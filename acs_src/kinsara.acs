@@ -1,0 +1,522 @@
+#library "kinsara"
+#include "zcommon.acs"
+#include "commonFuncs.h"
+
+// A handy method of detecting what Source Port you're using and using appropriate
+// scripts for it. Thanks to TheZombieKiller!
+// [tv50] GetTimeProperty is a new function in Zandronum that is treated as a dummy
+// [tv50] in ZDoom, returning 0 there (as opposed to 1970 in Zandronum with the
+// [tv50] parameters chosen). Compared to previous methods, no side effects have
+// [tv50] come from this, so this should be used for checking the current source port.
+script "IsThisZandro" OPEN
+{
+    if (GetTimeProperty(0, 5, true) == 0) // TM_YEAR = 5
+	{
+        //Log(s:"Zandronum check unsuccessful, assuming ZDoom.");
+        SetCVar("samsara_runninginzandro",0);
+        SetCVar("samsara_runninginzdoom",1);
+    } else {
+        //Log(s:"Zandronum check successful.");
+        SetCVar("samsara_runninginzandro",1);
+        SetCVar("samsara_runninginzdoom",0);
+    }
+}
+
+// If running in ZDoom, mirror Zandro options to the ZDoom cvars so I don't have
+// to define them twice in the menu.
+script "ZDoomOptionMirror" ENTER
+{
+	If (GetCVar("samsara_runninginzdoom") == 1)
+	{
+		SetCVar("samsara_zd_expparticles",GetCVar("samsara_cl_expparticles"));
+		SetCVar("samsara_zd_pickupmode",GetCVar("samsara_cl_pickupmode"));
+		SetCVar("samsara_zd_noadditivepickups",GetCVar("samsara_cl_noadditivepickups"));
+		SetCVar("samsara_zd_bloodyhell",GetCVar("samsara_cl_bloodyhell"));
+		SetCVar("samsara_zd_bloodypersistent",GetCVar("samsara_cl_bloodypersistent"));
+		delay(1);
+		restart;
+	}
+}
+
+// Fancy per-class secret notifications
+script "SecretNotifier" ENTER
+{
+	int stotal;
+	int sfound;
+	int sfound2;
+	
+	stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
+	sfound2 = sfound;
+	sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+	// Found a secret.
+	if (sfound > sfound2)
+	{
+		if (CheckInventory("DoomguyClass"))
+		{
+			LocalAmbientSound("secretfound/doom", 127);
+			Log(l:"SECRETFOUND_DOOM");
+		} else if (CheckInventory("WolfenClass"))
+		{
+			LocalAmbientSound("secretfound/wolf", 127);
+			Log(l:"SECRETFOUND_WOLF");
+
+		} else if (CheckInventory("ChexClass"))
+		{
+			LocalAmbientSound("secretfound/chex", 127);
+			Log(l:"SECRETFOUND_CHEX");
+
+		} else if (CheckInventory("DukeClass"))
+		{
+			LocalAmbientSound("secretfound/duke", 127);
+			SetHudSize(400, 300, 0);
+				Hudmessage(l:"SECRETFOUND_DUKE";
+				HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,2.0);
+			//Log(l:"SECRETFOUND_DUKE");
+			delay(10);
+			if (!CheckInventory("DukeBallgag"))
+            {
+                LocalAmbientSound("duke/secret",127);
+                GiveInventory("DukeTauntCooldown",5);
+                ACS_NamedExecuteAlways("DukeTauntCooldown",0,0);
+            }
+
+		} else if (CheckInventory("MarathonClass"))
+		{
+			LocalAmbientSound("secretfound/marathon", 127);
+			Log(l:"SECRETFOUND_MARATHON");
+
+		} else if (CheckInventory("HexenClass"))
+		{
+			if (sfound == stotal)
+			{
+			LocalAmbientSound("secretfound/PuzzleSuccess", 127);
+			Print(s:"\cjYou have completed the puzzle of the secrets in this level.");
+			} else {
+			LocalAmbientSound("secretfound/SwitchOtherLevel", 127);
+			Print(s:"\cjYou have found ",i:sfound,s:" of the ",i:stotal,s:" secrets in this level.");
+			}
+		} else if (CheckInventory("CorvusClass"))
+		{
+			LocalAmbientSound("secretfound/heretic", 127);
+			Log(l:"SECRETFOUND_RAVEN");
+
+		} else if (CheckInventory("QuakeClass"))
+		{
+			LocalAmbientSound("secretfound/quake", 127);
+			Print(l:"SECRETFOUND_QUAKE");
+		} else {
+			LocalAmbientSound("secretfound/default", 127);
+			Print(l:"SECRETFOUND_DEFAULT");
+		}
+	}
+	delay(1);
+	restart;
+}
+
+// class-specific item pickup messages
+script "SoulSpherePickupMessage" (void)
+{
+	// here's the nice way to do things, which zandro clearly won't let us do.
+	/*
+	int msgColors[22] = 
+	{
+		"\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
+		"\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+	};
+
+	int color = GetCvar("msg0color");
+	
+	// Log(s:msgColors[color], l:"SAMSARA_HEALPACK3_DUKE");
+	*/
+	
+	// here's the ugly, shitty way.
+	int colortemp = GetCvar("msg0color");
+	str msgcolor = "";
+	
+	if (GetCvar("msg0color") == 0) { msgcolor = "\ca"; }
+	else if (GetCvar("msg0color") == 1) { msgcolor = "\cb"; }
+	else if (GetCvar("msg0color") == 2) { msgcolor = "\cc"; }
+	else if (GetCvar("msg0color") == 3) { msgcolor = "\cd"; }
+	else if (GetCvar("msg0color") == 4) { msgcolor = "\ce"; }
+	else if (GetCvar("msg0color") == 5) { msgcolor = "\cf"; }
+	else if (GetCvar("msg0color") == 6) { msgcolor = "\cg"; }
+	else if (GetCvar("msg0color") == 7) { msgcolor = "\ch"; }
+	else if (GetCvar("msg0color") == 8) { msgcolor = "\ci"; }
+	else if (GetCvar("msg0color") == 9) { msgcolor = "\cj"; }
+	else if (GetCvar("msg0color") == 10) { msgcolor = "\ck"; }
+	else if (GetCvar("msg0color") == 11) { msgcolor = "\cl"; }
+	else if (GetCvar("msg0color") == 12) { msgcolor = "\cm"; }
+	else if (GetCvar("msg0color") == 13) { msgcolor = "\cn"; }
+	else if (GetCvar("msg0color") == 14) { msgcolor = "\co"; }
+	else if (GetCvar("msg0color") == 15) { msgcolor = "\cp"; }
+	else if (GetCvar("msg0color") == 16) { msgcolor = "\cq"; }
+	else if (GetCvar("msg0color") == 17) { msgcolor = "\cr"; }
+	else if (GetCvar("msg0color") == 18) { msgcolor = "\cs"; }
+	else if (GetCvar("msg0color") == 19) { msgcolor = "\ct"; }
+	else if (GetCvar("msg0color") == 20) { msgcolor = "\cu"; }
+	else if (GetCvar("msg0color") == 21) { msgcolor = "\cv"; }
+	
+	if (CheckInventory("DukeClass") == 1) { Log(s:msgcolor, l:"SAMSARA_HEALPACK3_DUKE"); }
+	else if (CheckInventory("CorvusClass") == 1) { Log(s:msgcolor, l:"SAMSARA_HEALPACK3_RAVEN"); }
+	else if (CheckInventory("HexenClass") == 1) { Log(s:msgcolor, l:"SAMSARA_HEALPACK3_RAVEN"); }
+	else { Log(s:msgcolor, l:"SAMSARA_HEALPACK3"); }
+}
+
+script "HealPack2PickupMessage" (void)
+{
+	/*
+	int msgColors[22] = 
+	{
+		"\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
+		"\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+	};
+
+	int color = GetCvar("msg0color");
+	*/
+	
+	int colortemp = GetCvar("msg0color");
+	str msgcolor = "";
+	
+	if (GetCvar("msg0color") == 0) { msgcolor = "\ca"; }
+	else if (GetCvar("msg0color") == 1) { msgcolor = "\cb"; }
+	else if (GetCvar("msg0color") == 2) { msgcolor = "\cc"; }
+	else if (GetCvar("msg0color") == 3) { msgcolor = "\cd"; }
+	else if (GetCvar("msg0color") == 4) { msgcolor = "\ce"; }
+	else if (GetCvar("msg0color") == 5) { msgcolor = "\cf"; }
+	else if (GetCvar("msg0color") == 6) { msgcolor = "\cg"; }
+	else if (GetCvar("msg0color") == 7) { msgcolor = "\ch"; }
+	else if (GetCvar("msg0color") == 8) { msgcolor = "\ci"; }
+	else if (GetCvar("msg0color") == 9) { msgcolor = "\cj"; }
+	else if (GetCvar("msg0color") == 10) { msgcolor = "\ck"; }
+	else if (GetCvar("msg0color") == 11) { msgcolor = "\cl"; }
+	else if (GetCvar("msg0color") == 12) { msgcolor = "\cm"; }
+	else if (GetCvar("msg0color") == 13) { msgcolor = "\cn"; }
+	else if (GetCvar("msg0color") == 14) { msgcolor = "\co"; }
+	else if (GetCvar("msg0color") == 15) { msgcolor = "\cp"; }
+	else if (GetCvar("msg0color") == 16) { msgcolor = "\cq"; }
+	else if (GetCvar("msg0color") == 17) { msgcolor = "\cr"; }
+	else if (GetCvar("msg0color") == 18) { msgcolor = "\cs"; }
+	else if (GetCvar("msg0color") == 19) { msgcolor = "\ct"; }
+	else if (GetCvar("msg0color") == 20) { msgcolor = "\cu"; }
+	else if (GetCvar("msg0color") == 21) { msgcolor = "\cv"; }
+	
+	if (CheckInventory("CorvusClass") == 1) { Log(s:msgcolor, l:"SAMSARA_HEALPACK2_RAVEN"); }
+	else if (CheckInventory("HexenClass") == 1) { Log(s:msgcolor, l:"SAMSARA_HEALPACK2_RAVEN"); }
+	else { Log(s:msgcolor, l:"SAMSARA_HEALPACK2"); }
+}
+
+script "MegaSpherePickupMessage" (void)
+{
+	/*
+	int msgColors[22] = 
+	{
+		"\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
+		"\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+	};
+
+	int color = GetCvar("msg0color");
+	
+	*/
+	
+	int colortemp = GetCvar("msg0color");
+	str msgcolor = "";
+	
+	if (GetCvar("msg0color") == 0) { msgcolor = "\ca"; }
+	else if (GetCvar("msg0color") == 1) { msgcolor = "\cb"; }
+	else if (GetCvar("msg0color") == 2) { msgcolor = "\cc"; }
+	else if (GetCvar("msg0color") == 3) { msgcolor = "\cd"; }
+	else if (GetCvar("msg0color") == 4) { msgcolor = "\ce"; }
+	else if (GetCvar("msg0color") == 5) { msgcolor = "\cf"; }
+	else if (GetCvar("msg0color") == 6) { msgcolor = "\cg"; }
+	else if (GetCvar("msg0color") == 7) { msgcolor = "\ch"; }
+	else if (GetCvar("msg0color") == 8) { msgcolor = "\ci"; }
+	else if (GetCvar("msg0color") == 9) { msgcolor = "\cj"; }
+	else if (GetCvar("msg0color") == 10) { msgcolor = "\ck"; }
+	else if (GetCvar("msg0color") == 11) { msgcolor = "\cl"; }
+	else if (GetCvar("msg0color") == 12) { msgcolor = "\cm"; }
+	else if (GetCvar("msg0color") == 13) { msgcolor = "\cn"; }
+	else if (GetCvar("msg0color") == 14) { msgcolor = "\co"; }
+	else if (GetCvar("msg0color") == 15) { msgcolor = "\cp"; }
+	else if (GetCvar("msg0color") == 16) { msgcolor = "\cq"; }
+	else if (GetCvar("msg0color") == 17) { msgcolor = "\cr"; }
+	else if (GetCvar("msg0color") == 18) { msgcolor = "\cs"; }
+	else if (GetCvar("msg0color") == 19) { msgcolor = "\ct"; }
+	else if (GetCvar("msg0color") == 20) { msgcolor = "\cu"; }
+	else if (GetCvar("msg0color") == 21) { msgcolor = "\cv"; }
+	
+	if (CheckInventory("CorvusClass") == 1) { Log(s:msgcolor, l:"SAMSARA_MEGAPACK_CORVUS"); }
+	else if (CheckInventory("MarathonClass") == 1) { Log(s:msgcolor, l:"SAMSARA_MEGAPACK_MARATHON"); }
+	else { Log(s:msgcolor, l:"SAMSARA_MEGAPACK"); }
+}
+
+script "InvisPickupMessage" (void)
+{
+	int colortemp = GetCvar("msg0color");
+	str msgcolor = "";
+	
+	if (GetCvar("msg0color") == 0) { msgcolor = "\ca"; }
+	else if (GetCvar("msg0color") == 1) { msgcolor = "\cb"; }
+	else if (GetCvar("msg0color") == 2) { msgcolor = "\cc"; }
+	else if (GetCvar("msg0color") == 3) { msgcolor = "\cd"; }
+	else if (GetCvar("msg0color") == 4) { msgcolor = "\ce"; }
+	else if (GetCvar("msg0color") == 5) { msgcolor = "\cf"; }
+	else if (GetCvar("msg0color") == 6) { msgcolor = "\cg"; }
+	else if (GetCvar("msg0color") == 7) { msgcolor = "\ch"; }
+	else if (GetCvar("msg0color") == 8) { msgcolor = "\ci"; }
+	else if (GetCvar("msg0color") == 9) { msgcolor = "\cj"; }
+	else if (GetCvar("msg0color") == 10) { msgcolor = "\ck"; }
+	else if (GetCvar("msg0color") == 11) { msgcolor = "\cl"; }
+	else if (GetCvar("msg0color") == 12) { msgcolor = "\cm"; }
+	else if (GetCvar("msg0color") == 13) { msgcolor = "\cn"; }
+	else if (GetCvar("msg0color") == 14) { msgcolor = "\co"; }
+	else if (GetCvar("msg0color") == 15) { msgcolor = "\cp"; }
+	else if (GetCvar("msg0color") == 16) { msgcolor = "\cq"; }
+	else if (GetCvar("msg0color") == 17) { msgcolor = "\cr"; }
+	else if (GetCvar("msg0color") == 18) { msgcolor = "\cs"; }
+	else if (GetCvar("msg0color") == 19) { msgcolor = "\ct"; }
+	else if (GetCvar("msg0color") == 20) { msgcolor = "\cu"; }
+	else if (GetCvar("msg0color") == 21) { msgcolor = "\cv"; }
+	
+	if (CheckInventory("DukeClass") == 1) { Log(s:msgcolor, l:"SAMSARA_POWERUP_HOLODUKE"); }
+	else { Log(s:msgcolor, l:"SAMSARA_POWERUP_INVIS"); }
+}
+
+// don't get too brutal, kid
+script "BrutalChecker" ENTER
+{
+    int s = unusedTID(37000, 47000);
+
+    if (SpawnForced("Brutal_Blood",0,0,0,s,0))
+	{
+		SetFont("BIGFONT");
+		HudMessage(s:"Hello! You seem to have Brutal Doom\n
+		loaded at the same time as Samsara.\n
+		This may cause bugs and glitches.\n
+		Please Understand.";
+		HUDMSG_TYPEON | HUDMSG_LOG, 0, CR_TAN, 1.5, 0.8, 5.0,
+		0.05, 2.0);
+    }
+}
+
+// Pistol Start Stuff!
+
+str pistolwit[10] =
+{
+	"PISTOLSTART_WIT1",
+	"PISTOLSTART_WIT2",
+	"PISTOLSTART_WIT3",
+	"PISTOLSTART_WIT4",
+	"PISTOLSTART_WIT5",
+	"PISTOLSTART_WIT6",
+	"PISTOLSTART_WIT7",
+	"PISTOLSTART_WIT8",
+	"PISTOLSTART_WIT9",
+	"PISTOLSTART_WIT10"
+};
+
+script "PistolStart" ENTER
+{
+	if(GetCvar("samsara_pistolstart") == 1 && (GameType () != GAME_TITLE_MAP))
+	{
+		GiveInventory("PistolStartEnabled", 1);
+		
+		SetActorProperty (0, APROP_Health, 100);
+		
+		if (CheckInventory("DoomguyClass") == 1)
+		{
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory(" Chaingun ", 999);
+			TakeInventory(" Chainsaw ", 999);
+			TakeInventory(" Railgun ", 999);
+			
+			GiveInventory(" Pistol ", 1);
+			GiveInventory(" Fist ", 1);
+			GiveInventory("DoomguyClass", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			SetWeapon(" Pistol ");
+		}
+		else if (CheckInventory("ChexClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("Super Bootspork", 999);
+			TakeInventory("Rapid Zorcher", 999);
+			TakeInventory("Gigazorcher 2100", 999);
+			
+			GiveInventory("Mini-Zorcher", 1);
+			GiveInventory(" Bootspoon ", 1);
+			GiveInventory("ChexClass", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			SetWeapon("Mini-Zorcher");
+		
+		}
+		else if (CheckInventory("WolfenClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("BJSuperKnife", 999);
+			TakeInventory("  Chaingun  ", 999);
+			TakeInventory("Mauser Rifle", 999);
+			
+			GiveInventory("Luger", 1);
+			GiveInventory("Knife", 1);
+			GiveInventory("WolfenClass", 1);
+			GiveInventory("CanWolfMovement", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			SetWeapon("Luger");
+		}
+		else if (CheckInventory("DukeClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("Pipebombs", 999);
+			TakeInventory("Chaingun Cannon", 999);
+			TakeInventory("Golden Desert Eagle", 999);
+			TakeInventory("DukePortJetpack", 999);
+			TakeInventory("DukePetjack", 999);
+			TakeInventory("DukePortNiVi", 999);
+			TakeInventory("DukeNightVision", 999);
+			TakeInventory("ItemHoloDuke", 999);
+			TakeInventory("  Shotgun  ", 999);
+			TakeInventory("Explosive Shotgun", 999);
+			TakeInventory("Chaingun Cannon", 999);
+			TakeInventory("RPG", 999);
+			TakeInventory("Freezethrower", 999);
+			TakeInventory("Devastator", 999);
+			
+			GiveInventory("Glock 17", 1);
+			GiveInventory("Mighty Boot", 1);
+			GiveInventory("DukeClass", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			SetWeapon("Glock 17");
+			
+			if (!CheckInventory("DukeBallgag"))
+			{
+				LocalAmbientSound("duke/mpdeath",127);
+				GiveInventory("DukeTauntCooldown",5);
+				ACS_NamedExecuteAlways("DukeTauntCooldown",0,0);
+			}
+		}
+		else if (CheckInventory("CorvusClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("Gauntlets of the Necromancer", 999);
+			TakeInventory("Dragon Claw", 999);
+			TakeInventory("Grim Ballista", 999);
+			TakeInventory("PermaRemoteBomb", 999);
+			TakeInventory("PermaTimeBomb", 999);
+			
+			GiveInventory("Elven Wand", 1);
+			GiveInventory(" Staff ", 1);
+			GiveInventory("CorvusClass", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			GiveInventory("PermaRemoteBomb", 1);
+			GiveInventory("PermaTimeBomb", 1);
+			SetWeapon("Elven Wand");
+		}
+		else if (CheckInventory("HexenClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("PortFlechette", 999);
+			TakeInventory("PortMysticAmbit", 999);
+			TakeInventory("Serpent Staff", 999);
+			TakeInventory("Bloodscourge", 999);
+			TakeInventory("Hammer of Retribution", 999);
+			TakeInventory("Frost Shards", 999);
+			TakeInventory("Timon's Axe", 999);
+			
+			GiveInventory("Sapphire Wand", 1);
+			GiveInventory("Mace of Contrition", 1);
+			GiveInventory("HexenClass", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			SetWeapon("Sapphire Wand");
+		}
+		else if (CheckInventory("QuakeClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("Laser Cannon", 999);
+			TakeInventory("Nailgun", 999);
+			TakeInventory("QuadDamageItem", 999);
+			TakeInventory("Thunderbolt", 999);
+			TakeInventory("Rocket Powered Impaler", 999);
+			TakeInventory("Double Shotgun", 999);
+			TakeInventory("Grenade Launcher", 999);
+			TakeInventory("  Rocket Launcher  ", 999);
+			TakeInventory("Super Nailgun", 999);
+			
+			GiveInventory("QuakeClass", 1);
+			GiveInventory("Single Shotgun", 1);
+			GiveInventory("IsSamsaraClass", 1);
+			GiveInventory("Shell", 25);
+			GiveInventory("Axe", 1);
+			SetWeapon("Single Shotgun");
+		}
+		else if (CheckInventory("MarathonClass") == 1)
+		{ 
+			ClearInventory();
+			// for some reason certain weapons refuse to comply with clearinventory.
+			TakeInventory("KKV-7 SMG Flechette", 999);
+			TakeInventory("MA-75B Assault Rifle", 999);
+			TakeInventory("SPNKR-25 Auto Cannon", 999);
+			TakeInventory("CanDualPistols", 999);
+			TakeInventory("CanDualShotties", 999);
+			TakeInventory("WSTE-M5 Combat Shotgun", 999);
+			TakeInventory("Fusion Pistol", 999);
+			TakeInventory("SPNKR-XP SSM Launcher", 999);
+			TakeInventory("TOZT-7 Napalm Unit", 999);
+			TakeInventory("ONI-71 Wave Motion Cannon", 999);
+			TakeInventory("Alien Weapon", 999);
+			TakeInventory(" Alien Weapon ", 999);
+			TakeInventory(".44 Magnum Mega Class A1", 999);
+
+			GiveInventory("OverMax", 200);
+			GiveInventory("OverOverMax", 300);
+			GiveInventory(".44 Magnum Mega Class A1", 1);
+			GiveInventory("Steel Knuckles", 1);
+			GiveInventory("RocketAmmo", 10);
+			GiveInventory("Shell", 20);
+			GiveInventory("Cell", 50);
+			GiveInventory("IsSamsaraClass", 1);
+			GiveInventory("MarathonClass", 1);
+			GiveInventory("MagnumBullet", 100);
+			GiveInventory("MagnumBulletRight", 100);
+			GiveInventory("RifleBullet", 500);
+			GiveInventory("SmgBullet", 500);
+			GiveInventory("FusionBullet", 500);
+			GiveInventory("GrenadeInClip", 500);
+			GiveInventory("WMCAmmo", 500);
+			GiveInventory("MortarAmmo", 500);
+			GiveInventory("NapalmInTank", 500);
+			GiveInventory("SpankerAmmo", 2);
+			GiveInventory("KnifeAmmo", 2);
+			SetWeapon(".44 Magnum Mega Class A1");
+		}
+		
+		if (!CheckInventory("QuakeClass"))
+		{
+			GiveInventory("Clip", 50);
+		}
+		
+		LocalAmbientSound("misc/pistolstart", 127);
+		Log(l:"PISTOLSTART_HEADER", s:" ", l:pistolwit[random(0,9)]);
+	}
+}
+
+// Give IDKFA Users the proper inventory tokens for the top bar
+// this is basically copypasted from metadoom sorry
+script "InventoryCheat" (void)
+{
+	GiveInventory("GotWeapon0", 1);
+	GiveInventory("GotWeapon2", 1);
+	GiveInventory("GotWeapon3", 1);
+	GiveInventory("GotWeapon4", 1);
+	GiveInventory("GotWeapon5", 1);
+	GiveInventory("GotWeapon6", 1);
+	GiveInventory("GotWeapon7", 1);
+	TakeInventory("MetaCheatDetector",1);
+	ACS_NamedExecuteWithResult("Samsara_FillInventory",0,0,0,0);
+}

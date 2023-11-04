@@ -1,0 +1,134 @@
+graphic samstip0, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_1fctf, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_coop, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_ctf, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_dm, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_duel, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_inv, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_lms, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_poss, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_scp, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_st, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_tdm, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_term, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_tlms, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+graphic f1_tposs, 800, 600
+{
+    patch samsarf1, 0, 0
+}
+
+sprite RANGH1, 103, 261
+{
+    offset 51, 257
+    patch RANGH1, 0, 0
+}
+
+sprite RANGH2H8, 149, 261
+{
+    offset 74, 257
+    patch RANGH2H8, 0, 0
+}
+
+sprite RANGH3H7, 184, 261
+{
+    offset 92, 257
+    patch RANGH3H7, 0, 0
+}
+
+sprite RANGH4H6, 157, 261
+{
+    offset 78, 257
+    patch RANGH4H6, 0, 0
+}
+
+sprite RANGH5, 103, 261
+{
+    offset 51, 257
+    patch RANGH5, 0, 0
+}
+
+sprite RANGZ1, 103, 261
+{
+    offset 51, 257
+    patch RANGH1, 0, 0
+}
+
+sprite RANGZ2Z8, 149, 261
+{
+    offset 74, 257
+    patch RANGH2H8, 0, 0
+}
+
+sprite RANGZ3Z7, 184, 261
+{
+    offset 92, 257
+    patch RANGH3H7, 0, 0
+}
+
+sprite RANGZ4Z6, 157, 261
+{
+    offset 78, 257
+    patch RANGH4H6, 0, 0
+}
+
+sprite RANGZ5, 103, 261
+{
+    offset 51, 257
+    patch RANGH5, 0, 0
+}

@@ -1,0 +1,454 @@
+actor PartialInvisibility : CustomInventory replaces BlurSphere
+{
+    RenderStyle Add
+    Alpha 0.75
+    +Floatbob
+    +VISIBILITYPULSE
+    +INVENTORY.PICKUPFLASH
+    +INVENTORY.BIGPOWERUP
+    +COUNTITEM
+	+INVENTORY.QUIET
+    Inventory.PickupAnnouncerEntry "partialinvisibility"
+    Inventory.PickupMessage "$SAMSARA_POWERUP_INVIS"
+    Inventory.PickupSound "nosoundforyoubitch"
+    states
+    {
+      Spawn:
+        NVSI A 0
+        NVSI A -1 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 75)
+        stop
+
+      Pickup:
+		TNT1 A 0 ACS_NamedExecute("InvisPickupMessage")
+		TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 1 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 1 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
+		TNT1 A 1 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+        TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 1 A_GiveInventory("BlurSphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("PortGhostly",0,"PickupHereticFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("PortGhostly")
+        stop
+
+      PickupHereticFail:
+        NVSI A 1 BRIGHT
+        fail
+
+      PickupHexen:
+        TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 1 A_GiveInventory("PowerGhost")
+        stop
+		
+	  PickupDuke:
+        TNT1 A 0 A_PlaySound("duke/itemget")
+        TNT1 A 1 A_GiveInventory("ItemHoloDuke",3)
+        stop
+
+      PickupQuake: 
+        TNT1 A 0 A_GiveInventory("QuakeInvisTimer", 1050)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate",0,25,0,0)//TNT1 A 0 A_PlaySoundEx("quake/invisannouncer","soundslot7",0,2)
+        TNT1 A 0
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.5,6)
+        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        //TNT1 A 1 A_GiveInventory("Blursphere")
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate",0,26,0,0) //A_GiveInventory("PowerShadow")
+        stop
+    }
+}
+
+actor InvisTrail
+{
+    Renderstyle Add
+    Alpha 0.35
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        NVSI A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor QuakeInvisTimer: Counter {}
+
+actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
+{
+    RenderStyle Add
+    Alpha 0.95
+    +Floatbob
+    +INVENTORY.BIGPOWERUP
+    +INVENTORY.PICKUPFLASH
+    +COUNTITEM
+    Inventory.PickupAnnouncerEntry "invulnerability"
+    Inventory.PickupMessage "$SAMSARA_POWERUP_INVULN"
+    Inventory.PickupSound "nosoundforyoubitch"
+    states
+    {
+      Spawn:
+        NVLN A 0 
+        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",28,0,0) == 1, "NoInvuln")
+        NVLN A -1 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
+		TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+        TNT1 A 0 A_PlaySound("invulnget")
+        TNT1 A 1 A_GiveInventory("PowerFakeInvulnerable")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("PortRingInvuln",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("PortRingInvuln")
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("PortIconDefender",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 1 A_GiveInventory("PortIconDefender")
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("QuakePentTimer", 1050)
+        stop
+	
+	  PickupDuke:
+		TNT1 A 0 A_PlaySound("invulnget")
+        TNT1 A 1 A_GiveInventory("PowerFakeInvulnerableDuke")
+		TNT1 A 0 A_TakeInventory("DukeTauntCooldown", 9999)
+		TNT1 A 0 A_StopSound("soundslot7")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupStop")
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 15)
+		TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
+        TNT1 A 0 A_PlaySoundEx("duke/invuln", "soundslot7", 0, 0)
+        stop
+
+      PickupFail:
+        NVLN A 1 BRIGHT
+        fail
+        
+      NoInvuln:
+        TNT1 A 1
+        stop
+		
+	  PickupStop:
+        TNT1 A 0
+        stop
+    }
+}
+
+ACTOR PowerFakeInvulnerable : PowerProtection
+{
+  Powerup.Duration -30
+  //inventory.icon "SPSHLD0"
+  Powerup.Color InverseMap
+  damagefactor "normal", 0.0
+  damagefactor "Pistol", 0.0
+  DamageFactor "DoomFist", 0.0
+  damagefactor "ZorchPistol", 0.0
+  damagefactor "Wraithverge", 0.0
+  damagefactor "zorch", 0.0
+  damagefactor "fire", 0.0
+  damagefactor "ice", 0.0
+  damagefactor "slime", 0.0
+  damagefactor "bfg", 0.0
+  damagefactor "bfgspray", 0.0
+  damagefactor "disintegrate", 0.0
+  damagefactor "electric", 0.0
+  DamageFactor "BFG", 0.0
+  DamageFactor "BFGSpray", 0.0
+  DamageFactor "Poison", 0.0
+  DamageFactor "PoisonCloud", 0.0
+  DamageFactor "Mace", 0.0
+  DamageFactor "DragonClaw", 0.0
+  DamageFactor "WolfenFlamethrower", 0.0
+  DamageFactor "DukeDamage", 0.0
+  DamageFactor "DukeExplosive", 0.0
+  DamageFactor "DukeSpectral", 0.0
+  DamageFactor "MightyBoot", 0.0
+  DamageFactor "DukeIce", 0.0
+  DamageFactor "DukePistol", 0.0
+  DamageFactor "MarathonPistol", 0.0
+  DamageFactor "Explosive", 0.0
+  DamageFactor "DoomPlasma", 0.0
+  DamageFactor "CorvusCrossbow", 0.0
+  DamageFactor "CorvusHellstaff", 0.0
+  DamageFactor "CorvusHellstaffTomed", 0.0
+  DamageFactor "MarathonPlasma", 0.0
+  DamageFactor "BJSpear", 0.0
+  DamageFactor "DoomCacodemon", 0.0
+  DamageFactor "DoomHellNoble", 0.0
+  DamageFactor "DoomSpiderPlasma", 0.0
+  DamageFactor "DoomTheseGuysAreTheBest", 0.0
+  DamageFactor "HereNitrogolem", 0.0
+  DamageFactor "HereAxeGreen", 0.0
+  DamageFactor "HereAxeRed", 0.0
+  DamageFactor "Wizard", 0.0
+  DamageFactor "HereLichWind", 0.0
+  DamageFactor "HereDsparil", 0.0
+  DamageFactor "HexBishop", 0.0
+  DamageFactor "HexSlaughtaur", 0.0
+  DamageFactor "HexGreenFire", 0.0
+  DamageFactor "HexStalkerShot", 0.0
+  DamageFactor "HexHeresiarchPurple", 0.0
+  DamageFactor "QuakePistol", 0.0
+  DamageFactor "NotQuadded", 0.0
+  DamageFactor "SpectralNoQuad", 0.0
+
+  DamageFactor "MarathonFusion", 1.0
+  DamageFactor "Kamikaze", 1.0
+  DamageFactor "ZorchKamikaze", 1.0
+  DamageFactor "Suicide", 1.0
+  DamageFactor "Telefrag", 1.0
+}
+
+ACTOR PowerFakeInvulnerableDuke : PowerFakeInvulnerable
+{
+  Powerup.Color GoldMap
+}
+
+actor QuakePentagram: PowerFakeInvulnerable
+{
+    Powerup.Duration 0x7FFFFFFF
+    Powerup.Color "FF 20 00", 0.15
+}
+
+actor QuakePentTimer: Counter {}
+
+actor InvulnTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        NVLN A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor BioSuit : PowerupGiver replaces RadSuit
+{
+    RenderStyle Add
+    Alpha 0.95
+    +CountItem
+    +FLOATBOB
+    +INVENTORY.PICKUPFLASH
+    +Inventory.AlwaysPickup
+    +Inventory.AutoActivate
+    Inventory.MaxAmount 1
+    Powerup.Type "IronFeet"
+    Powerup.Duration -60
+    Powerup.Color "Green", 0.125
+    Inventory.PickupMessage "$SAMSARA_POWERUP_RADSUIT"
+    Inventory.PickupSound "antisterileget"
+    States
+    {
+      Spawn:
+        RDST A 0 
+        RDST A -1 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
+        stop
+    }
+}
+
+actor BioTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        RDST A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor Visor : CustomInventory replaces Infrared// replaces Infrared
+{
+    RenderStyle Add
+    Alpha 0.85
+    +Floatbob
+    +INVENTORY.PICKUPFLASH
+    Inventory.PickupMessage "$SAMSARA_POWERUP_INFRARED"
+    Inventory.PickupSound "nosoundforyoubitch"
+    States
+    {
+      Spawn:
+        VISR A 0
+        VISR A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 85)
+        goto Spawn2
+
+      Spawn2:
+        VISR A 20 Bright //A_SpawnItemEx("VisorTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        VISR A 20
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_PlaySound("lettherebelight")
+        TNT1 A 1 A_GiveInventory("Infrared")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("PortTorch",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("PortTorch")
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("PortTorch2",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 1 A_GiveInventory("PortTorch2")
+        stop
+
+      PickupDuke:
+        TNT1 A 0 A_JumpIfInventory("DukeVisionFuel",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("Duke/itemget")
+        TNT1 A 1 A_GiveInventory("DukePortNiVi")
+        TNT1 A 1 A_GiveInventory("DukeVisionFuel",100)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 1 A_GiveInventory("MarathonInfrared")
+        stop
+
+      PickupFail:
+        VISR A 1 BRIGHT
+        fail
+    }
+}
+
+actor MarathonInfrared : PowerLightAmp
+{
+    Powerup.Color BlueMap
+}
+
+actor VisorTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        VISR A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor PortTorch : PowerupGiver
+{
+    tag "Torch"
+    +FLOATBOB
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.PICKUPFLASH
+    Inventory.MaxAmount 16
+    Inventory.Icon ARTITRCH
+    Inventory.UseSound "heretic/itemuse"
+    Inventory.PickupMessage "You picked up a Torch!"
+	Inventory.RestrictedTo "CorvusPlayer"
+    Powerup.Type Torch
+    States
+    {
+      Spawn:
+        TRCH ABC 3 Bright
+        Loop
+    }
+}
+
+actor PortRingInvuln : PowerupGiver
+{
+    tag "Ring of Invulnerability"
+    +INVENTORY.UNDROPPABLE
+    +inventory.hubpower
+    Inventory.MaxAmount 16
+    Inventory.Icon "ARTIINVU"
+    Powerup.Type FakeInvulnerable
+    inventory.usesound "heretic/itemuse"
+	Inventory.RestrictedTo "CorvusPlayer"
+    Powerup.Color GoldMap
+}
+
+actor PortGhostly : PowerupGiver
+{
+    tag "Shadowsphere"
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+	Inventory.RestrictedTo "CorvusPlayer"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTINVSI"
+    Powerup.Type Ghost
+}
+
+actor PortTorch2 : PowerupGiver
+{
+    tag "Torch"
+    +FLOATBOB
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.PICKUPFLASH
+    Inventory.MaxAmount 16
+    Inventory.Icon ARTITRCH
+    Inventory.UseSound "hexen/artiuse"
+    Inventory.PickupMessage "You picked up a Torch!"
+	Inventory.RestrictedTo "HexenPlayer"
+    Powerup.Type Torch
+    States
+    {
+      Spawn:
+        TRCH ABC 3 Bright
+        Loop
+    }
+}
+
+actor PortIconDefender : PowerupGiver
+{
+    tag "Icon of the Defender"
+    +INVENTORY.UNDROPPABLE
+    +inventory.hubpower
+    Inventory.MaxAmount 16
+    Inventory.Icon "ARTIDFND"
+    Powerup.Type Invulnerable
+    inventory.usesound "hexen/artiuse"
+	Inventory.RestrictedTo "HexenPlayer"
+    Powerup.Color Grey, 0.1
+}
+

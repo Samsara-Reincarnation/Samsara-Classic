@@ -1,0 +1,417 @@
+actor DukeKicking : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+
+actor "Mighty Boot" : Weapon//InstantSwitchWeapon
+{
+    Weapon.SlotNumber 0
+    Weapon.SelectionOrder 3700
+    +MELEEWEAPON
+    +NOALERT
+    +WIMPY_WEAPON
+    +INVENTORY.UNDROPPABLE
+	Inventory.RestrictedTo "DukePlayer"
+	Tag "Mighty Boot"
+    states
+    {
+      Select:
+        TNT1 A 0 A_TakeInventory("DBSHOT",99)
+        TNT1 A 0 A_TakeInventory("DB1",1)
+        TNT1 A 0 A_TakeInventory("DB2",1)
+        TNT1 A 0 A_TakeInventory("DB3",1)
+        TNT1 A 0 A_TakeInventory("DB4",1)
+        TNT1 A 0 A_TakeInventory("DB5",1)
+        TNT1 A 0 A_TakeInventory("DB6",1)
+        TNT1 A 0 A_TakeInventory("DB7",1)
+        TNT1 A 0 A_TakeInventory("DB8",1)
+        TNT1 A 0 A_TakeInventory("DB9",1)
+        TNT1 A 0 A_TakeInventory("DB10",1)
+        TNT1 A 0 A_TakeInventory("DB11",1)
+        TNT1 A 0 A_TakeInventory("DB12",1)
+        TNT1 A 0 A_TakeInventory("DB13",1)
+        TNT1 A 0 A_TakeInventory("DB14",1)
+        TNT1 A 0 A_TakeInventory("DB15",1)
+        TNT1 A 0 A_TakeInventory("DB16",1)
+        TNT1 A 0 A_TakeInventory("DB17",1)
+        TNT1 A 0 A_TakeInventory("DB18",1)
+        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt1")
+        TNT1 A 1 A_Raise
+        TNT1 A 0 A_Raise
+        TNT1 A 0 A_Raise
+        TNT1 A 1 A_Raise
+        TNT1 A 0 A_Raise
+        TNT1 A 1 A_Raise
+        TNT1 A 0 A_Raise
+        TNT1 A 1 A_Raise
+        TNT1 A 0 A_Raise
+        TNT1 A 1 A_Raise
+        TNT1 A 0 A_Raise
+        TNT1 AAAAAA 1 A_Raise
+        loop
+        
+      Deselect:
+        TNT1 A 0 A_TakeInventory("DBSHOT",99)
+        TNT1 A 0 A_TakeInventory("DB1",1)
+        TNT1 A 0 A_TakeInventory("DB2",1)
+        TNT1 A 0 A_TakeInventory("DB3",1)
+        TNT1 A 0 A_TakeInventory("DB4",1)
+        TNT1 A 0 A_TakeInventory("DB5",1)
+        TNT1 A 0 A_TakeInventory("DB6",1)
+        TNT1 A 0 A_TakeInventory("DB7",1)
+        TNT1 A 0 A_TakeInventory("DB8",1)
+        TNT1 A 0 A_TakeInventory("DB9",1)
+        TNT1 A 0 A_TakeInventory("DB10",1)
+        TNT1 A 0 A_TakeInventory("DB11",1)
+        TNT1 A 0 A_TakeInventory("DB12",1)
+        TNT1 A 0 A_TakeInventory("DB13",1)
+        TNT1 A 0 A_TakeInventory("DB14",1)
+        TNT1 A 0 A_TakeInventory("DB15",1)
+        TNT1 A 0 A_TakeInventory("DB16",1)
+        TNT1 A 0 A_TakeInventory("DB17",1)
+        TNT1 A 0 A_TakeInventory("DB18",1)
+        TNT1 AAAA 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 0 A_Lower
+        TNT1 A 1 A_Lower
+        loop
+
+      Ready:
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_GiveInventory("SynthFireActive",1)
+        goto LIdle
+
+
+      // Left Boot
+      LIdle:
+        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
+        TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
+        TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+        TNT1 A 1 A_WeaponReady(12)
+        Loop
+
+      LFire:
+        TNT1 A 0 A_GiveInventory("DukeKicking",1)
+        TNT1 A 0 A_JumpIfInventory("CalmYoLegsDuke", 1, "FastLeft")
+        DKBT A 5 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearLeft")
+        goto LFire2
+
+      NuclearLeft:
+		TNT1 A 0 A_JumpIfInventory("DukeBootserk", 1, "NuclearLeftBootserk")
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, random(4,6))
+      NuclearLeftBootserk:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKickBootserk", 0,0, random(4,6))
+        goto LFire2
+
+      LFire2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
+        DKBT B 7 A_WeaponReady(14)
+        DKBT A 3 A_WeaponReady(14)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT A 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+        Goto LIdle
+
+      FastLeft:
+        DKBT A 4 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearLeft2")
+        goto FL2
+
+      NuclearLeft2:
+		TNT1 A 0 A_JumpIfInventory("DukeBootserk", 1, "NuclearLeft2Bootserk")
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, random(4,6))
+        goto FL2
+		
+      NuclearLeft2Bootserk:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKickBootserk", 0,0, random(4,6))
+        goto FL2
+
+      FL2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
+        DKBT B 6 A_WeaponReady(14)
+        DKBT A 2 A_WeaponReady(14)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT A 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+        Goto LIdle
+
+
+      // Right Boot
+      Flash:
+        TNT1 A 1
+
+      RIdle:
+        TNT1 A 0 A_JumpIfHealthLower(1, "RDone")
+        TNT1 A 1 A_JumpIfInventory("SynthFireRight",1,"RFire")
+        loop
+
+      RDone:
+        TNT1 A 0
+        goto LightDone
+
+      RFire:
+        TNT1 A 0 A_GiveInventory("DukeKicking",1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate",0,3)
+        TNT1 A 0 A_JumpIfInventory("CalmYoLegsDuke", 1, "FastRight")
+        DKBT C 6 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearRight")
+        goto RFire2
+
+      NuclearRight:
+		TNT1 A 0 A_JumpIfInventory("DukeBootserk", 1, "NuclearRightBootserk")
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, -random(4,6))
+      NuclearRightBootserk:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKickBootserk", 0,0, -random(4,6))
+        goto RFire2
+
+      RFire2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
+        DKBT D 9 A_WeaponReady(14)
+        DKBT C 3 A_WeaponReady(14)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT C 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfHealthLower(1, "RDone")
+        TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
+        Goto RIdle
+        
+      FastRight:
+        DKBT C 5 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearRight2")
+        goto FR2
+
+      NuclearRight2:
+		TNT1 A 0 A_JumpIfInventory("DukeBootserk", 1, "NuclearRight2Bootserk")
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, -random(4,6))
+        goto FR2
+		
+      NuclearRight2Bootserk:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKickBootserk", 0,0, -random(4,6))
+        goto FR2
+
+      FR2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
+        DKBT D 7 A_WeaponReady(14)
+        DKBT C 2 A_WeaponReady(14)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT C 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfHealthLower(1, "RDone")
+        TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
+        Goto RIdle
+        
+      IntroTaunt:
+      IntroTaunt1:
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt2")
+        KNUX A 3
+        KNUX B 3
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt3")
+		//TNT1 A 0 A_JumpIf(GetCvar("samsara_pistolstart") == 1,"IntroTaunt3")
+        TNT1 A 0 A_PlaySoundEX("duke/introtaunt","SoundSlot7",0,0)
+        KNUX C 3
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
+        KNUX D 3 A_PlayWeaponSound("duke/knuckles")
+        KNUX C 3
+        KNUX B 3
+        KNUX A 3 A_TakeInventory("DukeReady",1)
+        //KNUX AAAAAAAAAAAAAA 0 A_Lower
+        goto Select
+
+      IntroTaunt2:
+        KNUX A 3
+        KNUX B 3
+
+      IntroTaunt3:
+        KNUX C 3
+        KNUX D 3 A_PlayWeaponSound("duke/knuckles")
+        KNUX C 3
+        KNUX B 3
+        KNUX A 3 A_TakeInventory("DukeReady",1)
+        //KNUX AAAAAAAAAAAAAA 0 A_Lower
+        goto Select
+        
+      WaitingTaunt:
+      WaitingTaunt1:
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt2")
+        KNUX A 3
+        KNUX B 3
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt3")
+        TNT1 A 0 A_PlaySoundEX("duke/waitingtoolong","SoundSlot7",0,0)
+        KNUX C 3
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
+        KNUX D 3 A_PlayWeaponSound("duke/knuckles")
+        KNUX C 3
+        KNUX B 3
+        KNUX A 3 A_TakeInventory("DukeWaiting",15)
+        //KNUX AAAAAAAAAAAAAA 0 A_Lower
+        goto Select
+
+      WaitingTaunt2:
+        KNUX A 3
+        KNUX B 3
+
+      WaitingTaunt3:
+        KNUX C 3
+        KNUX D 3 A_PlayWeaponSound("duke/knuckles")
+        KNUX C 3
+        KNUX B 3
+        KNUX A 3 A_TakeInventory("DukeWaiting",15)
+        //KNUX AAAAAAAAAAAAAA 0 A_Lower
+        goto Select
+        
+      Fire:
+        TNT1 A 0
+        goto Ready
+
+      AltFire:
+        TNT1 A 0
+        goto Ready
+    }
+}
+
+actor DukeBootPuff : BulletPuff
+{
+    Radius 1
+    Height 1
+    Alpha 1
+    Scale 0.45
+    VSpeed 1.15
+    Speed 0
+    +MISSILE
+    -SOLID
+    +NOCLIP
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    States
+    {
+      Spawn:
+        //TNT1 A 1 A_PlaySound("doomguy/wallpunch2")
+        DKPF ABCD 4
+        Stop
+    }
+}
+
+actor DukeBulletPuff2 : BulletPuff
+{
+    Alpha 1
+    DamageType "DukeDamage"
+    Scale 0.55
+    VSpeed 0
+    -SOLID
+    States
+    {
+      Spawn:
+        TNT1 A 0 A_Jump(224,2)
+        TNT1 A 0 A_PlaySound("duke/bulletricochet")
+        TNT1 A 1 A_SpawnItem("DukeBootPuff")
+        DKPF EFGH 3 BRIGHT
+        Stop
+    }
+}
+
+actor DukeKickAttack : FastProjectile
+{
+    Radius 6
+    Height 6
+    DamageType "MightyBoot"
+    Projectile
+    Damage (10)
+    Speed 25
+    Obituary "$SAMSARA_DUKE_OB_FIST"
+    SeeSound "none"
+    DeathSound "none"
+    Decal "none"
+    +NOTIMEFREEZE
+    States
+    {
+      Spawn:
+        TNT1 A 1
+        TNT1 A 1
+        Stop
+
+      Death:
+      Crash:
+        TNT1 A 1 A_Stop
+        TNT1 A 0 A_PlaySoundEx("doomguy/wallpunch2","body",0,0)
+        TNT1 A 1 A_SpawnItem("DukeBootPuff")
+        Stop
+
+      XDeath:
+        TNT1 A 1 A_Stop
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        stop
+    }
+}
+
+actor DukeKickAttack2: DukeKickAttack
+{
+    Damage (14)
+}
+
+actor DukeNuclearKick: DukeKickAttack
+{
+    Scale 0.30
+    Speed 15
+    +NODAMAGETHRUST
+    +FORCERADIUSDMG
+
+    DamageType "DukeExplosive"
+
+    States
+    {
+      Spawn:
+        TNT1 A 2
+        TNT1 A 0
+        goto Death
+
+      Death:
+      Crash:
+      XDeath:
+        RPGX B 0 A_Stop
+        RPGX B 0
+        RPGX B 0 A_PlaySound("duke/explosion")
+        RPGX B 0 bright A_Explode(20, 64, 0)
+        RPGX BCDEFGHIJKLMNOPQRSTUV 2 BRIGHT
+        Stop
+    }
+}
+
+actor DukeNuclearKickBootserk : DukeNuclearKick
+{
+    States
+    {
+      Death:
+      Crash:
+      XDeath:
+        RPGX B 0 A_Stop
+        RPGX B 0
+        RPGX B 0 A_PlaySound("duke/explosion")
+        RPGX B 0 bright A_Explode(160, 64, 0)
+        RPGX BCDEFGHIJKLMNOPQRSTUV 2 BRIGHT
+        Stop
+    }
+}
+
+
+actor DukeBootserk: PowerDamage
+{
+    +HUBPOWER
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "MightyBoot", 8
+}

@@ -1,0 +1,102 @@
+// Health/Armor Crumbs
+// ===================
+pulselight HEALTHCRUMB1
+{
+    color 0.5 0.5 0.5
+    size 8
+    secondarySize 10
+    interval 1
+	offset 0 12 0
+} 
+
+object HealPack0
+{
+    frame MEDI { light HEALTHCRUMB1 }
+}
+
+object HereticHealPack0
+{
+    frame MEDI { light HEALTHCRUMB1 }
+}
+
+object HereticStuffDump
+{
+    frame MEDI { light HEALTHCRUMB1 }
+}
+
+// Green Health
+// ============
+pulselight HEALTHCRUMB2
+{
+    color 0.2 0.5 0.2
+    size 9
+    secondarySize 11
+    interval 1
+	offset 0 13 0
+} 
+
+object HealPack1
+{
+    frame MED2 { light HEALTHCRUMB2 }
+}
+
+object HereticHealPack1
+{
+    frame MED2 { light HEALTHCRUMB2 }
+}
+
+// Red Health
+// ==========
+
+pulselight HEALTHCRUMB3
+{
+    color 0.5 0.0 0.0
+    size 10
+    secondarySize 12
+    interval 1
+	offset 0 13 0
+} 
+
+object HealPack2
+{
+    frame MED3 { light HEALTHCRUMB3 }
+}
+
+object HereticHealPack2
+{
+    frame MED3 { light HEALTHCRUMB3 }
+}
+
+// Super Health
+// ============
+
+pulselight HEALTHSUPER
+{
+    color 0.0 0.0 1.0
+    size 18
+    secondarySize 20
+    interval 1
+	offset 0 20 0
+} 
+
+object SuperHealth
+{
+    frame SOUL { light HEALTHSUPER }
+}
+
+// Mega Pack
+// =========
+
+pulselight HEALTHMEGA
+{
+    color 0.2 0.2 1.0
+    size 18
+    secondarySize 20
+    interval 1
+	offset 0 16 0
+} 
+
+object MegaPack
+{
+    frame FELD { light HEALTHMEGA }
+}

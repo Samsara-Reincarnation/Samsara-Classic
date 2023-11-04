@@ -1,0 +1,343 @@
+// i guess medi hasn't started on this yet
+
+// so here's the samsara_ex-ha1 gldef as a placeholder/starting point
+
+flickerlight DN3DNormalFlash__
+{              
+	color 2.4 1.4 0.8
+    size 50
+	secondarysize 60
+	chance 0.3
+}
+
+pointlight DN3DRPGGlow
+{              
+	color 1.0 0.7 0.0
+    size 50
+}
+
+pointlight DN3DDevaGlow
+{              
+	color 1.0 0.7 0.0
+    size 16
+}
+
+flickerlight DN3DFlashPlayer__
+{              
+	color 1.6 1.0 1.0
+    size 60
+	secondarysize 50
+	chance 0.3
+}
+
+
+flickerlight DN3DEX1__
+{          
+    color 1.6 0.8 0.0
+    size 50
+	secondarysize 40
+	chance 0.3
+}
+
+flickerlight DN3DEX2__
+{          
+    color 2.28 1.20 0.56
+    size 50
+	secondarysize 40
+	chance 0.1	
+}
+
+flickerlight DN3DEX3__
+{          
+    color 2.48 2.16 1.4
+    size 40
+	secondarysize 40
+	chance 0.6	
+}
+
+flickerlight DN3DEX4__
+{          
+    color 2.4 1.84 1.0
+    size 40
+	secondarysize 40
+	chance 0.5	
+}
+
+flickerlight DN3DEX5__
+{          
+    color 2.4 1.72 0.92
+    size 40
+	secondarysize 40
+	chance 0.4	
+}
+
+flickerlight DN3DEX6__
+{          
+    color 2.28 1.20 0.56
+    size 40
+	secondarysize 40
+	chance 0.8
+}
+
+flickerlight DN3DEX7__
+{          
+    color 2.28 1.20 0.56
+    size 40
+	secondarysize 40
+	chance 0.8
+}
+
+flickerlight DN3DEX8__
+{          
+    color 2.4 1.72 0.92
+    size 40
+	secondarysize 40
+	chance 0.4
+}
+
+flickerlight DN3DEX9__
+{          
+    color 1.74 0.72 0.0
+    size 40
+	secondarysize 40
+	chance 0.8
+}
+
+flickerlight DN3DEXSHOT1__
+{          
+    color 2.55 1.94 1.53
+    size 40
+	secondarysize 40
+	chance 0.8
+}
+
+flickerlight DN3DEXSHOT2__
+{          
+    color 2.55 2.04 0.51
+    size 40
+	secondarysize 40
+	chance 0.8
+}
+
+flickerlight DN3DEXSHOT3__
+{          
+    color 2.55 2.39 0.17
+    size 40
+	secondarysize 40
+	chance 0.8
+}
+
+
+Object DukeRocket
+{
+	frame RPGXA { light DN3DRPGGlow }
+}
+
+Object DukeRocketCoop
+{
+	frame RPGXA { light DN3DRPGGlow }
+}
+
+Object DukeDevastatorRocket
+{
+	frame RPGXA { light DN3DDevaGlow }
+}
+
+Object DukeDevastatorRocketCoop
+{
+	frame RPGXA { light DN3DDevaGlow }
+}
+
+pulselight DN3DExplosion
+{
+    color 1.0 0.7 0.0
+    size 48
+    secondarySize 0
+    interval 2
+} 
+
+Object RPGExplosion
+{
+	frame RPGX { light DN3DExplosion }
+}
+
+/*
+	frame RPGXB { light DN3DEX1__ }
+	frame RPGXC { light DN3DEX2__ }
+	frame RPGXD { light DN3DEX3__ }
+	frame RPGXE { light DN3DEX4__ }
+	frame RPGXF { light DN3DEX5__ }
+	frame RPGXG { light DN3DEX6__ }
+	frame RPGXH { light DN3DEX5__ }
+	frame RPGXI { light DN3DEX6__ }
+	frame RPGXJ { light DN3DEX5__ }
+	frame RPGXK { light DN3DEX3__ }
+	frame RPGXL { light DN3DEX4__ }
+	frame RPGXM { light DN3DEX3__ }
+	frame RPGXN { light DN3DEX2__ }
+	frame RPGXO { light DN3DEX1__ }
+	frame RPGXP { light DN3DEX2__ }
+	frame RPGXQ { light DN3DEX1__ }
+	frame RPGXR { light DN3DEX2__ }
+	frame RPGXS { light DN3DEX7__ }
+	frame RPGXT { light DN3DEX8__ }
+	frame RPGXU { light DN3DEX9__ }	
+*/
+
+pulselight DN3DDevaExplosion
+{
+    color 1.0 0.7 0.0
+    size 24
+    secondarySize 0
+    interval 2
+} 
+
+Object DevastatorExplosion
+
+{
+	frame RPGX { light DN3DDevaExplosion }
+}	
+
+flickerlight2 DN3DDeathFireGlow
+{          
+    color 1.0 0.7 0.0
+    size 32
+	secondarysize 50
+	interval 0.01
+}
+
+Object BurnDeathDuke
+
+{
+	frame DKBRA { light DN3DDeathFireGlow }
+	frame DKBRB { light DN3DDeathFireGlow }
+	frame DKBRC { light DN3DDeathFireGlow }
+	frame DKBRD { light DN3DDeathFireGlow }
+	frame DKBRE { light DN3DDeathFireGlow }
+	frame DKBRF { light DN3DDeathFireGlow }
+	frame DKBRG { light DN3DDeathFireGlow }
+	frame DKBRH { light DN3DDeathFireGlow }
+	frame DKBRI { light DN3DDeathFireGlow }
+	frame DKBRJ { light DN3DDeathFireGlow }
+	frame DKBRK { light DN3DDeathFireGlow }
+	frame DKBRL { light DN3DDeathFireGlow }
+	frame DKBRM { light DN3DDeathFireGlow }
+	frame DKBRN { light DN3DDeathFireGlow }
+	frame DKBRO { light DN3DDeathFireGlow }
+	frame DKBRP { light DN3DDeathFireGlow }
+	frame DKBRQ { light DN3DDeathFireGlow }
+}	
+
+/*
+	frame DKBRA { light DN3DEX1__ }
+	frame DKBRB { light DN3DEX2__ }
+	frame DKBRC { light DN3DEX3__ }
+	frame DKBRD { light DN3DEX4__ }
+	frame DKBRE { light DN3DEX5__ }
+	frame DKBRF { light DN3DEX6__ }
+	frame DKBRG { light DN3DEX5__ }
+	frame DKBRH { light DN3DEX6__ }
+	frame DKBRI { light DN3DEX5__ }
+	frame DKBRJ { light DN3DEX3__ }
+	frame DKBRK { light DN3DEX4__ }
+	frame DKBRL { light DN3DEX3__ }
+	frame DKBRM { light DN3DEX2__ }
+	frame DKBRN { light DN3DEX1__ }
+	frame DKBRO { light DN3DEX7__ }
+	frame DKBRP { light DN3DEX8__ }
+	frame DKBRQ { light DN3DEX9__ }
+*/
+
+Object Dukeplayer
+
+{
+//	frame DUKEF { light DN3DFlashPlayer__ }
+}
+
+Object DukeExplosiveShotgunBullet
+{
+	frame DKSXA { light DN3DEXSHOT1__ }
+	frame DKSXB { light DN3DEXSHOT2__ }
+	frame DKSXC	{ light DN3DEXSHOT3__ } 
+	frame DKSXD	{ light DN3DEXSHOT1__ }
+	frame DKSXE	{ light DN3DEXSHOT2__ }
+	frame DKSXF	{ light DN3DEXSHOT3__ }
+	frame DKSXG	{ light DN3DEXSHOT1__ }
+	frame DKSXH	{ light DN3DEXSHOT2__ }
+	frame DKSXI	{ light DN3DEXSHOT3__ }
+	frame DKSXJ	{ light DN3DEXSHOT1__ }
+	frame DKSXK	{ light DN3DEXSHOT2__ }
+	frame DKSXL	{ light DN3DEXSHOT3__ }
+	frame DKSXM	{ light DN3DEXSHOT1__ }
+	frame DKSXN { light DN3DEXSHOT2__ }
+	frame DKSXO { light DN3DEXSHOT1__ }
+	frame DKSXP { light DN3DEXSHOT2__ }
+	frame DKSXQ { light DN3DEXSHOT3__ }
+}	
+
+/*
+	frame DKSXA { light DN3DEXSHOT1__ }
+	frame DKSXB { light DN3DEXSHOT2__ }
+	frame DKSXC	{ light DN3DEXSHOT3__ } 
+	frame DKSXD	{ light DN3DEXSHOT1__ }
+	frame DKSXE	{ light DN3DEXSHOT2__ }
+	frame DKSXF	{ light DN3DEXSHOT3__ }
+	frame DKSXG	{ light DN3DEXSHOT1__ }
+	frame DKSXH	{ light DN3DEXSHOT2__ }
+	frame DKSXI	{ light DN3DEXSHOT3__ }
+	frame DKSXJ	{ light DN3DEXSHOT1__ }
+	frame DKSXK	{ light DN3DEXSHOT2__ }
+	frame DKSXL	{ light DN3DEXSHOT3__ }
+	frame DKSXM	{ light DN3DEXSHOT1__ }
+	frame DKSXN { light DN3DEXSHOT2__ }
+	frame DKSXO { light DN3DEXSHOT1__ }
+	frame DKSXP { light DN3DEXSHOT2__ }
+	frame DKSXQ { light DN3DEXSHOT3__ }
+*/
+
+Object DukeExplosiveShotgunPuff
+{
+	frame DKSX  { light DN3DExplosion }
+}	
+
+Object DukeExplosiveShotgunPuffSP
+{
+	frame DKSX  { light DN3DExplosion }
+}
+
+object DukeBulletPuff
+{
+    frame DKPFE { light BPUFF1 }
+	frame DKPFF { light BPUFF1 }
+    frame DKPFG { light BPUFF2 }
+	frame DKPFH { light BPUFF2 }
+}
+
+pointlight DN3DFreezeBall
+{
+    color 0.0 0.1 1.0
+    size 56
+}
+
+object FreezethrowerBolt
+{
+    frame FRZX { light DN3DFreezeBall }
+}
+
+object FreezethrowerBoltCoop
+{
+    frame FRZX { light DN3DFreezeBall }
+}
+
+pulselight DN3DFreezeDeath
+{
+    color 0.5 0.5 1.0
+    size 48
+    secondarySize 0
+    interval 0.5
+} 
+
+object FreezethrowerDeath
+{
+    frame FRZX { light DN3DFreezeDeath }
+}

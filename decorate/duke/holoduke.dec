@@ -1,0 +1,141 @@
+// The Holoduke!
+
+actor ItemHoloduke : CustomInventory
+{
+    tag "Holoduke"
+    +FLOATBOB
+    Inventory.Amount 1
+    Inventory.MaxAmount 3
+    +INVBAR
+    +INVENTORY.UNDROPPABLE
+    Inventory.Icon "HOLOICON"
+    Inventory.PickupSound "duke/itemget"
+    Inventory.PickupMessage "Holoduke!"
+	Inventory.RestrictedTo "DukePlayer"
+    States
+    {
+      Spawn:
+        PSBG A 1 Bright
+        Loop
+
+      Use:
+	    TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"SPUse")
+		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"SPUse")
+	  DMUse:
+        TNT1 A 0 A_JumpIfInventory("DiscOfRepulsionCooldown",1,"UseFail")
+        TNT1 A 0 A_SpawnItemEx("HoloDukeDM",32,0,8,0,0,0,0,SXF_TRANSFERTRANSLATION)
+        TNT1 A 1 ACS_NamedExecuteAlways("DiscOfRepulsionCooldown")
+        TNT1 A 0 A_GiveInventory("DiscOfRepulsionCooldown",5)
+        stop
+	  SPUse:
+        TNT1 A 0 A_JumpIfInventory("DiscOfRepulsionCooldown",1,"UseFail")
+        TNT1 A 0 A_SpawnItemEx("HoloDuke",32,0,8,0,0,0,0,SXF_TRANSFERTRANSLATION)
+        TNT1 A 1 ACS_NamedExecuteAlways("DiscOfRepulsionCooldown")
+        TNT1 A 0 A_GiveInventory("DiscOfRepulsionCooldown",10)
+        stop
+
+      UseFail:
+        TNT1 A 1 A_Print("$HOLOCOOLDOWN")
+        fail
+    }
+}
+
+ACTOR Holoduke
+{
+  Radius 20
+  Height 56
+  Speed 8
+  Scale 0.725
+  +FLOORCLIP
+  +SHOOTABLE
+  +FRIENDLY
+  +INVULNERABLE
+  +NODAMAGE
+  +NOBLOCKMAP
+  -SOLID
+  +NONSHOOTABLE
+  var int user_seconds;
+  States
+  {
+  Spawn:
+    DUKE E 0 
+	DUKE E 0 A_PlaySound("duke/holoduke1")
+	DUKE E 0 Thing_ChangeTID (0, 3333)
+	DUKE E 0 A_RadiusGive ("ForgetAboutDre", 2048, RGF_MONSTERS, 1)
+	DUKE E 2 A_SetScale (0.1)
+	DUKE E 2 A_SetScale (0.3,0.2)
+	DUKE E 2 A_SetScale (0.4,0.5)
+	DUKE E 2 A_SetScale (0.6,0.8)
+	DUKE E 2 A_SetScale (0.8,0.7)
+	DUKE E 2 A_SetScale (0.725,0.725)
+	goto Active
+  Active:
+    DUKE E 0 A_AlertMonsters(0, AMF_TARGETEMITTER)
+    DUKE EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 1 A_SetTranslucent(frandom(0.5,1.0),0)
+	DUKE E 0 A_SetUserVar(user_seconds, (user_seconds + 1))
+	DUKE E 0 A_JumpIf(user_seconds >= 10, "End")
+    Loop
+  End:
+	DUKE E 0 A_PlaySound("duke/holoduke2")
+	DUKE E 2 A_SetScale (0.6,0.725)
+	DUKE E 2 A_SetScale (0.5,0.725)
+	DUKE E 2 A_SetScale (0.3,0.725)
+	DUKE E 2 A_SetScale (0.1,0.725)
+	Stop
+  }
+}
+
+actor ForgetAboutDre : CustomInventory
+{
+  states
+  {
+  Pickup:
+    //TNT1 A 0 A_ClearTarget
+	TNT1 A 0 Thing_Hate (0, 3333, 0)
+    stop
+  }
+}
+
+ACTOR HolodukeDM
+{
+  Radius 20
+  Height 20
+  Speed 0
+  Scale 0.725
+  +FLOORCLIP
+  -SOLID
+  PROJECTILE
+  -NOGRAVITY
+  +NOEXPLODEFLOOR
+  +STEPMISSILE
+  States
+  {
+  Spawn:
+    DUKE E 0 
+	DUKE E 0 A_PlaySound("duke/holoduke1")
+	DUKE E 2 A_SetScale (0.1)
+	DUKE E 2 A_SetScale (0.3,0.2)
+	DUKE E 2 A_SetScale (0.4,0.5)
+	DUKE E 2 A_SetScale (0.6,0.8)
+	DUKE E 2 A_SetScale (0.8,0.7)
+	DUKE E 2 A_SetScale (0.725,0.725)
+	goto Active
+  Active:
+    DUKE A 0 ThrustThing(angle*256/360, 4, 0, 0)
+    DUKE AAAA 1 A_SetTranslucent(frandom(0.5,1.0),0)
+	DUKE B 0 ThrustThing(angle*256/360, 4, 0, 0)
+    DUKE BBBB 1 A_SetTranslucent(frandom(0.5,1.0),0)
+	DUKE A 0 ThrustThing(angle*256/360, 4, 0, 0)
+    DUKE CCCC 1 A_SetTranslucent(frandom(0.5,1.0),0)
+	DUKE B 0 ThrustThing(angle*256/360, 4, 0, 0)
+    DUKE DDDD 1 A_SetTranslucent(frandom(0.5,1.0),0)
+    Loop
+  Death:
+	DUKE E 0 A_PlaySound("duke/holoduke2")
+	DUKE E 2 A_SetScale (0.6,0.725)
+	DUKE E 2 A_SetScale (0.5,0.725)
+	DUKE E 2 A_SetScale (0.3,0.725)
+	DUKE E 2 A_SetScale (0.1,0.725)
+	Stop
+  }
+}

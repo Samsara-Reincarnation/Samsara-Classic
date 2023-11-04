@@ -1,0 +1,136 @@
+// Health/Armor Crumbs
+// ===================
+
+pulselight ARMORCRUMB1
+{
+    color 0.5 0.5 0.5
+    size 9
+    secondarySize 11
+    interval 1
+	offset 0 13 0
+} 
+
+object ArmorScrap
+{
+    frame BON2 { light ARMORCRUMB1 }
+}
+
+object HereticArmorDump
+{
+    frame BON2 { light ARMORCRUMB1 }
+}
+
+object HereticArmorDump
+{
+    frame BON3 { light ARMORCRUMB1 }
+}
+
+// Green Armor
+// ===========
+
+pulselight ARMORGREEN1
+{
+    color 0.0 0.6 0.0
+    size 32
+    secondarySize 24
+    interval 1
+	offset 0 16 0
+} 
+
+object ArmorPack1
+{
+    frame RMR1 { light ARMORGREEN1 }
+}
+
+object QuakeGreenArmor
+{
+    frame RMR7 { light ARMORGREEN1 }
+}
+
+object GreenArmorNoDrop
+{
+    frame RMR1 { light ARMORGREEN1 }
+}
+
+// Blue Armor
+// ==========
+
+pulselight ARMORBLUE1
+{
+    color 0.0 0.0 0.6
+    size 32
+    secondarySize 24
+    interval 1
+	offset 0 16 0
+} 
+
+object ArmorPack2
+{
+    frame RMR2 { light ARMORBLUE1 }
+}
+
+object BlueArmorNoDrop
+{
+    frame RMR2 { light ARMORBLUE1 }
+}
+
+// Red Armor
+// ==========
+
+pulselight ARMORRED1
+{
+    color 0.6 0.0 0.0
+    size 32
+    secondarySize 24
+    interval 1
+	offset 0 16 0
+} 
+
+object ArmorPack3
+{
+    frame RMR3 { light ARMORRED1 }
+}
+
+object QuakeRedArmor
+{
+    frame RMR3 { light ARMORRED1 }
+}
+
+// Yellow Armor
+// ============
+
+pulselight ARMORYELLOW1
+{
+    color 0.6 0.6 0.0
+    size 32
+    secondarySize 24
+    interval 1
+	offset 0 16 0
+} 
+
+object SamsaraYellowArmor
+{
+    frame RMR5 { light ARMORYELLOW1 }
+}
+
+object QuakeYellowArmor
+{
+    frame RMR5 { light ARMORYELLOW1 }
+}
+
+// Silver Armor
+// ============
+
+pulselight ARMORSILVER1
+{
+    color 0.6 0.6 0.6
+    size 32
+    secondarySize 24
+    interval 1
+	offset 0 16 0
+} 
+
+object SamsaraSilverArmor
+{
+    frame RMR6 { light ARMORSILVER1 }
+}

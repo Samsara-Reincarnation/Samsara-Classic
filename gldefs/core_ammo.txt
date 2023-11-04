@@ -1,0 +1,332 @@
+//----------------------------------------------------------------------------
+// Small Ammo
+//----------------------------------------------------------------------------
+object Ammo1Small
+{
+    frame AMSMA { light SMAMMO1 }
+    frame CLIPA { light SMAMMO1 }
+}
+
+object Ammo2Small
+{
+    frame AMSMB { light SMAMMO2 }
+    frame SHELB { light SMAMMO2 }
+}
+
+object Ammo3Small
+{
+    frame AMSMC { light SMAMMO3 }
+    frame ROCKA { light SMAMMO3 }
+}
+
+object Ammo4Small
+{
+    frame AMSMD { light SMAMMO4 }
+    frame CELLA { light SMAMMO4 }
+}
+
+pulselight SMAMMO1
+{
+    color 0.5 0.5 0.0
+    size 8
+    secondarySize 10
+    interval 1
+} 
+
+pulselight SMAMMO2
+{
+    color 0.5 0.0 0.0
+    size 8
+    secondarySize 10
+    interval 1
+} 
+
+pulselight SMAMMO3
+{
+    color 0.5 0.2 0.0
+    size 8
+    secondarySize 10
+    interval 1
+} 
+
+pulselight SMAMMO4
+{
+    color 0.0 0.2 0.5
+    size 8
+    secondarySize 10
+    interval 1
+} 
+
+//----------------------------------------------------------------------------
+// Large Ammo
+//----------------------------------------------------------------------------
+
+object Ammo1Big
+{
+    frame AMMBA { light LGAMMO1 }
+}
+
+object Ammo2Big
+{
+    frame AMMBB { light LGAMMO2 }
+}
+
+object Ammo3Big
+{
+    frame AMMBC { light LGAMMO3 }
+}
+
+object Ammo4Big
+{
+    frame AMMBD { light LGAMMO4 }
+}
+
+pulselight LGAMMO1
+{
+    color 0.5 0.5 0.0
+    size 32
+    secondarySize 35
+    interval 1
+} 
+
+pulselight LGAMMO2
+{
+    color 0.5 0.0 0.0
+    size 32
+    secondarySize 35
+    interval 1
+} 
+
+pulselight LGAMMO3
+{
+    color 0.5 0.2 0.0
+    size 32
+    secondarySize 35
+    interval 1
+} 
+
+pulselight LGAMMO4
+{
+    color 0.0 0.2 0.5
+    size 32
+    secondarySize 35
+    interval 1
+} 
+
+//----------------------------------------------------------------------------
+// Heretic Ammo Definitions
+//----------------------------------------------------------------------------
+
+pulselight HSMAMMO1
+{
+    color 0.5 0.5 0.0
+    size 16
+    secondarySize 18
+    interval 1
+	offset 0 16 0
+} 
+
+pulselight HSMAMMO2
+{
+    color 0.5 0.0 0.0
+    size 16
+    secondarySize 18
+    interval 1
+	offset 0 16 0
+} 
+
+pulselight HSMAMMO3
+{
+    color 0.5 0.2 0.0
+    size 16
+    secondarySize 18
+    interval 1
+	offset 0 16 0
+} 
+
+pulselight HSMAMMO4
+{
+    color 0.0 0.2 0.5
+    size 16
+    secondarySize 18
+    interval 1
+	offset 0 16 0
+} 
+
+object HereticAmmo1Small
+{
+    frame AMSMG { light HSMAMMO1 }
+}
+
+object HereticAmmo2Small
+{
+    frame AMSMH { light HSMAMMO2 }
+}
+
+object HereticAmmo3Small
+{
+    frame AMSMI { light HSMAMMO3 }
+}
+
+object HereticAmmo4Small
+{
+    frame AMSMJ { light HSMAMMO4 }
+}
+
+pulselight HLGAMMO1
+{
+    color 0.5 0.5 0.0
+    size 24
+    secondarySize 26
+    interval 1
+	offset 0 16 0
+} 
+
+pulselight HLGAMMO2
+{
+    color 0.5 0.0 0.0
+    size 24
+    secondarySize 26
+    interval 1
+	offset 0 16 0
+} 
+
+pulselight HLGAMMO3
+{
+    color 0.5 0.2 0.0
+    size 24
+    secondarySize 26
+    interval 1
+	offset 0 16 0
+} 
+
+pulselight HLGAMMO4
+{
+    color 0.0 0.2 0.5
+    size 24
+    secondarySize 26
+    interval 1
+	offset 0 16 0
+} 
+
+object HereticAmmo1Big
+{
+    frame AMMBF { light HLGAMMO1 }
+}
+
+object HereticAmmo2Big
+{
+    frame AMMBG { light HLGAMMO2 }
+}
+
+object HereticAmmo3Big
+{
+    frame AMMBH { light HLGAMMO3 }
+}
+
+object HereticAmmo4Big
+{
+    frame AMMBI { light HLGAMMO4 }
+}
+
+object GoldWandAmmo2
+{
+    frame AMG1 { light SWANDAMMO }
+}
+
+object CrossbowAmmo2
+{
+    frame AMC1 { light ETHARROWS }
+}
+
+object CrossbowAmmo3
+{
+    frame AMC1 { light ETHARROWS }
+}
+
+object BlasterAmmo2
+{
+    frame AMB1 { light SCLAWAMMO }
+}
+
+object SkullRodAmmo2
+{
+    frame AMS1 { light SSTAFFAMMO }
+}
+
+object PhoenixRodAmmo2
+{
+    frame AMP1 { light SRODAMMO }
+}
+
+object PhoenixRodAmmo3
+{
+    frame AMP1 { light SRODAMMO }
+}
+
+
+// Ammo Backpack
+
+pulselight AMMOPACKPACK1
+{
+    color 0.0 0.6 0.0
+    size 32
+    secondarySize 24
+    interval 1
+	offset 0 8 0
+} 
+
+object AmmoBackpack
+{
+	frame AMPK { light AMMOPACKPACK1 }
+}
+
+object HereticAmmoBackpack
+{
+	frame AMPK { light AMMOPACKPACK1 }
+}
+
+object HexenAmmoBackpack
+{
+	frame AMPK { light AMMOPACKPACK1 }
+}
+
+object HexenAmmoBackpack2
+{
+	frame AMPK { light AMMOPACKPACK1 }
+}
+
+object HexenAmmoBackpack3
+{
+	frame AMPK { light AMMOPACKPACK1 }
+}
+
+// Fuck A Hexen!
+
+pointlight SMAMMO1POINT
+{
+    color 0.5 0.5 0.0
+    size 8
+	offset 0 16 0
+} 
+
+pointlight SMAMMO2POINT
+{
+    color 0.5 0.0 0.0
+    size 10
+	offset 0 16 0
+} 
+
+pointlight SMAMMO3POINT
+{
+    color 0.5 0.2 0.0
+    size 8
+    offset 0 16 0
+} 
+
+pointlight SMAMMO4POINT
+{
+    color 0.0 0.2 0.5
+    size 10
+	offset 0 16 0
+} 

@@ -1,0 +1,35 @@
+const int ARMOR_GREEN           = 0;
+const int ARMOR_YELLOW          = 1;
+const int ARMOR_BLUE            = 2;
+const int ARMOR_BLUE_WITHYELLOW = 3;
+const int ARMOR_RED             = 4;
+const int ARMOR_MEGASPHERE      = 5;
+
+const int SAMSARA_DECORATE = 215;
+const int SAMSARA_CLIENT_DECORATE = 212;
+
+#include "decorate/core.dec"
+
+#include "decorate/doomguy.dec"
+#include "decorate/chexguy.dec"
+#include "decorate/corvus.dec"
+#include "decorate/blazko.dec"
+#include "decorate/parias.dec"
+#include "decorate/duke.dec"
+#include "decorate/marathon.dec"
+#include "decorate/ranger.dec"
+
+#include "decorate/slots.dec"
+#Include "decorate/pdwtak.dec"
+#Include "decorate/punchdrunk.dec"
+
+#include "decorate/game_doom.dec"
+#include "decorate/game_chex.dec"
+#include "decorate/game_heretic.dec"
+#include "decorate/game_hexen.dec"
+#include "decorate/game_strife.dec"
+
+#include "decorate/stDummies.dec"
+//#include "decorate/dummies.dec"
+
+#include "decorate/keys.dec"

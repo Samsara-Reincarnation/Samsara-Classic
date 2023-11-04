@@ -1,0 +1,92 @@
+server int samsara_cvarinfo = 0;
+
+// serverside
+server int samsara_banjetpack = 0;
+server int samsara_banwolfmove = 0;
+server int samsara_nocustomgravity = 0;
+server int samsara_jumpmod = 0;
+server int samsara_permault = 0;
+server int samsara_lmslife = 0;
+server int samsara_lmsult = 0;
+server int samsara_uniquestart = 0;
+server int samsara_chainsawstart = 0;
+server int samsara_peoplediewhentheyarekilled = 0;
+server int samsara_punchdrunk = 0;
+server int samsara_punchdrunkuniques = 0;
+server int samsara_punchdrunksaws = 0;
+server int samsara_armormode = 0;
+server int samsara_nohealthcap = 0;
+server int samsara_noult = 0;
+server int samsara_nomonologues = 0;
+server int samsara_backpackstart = 0;
+server int samsara_classiclaz = 0;
+server int samsara_allcanrj = 0;
+server int samsara_nounique = 0;
+server int samsara_noinvuln = 0;
+server int samsara_dukesoundboard = 0;
+server int samsara_pistolammo = 0;
+
+server int samsara_bandoomguy = 0;
+server int samsara_bancorvus = 0;
+server int samsara_banbj = 0;
+server int samsara_banparias = 0;
+server int samsara_banduke = 0;
+server int samsara_banso = 0;
+server int samsara_banranger = 0;
+server int samsara_banchex = 0;
+
+server int samsara_lmsrules = 0;
+
+server int samsara_doomguydamage = 0;
+server int samsara_corvusdamage = 0;
+server int samsara_bjdamage = 0;
+server int samsara_pariasdamage = 0;
+server int samsara_dukedamage = 0;
+server int samsara_sodamage = 0;
+server int samsara_rangerdamage = 0;
+server int samsara_chexdamage = 0;
+
+server int samsara_doomguydefence = 0;
+server int samsara_corvusdefence = 0;
+server int samsara_bjdefence = 0;
+server int samsara_pariasdefence = 0;
+server int samsara_dukedefence = 0;
+server int samsara_sodefence = 0;
+server int samsara_rangerdefence = 0;
+server int samsara_chexdefence = 0;
+
+server int samsara_permaquad = 0;
+server int samsara_nohealth = 0;
+
+server int samsara_superturboturkeypuncher3000 = 0;
+server int samsara_superturboturkeylimit = 0;
+server int samsara_superturboturkeyfrequency = 35;
+
+server int samsara_pistolstart = 0;
+
+server int samsara_railgunstart = 0;
+
+// clientside
+user int samsara_cl_printpickup = 0;
+user int samsara_cl_expparticles = 0;
+user int samsara_cl_norecoil = 0;
+user int samsara_cl_sinerecoil = 0;
+user int samsara_cl_weaponhud = 1;
+user int samsara_cl_vanilladoom = 0;
+user int samsara_cl_vanillaquake = 0;
+user int samsara_cl_wolfmove = 0;
+user int samsara_cl_ballgag = 0;
+user int samsara_cl_moremessages = 0;
+
+// for checking what stupid port you have
+server int samsara_runninginzandro = 0;
+server int samsara_runninginzdoom = 0;
+
+// supposed to be clientside, but apparently actually not. awesome. great.
+user int samsara_cl_pickupmode = 0;
+user int samsara_cl_bloodyhell = 0;
+user int samsara_cl_bloodypersistent = 0;
+
+server int samsara_zd_pickupmode = 0;
+server int samsara_zd_bloodyhell = 0;
+server int samsara_zd_bloodypersistent = 0;

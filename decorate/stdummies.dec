@@ -1,0 +1,578 @@
+// Weapon/item spawners for Skulltag-specific maps. Wahey!
+
+//actor InvisibilitySphere : PartialInvisibility { }
+
+actor MaxArmorBonus : ArmorScrap 5091
+//actor MaxArmorBonus2: ArmorScrap replaces MaxArmorBonus
+{
+    Game Doom
+    SpawnID 167
+}
+
+actor MaxHealthBonus : HealPack0 5090
+//actor MaxHealthBonus2: HealPack0 replaces MaxHealthBonus
+{
+    Game Doom
+    SpawnID 166
+}
+
+// Monster spawners
+actor Abaddon : Cacodemon2 5015
+{
+    Game Doom
+    Health 1200
+    SpawnID 220
+    Speed 12
+    PainChance 40
+    BloodColor Red
+    Translation "170:191=[135,135,135]:[0,0,0]", "16:47=[200,200,200]:[0,0,0]", "164:167=108:108", "217:223=107:109", "112:123=160:167", "124:125=77:78", "126:127=1:2", "192:207=168:187", "240:247=188:191", "48:79=80:111", "144:151=176:191"
+    Obituary "%o was smitten by an Abaddon."
+    HitObituary "%o became food for an Abaddon."
+    States
+    {
+    DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "Cacodemon::Death"
+    }
+}
+
+actor Belphegor : BaronOfHell2 5008
+{
+    Game Doom
+    SpawnID 215
+    Health 1500
+    PainChance 25
+    Obituary "%o was slain by a Belphegor."
+    HitObituary "%o was slain by a Belphegor."
+    Translation "16:47=176:191", "48:79=80:111"
+}
+
+actor BloodDemon : DoomDemon2 5004
+{
+    Game Doom
+    SpawnID 156
+    Health 300
+    Obituary "%o was chomped on by a Blood Demon."
+    Translation "16:35=28:47", "36:47=[75,0,0]:[0,0,0]", "160:162=168:168", "163:166=164:167", "224:230=165:165", "161:161=164:164", "80:111=[200,200,200]:[0,0,0]", "208:223=177:188"
+}
+
+actor Cacolantern : Cacodemon2 5006
+{
+    Game Doom
+    SpawnID 159
+    Health 800
+    Obituary "%o was smitten by a Cacolantern."
+    HitObituary "%o got too close to a Cacolantern."
+    Translation "171:175=209:214", "176:187=212:223", "188:191=232:235", "16:39=212:223", "40:47=232:235", "164:167=215:218"
+}
+
+actor DarkImp : DoomImp2 5003
+{
+    Game Doom
+    SpawnID 155
+    Health 120
+    Obituary "%o was burned by a Dark Imp."
+    HitObituary "%o was slashed by a Dark Imp."
+    BloodColor Blue
+    Translation "1:1=8:8", "16:47=[0,0,255]:[0,0,0]", "48:79=[185,185,185]:[0,0,0]", "151:151=6:6", "160:167=198:204", "169:174=194:200", "175:183=197:205", "184:185=206:207", "186:191=240:245", "208:223=193:207", "232:235=201:204"//"48:79=[185,185,185]:[0,0,0]", "175:183=197:205", "169:174=194:200", "184:185=206:207", "186:191=240:245", "16:47=[0,0,255]:[0,0,0]", "232:235=201:204", "160:167=198:204", "208:223=193:207"
+    States
+    {
+    Melee:
+    Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        TROO EF 6 A_FaceTarget
+        TROO G 5 A_CustomComboAttack("DarkImpBall",32,3*random(1,8),"imp/melee")//A_CustomMissile("DarkImpBall")
+        TNT1 A 0 A_Jump(192,"See")
+        TNT1 A 0 A_SpidRefire
+        Goto Missile
+
+    DukeGibStart:
+        TROO H 1
+        TNT1 A 0 A_UnsetSolid
+        /*TNT1 A 0 A_SpawnDebris("DukeGibs1B")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2B")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3B")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4B")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5B")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6B")*/ // Well that's an odd glitch
+        TNT1 AA 0 A_SpawnItemEx("DukeGibs1B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("DukeGibs2B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
+        TNT1 AAAA 0 A_SpawnItemEx("DukeGibs3B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("DukeGibs4B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
+        TNT1 AA 0 A_SpawnItemEx("DukeGibs5B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
+        TNT1 AAAAAAA 0 A_SpawnItemEx("DukeGibs6B",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+        goto XDeath
+
+      XDeathNashgore:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnDebris("NashGore_Gib9_Blue",0)
+        TNT1 A 0 A_SpawnDebris("NashGore_Gib10_Blue",0)
+        TNT1 AA 0 A_SpawnDebris("NashGore_Gib11_Blue",0)
+        TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator_Blue",0,0,0,0)
+        TROO N 5
+        TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator_Blue",0,0,0,0)
+        TROO O 5 A_XScream
+        TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator_Blue",0,0,0,0)
+        TROO P 5
+        TNT1 AA 0 A_SpawnItem("NashGore_GibGenerator_Blue",0,0,0,0)
+        TROO Q 5 A_NoBlocking
+        TROO RST 5
+        TROO U -1
+        stop
+
+    DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("BlueMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier_Blue",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny_Blue",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BlueMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood_Blue",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "DoomImp::Death"
+        
+      XDeathBrutal:
+        TROO N 1
+        TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalBrownOrgan_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalBlueOrgan",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalChunk_Blue",random(-10,10),random(-10,10),random(12,40),random(-500,500)/100.00,random(-500,500)/100.00,random(300,1000)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("BrutalChunkHuge_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalSkull_Blue",0,0,56,random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalTinyBouncyBone_Blue",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BlueMist",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BrutalChunkTiny_Blue",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+        TNT1 AAAAA 0 A_SpawnItemEx("BlueMistIntense",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TROO N 4 A_SpawnItemEx("BrutalOnlineSound",0,0,0,0,0,0,0,160)
+        TROO O 5 A_XScream
+        TROO P 5
+        TROO QRST 5 A_NoBlocking
+        TROO U -1
+        stop
+    }
+}
+
+actor DukeGibs1B : DukeGibs1 { Translation "30:39=200:207", "40:47=240:247" }
+actor DukeGibs2B : DukeGibs2 { Translation "30:39=200:207", "40:47=240:247" }
+actor DukeGibs3B : DukeGibs3 { Translation "30:39=200:207", "40:47=240:247" }
+actor DukeGibs4B : DukeGibs4 { Translation "30:39=200:207", "40:47=240:247" }
+actor DukeGibs5B : DukeGibs5 { Translation "30:39=200:207", "40:47=240:247" }
+actor DukeGibs6B : DukeGibs6 { Translation "30:39=200:207", "40:47=240:247" }
+
+actor DarkImpBall : DoomImpBall
+{
+Translation "176:183=200:207", "184:191=240:247", "168:175=198:199", "210:223=198:203", "233:233=202:202", "231:231=197:197"
++THRUGHOST
+}
+
+actor Hectebus : Fatso2 5007
+{
+    Game Doom
+    SpawnID 158
+    Health 1200
+    PainChance 20
+    Obituary "%o was cremated by a Hectebus."
+    BloodColor Green
+    Translation "48:63=80:95", "64:79=96:111", "1:2=5:6", "13:15=106:111", "236:239=108:111", "144:151=103:111", "16:47=112:127", "208:223=80:111", "176:191=112:127", "168:175=112:127", "160:167=112:127", "232:236=96:108"
+    States
+    {
+    Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        FATT G 20 A_FatRaise
+        FATT H 0 A_CustomMissile("HectShot",28,0,0,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,5.625,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,11.25,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,16.875,1)
+        FATT H 10 Bright
+        FATT IG 5 A_FaceTarget
+        FATT H 0 A_CustomMissile("HectShot",28,0,0,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,-5.625,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,-11.25,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,-16.875,1)
+        FATT H 10 Bright
+        FATT IG 5 A_FaceTarget
+        FATT H 0 A_CustomMissile("HectShot",28,0,-11.25,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,-5.625,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,0,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,5.625,1)
+        FATT H 0 A_CustomMissile("HectShot",28,0,11.25,1)
+        FATT H 10 Bright
+        FATT IG 5
+        TNT1 A 0 A_Jump(192,"See")
+        TNT1 A 0 A_SpidRefire
+        Goto Missile
+        
+    DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "Fatso::Death"
+    }
+}
+
+actor HectShot : BaronBall//FatShot - Surprisingly, the Baron Ball looks better.
+{
++THRUGHOST
+Scale 1.5
+Translation "176:191=112:127", "208:223=112:123", "168:175=112:115", "231:231=112:112", "32:47=121:121", "160:167=112:127", "232:235=112:127", "61:79=115:124", "128:143=112:127", "16:31=112:115", "144:151=121:127", "13:15=122:122"
+DamageType "HexGreenFire"
+}
+
+actor SuperShotgunGuy : ChaingunGuy2 5005
+{
+    Game Doom
+    SpawnID 157
+    Health 120
+    //AttackSound "doomguy/sshotf"
+    DropItem "SuperShotgunPickup"
+    Obituary "%o was pounded by a Riot Shotgun Guy."
+    Translation "64:79=48:79", "30:47=112:127"
+    States
+    {
+      Missile:
+        CPOS E 9 A_FaceTarget
+        CPOS FFFFFF 0 A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        CPOS F 6 Bright A_PlayWeaponSound("doomguy/sshotf")//A_CustomBulletAttack(8, 7, 7, 5, "BulletPuff")
+        CPOS E 6
+        Goto See
+    }
+}
+
+actor SuperShotgunPickup: SamsaraSlotThreeDrop
+{
+    States
+    {
+      Spawn:
+        SGN2 A -1
+        stop
+    }
+}
+
+actor Turbosphere : CustomInventory 5030
+//actor Turbosphere2: CustomInventory replaces Turbosphere
+{
+    Game Doom
+    SpawnID 169
+    +COUNTITEM
+    +NOGRAVITY
+    Inventory.MaxAmount 0
+    Inventory.PickupMessage "$PICKUP_TURBOSPHERE"
+    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupAnnouncerEntry "turbosphere"
+    States
+    {
+      Spawn:
+        TURB ABCD 3 Bright
+        Loop
+        
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerTurbo")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("TurbosphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("TurbosphereHeretic")
+        stop
+
+      PickupFail:
+        TURB A 1 Bright
+        fail
+    }
+}
+
+actor TurbosphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP1"
+    Powerup.Type Turbo
+    Powerup.Duration 1050
+	tag "Turbosphere"
+}
+
+actor TimeFreezeSphere : CustomInventory 5032
+//actor TimeFreezeSphere2: CustomInventory replaces TimeFreezeSphere
+{
+    Game Doom
+    SpawnID 171
+    +COUNTITEM
+    +NOGRAVITY
+    Inventory.MaxAmount 0
+    Inventory.PickupMessage "$PICKUP_TIMEFREEZER"
+    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupAnnouncerEntry "timefreeze"
+    States
+    {
+      Spawn:
+        TIME ABCD 6 Bright
+        Loop
+        
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerTimeFreezer")
+        TNT1 A 1 A_GiveInventory("PowerTimeFreezerColor")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("TimeFreezeSphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("TimeFreezeSphereHeretic")
+        stop
+
+      PickupFail:
+        TIME A 1 Bright
+        fail
+    }
+}
+
+actor TimeFreezeSphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP2"
+    Powerup.Type TimeFreezer
+    Powerup.Color GoldMap
+	tag "Time Freeze Sphere"
+}
+
+actor PowerTimeFreezerColor : Powerup
+{
+    Powerup.Color GoldMap
+    Powerup.Duration -12
+}
+
+actor InvisibilitySphere : CustomInventory 5035
+//actor InvisibilitySphere2: CustomInventory replaces InvisibilitySphere
+{
+    Game Doom
+    SpawnID 174
+    +COUNTITEM
+    +NOGRAVITY
+    +VISIBILITYPULSE
+    Inventory.MaxAmount 0
+    RenderStyle Translucent
+    Inventory.PickupMessage "$PICKUP_INVISIBILITY"
+    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupAnnouncerEntry "invisibility"
+    States
+    {
+      Spawn:
+        SINV ABCD 6 Bright
+        Loop
+        
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 1 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+        TNT1 A 1 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerTranslucency")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("InvisibilitySphereHeretic", 0, "PickupHereticFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("InvisibilitySphereHeretic")
+        stop
+
+      PickupHereticFail:
+        SINV A 1 Bright
+        fail
+
+      PickupHexen:
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerGhost")
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.5,6)
+        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 1 A_GiveInventory("PowerShadow")
+        TNT1 A 1 A_GiveInventory("PowerShadow")
+        stop
+        
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("QuakeInvisTimer", 1050)
+        stop
+    }
+}
+
+actor InvisibilitySphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP3"
+    Powerup.Type Ghost
+    Powerup.Duration -120
+    //Powerup.Strength 90
+	tag "Blur Artifact"
+}
+
+actor Doomsphere2 : CustomInventory 5036
+//actor Doomsphere2: CustomInventory replaces Doomsphere
+{
+    Game Doom
+    SpawnID 175
+    +COUNTITEM
+    +NOGRAVITY
+    Inventory.MaxAmount 0
+    Inventory.PickupMessage "$PICKUP_DOOMSPHERE"
+    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupAnnouncerEntry "doomsphere"
+    States
+    {
+      Spawn:
+        DOOM A 10 Bright
+        DOOM B 15 Bright
+        DOOM C 8 Bright
+        DOOM D 6 Bright
+        Loop
+        
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerQuadDamage")
+        TNT1 A 1 A_GiveInventory("PowerDoomsphereColor")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("DoomsphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("DoomsphereHeretic")
+        stop
+
+      PickupFail:
+        DOOM A 1 Bright
+        fail
+    }
+}
+
+actor DoomsphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP4"
+    Powerup.Type QuadDamage
+    Powerup.Color RedMap
+	tag "Doomsphere"
+}
+
+actor PowerDoomsphereColor : Powerup
+{
+    Powerup.Color RedMap
+    Powerup.Duration -25
+}
+
+actor Guardsphere : CustomInventory 5037
+//actor Guardsphere2: CustomInventory replaces Guardsphere
+{
+    Game Doom
+    SpawnID 0
+    +COUNTITEM
+    +NOGRAVITY
+    Inventory.MaxAmount 0
+    Inventory.PickupMessage "$PICKUP_GUARDSPHERE"
+    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupAnnouncerEntry "guardsphere"
+    States
+    {
+      Spawn:
+        GARD ABCD 6 Bright
+        Loop
+        
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerQuarterDamage")
+        TNT1 A 1 A_GiveInventory("PowerGuardsphereColor")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("GuardsphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("GuardsphereHeretic")
+        stop
+
+      PickupFail:
+        GARD A 1 Bright
+        fail
+    }
+}
+
+actor GuardsphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP5"
+    Powerup.Type QuarterDamage
+    Powerup.Color GreenMap
+	tag "Guardsphere"
+}
+
+actor PowerGuardsphereColor : Powerup
+{
+    Powerup.Color GreenMap
+    Powerup.Duration -25
+}
+
+actor PowerQuadDamage : PowerDamage
+{
+    Powerup.Duration -25
+    damagefactor "normal", 4
+}
+
+actor PowerQuarterDamage : PowerProtection
+{
+    Powerup.Duration -25
+    damagefactor "normal", 0.25
+}
+
+actor PowerTurbo : PowerSpeed
+{
+    Powerup.Duration -25
+    Speed 1.4
+}
+
+actor PowerTranslucency : PowerInvisibility
+{
+    +CANTSEEK
+    Powerup.Strength 80
+    Powerup.Mode Translucent
+}
+
+Actor RuneProsperity : Boolean { }
+Actor RuneDoubleFiringSpeed : PowerDoubleFiringSpeed { }
+ACTOR RuneSpread : Boolean { }

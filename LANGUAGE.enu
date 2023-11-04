@@ -1,0 +1,389 @@
+[enu default]
+
+// QUIT MESSAGES
+// =============
+
+//Quake
+QUITMSG = "\ccAre you gonna quit this game\n\ccjust like everything else?"; // Quake quit message
+//Doom
+QUITMSG1 = "\cghey, ron!\n\cgcan we say 'fuck' in the game?"; // Unused Doom quit message
+QUITMSG2 = "\cgi'd leave:\n\cgthis is just more monsters and levels.\n\cgwhat a load."; // Unused Doom quit message
+//Chex Quest
+QUITMSG3 = "\cdI hope you're just taking a\n\cdbreak for Chex(R) party mix."; // Chex Quest 1 quit message
+QUITMSG4 = "\cdThe only people who don't run\n\cdare either fools or heroes.\n\cdLet's hope you're the latter."; // Chex Quest 2 manual
+//Heretic
+QUITMSG5 = "\cj...the world is surely damned."; // Heretic Manual
+QUITMSG6 = "\cjIt is not my destiny to be a hero."; // Heretic II
+//HeXen
+QUITMSG7 = "\cjWorship me, and I may yet be merciful.\n\cjThen again, maybe not."; // Hexen, Hub 3
+QUITMSG8 = "\cjMy servants can smell your blood, human."; // Hexen, Hub 2
+//Wolfenstein
+QUITMSG9 = "\cjHeroes don't quit, but\n\cjgo ahead and press Y\n\cjif you aren't one."; // Wolfenstein quit message
+QUITMSG10 = "\cjSieg heil...huh.\n\cjSieg hell."; // Wolfenstein E3 end text
+//Duke Nukem
+QUITMSG11 = "\cnAfter a few days of R&R,\n\cnI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
+QUITMSG12 = "\cnI guess I'll lean against this oozing,\n\cnbulbous wall and wait for death."; // Duke Nukem II
+//Marathon
+QUITMSG13 = "\cdDo you know what kind of hat I'm wearing?\n\cdA party hat. You don't get one."; // Marathon: Infinity terminal
+QUITMSG14 = "\cdP.S.: If things around here aren't working,\n\cdit's because I'm laughing so hard."; // Marathon terminal
+
+// Zandronum cuts off here. The ZDoom-specific messages are as follows:
+//Doom
+QUITMSG15 = "\cglook, bud. you leave now and\n\cgyou forfeit your body count!"; // Doom 2 quit message
+QUITMSG16 = "\cgget outta here and go back\n\cgto your boring programs."; // Doom 2 quit message
+QUITMSG17 = "\cggo ahead and leave. see if i care."; // Doom quit message
+QUITMSG18 = "\cglet's beat it -- this is turning\n\cginto a bloodbath!"; // Doom quit message
+//Chex Quest
+QUITMSG19 = "\cdThe real Chex(R) Warrior\n\cdwouldn't give up so fast!"; // Chex Quest 1 quit message
+QUITMSG20 = "\cdDon't abandon the\n\cdIntergalactic Federation of Cereals!"; // Chex Quest 1 quit message
+QUITMSG21 = "\cdDon't quit now! We need your help!"; // Chex Quest 1 quit message
+QUITMSG22 = "\cdThe mission continues..."; // Various Chex Quest promo
+//Heretic
+QUITMSG23 = "\cjBut what else can you do,\n\cjif the will to fight is gone?"; // E5 end text
+QUITMSG24 = "\cjYou find, in the end,\n\cjthat it is not within you\n\cjto surrender without a fight."; // E5 end text
+QUITMSG25 = "\cjNo one ever said being a Heretic was easy!"; // E1 end text.
+QUITMSG26 = "\cjYour fight has been in vain."; // Heretic II.
+//HeXen
+QUITMSG27 = "\cjRegardless of the path you choose,\n\cjDeath awaits you."; // Hexen II, Hub 1
+QUITMSG28 = "\cjFollow the light, for while the path\n\cjis wrought with danger, your destiny lies below."; // Hexen II, Hub 2
+QUITMSG29 = "\cjYour meddling will only\n\cjresult in your death.\n\cjLeave while you can."; // Hexen II: Portal of Praevus
+QUITMSG30 = "\cjYou've made it to your final goal,\n\cjto turn back would be cowardice."; // Hexen II: Portal of Praevus
+//Wolfenstein
+QUITMSG31 = "\cjWe owe you a great debt, Mr. Blazkowicz.\n\cjYou have served your country well."; // Spear of Destiny end text
+QUITMSG32 = "\cjFor guns and glory, press N.\n\cjFor work and worry, press Y."; // Wolfenstein 3D quit message
+QUITMSG33 = "\cjThe next adventure awaits!\n\cjSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
+QUITMSG34 = "\cjBut the adventure is just beginning!"; // The Nocturnal Missions promo text
+//Duke Nukem
+QUITMSG35 = "\cnI need a stiff drink... a shower...\n\cnand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
+QUITMSG36 = "\cnThe last thing that's gonna go thru\n\cnyour mind before you die... is my size 13 boot!"; // Duke Nukem 3D: E2 end text
+QUITMSG37 = "\cnI always said if there's a way to go,\n\cnit would have something to do with\n\cnwomen, whips and oil."; // Duke Nukem: Manhattan Project
+QUITMSG38 = "\cnI should probably kill everything,\n\cnthen watch a movie."; // Duke Nukem: Land of the Babes
+//Marathon
+QUITMSG39 = "\cdIf I had a rocket launcher, I'd make somebody pay."; // Marathon 2
+QUITMSG40 = "\cdThe candles burn out for you; I am free."; // Marathon
+QUITMSG41 = "\cdT-Minus 15.193792102158E+9 years\n\cduntil the universe closes!"; // Marathon
+QUITMSG42 = "\cdYou can stay behind to work on your tan,\n\cdif you'd like, but I'm leaving."; // Marathon 2
+//Quake
+QUITMSG43 = "\ccDid the scary monsters frighten you?\n\ccOr did Mr. Sandman tug at your little lids? "; // Quit message
+QUITMSG44 = "\ccIf you quit now, I'll throw a\n\ccblanket-party for you next time!"; // Quit message
+QUITMSG45 = "\ccUm, Asmodeus dislikes his\n\ccchildren trying to quit.\n\ccPress Y to return to your tinkertoys."; // Quit message
+QUITMSG46 = "\ccNo matter! What is important is\n\ccyou love our game. Congratulations,\n\ccyou are probably not a thief."; // Copyright message
+//Buddha
+QUITMSG47 = "\cfNeither fire nor wind,\n\cfbirth nor death,\n\cfcan erase our good deeds.";
+QUITMSG48 = "\cfIf on the hand there is no wound,\n\cfone may carry even poison in it.\nP\cfoison does not affect one who is free from wounds.";
+QUITMSG49 = "\cfNeither in the sky nor in mid-ocean,\n\cfnor by entering into mountain clefts,\n\cfnowhere in the world is there a place\n\cfwhere one will not be overcome by death.";
+
+
+
+// OBITUARIES
+// ==========
+
+SAMSARA_DOOMGUY_OB_FIST = "%k \cdfisted\c- %o \cdwith a pair of brass knuckles.\c-";
+SAMSARA_DOOMGUY_OB_PISTOL = "%k \cdexecuted\c- %o \cdfor insubordination.\c-";
+SAMSARA_DOOMGUY_OB_SLOT1 = "%k \cdmassacred\c- %o \cdwith the Chainsaw.\c-";
+SAMSARA_DOOMGUY_OB_SLOT2 = "%k \cdshowed\c- %o \cdthe boomstick.\c-";
+SAMSARA_DOOMGUY_OB_SLOT3 = "%k \cdsmeared\c- %o \cdacross the wall with the SSG.\c-";
+SAMSARA_DOOMGUY_OB_SLOT4 = "%k \cdmowed\c- %o \cddown with the Chaingun.\c-";
+SAMSARA_DOOMGUY_OB_SLOT5 = "%k \cdmade\c- %o \cdride the rocket.\c-";
+SAMSARA_DOOMGUY_OB_SLOT6 = "%k \cdmelted\c- %o \cdwith the Plasma Rifle.\c-";
+SAMSARA_DOOMGUY_OB_SLOT7_1 = "%k \cdshowed\c- %o \cdyou don't hide from the B.F.G. 9000.\c-";
+SAMSARA_DOOMGUY_OB_SLOT7_2 = "%k \cdobliterated\c- %o \cdwith the B.F.G. 9000.\c-";
+SAMSARA_DOOMGUY_OB_INSTAGIB = "%k \cdrailed\c- %o\cd.\c-";
+
+SAMSARA_CHEX_OB_FIST = "%k \chspooned\c- %o \chback to home.\c-";
+SAMSARA_CHEX_OB_PISTOL = "%k \chzorched\c- %o \chwith a pea-blaster.\c-";
+SAMSARA_CHEX_OB_SLOT1 = "%k \chthoroughly mixed\c- %o \chwith the Super Bootspork.\c-";
+SAMSARA_CHEX_OB_SLOT2 = "%k \chsplayed\c- %o \chwith zorches all over.\c-";
+SAMSARA_CHEX_OB_SLOT3 = "%k \chpounded\c- %o \chwith super-kinetic zorches.\c-";
+SAMSARA_CHEX_OB_SLOT4 = "%k \chzorched\c- %o \chfull of neat holes.\c-";
+SAMSARA_CHEX_OB_SLOT5 = "%k \chzorched\c- %o \chwith way more force than needed.\c-";
+SAMSARA_CHEX_OB_SLOT6 = "%k \chphased\c- %o \choff of this planet.\c-";
+SAMSARA_CHEX_OB_SLOT7_1 = "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-";
+SAMSARA_CHEX_OB_SLOT7_2 = "%k \chkicked\c- %o \choff to another dimension with the LAZ Device.\c-";
+SAMSARA_CHEX_OB_INSTAGIB = "%k \chsent\c- %o \chon a trip to lightspeed.\c-";
+
+SAMSARA_CORVUS_OB_FIST = "%k \cqspoke softly and gave\c- %o \cqthe big stick.\c-";
+SAMSARA_CORVUS_OB_PISTOL = "%k \cqput an elven hex on\c- %o\cq.\c-";
+SAMSARA_CORVUS_OB_SLOT1 = "%k \cqseized\c- %o\cq's soul in %p very body.\c-";
+SAMSARA_CORVUS_OB_SLOT2_1 = "%k \cqpelted\c- %o \cqwith balls of steel.\c-";
+SAMSARA_CORVUS_OB_SLOT2_2 = "%k \cqcrushed\c- %o \cqwith giant balls.\c-";
+SAMSARA_CORVUS_OB_SLOT3 = "%k \cqturned\c- %o \cqinto an ethereal pincushion.\c-";
+SAMSARA_CORVUS_OB_SLOT4 = "%k \cqclawed\c- %o \cqwide open.\c-";
+SAMSARA_CORVUS_OB_SLOT5 = "%k \cqgave\c- %o \cqthe bird.\c-";
+SAMSARA_CORVUS_OB_SLOT6 = "%k \cqsent\c- %o \cqto the depths of Hell.\c-";
+SAMSARA_CORVUS_OB_BOMB = "%k \cqsent\c- %o \cqto the Ancients.\c-";
+SAMSARA_CORVUS_OB_INSTAGIB = "%k \cqbrought\c- %o \cqa grim fate.\c-";
+
+SAMSARA_WOLFEN_OB_FIST_1 = "%k \cjshanked\c- %o \cjwith a knife.\c-";
+SAMSARA_WOLFEN_OB_FIST_2 = "%k \cjcleansed\c- %o \cjfrom this world with the Butterknife.\c-";
+SAMSARA_WOLFEN_OB_PISTOL = "%k \cjput a hole in\c- %o \cjwith the Luger.\c-";
+SAMSARA_WOLFEN_OB_SLOT2 = "%k \cjshot\c- %o \cjto pieces with the Machine Gun.\c-";
+SAMSARA_WOLFEN_OB_SLOT4 = "%k \cjdrilled\c- %o \cjwith the Chaingun.\c-";
+SAMSARA_WOLFEN_OB_SLOT5 = "%k \cjtore through\c- %o \cjwith the Rocket Launcher.\c-";
+SAMSARA_WOLFEN_OB_SLOT6 = "%k \cjscorched\c- %o \cjwith the Flamethrower.\c-";
+SAMSARA_WOLFEN_OB_SLOT7 = "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-";
+SAMSARA_WOLFEN_OB_PUNCHDRUNKB = "%k \cjput\c- %o \cjout of %p misery.\c-";
+SAMSARA_WOLFEN_OB_INSTAGIB = "%k \cjsniped\c- %o \cjwith the Mauser Rifle.\c-";
+
+SAMSARA_HEXEN_OB_FIST = "%k \clmaced\c- %o \clthe ol'-fashioned way.\c-";
+SAMSARA_HEXEN_OB_PISTOL = "%k \clunwove\c- %o\cl's life force with the Sapphire Wand.\c-";
+SAMSARA_HEXEN_OB_SLOT1 = "%k \clput\c- %o \clunder the gas.\c-";
+SAMSARA_HEXEN_OB_SLOT2 = "%k \clshattered\c- %o \cland left %p body to melt.\c-";
+SAMSARA_HEXEN_OB_SLOT3 = "%k \clexecuted\c- %o \clunder Timon's blessing.\c-";
+SAMSARA_HEXEN_OB_SLOT4_1 = "%k \cldrained\c- %o\cl's soul into the Serpent Staff.\c-";
+SAMSARA_HEXEN_OB_SLOT4_2 = "%k \clmelted\c- %o\cl's flesh off with the Serpent's venom.\c-";
+SAMSARA_HEXEN_OB_SLOT5_1 = "%k \clsplintered\c- %o\cl's skull and spine with the Hammer of Retribution.\c-";
+SAMSARA_HEXEN_OB_SLOT5_2 = "%k \clthrew\c- %o \clunder the Hammer.\c-";
+SAMSARA_HEXEN_OB_SLOT6 = "%k \clbaptized\c- %o \clin the Firestorm.\c-";
+SAMSARA_HEXEN_OB_SLOT7 = "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-";
+SAMSARA_HEXEN_OB_PUNCHDRUNKB = "%k \cgsnapped\c- %o\cg's neck with a brutal punch.\c-";
+SAMSARA_HEXEN_OB_INSTAGIB = "%k \cgset\c- %o\cg's soul ablaze.\c-";
+
+SAMSARA_DUKE_OB_FIST = "%k \c[m1]put\c- %o \c[m1]out with a snap kick.\c-";
+SAMSARA_DUKE_OB_PISTOL = "%k \c[m1]made\c- %o \c[m1]suck on the M1911.\c-";
+SAMSARA_DUKE_OB_SLOT1 = "%k \c[m1]passed\c- %o \c[m1]the pipe.\c-";
+SAMSARA_DUKE_OB_SLOT2 = "%k \c[m1]deemed\c- %o \c[m1]a threat.\c-";
+SAMSARA_DUKE_OB_SLOT3 = "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-";
+SAMSARA_DUKE_OB_SLOT4 = "%k \c[m1]ripped \c-%o \c[m1]a new one.\c-";
+SAMSARA_DUKE_OB_SLOT5 = "%k \c[m1]sent\c- %o \c[m1]home in a box.\c-";
+SAMSARA_DUKE_OB_SLOT6 = "%k \c[m1]threw\c- %o \c[m1]in the freezer.\c-";
+SAMSARA_DUKE_OB_SLOT7 = "%k \c[m1]devastated\c- %o\c[m1].\c-";
+SAMSARA_DUKE_OB_INSTAGIB = "%k \c[m1]made\c- %o \c[m1]spread 'em.\c-";
+
+SAMSARA_MARATHON_OB_FIST = "%k \cnsnapped\c- %o \cnwith a nasty hook.\c-";
+SAMSARA_MARATHON_OB_PISTOL = "%k \cnemptied\c- %o\cn's skull with a .44 Magnum.\c-";
+SAMSARA_MARATHON_OB_SLOT1 = "%k \cnshredded\c- %o \cnwith the KKV-7.\c-";
+SAMSARA_MARATHON_OB_SLOT2 = "%k \cnwasted\c- %o \cnwith the WSTE-M5.\c-";
+SAMSARA_MARATHON_OB_SLOT3_1 = "%k \cnfused\c- %o \cnwith the dirt.\c-";
+SAMSARA_MARATHON_OB_SLOT3_2 = "%k\cn caught \c-%o \cnin the meltdown.\c-";
+SAMSARA_MARATHON_OB_SLOT4_1 = "%k \cnassaulted\c- %o \cnwith the MA-75B.\c-";
+SAMSARA_MARATHON_OB_SLOT4_2 = "%k \cnwent with\c- %o \cnin a game of catch-the-grenade.\c-";
+SAMSARA_MARATHON_OB_SLOT5 = "%k \cnspanked\c- %o\cn.\c-";
+SAMSARA_MARATHON_OB_SLOT6 = "%k \cnmade\c- %o \cnall TOZT.\c-";
+SAMSARA_MARATHON_OB_SLOT7_1 = "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-";
+SAMSARA_MARATHON_OB_SLOT7_2 = "%k \cnintroduced\c- %o \cnto the magic of orbital bombardment.\c-";
+SAMSARA_MARATHON_OB_BERSERK1 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"; // M2/I Alien Weapon.
+SAMSARA_MARATHON_OB_BERSERK2 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"; // M1 Alien Weapon
+SAMSARA_MARATHON_OB_PUNCHDRUNKC = "%k \cnbrought\c- %o \cnin for resisting security.\c-";
+SAMSARA_MARATHON_OB_PUNCHDRUNKB_1 = "%k \cndug into\c- %o\cn's spine.\c-";
+SAMSARA_MARATHON_OB_PUNCHDRUNKB_2 = "%k \cnput\c- %o \cnin the blender.\c-";
+SAMSARA_MARATHON_OB_INSTAGIB = "%k \cnspanked\c- %o\cn.\c-";
+
+SAMSARA_RANGER_OB_FIST = "%k \csmet\c- %o\cs, and %g met the axe.\c-";
+SAMSARA_RANGER_OB_PISTOL = "%k \csgave\c- %o \csa boomstick to chew on.\c-";
+SAMSARA_RANGER_OB_SLOT1_1 = "%k \cshammered \c-%o \cswithout %p consent.\c-";
+SAMSARA_RANGER_OB_SLOT1_2 = "%k \csshocked\c- %o \cswith a purple wand.\c-";
+SAMSARA_RANGER_OB_SLOT2 = "%k \csgave\c- %o \cstwo loads of buckshot.\c-";
+SAMSARA_RANGER_OB_SLOT3_1 = "%k \csfed\c- %o \csa pineapple.\c-";
+SAMSARA_RANGER_OB_SLOT3_2 = "%k \csfed\c- %o \csa cluster of pineapples.\c-";
+SAMSARA_RANGER_OB_SLOT4_1 = "%k \csnailed\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_SLOT4_2 = "%k \csthought\c- %o \cswas hot.\c-";
+SAMSARA_RANGER_OB_SLOT5_1 = "%k \csgave\c- %o \csa rocket to ride.\c-";
+SAMSARA_RANGER_OB_SLOT5_2 = "%k \csgave\c- %o \csfour rockets to ride.\c-";
+SAMSARA_RANGER_OB_SLOT5_3 = "%k \cssmeared\c- %o \cswith a Quadded Rocket.\c-";
+SAMSARA_RANGER_OB_SLOT5_4 = "%k \csturned\c- %o \csinto a fine mist.\c-";
+SAMSARA_RANGER_OB_SLOT6_1 = "%k \cspenetrated\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_SLOT6_2 = "%k \csthought\c- %o \cswas super-hot.\c-";
+SAMSARA_RANGER_OB_SLOT7_1 = "%k \csgave\c- %o \csthe shaft.\c-";
+SAMSARA_RANGER_OB_SLOT7_2 = "%k \csdischarged at\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_BERSERK = "%k \cstazed\c- %o \cswith the Laser Cannon.\c-";
+SAMSARA_RANGER_OB_PUNCHDRUNKC = "%k \csmade\c- %o \cstalk to the hand.\c-";
+SAMSARA_RANGER_OB_INSTAGIB_1 = "%k \cspinned\c- %o \csdown.\c-";
+
+SAMSARA_STTP3K_OB_CHICKEN1 = "%o was pecked to death by a chicken.";
+SAMSARA_STTP3K_OB_CHICKEN2 = "%o was shot down by an assault chicken.";
+SAMSARA_STTP3K_OB_CHICKEN3 = "%o was blown up by an explosive chicken.";
+
+SAMSARA_OB_PDWTAK = "%k exploded %o.";
+
+
+
+// ITEMS
+// ======
+
+SAMSARA_WOLFENCHICKEN = "Ate up a chicken leg for 10 Health.";
+SAMSARA_WOLFENDRINK = "Drank up for 1 Health.";
+SAMSARA_HEALPACK0 = "Picked up 1 Health.";
+SAMSARA_HEALPACK1 = "Picked up 10 Health.";
+SAMSARA_HEALPACK2 = "Picked up 25 Health.";
+SAMSARA_HEALPACK2_RAVEN = "Picked up a Quartz Flask.";
+SAMSARA_HEALPACK3 = "Picked up 100 Health.";
+SAMSARA_HEALPACK3_DUKE = "Picked up 50 Atomic Health.";
+SAMSARA_HEALPACK3_RAVEN = "Picked up a Mystic Urn.";
+SAMSARA_MEGAPACK = "Picked up 200 Health and 200 Armor!";
+SAMSARA_MEGAPACK_CORVUS = "Picked up an Unbound Megasphere!";
+SAMSARA_MEGAPACK_MARATHON = "Picked up 300 Health and 300 Armor!";
+SAMSARA_ARMORSCRAP = "Picked up 1 Armor.";
+SAMSARA_ARMOR0_1 = "Picked up 100 Armor.";
+SAMSARA_ARMOR0_2 = "Picked up 150 Armor.";
+SAMSARA_ARMOR0_3 = "Picked up 200 Armor.";
+SAMSARA_ARMOR0_4 = "Picked up 250 explosive/fire-tempered armor.";
+SAMSARA_ARMOR12_1 = "Picked up 100 Armor.";
+SAMSARA_ARMOR12_2 = "Picked up 150 Armor.";
+SAMSARA_ARMOR12_3 = "Picked up 200 red armor.";
+SAMSARA_ARMOR12_4 = "Picked up 250 titanium armor.";
+SAMSARA_ARMOR3_1 = "Picked up 100 shield.";
+SAMSARA_ARMOR3_2 = "Picked up 150 shield.";
+SAMSARA_ARMOR3_3 = "Picked up 200 shield.";
+SAMSARA_ARMOR3_4 = "Picked up 300 shield.";
+SAMSARA_POWERUP_INVIS = "Picked up Partial Invisibility.";
+SAMSARA_POWERUP_HOLODUKE = "Picked up a HoloDuke";
+SAMSARA_POWERUP_INVULN = "Picked up Invulnerability.";
+SAMSARA_POWERUP_RADSUIT = "Picked up Environmental Protection.";
+SAMSARA_POWERUP_INFRARED = "Picked up Light Amplification.";
+SAMSARA_HEALPACK_HERETIC = "Picked up 4 Health.";
+SAMSARA_ARMORSCRAP_HERETIC = "Picked up 5 Armor.";
+SAMSARA_HEALPACK_TI = "Picked up 2 Health.";
+SAMSARA_ARMORSCRAP_TI = "Picked up 2 Armor.";
+SAMSARA_ARMORHEXEN = "Picked up 25 Armor.";
+SAMSARA_POWERUP_FLIGHT = "Picked up Flight.";
+SAMSARA_POWERUP_TELEPORTSELF = "Picked up Teleportation.";
+SAMSARA_POWERUP_LESSERTOME = "Picked up a Lesser Tome of Power!";
+SAMSARA_POWERUP_ARMOR = "Picked up 50 Extra Armor.";
+SAMSARA_POWERUP_TEAM = "Picked up Team Power.";
+SAMSARA_POWERUP_QUARTERDMG = "Picked up a Quarter Damage!";
+SAMSARA_POWERUP_SPEED = "Picked up Haste.";
+SAMSARA_POWERUP_TELEPORTOTHER = "Picked up Banishment.";
+SAMSARA_BEACON_HEXEN = "Picked up a crystallized Chaos Portal!";
+SAMSARA_BEACON_STRIFE = "Picked up a teleporter beacon!";
+
+
+
+// AMMO
+// =====
+
+SAMSARA_CLIP_1 = "Picked up 10 rounds of Ammo 1.";
+SAMSARA_CLIP_2 = "Picked up 50 rounds of Ammo 1.";
+SAMSARA_SHELL_1 = "Picked up 4 rounds of Ammo 2.";
+SAMSARA_SHELL_2 = "Picked up 20 rounds of Ammo 2.";
+SAMSARA_ROCKET_1 = "Picked up 2 rounds of Ammo 3.";
+SAMSARA_ROCKET_2 = "Picked up 6 rounds of Ammo 3.";
+SAMSARA_CELL_1 = "Picked up 20 rounds of Ammo 4.";
+SAMSARA_CELL_2 = "Picked up 100 rounds of Ammo 4.";
+SAMSARA_BACKPACK = "Picked up Ammo Expansion Pack.";
+SAMSARA_CLIPDROP_DOOM = "Picked up 5 rounds of Ammo 1.";
+SAMSARA_CLIPDROP_HERETIC_1 = "Picked up 3 rounds of Ammo 1.";
+SAMSARA_CLIPDROP_HERETIC_2 = "Picked up 10 rounds of Ammo 1.";
+SAMSARA_SHELLDROP_HERETIC_1 = "Picked up 5 rounds of Ammo 2.";
+SAMSARA_SHELLDROP_HERETIC_2 = "Picked up 10 rounds of Ammo 2.";
+SAMSARA_ROCKETDROP_HERETIC_1 = "Picked up 5 rounds of Ammo 3.";
+SAMSARA_ROCKETDROP_HERETIC_2 = "Picked up 10 rounds of Ammo 3.";
+SAMSARA_CELLDROP_HERETIC = "Picked up 20 rounds of Ammo 4.";
+SAMSARA_CLIPSHELL_HEXEN = "Picked up 10/10 rounds of Ammo 1/2.";
+SAMSARA_ROCKETCELL_HEXEN = "Picked up 5/10 rounds of Ammo 3/4.";
+SAMSARA_ALLAMMO_HEXEN = "Picked up 15 rounds of all ammo.";
+SAMSARA_CLIPDROP_STRIFE = "Picked up 5 rounds of Ammo 1.";
+SAMSARA_SHELL_STRIFE = "Picked up 12 rounds of Ammo 2.";
+SAMSARA_ROCKET_STRIFE = "Picked up 4 rounds of Ammo 3.";
+SAMSARA_ALLAMMO_STRIFE_1 = "Picked up 5/2/4 rounds of Ammo 1/2/4.";
+SAMSARA_ALLAMMO_STRIFE_2 = "Picked up 20/10/1/10 rounds of Ammo 1/2/3/4.";
+
+// SAMSARA.C EXTERNALIZATIONS
+DUKEDEADMESSAGE = "PRESS SPACE TO RESTART LEVEL"; //"Press any button to respawn.";
+NOTUNLESSINJURED = "You cannot use this unless injured.";
+FOOTENGAGED = "MIGHTY FOOT ENGAGED";
+NOFUEL = "You do not have enough fuel!";
+NOPOWER = "You do not have enough power!";
+ALREADYFLYING = "You are already flying!";
+
+// DECORATE EXTERNALIZATIONS
+FLECCOOLDOWN = "The Flechette has not cooled down yet.";
+TOMECOOLDOWN = "The Tome of Power has not cooled down yet.";
+QUADCOOLDOWN = "Quad Damage is recharging";
+HOLOCOOLDOWN = "The HoloDuke has not cooled down yet.";
+
+// Boss Monologues
+
+// Korax
+BOSS_MONOLOGUE_KORAX01 = "So, you have come.";
+BOSS_MONOLOGUE_KORAX02 = "I have personally watched every step of your path, mortal.";
+BOSS_MONOLOGUE_KORAX03 = "Your journey has given you such raw, destructive power...";
+BOSS_MONOLOGUE_KORAX04 = "Endless mountains of corpses and blood pollute your wake...";
+BOSS_MONOLOGUE_KORAX05 = "I can't help but see myself when I look at you.";
+BOSS_MONOLOGUE_KORAX06 = "You've done me a great favor by coming here...";
+BOSS_MONOLOGUE_KORAX07 = "...now there are so many more worlds open to me.";
+BOSS_MONOLOGUE_KORAX08 = "Don't feel too sad about never seeing home again.";
+BOSS_MONOLOGUE_KORAX09 = "I'll be sure to give my regards when I visit on your behalf.";
+BOSS_MONOLOGUE_KORAX10 = "Greetings, mortal...";
+BOSS_MONOLOGUE_KORAX11 = "...Are you ready to die?";
+
+// Stupid Chex Monster Doing Shakespere
+BOSS_MONOLOGUE_CHEX01 = "Glorp... glorp... glorp...";
+BOSS_MONOLOGUE_CHEX02 = "Isn't it beautiful?";
+BOSS_MONOLOGUE_CHEX03 = "Look at it all. Look at all the goop that surrounds you.";
+BOSS_MONOLOGUE_CHEX04 = "Your people call it repulsive. Revolting. Disgusting.";
+BOSS_MONOLOGUE_CHEX05 = "For me... it's life.";
+BOSS_MONOLOGUE_CHEX06 = "Would you deny a man food? Would you deny a man life?";
+BOSS_MONOLOGUE_CHEX07 = "Your food is made for only one purpose - to consume, as we have.";
+BOSS_MONOLOGUE_CHEX08 = "Would you blame me for leading my people to prosperous grounds?";
+BOSS_MONOLOGUE_CHEX09 = "If I'm to play the villain simply for eating, then so be it.";
+BOSS_MONOLOGUE_CHEX10 = "I will bury you in slime.";
+BOSS_MONOLOGUE_CHEX11 = "Glorp... glorp... glorp...";
+
+// D'Sparil
+BOSS_MONOLOGUE_DSPARIL01 = "I suppose congratulations are in order.";
+BOSS_MONOLOGUE_DSPARIL02 = "You've come all this way to the doors of my sanctum.";
+BOSS_MONOLOGUE_DSPARIL03 = "How many times have you narrowly dodged the clutch of death?";
+BOSS_MONOLOGUE_DSPARIL04 = "It's such a shame that it was all ultimately pointless.";
+BOSS_MONOLOGUE_DSPARIL05 = "Do you realize you are the only living mortal left on this planet?";
+BOSS_MONOLOGUE_DSPARIL06 = "I command the vast power of the cosmos, the stars above you.";
+BOSS_MONOLOGUE_DSPARIL07 = "I command the vast power of the hells, the nethers below you.";
+BOSS_MONOLOGUE_DSPARIL08 = "I command the vast power of the dead, the corpses around you.";
+BOSS_MONOLOGUE_DSPARIL09 = "I can effortlessly rebuild anything you have broken with just a thought.";
+BOSS_MONOLOGUE_DSPARIL10 = "Gape at your own insignificance in the greater workings of the universe.";
+BOSS_MONOLOGUE_DSPARIL11 = "Surrender to D'Sparil.";
+
+// The Entity
+BOSS_MONOLOGUE_ENTITY01 = "What is this, I spy?";
+BOSS_MONOLOGUE_ENTITY02 = "A tiny speck of a mortal, crawling into the depths of my chambers?";
+BOSS_MONOLOGUE_ENTITY03 = "Is this the one that has caused so much trouble?";
+BOSS_MONOLOGUE_ENTITY04 = "Fool.";
+BOSS_MONOLOGUE_ENTITY05 = "There is no way out, from here.";
+BOSS_MONOLOGUE_ENTITY06 = "The doors close behind you. The path goes only ahead.";
+BOSS_MONOLOGUE_ENTITY07 = "In front of you lies my legions, all craving your blood.";
+BOSS_MONOLOGUE_ENTITY08 = "Even my own Sigil, which you have fought so hard for, pulls away at your very soul.";
+BOSS_MONOLOGUE_ENTITY09 = "Despair, for every step you take is a step further into my waiting maw.";
+BOSS_MONOLOGUE_ENTITY10 = "Despair, for even after death, I will never let you know peace.";
+BOSS_MONOLOGUE_ENTITY11 = "Despair, for I am the One God.";
+
+// John's Head
+BOSS_MONOLOGUE_ICON01 = "In all my aeons, I have never met one like you.";
+BOSS_MONOLOGUE_ICON02 = "I wonder what your people would call you.";
+BOSS_MONOLOGUE_ICON03 = "Mighty? Great? Savior? Hero?";
+BOSS_MONOLOGUE_ICON04 = "Who knows how many they would have to sort through to find one for you?";
+BOSS_MONOLOGUE_ICON05 = "Some fitting word that could suit all the incredible deeds you've done.";
+BOSS_MONOLOGUE_ICON06 = "Do you know the title I have?";
+BOSS_MONOLOGUE_ICON07 = "None.";
+BOSS_MONOLOGUE_ICON08 = "In all the years of my life, they have never found anything suitable for my power.";
+BOSS_MONOLOGUE_ICON09 = "Call me Baphomet. Call me Gatekeeper. Satan. Demonlord. Hellfather. The Icon of Sin.";
+BOSS_MONOLOGUE_ICON10 = "Whichever name you choose for me, only one will truly fit.";
+BOSS_MONOLOGUE_ICON11 = "Your Doom.";
+
+// KINSARA
+
+// Secrets Found
+
+SECRETMESSAGE = ""; //"A secret is revealed!";
+
+SECRETFOUND_DOOM = "\cgYou found a secret!"; 
+SECRETFOUND_WOLF = "\cjYou found a hidden passage!"; 
+SECRETFOUND_CHEX = "\cdWow, a secret area!"; 
+SECRETFOUND_DUKE = "A SECRET PLACE!"; 
+SECRETFOUND_MARATHON = "\cdYou have discovered a secret room."; 
+SECRETFOUND_RAVEN = "\ccA secret is revealed!"; 
+SECRETFOUND_QUAKE = "\ccYou found a secret area!"; 
+SECRETFOUND_DEFAULT = "A secret is revealed!";
+
+// PISTOL START MESSAGES
+
+PISTOLSTART_HEADER = "Pistol Start!";
+PISTOLSTART_WIT1 = "Because you're allergic to fun.";
+PISTOLSTART_WIT2 = "You're practically naked! ... Lewd.";
+PISTOLSTART_WIT3 = "Shut up Medi.";
+PISTOLSTART_WIT4 = "Progression is for losers.";
+PISTOLSTART_WIT5 = "Just be thankful I didn't take your pants.";
+PISTOLSTART_WIT6 = "(Notably not called ''Pistol and Dignity Start'')";
+PISTOLSTART_WIT7 = "Laaame.";
+PISTOLSTART_WIT8 = "Hold my beer and watch this!";
+PISTOLSTART_WIT9 = "All the cool kids on Doomworld HAVE to notice you now!";
+PISTOLSTART_WIT10 = "Alternatively, DUMP Mode.";

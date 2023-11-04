@@ -1,0 +1,108 @@
+- : Majority of amounts of reference was taken off the ZDoom wiki. A deep and heartfelt thank you to all those who continue to document the finer workings this game, even today.
+- : Doom, the Doomguy, and everything within the Doom umbrella is property of id Software.
+ ^- : Doomguy's Falling, Taunt, and Landing sound was taken from Quake III.
+ ^- : Doomguy's burning scream was by cdrk.
+ ^- : Doomguy's burning sprites by Blox.
+ ^- : Doomguy's puzzfail voice by Roy Conrad.
+ ^- : Railgun sprites by Michael Niggel and Edmundo Bordeu.
+- : Corvus, Heretic, and the respective sprites/sounds are property of Raven Software.
+ ^- : Corvus' Burn Death, Taunt, and Falling sounds were taken from Heretic II.
+ ^- : Grim Ballista drawn by Revae, design tweaks by Matt Smirnoff.
+- : Chex Warrior, Chex Quest, and the respective sprites/sounds are property of Digital Cafe.
+ ^- : Chex Quest 3 actors and decorate by Charles Jacobi.
+ ^- : Super Large Zorcher designed with assistance by Charles Jacobi.
+ ^- : Mini-Zorcher pickup sprite by Boingo the Clown.
+ ^- : Flemoid splat sounds by Nash.
+ ^- : Flemoid death sound taken from audionautics, anechoix, and flasher21 on FreeSound.
+ ^- : Cyclops Flemoid death sound taken from Killing Floor.
+ ^- : Lord Snotfolus' Flemoid summoning taken from ZDoom Wars.
+ ^- : Gigazorcher 2100 drawn by Revae, design by Charles Jacobi.
+- : B.J. Blazkowicz, Wolfenstein, and the respective sprites/sounds are property of id Software.
+ ^- : Wolfenstein 3D HUD graphics ripped by Ultimecia.
+ ^- : B.J. Blazkowicz skin done by Joseph Dugas.
+ ^- : Wolfenstein weapon sprites ripped by Lotos.
+ ^- : Flamethrower/Rocket Launcher sprites ripped by Locke_gb7.
+ ^- : Flamethrower/Rocket Launcher pickup sprites by Laz Rojas.
+ ^- : Wolfenstein sounds ripped by Kinsie and Counter.
+ ^- : Knife pickup sprite by Scuba Steve.
+ ^- : Numerous sounds by as3sfxr
+ ^- : Gibbing sprites by Peter Bark
+ ^- : Rifle by Turbo.
+- : Parias, Hexen, and the respective sprites/sounds are property of Raven Software.
+ ^- : Widescreen sprites for the Firestorm by BlackFish.
+ ^- : Muscular polishing on Timon's Axe and Hammer of Retribution by BlackFish.
+- : Duke Nukem and the respective sprites/sounds are property of Gearbox and 3DRealms.
+ ^- : Duke Nukem sprites and weapons ripped by Dolphman.
+ ^- : Explosive Shotgun ripped by Chronoteeth.
+ ^- : Duke Nukem 3D-style gibs by Voltlock.
+ ^- : Freezethrower self-damage and streamlined taunting by Doomrater.
+ ^- : Pipebomb detonation via bullets by Doomrater.
+ ^- : Widescreen RPG sprites by BlackFish and Turbo.
+ ^- : Widescreen Freezethrower sprite ripped by Kinsie.
+ ^- : Duke Nukem Advance sprites for the Golden Desert Eagle expanded and polished by Marrub and Mike12.
+ ^- : Duke Nukem Advance sounds for the Golden Desert Eagle ripped by President People.
+ ^- : Code for picking up thrown pipebombs by Popsoap.
+ ^- : Code for kicking while shooting by Scroton.
+ ^- : Blood translations by PresidentPeople.
+ ^- : Icons for the soundboard taunts by PresidentPeople.
+ ^- : All non-3D quotes converted to 3D's frequency and bitrate by BouncyTEM.
+- : The Security Officer, Durandal, Marathon, and the respective sprites/sounds are property of Bungie.
+ ^- : Wave Motion Cannon sprite ripped by Hopper.
+ ^- : Security Officer sprites ripped and assembled by Hopper. Infinite thanks for your generosity!
+ ^- : The Security Officer's wielding-the-M1-Alien-Weapon sprites by PresidentPeople.
+ ^- : Custom Pain sprites by PresidentPeople.
+ ^- : Majority of resources/decorate given graciously by TwelveEyes. Thank you very much!
+ ^- : Double, triple, and quadruple checking for Marathon accuracy by PresidentPeople.
+ ^- : Synthesized fire mode by Xaser.
+ ^- : HUD inspired by Steven Tze's M1A1 Enhanced hud.
+ ^- : Marapfhont and Squarish Sans by ChristTrekker.
+- : Quake, Ranger, the Quakeguy, Quake III, and the respective models/sounds are property of id Software.
+ ^- : Majority of weapon coding done by Ijon Tichy, adapted from Quakeweps.
+ ^- : Regeneration icon by Ijon Tichy.
+ ^- : Weapon rips done by leileilol.
+ ^- : Gib, rocket, and grenade graphics provided by DBThanatos and Major Cooke.
+ ^- : Ranger model by Disapota.
+ ^- : Model to sprite conversions done with the help of D-Grafix.
+ ^- : .mdl to .md2 conversion done with the help of Senor Casarajo's Noesis.
+ ^- : Mjolnir and the Laser Cannon by Ritual Entertainment, formerly Hipnotic Interactive.
+
+- : Fuckloads of ACS design, re-design, and enhancement done by Ijon Tichy.
+- : The Zorch cry for the Cyberdemon was taken from Duke Nukem 3D.
+- : Sounds for item pickups were taken from:
+ ^- : The Health pickups were taken from Painkiller, Quake III, and Quake IV.
+ ^- : The Armor pickups were taken from Fatal/Fake.
+ ^- : The Soulsphere pickup was taken from Super Street Fighter IV.
+ ^- : The Megasphere pickup was taken from Unreal Tournament III.
+ ^- : The Invisibility pickup was taken from Fatal/Fake.
+ ^- : The Invulnerability pickup was taken from Super Street Fighter IV.
+ ^- : The Infrared Light Visor was taken from Devil May Cry 3.
+ ^- : Ammo 1 pickups taken from Devil May Cry 3 and Unreal Tournament III.
+ ^- : Ammo 2 pickups taken from Unreal Tournament III.
+ ^- : Ammo 3 pickups taken from Painkiller.
+ ^- : Ammo 4 pickups taken from Painkiller and Unreal Tournament III.
+ ^- : Backpack pickup taken from Unreal Tournament III.
+- : Full-screen hud uses Sky Driver's "MugHud" as a basis.
+- : Boss monologue introductions inspired by Lioyd_Irving.
+- : Heretic widescreen HUD graphics nicked from Neoworm.
+- : HeXen widescreen HUD graphics nicked from Nash.
+- : All bar HUDs given widescreen support by BlackFish.
+- : Interframes for Doomguy's weapons done by Perkristian.
+ ^- : Super Shotgun DECORATE done by Phi108.
+- : B.J.'s bot chatfile written by pkfan2004.
+- : Weapon bar streamlining and banning the jetpack done with major help by Llewellyn.
+- : Global key pickups taken from Shared Keys by Synert.
+- : Xspheres inventory stuff for Corvus done by TehVappy50.
+- : GLDefs for enemies provided by Popsoap.
+- : Extra colors by Fuzzball Fox.
+- : Obituaries/pickup messages to LANGUAGE by TehVappy50.
+- : MENUDEF by BlackFish.
+
+- : bloodyhell cvar-based gore system developed with the assistance of the following people:
+ ^- : Level 1 (Nashgore) done pretty much entirely by Nash.
+ ^- : Nashgore code polishing by Popsoap.
+ ^- : Level 2 (Brutal) sprites by Bloax, along with quite a bit of code-polishing.
+ ^- : Level 3 (Nightmare) sprites by Mike12.
+ ^- : Duke Orange blood gib/color translations by PresidentPeople.
+ ^- : Brutal bounce/thud sounds from Painkiller.
+ ^- : Brutal splash sounds from Bloax, Painkiller, and Unreal Tournament 2004.
+ ^- : Level -1 (Happyfun) sounds taken from Trickster Online.

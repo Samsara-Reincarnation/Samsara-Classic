@@ -1,0 +1,173 @@
+//----------------------------------------------------------------------------
+// Player
+//----------------------------------------------------------------------------
+object WolfenPlayer
+{
+    frame BJBLF { light ZOMBIEATK }
+}
+
+//----------------------------------------------------------------------------
+// Rocket Launcher
+//----------------------------------------------------------------------------
+object WolfRocket
+{
+    frame WMSLA { light MNADE }
+
+    frame WFLBC { light BLAZF_X1 }
+    frame WFLBD { light BLAZF_X2 }
+    frame WFLBE { light BLAZF_X3 }
+}
+
+object WolfRocketRJ
+{
+    frame WMSLA { light MNADE }
+
+    frame WFLBC { light BLAZF_X1 }
+    frame WFLBD { light BLAZF_X2 }
+    frame WFLBE { light BLAZF_X3 }
+}
+
+flickerlight BLAZF_X1
+{
+    color 1.0 0.2 0.0
+    size 56
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight BLAZF_X2
+{
+    color 0.4 0.0 0.0
+    size 58
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight BLAZF_X3
+{
+    color 0.2 0.0 0.0
+    size 60
+    secondarySize 72
+    chance 0.4
+}
+
+
+//----------------------------------------------------------------------------
+// Flamethrower
+//----------------------------------------------------------------------------
+object WolfenFire
+{
+    frame WFLBA { light BLAZFBALL }
+    frame WFLBB { light BLAZFBALL }
+
+    frame WFLBC { light BLAZF_X1 }
+    frame WFLBD { light BLAZF_X2 }
+    frame WFLBE { light BLAZF_X3 }
+}
+
+object WolfenFire2
+{
+    frame WFLBA { light BLAZFBALL }
+    frame WFLBB { light BLAZFBALL }
+
+    frame WFLBC { light BLAZF_X1 }
+    frame WFLBD { light BLAZF_X2 }
+    frame WFLBE { light BLAZF_X3 }
+}
+
+pointlight BLAZFBALL
+{
+    color 1.0 0.1 0.0
+    size 56
+}
+
+//----------------------------------------------------------------------------
+// Spear of Destiny
+//----------------------------------------------------------------------------
+
+object SpearBolt
+{
+    frame SPB1A { light SPEARBALL }
+    frame SPB1B { light SPEARBALL }
+
+    frame SPX1A { light SPEARBALL_X1 }
+    frame SPX1B { light SPEARBALL_X2 }
+    frame SPX1C { light SPEARBALL_X3 }
+    frame SPX1D { light SPEARBALL_X1 }
+    frame SPX1E { light SPEARBALL_X4 }
+    frame SPX1F { light SPEARBALL_X5 }
+}
+
+object SpearBoltDM
+{
+    frame SPB1A { light SPEARBALL }
+    frame SPB1B { light SPEARBALL }
+
+    frame SPX1A { light SPEARBALL_X1 }
+    frame SPX1B { light SPEARBALL_X2 }
+    frame SPX1C { light SPEARBALL_X3 }
+    frame SPX1D { light SPEARBALL_X1 }
+    frame SPX1E { light SPEARBALL_X4 }
+    frame SPX1F { light SPEARBALL_X5 }
+}
+
+object SpectralSpearBolt
+{
+    frame SPB1A { light SPEARBALL }
+    frame SPB1B { light SPEARBALL }
+
+    frame SPX1A { light SPEARBALL_X1 }
+    frame SPX1B { light SPEARBALL_X2 }
+    frame SPX1C { light SPEARBALL_X3 }
+    frame SPX1D { light SPEARBALL_X1 }
+    frame SPX1E { light SPEARBALL_X4 }
+    frame SPX1F { light SPEARBALL_X5 }
+}
+
+
+
+pointlight SPEARBALL
+{
+    color 1.0 1.0 0.0
+    size 80
+}
+
+flickerlight SPEARBALL_X1
+{
+    color 1.0 1.0 0.2
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight SPEARBALL_X2
+{
+    color 1.0 1.0 0.3
+    size 104
+    secondarySize 112
+    chance 0.3
+}
+
+flickerlight SPEARBALL_X3
+{
+    color 1.0 1.0 0.5
+    size 120
+    secondarySize 128
+    chance 0.3
+}
+
+flickerlight SPEARBALL_X4
+{
+    color 0.7 0.7 0.2
+    size 56
+    secondarySize 64
+    chance 0.3
+}
+
+flickerlight SPEARBALL_X5
+{
+    color 0.3 0.1 0.1
+    size 48
+    secondarySize 56
+    chance 0.3
+}

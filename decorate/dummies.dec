@@ -1,0 +1,6 @@
+// These are just to fix a small ACS issue with more recent ZDoom builds where
+// the engine would throw out a console warning when trying to give a
+// non-existent inventory item.
+
+//actor ForceCheck : Trigger {}
+actor DummyInventory : Trigger {}

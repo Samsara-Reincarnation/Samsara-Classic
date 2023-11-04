@@ -1,0 +1,124 @@
+gameinfo
+{
+	infopage = "SAMSTIP0", "CREDIT"
+	quitmessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
+				   "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14",
+				   "$QUITMSG15", "$QUITMSG16", "$QUITMSG17", "$QUITMSG18", "$QUITMSG19", "$QUITMSG20", "$QUITMSG21",
+				   "$QUITMSG22", "$QUITMSG23", "$QUITMSG24", "$QUITMSG25", "$QUITMSG26", "$QUITMSG27", "$QUITMSG28",
+				   "$QUITMSG29", "$QUITMSG30", "$QUITMSG31", "$QUITMSG32", "$QUITMSG33", "$QUITMSG34", "$QUITMSG35",
+				   "$QUITMSG36", "$QUITMSG37", "$QUITMSG38", "$QUITMSG39", "$QUITMSG40", "$QUITMSG41", "$QUITMSG42",
+				   "$QUITMSG43", "$QUITMSG44", "$QUITMSG45", "$QUITMSG46", "$QUITMSG47", "$QUITMSG48", "$QUITMSG49"
+	playerclasses = "DoomguyPlayer", "ChexWarrior", "CorvusPlayer", "WolfenPlayer", "HexenPlayer", "DukePlayer", "MarathonPlayer", "QuakePlayer"
+	weaponslot = 0, " Fist ", " Staff ", "Mace of Contrition", " Bootspoon ", "Knife", "Mighty Boot", "Steel Knuckles", "Axe", "MetaCheatDetector"
+	weaponslot = 1, " Chainsaw ", "Gauntlets of the Necromancer", "Super Bootspork", "Pipebombs", "KKV-7 SMG Flechette",
+					"Spiked Gauntlet", "Spear of Longinus", "Talon Ceramic Combat Blade", "Tech.50 Pacifier", "Gauntlet", "Mjolnir",
+					" Pistol ", "Elven Wand", "Sapphire Wand", "Mini-Zorcher", "Luger", "Glock 17", ".44 Magnum Mega Class A1", "Single Shotgun"
+	weaponslot = 2, " Shotgun ", " Firemace ", "Frost Shards", "Large Zorcher", "Machine Gun", "  Shotgun  ", "WSTE-M5 Combat Shotgun", "Double Shotgun"
+	weaponslot = 3, "Super Shotgun", "Ethereal Crossbow", "Timon's Axe", "Super Large Zorcher", "Explosive Shotgun", "Fusion Pistol", "Grenade Launcher"
+	weaponslot = 4, " Chaingun ", "Dragon Claw", "Serpent Staff", "Rapid Zorcher", "  Chaingun  ", "Chaingun Cannon", "MA-75B Assault Rifle", "Nailgun"
+	weaponslot = 5, "Rocket Launcher", "Phoenix Rod", "Hammer of Retribution", "Zorch Propulsor", " Rocket Launcher ", "RPG", "SPNKR-XP SSM Launcher", "  Rocket Launcher  "
+	weaponslot = 6, "Plasma Rifle", "Hellstaff", "Firestorm", "Phasing Zorcher", " Flamethrower ", "Freezethrower", "Super Nailgun", "TOZT-7 Napalm Unit"
+	weaponslot = 7, "B.F.G. 9000", "Wraithverge", "LAZ Device", "Spear of Destiny", "Devastator", "ONI-71 Wave Motion Cannon", "Thunderbolt"
+	weaponslot = 8, "Alien Weapon", " Alien Weapon ", "Laser Cannon"
+}
+
+skill baby
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	DamageFactor = 0.5
+	ACSReturn = 0
+	EasyBossBrain
+	SpawnFilter = Baby
+	Name = "Jani"
+    PlayerClassName = "Doomguy", "I'm too young to die!"
+    PlayerClassName = "ChexWarrior", "Easy Does It"
+    PlayerClassName = "Corvus", "Thou Needeth a Wet-Nurse"
+    PlayerClassName = "Blazkowicz", "Can I Play, Daddy?"
+    PlayerClassName = "Parias", "Altar Boy"
+    PlayerClassName = "Duke", "Piece of Cake"
+	PlayerClassName = "SecurityOfficer", "Kindergarten"
+    PlayerClassName = "Ranger", "I Can Win"
+}
+
+skill easy
+{
+	ACSReturn = 1
+	EasyBossBrain
+	SpawnFilter = Easy
+	Name = "Srotapanna"
+    PlayerClassName = "Doomguy", "Hey, not too rough"
+    PlayerClassName = "ChexWarrior", "Not So Sticky"
+    PlayerClassName = "Corvus", "Yellowbellies-R-Us"
+    PlayerClassName = "Blazkowicz", "Don't Hurt Me."
+    PlayerClassName = "Parias", "Acolyte"
+    PlayerClassName = "Duke", "Let's Rock"
+	PlayerClassName = "SecurityOfficer", "Easy"
+    PlayerClassName = "Ranger", "Bring It On"
+}
+
+skill normal
+{
+	ACSReturn = 2
+	SpawnFilter = Normal
+	Name = "Sakridagami"
+    PlayerClassName = "Doomguy", "Hurt Me Plenty"
+    PlayerClassName = "ChexWarrior", "Gobs of Goo"
+    PlayerClassName = "Corvus", "Bringest Them Oneth"
+    PlayerClassName = "Blazkowicz", "Bring 'em On!"
+    PlayerClassName = "Parias", "Priest"
+    PlayerClassName = "Duke", "Come Get Some"
+	PlayerClassName = "SecurityOfficer", "Normal"
+    PlayerClassName = "Ranger", "Hurt Me Plenty"
+	//DefaultSkill
+}
+
+skill hard
+{
+	ACSReturn = 3
+	SpawnFilter = Hard
+	Name = "Anagamin"
+    PlayerClassName = "Doomguy", "Ultra-Violence"
+    PlayerClassName = "ChexWarrior", "Extreme Ooze"
+    PlayerClassName = "Corvus", "Thou Art a Smite-Meister"
+    PlayerClassName = "Blazkowicz", "I Am Death Incarnate!"
+    PlayerClassName = "Parias", "Cardinal"
+    PlayerClassName = "Duke", "Damn I'm Good"
+	PlayerClassName = "SecurityOfficer", "Major Damage"
+    PlayerClassName = "Ranger", "Hardcore"
+}
+
+skill nightmare
+{
+	ACSReturn = 4
+	//AmmoFactor = 2
+	FastMonsters
+	//DisableCheats
+	//RespawnTime = 12
+	SpawnFilter = Nightmare
+	Name = "Arahant"
+    PlayerClassName = "Doomguy", "NIGHTMARE!"
+    PlayerClassName = "ChexWarrior", "Super Slimey!"
+    PlayerClassName = "Corvus", "Black Plague Possesses Thee"
+    PlayerClassName = "Blazkowicz", "Uber!"
+    PlayerClassName = "Parias", "Pope"
+    PlayerClassName = "Duke", "Hail to the King"
+	PlayerClassName = "SecurityOfficer", "Total Carnage"
+    PlayerClassName = "Ranger", "NIGHTMARE!"
+	MustConfirm = "Heedfulness is the Deathless path; heedlessness, the path to death."
+	
+	monsterhealth = 1.5 //DamageFactor = 1.5
+	Aggressiveness = 0.75
+}
+
+skill originalnightmare
+{
+	ACSReturn = 5
+	AmmoFactor = 2
+	FastMonsters
+	DisableCheats
+	RespawnTime = 12
+	SpawnFilter = Nightmare
+	Name = " "
+	MustConfirm = "DEATH LABEL!"
+}

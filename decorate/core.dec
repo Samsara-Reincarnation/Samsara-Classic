@@ -1,0 +1,31 @@
+#include "decorate/core/tokens.dec"
+
+#include "decorate/core/ammo.dec"
+#include "decorate/core/armor.dec"
+#include "decorate/core/effects.dec"
+#include "decorate/core/health.dec"
+#include "decorate/core/instantweapon.dec"
+#include "decorate/core/killcount.dec"
+#include "decorate/core/lms.dec"
+#include "decorate/core/powerups.dec"
+#include "decorate/core/superturboturkeypuncher3000.dec"
+#include "decorate/core/buffsandnerfs.dec"
+
+#include "decorate/core/blood.dec"
+#include "decorate/core/blood0.dec"
+#include "decorate/core/blood1.dec"
+#include "decorate/core/blood2.dec"
+#include "decorate/core/blood3.dec"
+
+// This Is To Tell DECORATE That We're In Pistol Start Mode without using
+// GetCVar, which hurts Zandro.
+
+actor PistolStartEnabled : Boolean {}
+
+// This is used to detect usage of the IDKFA cheat
+// and dole out inventory items as appopriate
+
+ACTOR MetaCheatDetector : Pistol
+{
+	Weapon.SelectionOrder 0
+}

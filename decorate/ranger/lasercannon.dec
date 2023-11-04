@@ -1,0 +1,183 @@
+actor "Laser Cannon" : InstantSwitchWeapon
+{
+    Weapon.BobRangeX 0
+    Weapon.BobRangeY 0.5
+    Weapon.BobSpeed 1.1
+    Weapon.BobStyle Alpha
+    Weapon.SelectionOrder 100
+
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 60
+    Weapon.AmmoType "Cell"
+
+    Weapon.SisterWeapon "Spectral LC"
+
+    Inventory.Pickupmessage "You got the Laser Cannon!"
+    Inventory.PickupSound "quakeweps/weaponpickup"
+	Inventory.RestrictedTo "QuakePlayer"
+    Scale 0.75
+
+    +INVENTORY.UNDROPPABLE
+    +NOALERT
+	Tag "Laser Cannon"
+
+    States
+    {
+      Spawn:
+        QLSC Z -1
+        Stop
+        
+      Ready:
+        QLSC A 1 A_WeaponReady
+        Loop
+        
+      Fire:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraRecoil", 0, -50, 1, 2)
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_PlayWeaponSound("quakeweps/lasershot")
+        QLSC A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        QLSC A 0 A_JumpIfInventory("SPModeOn",   1, "CoopFire")
+        
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBolt", 0, 1, 3, -2)
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBolt", 0, 0, -3, -2)
+        goto Fire2
+
+      CoopFire:
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBoltCoop", 0, 1, 3, -2)
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBoltCoop", 0, 0, -3, -2)
+        goto Fire2
+
+      Fire2:
+        QLSC B 1 bright A_Light1
+        QLSC C 2 bright A_Light1
+		QLSC C 0 A_Light0
+        QLSC C 0 A_Refire
+        Goto Ready
+        
+      Hold:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraRecoil", 0, -50, 1, 3)
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_PlayWeaponSound("quakeweps/lasershot")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",   1, "CoopHold")
+        
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBolt", 0, 1, 0, 5)
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBolt", 0, 0, 0, 5)
+        goto Hold2
+
+      CoopHold:
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBoltCoop", 0, 1, 0, 5)
+        TNT1 A 0 A_FireCustomMissile("LaserCannonBoltCoop", 0, 0, 0, 5)
+        goto Hold2
+
+      Hold2:
+        QLSC D 2 bright A_Light1
+		QLSC D 0 A_Light0
+        QLSC E 2 bright A_ClearRefire
+        goto Ready
+        
+      Flash:
+        TNT1 A 2 A_Light1
+        goto LightDone
+    }
+}
+
+actor "Spectral LC": "Laser Cannon"
+{
+    Weapon.AmmoType ""
+    Weapon.AmmoUse  0
+    Weapon.AmmoGive 0
+
+    Weapon.SisterWeapon "Laser Cannon"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraRecoil", 0, -50, 1, 2)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSigil", 0, 4)
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlaySound("quakeweps/lasershot", CHAN_WEAPON)
+        TNT1 A 0 A_PlaySound("weapons/sigil", 6)
+        TNT1 A 0 A_FireCustomMissile("SpectralLaserCannonBolt", 0, 0, -3, -2)
+        QLSC B 1 bright A_FireCustomMissile("SpectralLaserCannonBolt", 0, 1, 3, -2)
+        QLSC C 2 bright
+        QLSC C 0 A_Refire
+        Goto Ready
+        
+      Hold:
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraRecoil", 0, -50, 1, 3)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSigil", 0, 4)
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlaySound("quakeweps/lasershot", CHAN_WEAPON)
+        TNT1 A 0 A_PlaySound("weapons/sigil", 6)
+        TNT1 A 0 A_FireCustomMissile("SpectralLaserCannonBolt", 0, 0, -3, -2)
+        QLSC D 2 bright A_FireCustomMissile("SpectralLaserCannonBolt", 0, 1, 3, -2)
+        QLSC E 2 bright A_ClearRefire
+        goto Ready
+    }
+}
+
+
+actor LaserCannonBolt
+{
+    Radius 2
+    Height 2
+
+    Speed 50
+
+    Projectile
+    Damage (7)
+
+    +HEXENBOUNCE
+    +BLOODSPLATTER
+    BounceCount 3
+
+    Scale 0.55
+    SeeSound "quakeweps/laserbounce"
+
+    Obituary "$SAMSARA_RANGER_OB_BERSERK"
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(16,"Spawn2")
+        LSCL A 1 bright A_Explode(2, 1, 1)
+        loop
+        
+      Spawn2:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("HexenBounce",0)
+      Spawn3:
+        LSCL A 1 bright A_Explode(2, 1, 1)
+        loop
+        
+      Death:
+        LSCL A 1 bright
+      Crash:
+        TNT1 A 1 A_SpawnItemEx("QuakeBulletPuff")
+        stop
+        
+      XDeath:
+        TNT1 A 1
+        stop
+    }
+}
+
+actor LaserCannonBoltCoop : LaserCannonBolt
+{
+    Damage (10)
+    +THRUSPECIES
+    Species "Player"
+}
+
+actor SpectralLaserCannonBolt: LaserCannonBoltCoop { DamageType "Spectral" }

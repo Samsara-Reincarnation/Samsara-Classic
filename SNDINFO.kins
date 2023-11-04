@@ -1,0 +1,47 @@
+// Kinsie Sounds So As To Seperate Things Out
+
+misc/secret			silence
+
+misc/pistolstart	PISTSTRT
+
+duke/holoduke1		dkholo1
+duke/holoduke2		dkholo2
+
+// Class-Centric Secrets
+secretfound/doom		sec-doom
+secretfound/wolf		sec-wolf
+secretfound/heretic		sec-ravn
+secretfound/hexen		sec-hexn
+secretfound/quake		sec-quak
+secretfound/duke		sec-duke
+secretfound/marathon	sec-mara
+secretfound/chex		sec-chex
+secretfound/default		dssecret
+
+secretfound/SwitchOtherLevel        secslv1
+secretfound/PuzzleSuccess           secslv
+
+// Duke Nukem Secret VO
+$random duke/secret { duke/secret01 duke/secret02 duke/secret03 duke/secret04 duke/secret05 duke/secret06 duke/secret07 duke/secret08 duke/secret09 duke/secret10 }
+duke/secret01			DKSCRT01
+duke/secret02			DKSCRT02
+duke/secret03			DKSCRT03
+duke/secret04			DKSCRT04
+duke/secret05			DKSCRT05
+duke/secret06			DKSCRT06
+duke/secret07			DKSCRT07
+duke/secret08			DKSCRT08
+duke/secret09			DKSCRT09
+duke/secret10			DKSCRT10
+
+// Duke Invuln VO
+$random duke/invuln { duke/invuln01 duke/invuln02 duke/invuln03 duke/invuln04 duke/invuln05 duke/invuln06 }
+duke/invuln01			DKINVL01
+duke/invuln02			DKBSDT27
+duke/invuln03			DKNTRO82
+duke/invuln04			DKSCRT10
+duke/invuln05			DKDMKL01
+duke/invuln06			DKKILL76
+
+// Scripted Marines
+scriptedmarine/see		zmarine
