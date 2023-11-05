@@ -146,6 +146,7 @@
             Option "Old Laz Device",                  "samsara_classiclaz", "OnOff"
             Option "Ban Duke's Jetpack",              "samsara_banjetpack", "OnOff"
             Option "Ban Wolf Movement",               "samsara_banwolfmove", "OnOff"
+            Option "Ban Quake DOE Ammo",              "samsara_vanillaquake", "OnOff"
             Option "No Custom Gravity",               "samsara_nocustomgravity", "OnOff"
             StaticText      ""
             StaticText      "Class Multiplier Options", 1
