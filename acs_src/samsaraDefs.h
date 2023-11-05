@@ -123,7 +123,7 @@ samsara_cl_expparticles [1-100000]: How many particles does Ranger's explosions 
 samsara_cl_norecoil 0/1: Controls whether Ranger's weapons recoil.\n\
 samsara_cl_sinerecoil 0/1: Toggles whether Ranger's recoil movement uses a sine wave.\n\
 samsara_cl_weaponhud 0/1: Controls whether the weapon bar at the top of your screen appears.\n\
-samsara_cl_vanilladoom 0/1: Toggles the vanilla weapon animations for Doomguy.\n\
+samsara_cl_smoothanims 0/1: Toggles the vanilla weapon animations for Doomguy.\n\
 samsara_cl_wolfmove 0/1: Toggles classic Wolfenstein movement on B.J. Blazkowicz.";
 
 int LMSArmors[LMSMODES] = 

@@ -70,7 +70,7 @@ QUITMSG45 = "\ccUm, Asmodeus dislikes his\n\ccchildren trying to quit.\n\ccPress
 QUITMSG46 = "\ccNo matter! What is important is\n\ccyou love our game. Congratulations,\n\ccyou are probably not a thief."; // Copyright message
 //Buddha
 QUITMSG47 = "\cfNeither fire nor wind,\n\cfbirth nor death,\n\cfcan erase our good deeds.";
-QUITMSG48 = "\cfIf on the hand there is no wound,\n\cfone may carry even poison in it.\nP\cfoison does not affect one who is free from wounds.";
+QUITMSG48 = "\cfIf on the hand there is no wound,\n\cfone may carry even poison in it.\n\cfPoison does not affect one who is free from wounds.";
 QUITMSG49 = "\cfNeither in the sky nor in mid-ocean,\n\cfnor by entering into mountain clefts,\n\cfnowhere in the world is there a place\n\cfwhere one will not be overcome by death.";
 
 

@@ -456,7 +456,7 @@ script "SamsaraSpawn" (int respawning)
         if (array_ballgag[pln]) { GiveInventory("DukeBallgag", 1); }
         else { TakeInventory("DukeBallgag", 0x7FFFFFFF); }
         
-        if (array_vanillaAnim[pln]) { GiveInventory("VanillaDoom", 1); }
+        if (!array_vanillaAnim[pln]) { GiveInventory("VanillaDoom", 1); }
         else { TakeInventory("VanillaDoom", 0x7FFFFFFF); }
         
         if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
@@ -976,7 +976,7 @@ script "SamsaraEnterClient" (void) clientside
         if (IsServer)
         {
             array_wolfmove[pln]     = !!GetCVar("samsara_cl_wolfmove");
-            array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_vanilladoom");
+            array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_smoothanims");
             array_ballgag[pln]      = !!GetCVar("samsara_cl_ballgag");
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
             array_pickupswitch[pln] = !!GetCVar("switchonpickup");

@@ -217,7 +217,7 @@ function int SamsaraClientVars(void)
     int switchOnPickup  = !!GetCVar("switchonpickup");
     int weaponBar       = !!GetCVar("samsara_cl_weaponhud");
     int ballgag         = !!GetCVar("samsara_cl_ballgag");
-    int classicAnims    = !!GetCVar("samsara_cl_vanilladoom");
+    int classicAnims    = !!GetCVar("samsara_cl_smoothanims");
     int wolfmove        = !!GetCVar("samsara_cl_wolfmove");
 
     return (switchOnPickup << 4) + (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;

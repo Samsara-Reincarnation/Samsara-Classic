@@ -72,7 +72,7 @@ user int samsara_cl_expparticles = 0;
 user int samsara_cl_norecoil = 0;
 user int samsara_cl_sinerecoil = 0;
 user int samsara_cl_weaponhud = 1;
-user int samsara_cl_vanilladoom = 0;
+//user int samsara_cl_vanilladoom = 0;
 //user int samsara_cl_vanillaquake = 0;
 user int samsara_cl_wolfmove = 0;
 user int samsara_cl_ballgag = 0;
@@ -93,5 +93,7 @@ server int samsara_zd_bloodypersistent = 0;
 
 user int samsara_cl_noadditivepickups = 0;
 server int samsara_zd_noadditivepickups = 0;
+
+user int samsara_cl_smoothanims = 0;
 
 server int samsara_vanillaquake = 0;

@@ -134,11 +134,14 @@ actor FlemoidGibTrail
 // Now the actual enemies...
 actor FlemoidusCommonus2 : FlemoidusCommonus replaces FlemoidusCommonus
 {
-    DamageFactor "CorvusCrossbow", 1.1
+    Tag "Flemoidus Commonus"
+	DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "Flem", 0.0
     DamageFactor "Slime", 0.0
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     +DONTGIB
     +NOTDMATCH
     +NOICEDEATH
@@ -222,18 +225,23 @@ actor FlemoidusCommonus2 : FlemoidusCommonus replaces FlemoidusCommonus
         Goto See
 
       Melee:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Melee"
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		POSS E 10 A_FaceTarget
+		POSS F 10 A_CustomMeleeAttack(random[posattack](1,5)*3, "", "", "Flem")
+		Goto See
     }
 }
 
 actor FlemoidusBipedicus2 : FlemoidusBipedicus replaces FlemoidusBipedicus
 {
-    DamageFactor "CorvusCrossbow", 1.1
+    Tag "Flemoidus Bipedicus"
+	DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "Flem", 0.0
     DamageFactor "Slime", 0.0
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     +DONTGIB
     +NOTDMATCH
     +NOICEDEATH
@@ -317,14 +325,17 @@ actor FlemoidusBipedicus2 : FlemoidusBipedicus replaces FlemoidusBipedicus
         Goto See
 
       Melee:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Melee"
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		SPOS E 14 A_FaceTarget
+		SPOS F 14 A_CustomMeleeAttack(random[posattack](1,5)*3, "", "", "Flem")
+		Goto See
     }
 }
 
 actor ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
 {
-    Game Chex
+    Tag "Armored Flemoidus Bipedicus"
+	Game Chex
     SpawnID 5
     Health 125 // Previously 100
     Radius 20
@@ -336,6 +347,8 @@ actor ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Speed 8
     PainChance 200
     Monster
@@ -481,7 +494,8 @@ actor ArmoredBipedicusBody
 
 actor Quadrumpus 9057
 {
-    Game Chex
+    Tag "Flemoidus Quadrumpus"
+	Game Chex
     SpawnID 122
     Health 150 // Previously 60
     Radius 20
@@ -492,6 +506,8 @@ actor Quadrumpus 9057
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Speed 8
     PainChance 200
     Monster
@@ -719,7 +735,8 @@ actor QuadrumpusArm2
 
 actor FlemoidusStridicus replaces FlemoidusCycloptisCommonus
 {
-    Game Chex
+    Tag "Flemoidus Stridicus"
+	Game Chex
     SpawnID 8
     Health 300 // Previously 225
     PainChance 100
@@ -732,6 +749,8 @@ actor FlemoidusStridicus replaces FlemoidusCycloptisCommonus
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Monster
     +FLOORCLIP +FASTER +FASTMELEE
     +DONTGIB
@@ -846,7 +865,8 @@ actor FlemoidusStridicus replaces FlemoidusCycloptisCommonus
 
 actor FlemoidusCycloptisCommonusV3 : FlemoidusStridicus 58
 {
-    Game Chex
+    Tag "Flemoidus Cycloptis"
+	Game Chex
     SpawnID 9
     Health 200 // Previously 150
     PainChance 180
@@ -860,6 +880,8 @@ actor FlemoidusCycloptisCommonusV3 : FlemoidusStridicus 58
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Monster
     +FLOORCLIP +FASTER +FASTMELEE
     +DONTGIB
@@ -885,6 +907,7 @@ actor FlemoidusCycloptisCommonusV3 : FlemoidusStridicus 58
         Loop
 
       Melee: // Previously all 8 frames each
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         CYCL EF 6 A_FaceTarget
         CYCL G 6 A_CustomMeleeAttack(random[sargattack](1,10)*4, "", "", "Flem")
         Goto See
@@ -1053,7 +1076,8 @@ actor CyclopsArm
 
 actor SuperCycloptis 3005
 {
-    Game Chex
+    Tag "Super Cycloptis"
+	Game Chex
     SpawnID 19
     Health 400
     Radius 31
@@ -1065,6 +1089,8 @@ actor SuperCycloptis 3005
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Speed 8
     PainChance 128
     Monster
@@ -1310,7 +1336,8 @@ actor SuperCyclopsArm2
 
 actor Larva 9050
 {
-    Game Chex
+    Tag "Larva"
+	Game Chex
     SpawnID 117
     Health 150 // Previously 100
     PainChance 180
@@ -1323,6 +1350,8 @@ actor Larva 9050
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Monster
     +FLOORCLIP +FASTER +FASTMELEE
     +DONTGIB
@@ -1438,7 +1467,8 @@ actor Larva 9050
 
 actor FlemMine replaces ChexSoul
 {
-    Game Chex
+    Tag "Flem Mine"
+	Game Chex
     SpawnID 110
     Health 100
     Radius 16
@@ -1448,6 +1478,8 @@ actor FlemMine replaces ChexSoul
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Speed 8
     Damage 3
     PainChance 256
@@ -1662,7 +1694,8 @@ actor FlemMineGib2
 
 actor Snotfolus 16
 {
-    Game Chex
+    Tag "Lord Snotfolus"
+	Game Chex
     SpawnID 114
     Health 8000
     Radius 40
@@ -1672,6 +1705,8 @@ actor Snotfolus 16
     damagefactor "BFGSpray", 0.75
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     PainChance "MarathonFusion", 0
     DamageFactor "CorvusHellstaffTomed", 0.2
     Speed 16
@@ -2025,6 +2060,19 @@ actor Snotfolus 16
         SNTD AAAAABCD 6
         SNTD D -1 A_BossDeath
         stop
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.PhasingZorch:
+      Death.ZorchKamikaze:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        CYBR H 10
+        CYBR I 10 A_Scream
+        CYBR JKL 10
+        CYBR M 10 A_NoBlocking
+        CYBR NO 10
+        CYBR P 30
+        CYBR P -1 A_BossDeath
+        Stop
     }
 }
 
@@ -2113,7 +2161,7 @@ actor FlemSpore
     Mass 5
     Speed 10
     PainChance 0
-    Bloodcolor "Green"
+    Bloodcolor "3f 7d 39"
     RenderStyle Translucent
     MONSTER
     +FLOORCLIP
@@ -2199,7 +2247,8 @@ actor CycloptisBall
 
 ACTOR FlemoidusMaximus replaces Flembrane
 {
-    Game Chex
+    Tag "Flemoidus Maximus"
+	Game Chex
     SpawnID 3
     Health 2000 // Previously 1000
     Radius 24
@@ -2210,6 +2259,8 @@ ACTOR FlemoidusMaximus replaces Flembrane
     damagefactor "BFG", 0.75
     damagefactor "BFGSpray", 0.75
     DamageFactor "CorvusHellstaffTomed", 0.2
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Speed 12 // Previously 8
     PainChance 20
     Monster
@@ -2323,6 +2374,7 @@ ACTOR FlemoidusMaximus replaces Flembrane
     Death.ZorchPistol:
     Death.PhasingZorch:
     Death.ZorchKamikaze:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
         BOSS I  8
         BOSS J  8 A_Scream
         BOSS K  8
@@ -2474,12 +2526,15 @@ actor MaximusArmLeft
 
 ACTOR FlembraneV3 : FlemoidusMaximus 69
 {
-    Game Chex
+    Tag "Flembrane"
+	Game Chex
     SpawnID 113
     Health 2500 // Previously was 1000
     Radius 64
     Height 64
     Mass 0x7FFFFFFF //10000
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     +MISSILEMORE
     +MISSILEEVENMORE
     Speed 0
@@ -2575,7 +2630,8 @@ ACTOR FlembraneV3 : FlemoidusMaximus 69
 
 ACTOR Flembomination 7
 {
-    Game Chex
+    Tag "Flembomination"
+	Game Chex
     SpawnID 7
     Health 3000
     Radius 100
@@ -2583,6 +2639,8 @@ ACTOR Flembomination 7
     Mass 1000
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+    Bloodtype ""
+    Bloodcolor "3f 7d 39"
     Speed 12
     PainChance 40
     Monster
@@ -2689,6 +2747,7 @@ ACTOR Flembomination 7
     Death.ZorchPistol:
     Death.PhasingZorch:
     Death.ZorchKamikaze:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
         SPID J 20 A_Scream
         SPID K 10 A_NoBlocking
         SPID LMNOPQR 10

@@ -38,8 +38,8 @@ actor HealPack0: CustomInventory replaces HealthBonus
       Spawn:
         MEDI A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        MEDI A -1 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
-        stop
+        MEDI A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        wait
 
       Pickup:
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
@@ -70,8 +70,8 @@ actor HealPack1: CustomInventory replaces StimPack
       Spawn:
         MED2 A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        MED2 A -1 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
-        stop
+        MED2 A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        wait
 
       Pickup:
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
@@ -103,8 +103,8 @@ actor HealPack2 : CustomInventory replaces Medikit
       Spawn:
         MED3 A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        MED3 A -1 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
-        stop
+        MED3 A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        wait
 
       Pickup:
 	    TNT1 A 0
@@ -216,13 +216,11 @@ actor SuperHealth : CustomInventory replaces Soulsphere
       Spawn:
         SOUL A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        SOUL A -1 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
-        stop
+        SOUL A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        wait
 
       Pickup:
 		TNT1 A 0
-		TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
-		TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
         TNT1 A 0 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("DukeClass", 1, "PickupDuke")
@@ -230,21 +228,27 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         goto PickupSuccess
 
       PickupHeretic:
-        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
         TNT1 A 0 A_JumpIfInventory("PortSuperHealth", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
+		TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
         TNT1 A 1 A_GiveInventory("PortSuperHealth")
         stop
 
       PickupHexen:
-        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
         TNT1 A 0 A_JumpIfInventory("PortSuperHealth2", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget", CHAN_ITEM)
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
+		TNT1 A 0 A_PlaySound("hexen/artiget", CHAN_ITEM)
         TNT1 A 1 A_GiveInventory("PortSuperHealth2")
         stop
 
       PickupSuccess:
-        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
         TNT1 A 0 A_GiveInventory("FiniteHealth200", 100)
         goto PickupSound
 
@@ -263,7 +267,9 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
       PickupDuke2:
-        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "InfiniteDuke")
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "InfiniteDuke")
         TNT1 A 1 A_GiveInventory("FiniteHealth200", 50)
         goto PickupSound
 
@@ -272,7 +278,9 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         goto PickupSound
 
       PickupQuake:
-        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraMegaHealth", 0, 100, 1, 175)
         goto PickupSound
 
@@ -344,14 +352,14 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
 
       Pickup:
 		TNT1 A 0
-		TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
-		TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
         TNT1 A 0 A_JumpIfInventory("CorvusClass", 1, "PickupCorvus")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("DukeClass", 1, "PickupDuke")
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
       Pickup2:
-        TNT1 A 0 A_PlaySound("megapackpickup", CHAN_ITEM)
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
+		TNT1 A 0 A_PlaySound("megapackpickup", CHAN_ITEM)
         TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraDecorate", 20, ARMOR_MEGASPHERE)
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
         TNT1 A 0 A_GiveInventory("FiniteHealth200", 200)
@@ -375,12 +383,16 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
 
       PickupCorvus:
         TNT1 A 0 A_JumpIfInventory("CorvusMegasphere", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
+		TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
         TNT1 A 1 A_GiveInventory("CorvusMegasphere")
         stop
 
       PickupQuake:
-        TNT1 A 0 A_PlaySound("quakeweps/megasphere", CHAN_ITEM)
+        TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
+        TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
+		TNT1 A 0 A_PlaySound("quakeweps/megasphere", CHAN_ITEM)
         TNT1 A 0 A_GiveInventory("QuakeRegenGiver")
         TNT1 A 0 A_GiveInventory("QuakeRedArmor")
         stop

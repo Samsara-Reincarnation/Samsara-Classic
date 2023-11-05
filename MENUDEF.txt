@@ -30,7 +30,7 @@
             Title "SAMSARA CLIENTSIDE OPTIONS"
 			StaticText      "Player Preferences", 1	     
             Option "BJ Movement",              "samsara_cl_wolfmove", "BJMovement"
-            Option "Doom Animations",               "samsara_cl_vanilladoom", "DoomAnims"
+            Option "Doom Animations",               "samsara_cl_smoothanims", "DoomAnims"
             Option "Weapon HUD Bar",                        "samsara_cl_weaponhud", "OnOff"
             Option "Pickup Sprites",                        "samsara_cl_pickupmode", "PickupGraphics"
             Option "Pickup Messages",                  "samsara_cl_printpickup", "PickupMsg"
@@ -60,8 +60,8 @@
 	
 	OptionValue DoomAnims
     {
-            0, "Improved"
-            1, "Vanilla"
+            0, "Vanilla"
+			1, "Improved"
     }
 	
 	OptionValue PickupMsg
