@@ -815,17 +815,16 @@ function int roundAway(int toround)
     if (i == 0) { return ftoi(toround); }
     return ftoi(toround + (1.0 - i));
 }
-/*
-function int round(int toround)
+
+function int intRound(int toround)
 {
     return ftoi(toround + 0.5);
 }
 
-function int ceil(int toround)
+function int intCeil(int toround)
 {
     return ftoi(toround + (1.0-1));
 }
-*/
 
 function int intFloat(int toround)
 {

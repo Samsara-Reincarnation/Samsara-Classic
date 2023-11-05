@@ -277,7 +277,7 @@ script "SamsaraSigil" (int baseHP)
     }
 
     baseHP *= min((SIGILCOUNT - splinterCount) + 1, SIGILCOUNT);
-    baseHP = round(baseHP);
+    baseHP = intRound(baseHP);
 
     if (baseHP) DamageThing(baseHP, 0);
 }

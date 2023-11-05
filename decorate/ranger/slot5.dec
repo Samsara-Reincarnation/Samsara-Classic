@@ -44,6 +44,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         
       MultiReady:
         QMRL A 1 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"Ready")
         TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
         TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
         Loop

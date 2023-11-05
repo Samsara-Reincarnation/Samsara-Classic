@@ -103,8 +103,8 @@ hgib6                        HPPYGIB6
 ////////////////////
 
 // Imp
-$random friendlyimp/sight	{ imp/sight1  imp/sight2 }
-$random friendlyimp/death	{ imp/death1  imp/death2 }
+$random friendlyimp/sight	{ friendlyimp/sight1  friendlyimp/sight2 }
+$random friendlyimp/death	{ friendlyimp/death1  friendlyimp/death2 }
 friendlyimp/sight1		sounds/allies/dimpsit1.wav
 friendlyimp/sight2		sounds/allies/dimpsit2.wav
 friendlyimp/active		sounds/allies/dimpact.wav
