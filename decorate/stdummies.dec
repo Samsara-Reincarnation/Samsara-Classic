@@ -572,7 +572,3 @@ actor PowerTranslucency : PowerInvisibility
     Powerup.Strength 80
     Powerup.Mode Translucent
 }
-
-Actor RuneProsperity : Boolean { }
-Actor RuneDoubleFiringSpeed : PowerDoubleFiringSpeed { }
-ACTOR RuneSpread : Boolean { }

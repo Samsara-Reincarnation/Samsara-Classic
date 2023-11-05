@@ -12,7 +12,7 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     {
       Spawn:
         RMR4 A 0
-        RMR4 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
+        RMR4 A -1 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
         loop
     }
 }

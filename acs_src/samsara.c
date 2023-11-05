@@ -345,23 +345,29 @@ script "SamsaraClientDecorate" (int which, int a1, int a2) clientside
         HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
         break;
 
-      case 4:
-        while (1)
-        {
-            if (defaultCVar("samsara_cl_noadditivepickups", 0))
-            {
-                SetActorProperty(0, APROP_RenderStyle, STYLE_Normal);
-                SetActorProperty(0, APROP_Alpha, itof(a1)/100);
-            }
-            else
-            {
-                SetActorProperty(0, APROP_RenderStyle, STYLE_Add);
-                SetActorProperty(0, APROP_Alpha, itof(a2)/100);
-            }
+	  case 4:
+		// [tv50] can't use while, otherwise the cpln isn't acquired I guess?
+		// [tv50] in any case, it won't work. at least, not to my knowledge
 
-            Delay(35);
-        }
-        break;
+		//while (true)
+		//{
+			bool cvarenabled = false;
+
+			if (GetCVar("samsara_runninginzdoom")) { cvarenabled = GetCVar("samsara_zd_noadditivepickups"); }
+			else { cvarenabled = GetUserCVar(ConsolePlayerNumber(), "samsara_cl_noadditivepickups"); }
+
+			if (cvarenabled)
+			{
+				SetActorProperty(0, APROP_RenderStyle, STYLE_Normal);
+				SetActorProperty(0, APROP_Alpha, itof(a1)/100);
+			} else {
+				SetActorProperty(0, APROP_RenderStyle, STYLE_Add);
+				SetActorProperty(0, APROP_Alpha, itof(a2)/100);
+			}
+
+			//Delay(35);
+		//}
+		break;
         
       case 5:
         Print(l:"NOFUEL");

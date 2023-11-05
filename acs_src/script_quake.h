@@ -357,7 +357,7 @@ script "SamsaraQPowers" (int startTime)
                 LocalAmbientSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
             }
         }
-        else if (CheckInventory("RuneProsperity") || GetCVar("sv_degeneration") > 0)
+        else if (CheckInventory("SamsaraHasProsperity") || GetCVar("sv_degeneration") > 0)
         {
             regenTimer = 0;
         }

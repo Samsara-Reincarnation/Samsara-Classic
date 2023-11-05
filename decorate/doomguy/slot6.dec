@@ -25,7 +25,8 @@ actor "Plasma Rifle" : PlasmaRifle
 
       Fire1:
 		TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire1")
-        DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
+        TNT1 D 0 A_JumpIfInventory("SamsaraHasDoubleFiringSpeed", 1, "RageFire1")
+		DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
         DPLF CD 1 BRIGHT
 		TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
@@ -34,8 +35,25 @@ actor "Plasma Rifle" : PlasmaRifle
 
       Fire2:
 		TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire2")
+		TNT1 D 0 A_JumpIfInventory("SamsaraHasDoubleFiringSpeed", 1, "RageFire2")
         DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
         DPLF CD 1 BRIGHT
+		TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        DPLF B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        goto FireEnd
+		
+	  RageFire1:
+        DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
+        DPLF C 1 BRIGHT
+		TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        DPLF B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        goto FireEnd
+		
+	  RageFire2:
+        DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
+        DPLF D 1 BRIGHT
 		TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
         DPLF B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
@@ -61,6 +79,7 @@ actor "Plasma Rifle" : PlasmaRifle
 
       CoopFire1:
 		TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCoopFire1")
+		TNT1 D 0 A_JumpIfInventory("SamsaraHasDoubleFiringSpeed", 1, "CoopRageFire1")
         DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
         DPLF CD 1 BRIGHT
 		TNT1 A 0 A_Refire
@@ -70,8 +89,25 @@ actor "Plasma Rifle" : PlasmaRifle
 
       CoopFire2:
 		TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCoopFire2")
+		TNT1 D 0 A_JumpIfInventory("SamsaraHasDoubleFiringSpeed", 1, "CoopRageFire2")
         DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
         DPLF CD 1 BRIGHT
+		TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        DPLF B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        goto FireEnd
+		
+	  CoopRageFire1:
+        DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
+        DPLF C 1 BRIGHT
+		TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        DPLF B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        goto FireEnd
+		
+	  CoopRageFire2:
+        DPLF A 1 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
+        DPLF D 1 BRIGHT
 		TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
         DPLF B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
@@ -94,7 +130,7 @@ actor "Plasma Rifle" : PlasmaRifle
       FireEnd:
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")
         DPLS A 1
-        DPLS D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageEnd")
+        DPLS D 0 A_JumpIfInventory("SamsaraHasDoubleFiringSpeed", 1, "RageEnd")
         DPLS DEF 1
         DPLS GF 3
         DPLS EDCB 2

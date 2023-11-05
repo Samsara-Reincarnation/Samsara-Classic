@@ -90,3 +90,6 @@ user int samsara_cl_bloodypersistent = 0;
 server int samsara_zd_pickupmode = 0;
 server int samsara_zd_bloodyhell = 0;
 server int samsara_zd_bloodypersistent = 0;
+
+user int samsara_cl_noadditivepickups = 0;
+server int samsara_zd_noadditivepickups = 0;

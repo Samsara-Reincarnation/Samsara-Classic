@@ -12,7 +12,7 @@ script "SamsaraPukeClient" (int mode, int arg1, int arg2) net clientside
     }
 }
 
-script "SamsaraTipbox" (void) net
+script "Samsara_Compendium_Initiate" (void) net // previously "SamsaraTipbox"
 {
     int pln = PlayerNumber();
 

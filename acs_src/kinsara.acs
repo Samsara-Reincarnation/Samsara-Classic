@@ -41,6 +41,11 @@ script "ZDoomOptionMirror" ENTER
 // Fancy per-class secret notifications
 script "SecretNotifier" ENTER
 {
+	int pln = PlayerNumber(); // ensure only the activator gets the messages
+	int cpln = ConsolePlayerNumber();
+
+    if (pln != cpln) { terminate; }
+	
 	int stotal;
 	int sfound;
 	int sfound2;
@@ -116,6 +121,11 @@ script "SecretNotifier" ENTER
 // class-specific item pickup messages
 script "SoulSpherePickupMessage" (void)
 {
+	int pln = PlayerNumber(); // ensure only the activator gets the messages
+	int cpln = ConsolePlayerNumber();
+
+    if (pln != cpln) { terminate; }
+	
 	// here's the nice way to do things, which zandro clearly won't let us do.
 	/*
 	int msgColors[22] = 
@@ -164,6 +174,11 @@ script "SoulSpherePickupMessage" (void)
 
 script "HealPack2PickupMessage" (void)
 {
+	int pln = PlayerNumber(); // ensure only the activator gets the messages
+	int cpln = ConsolePlayerNumber();
+
+    if (pln != cpln) { terminate; }
+	
 	/*
 	int msgColors[22] = 
 	{
@@ -251,6 +266,11 @@ script "MegaSpherePickupMessage" (void)
 
 script "InvisPickupMessage" (void)
 {
+	int pln = PlayerNumber(); // ensure only the activator gets the messages
+	int cpln = ConsolePlayerNumber();
+
+    if (pln != cpln) { terminate; }
+	
 	int colortemp = GetCvar("msg0color");
 	str msgcolor = "";
 	
@@ -300,7 +320,7 @@ script "BrutalChecker" ENTER
 
 // Pistol Start Stuff!
 
-str pistolwit[10] =
+str pistolwit[36] =
 {
 	"PISTOLSTART_WIT1",
 	"PISTOLSTART_WIT2",
@@ -311,7 +331,33 @@ str pistolwit[10] =
 	"PISTOLSTART_WIT7",
 	"PISTOLSTART_WIT8",
 	"PISTOLSTART_WIT9",
-	"PISTOLSTART_WIT10"
+	"PISTOLSTART_WIT10",
+	"PISTOLSTART_WIT11",
+	"PISTOLSTART_WIT12",
+	"PISTOLSTART_WIT13",
+	"PISTOLSTART_WIT14",
+	"PISTOLSTART_WIT15",
+	"PISTOLSTART_WIT16",
+	"PISTOLSTART_WIT17",
+	"PISTOLSTART_WIT18",
+	"PISTOLSTART_WIT19",
+	"PISTOLSTART_WIT20",
+	"PISTOLSTART_WIT21",
+	"PISTOLSTART_WIT22",
+	"PISTOLSTART_WIT23",
+	"PISTOLSTART_WIT24",
+	"PISTOLSTART_WIT25",
+	"PISTOLSTART_WIT26",
+	"PISTOLSTART_WIT27",
+	"PISTOLSTART_WIT28",
+	"PISTOLSTART_WIT29",
+	"PISTOLSTART_WIT30",
+	"PISTOLSTART_WIT31",
+	"PISTOLSTART_WIT32",
+	"PISTOLSTART_WIT33",
+	"PISTOLSTART_WIT34",
+	"PISTOLSTART_WIT35",
+	"PISTOLSTART_WIT36"
 };
 
 script "PistolStart" ENTER
@@ -502,7 +548,7 @@ script "PistolStart" ENTER
 		}
 		
 		LocalAmbientSound("misc/pistolstart", 127);
-		Log(l:"PISTOLSTART_HEADER", s:" ", l:pistolwit[random(0,9)]);
+		Log(l:"PISTOLSTART_HEADER", s:" ", l:pistolwit[random(0,35)]);
 	}
 }
 

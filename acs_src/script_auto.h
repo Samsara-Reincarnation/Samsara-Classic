@@ -444,8 +444,11 @@ script "SamsaraSpawn" (int respawning)
     
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
+		SetInventory("SamsaraHasDoubleFiringSpeed", CheckInventory("PowerDoubleFiringSpeed") || CheckInventory("RuneDoubleFiringSpeed") || CheckInventory("CustomDoubleFiringSpeed"));
+		SetInventory("SamsaraHasProsperity", CheckInventory("PowerProsperity") || CheckInventory("RuneProsperity") || CheckInventory("CustomProsperity"));
+		SetInventory("SamsaraHasSpread", CheckInventory("PowerSpread") || CheckInventory("RuneSpread") || CheckInventory("CustomSpread"));
         
-        if(CheckInventory("MetaCheatDetector")) { ACS_NamedExecuteWithResult("InventoryCheat",0,0,0); }
+		if(CheckInventory("MetaCheatDetector")) { ACS_NamedExecuteWithResult("InventoryCheat",0,0,0); }
         
         if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }
         else { TakeInventory("WolfenMovement", 0x7FFFFFFF); }
