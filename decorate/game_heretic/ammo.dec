@@ -121,8 +121,10 @@ actor HereticStuffDump: HealPack0 replaces GoldWandHefty
     States
     {
       Spawn:
-        MEDI V -1 BRIGHT
-        stop
+        MEDI V 0
+        TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
+        MEDI V 35 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        wait
         
       Pickup:
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
@@ -167,8 +169,9 @@ actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
     States
     {
       Spawn:
-        BON3 A -1 bright
-        stop
+        BON3 A 0 BRIGHT
+        BON3 A 35 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        wait
     }
 }
 

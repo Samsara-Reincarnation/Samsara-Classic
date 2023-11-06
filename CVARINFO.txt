@@ -1,99 +1,95 @@
-server int samsara_cvarinfo = 0;
+server bool samsara_cvarinfo = false;
 
 // serverside
-server int samsara_banjetpack = 0;
-server int samsara_banwolfmove = 0;
-server int samsara_nocustomgravity = 0;
+server bool samsara_banjetpack = false;
+server bool samsara_banwolfmove = false;
+server bool samsara_nocustomgravity = false;
 server int samsara_jumpmod = 0;
-server int samsara_permault = 0;
+server bool samsara_permault = false;
 server int samsara_lmslife = 0;
-server int samsara_lmsult = 0;
+server bool samsara_lmsult = false;
 server int samsara_uniquestart = 0;
 server int samsara_chainsawstart = 0;
 server int samsara_peoplediewhentheyarekilled = 0;
-server int samsara_punchdrunk = 0;
-server int samsara_punchdrunkuniques = 0;
-server int samsara_punchdrunksaws = 0;
+server bool samsara_punchdrunk = false;
+server bool samsara_punchdrunkuniques = false;
+server bool samsara_punchdrunksaws = false;
 server int samsara_armormode = 0;
-server int samsara_nohealthcap = 0;
-server int samsara_noult = 0;
-server int samsara_nomonologues = 0;
-server int samsara_backpackstart = 0;
-server int samsara_classiclaz = 0;
-server int samsara_allcanrj = 0;
-server int samsara_nounique = 0;
-server int samsara_noinvuln = 0;
-server int samsara_dukesoundboard = 0;
-server int samsara_pistolammo = 0;
+server bool samsara_nohealthcap = false;
+server bool samsara_noult = false;
+server bool samsara_nomonologues = false;
+server bool samsara_backpackstart = false;
+server bool samsara_classiclaz = false;
+server bool samsara_allcanrj = false;
+server bool samsara_nounique = false;
+server bool samsara_noinvuln = false;
+server bool samsara_dukesoundboard = false;
+server bool samsara_pistolammo = false;
+server bool samsara_vanillaquake = false;
 
-server int samsara_bandoomguy = 0;
-server int samsara_bancorvus = 0;
-server int samsara_banbj = 0;
-server int samsara_banparias = 0;
-server int samsara_banduke = 0;
-server int samsara_banso = 0;
-server int samsara_banranger = 0;
-server int samsara_banchex = 0;
+server bool samsara_bandoomguy = false;
+server bool samsara_banchex = false;
+server bool samsara_bancorvus = false;
+server bool samsara_banbj = false;
+server bool samsara_banparias = false;
+server bool samsara_banduke = false;
+server bool samsara_banso = false;
+server bool samsara_banranger = false;
 
-server int samsara_lmsrules = 0;
+server bool samsara_lmsrules = false;
 
 server int samsara_doomguydamage = 0;
+server int samsara_chexdamage = 0;
 server int samsara_corvusdamage = 0;
 server int samsara_bjdamage = 0;
 server int samsara_pariasdamage = 0;
 server int samsara_dukedamage = 0;
 server int samsara_sodamage = 0;
 server int samsara_rangerdamage = 0;
-server int samsara_chexdamage = 0;
 
-server int samsara_doomguydefence = 0;
-server int samsara_corvusdefence = 0;
-server int samsara_bjdefence = 0;
-server int samsara_pariasdefence = 0;
-server int samsara_dukedefence = 0;
-server int samsara_sodefence = 0;
-server int samsara_rangerdefence = 0;
-server int samsara_chexdefence = 0;
+server int samsara_doomguydefense = 0;
+server int samsara_chexdefense = 0;
+server int samsara_corvusdefense = 0;
+server int samsara_bjdefense = 0;
+server int samsara_pariasdefense = 0;
+server int samsara_dukedefense = 0;
+server int samsara_sodefense = 0;
+server int samsara_rangerdefense = 0;
 
-server int samsara_permaquad = 0;
-server int samsara_nohealth = 0;
+server bool samsara_permaquad = false;
+server bool samsara_nohealth = false;
 
 server int samsara_superturboturkeypuncher3000 = 0;
 server int samsara_superturboturkeylimit = 0;
 server int samsara_superturboturkeyfrequency = 35;
 
-server int samsara_pistolstart = 0;
+server bool samsara_pistolstart = false;
 
-server int samsara_railgunstart = 0;
+server bool samsara_railgunstart = false;
 
 // clientside
-user int samsara_cl_printpickup = 0;
-user int samsara_cl_expparticles = 0;
-user int samsara_cl_norecoil = 0;
-user int samsara_cl_sinerecoil = 0;
-user int samsara_cl_weaponhud = 1;
-//user int samsara_cl_vanilladoom = 0;
-//user int samsara_cl_vanillaquake = 0;
-user int samsara_cl_wolfmove = 0;
-user int samsara_cl_ballgag = 0;
-user int samsara_cl_moremessages = 0;
+user bool samsara_cl_printpickup = false;
+user bool samsara_cl_norecoil = false;
+user bool samsara_cl_sinerecoil = false;
+user bool samsara_cl_weaponhud = true;
+user bool samsara_cl_smoothanims = true; // was samsara_cl_vanilladoom (false by default)
+user bool samsara_cl_wolfmove = false;
+user bool samsara_cl_ballgag = false;
+user bool samsara_cl_moremessages = false;
 
 // for checking what stupid port you have
-server int samsara_runninginzandro = 0;
-server int samsara_runninginzdoom = 0;
+server bool samsara_runninginzandro = false;
+server bool samsara_runninginzdoom = false;
 
 // supposed to be clientside, but apparently actually not. awesome. great.
+user int samsara_cl_expparticles = 0;
 user int samsara_cl_pickupmode = 0;
+user bool samsara_cl_noadditivepickups = false;
 user int samsara_cl_bloodyhell = 0;
-user int samsara_cl_bloodypersistent = 0;
+user bool samsara_cl_bloodypersistent = false;
 
+server int samsara_zd_expparticles = 0;
 server int samsara_zd_pickupmode = 0;
+server bool samsara_zd_noadditivepickups = false;
 server int samsara_zd_bloodyhell = 0;
-server int samsara_zd_bloodypersistent = 0;
-
-user int samsara_cl_noadditivepickups = 0;
-server int samsara_zd_noadditivepickups = 0;
-
-user int samsara_cl_smoothanims = 0;
-
-server int samsara_vanillaquake = 0;
+server bool samsara_zd_bloodypersistent = false;

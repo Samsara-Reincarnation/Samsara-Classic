@@ -82,7 +82,7 @@ actor ArmorPack1Trail
 actor ArmorPack2: BlueArmor
 {
     RenderStyle Add
-    Alpha 0.975
+    Alpha 0.98 // 0.975
     +FLOATBOB
     Inventory.PickupMessage "$SAMSARA_ARMOR0_3"
     Inventory.PickupSound "armor2get"
@@ -124,7 +124,7 @@ actor ArmorPack3: BasicArmorPickup
     Armor.Saveamount 250
     Inventory.Icon "RMR3A0"
     RenderStyle Add
-    Alpha 0.95
+    Alpha 0.88 // 0.875
     +FLOATBOB
     Inventory.Pickupmessage "$SAMSARA_ARMOR0_4"
     Inventory.PickupSound "armor3get"
@@ -142,7 +142,7 @@ actor ArmorPack3: BasicArmorPickup
     {
       Spawn:
         RMR3 A 0
-        RMR3 A 35 bright Light("ARMORRED1") ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR3 A 35 bright Light("ARMORRED1") ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 88)
         wait
     }
 }
@@ -167,7 +167,7 @@ actor SamsaraYellowArmor: BasicArmorPickup
     {
       Spawn:
         RMR5 A 0
-        RMR5 A 35 bright Light("ARMORYELLOW1") ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR5 A 35 bright Light("ARMORYELLOW1") ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }
@@ -215,7 +215,7 @@ actor QuakeYellowArmor: BasicArmorPickup
     {
       Spawn:
         RMR5 A 0
-        RMR5 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR5 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }
@@ -229,14 +229,14 @@ actor QuakeRedArmor: BasicArmorPickup
     Inventory.PickupSound "armor2get"
 
     RenderStyle Add
-    Alpha 0.975
+    Alpha 0.88 // 0.875
     +FLOATBOB
 
     States
     {
       Spawn:
         RMR3 A 0
-        RMR3 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR3 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 88)
         wait
     }
 }
@@ -268,7 +268,7 @@ actor SamsaraSilverArmor: BasicArmorPickup
     {
       Spawn:
         RMR6 A 0
-        RMR6 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR6 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }
@@ -283,6 +283,7 @@ actor MarathonGreenArmor: BasicArmorPickup
 
     Inventory.Icon "RMR0A0"
     RenderStyle Add
+    Scale 0.75
     Alpha 0.95
     +FLOATBOB
 
@@ -293,7 +294,7 @@ actor MarathonGreenArmor: BasicArmorPickup
     {
       Spawn:
         RMR0 A 0
-        RMR0 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR0 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }
@@ -318,7 +319,7 @@ actor MarathonYellowArmor: BasicArmorPickup
     {
       Spawn:
         RMR8 A 0
-        RMR8 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR8 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }
@@ -343,7 +344,7 @@ actor MarathonBlueArmor: BasicArmorPickup
     {
       Spawn:
         RMR5 A 0
-        RMR5 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR5 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }
@@ -368,7 +369,7 @@ actor MarathonRedArmor: BasicArmorPickup
     {
       Spawn:
         RMR9 A 0
-        RMR9 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
+        RMR9 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
     }
 }

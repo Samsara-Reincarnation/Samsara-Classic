@@ -1,7 +1,7 @@
 actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
 {
     RenderStyle Add
-    Alpha 0.875
+    Alpha 0.88 // 0.875
     +Floatbob
     Armor.Savepercent 33.33333
     Armor.MaxSaveAmount 200
@@ -12,8 +12,8 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     {
       Spawn:
         RMR4 A 0
-        RMR4 A -1 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
-        loop
+        RMR4 A 35 bright ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 88)
+        wait
     }
 }
 

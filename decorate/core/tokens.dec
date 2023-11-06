@@ -141,7 +141,7 @@ actor Fucks: CustomInventory
     States
     {
       Spawn:
-        FELD ABCDCB 4 bright
+        FELD ABCD 2 Bright
         loop
 
       Use:

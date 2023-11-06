@@ -38,7 +38,7 @@ actor HealPack0: CustomInventory replaces HealthBonus
       Spawn:
         MEDI A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        MEDI A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        MEDI A 35 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
         wait
 
       Pickup:
@@ -70,7 +70,7 @@ actor HealPack1: CustomInventory replaces StimPack
       Spawn:
         MED2 A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        MED2 A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        MED2 A 35 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
         wait
 
       Pickup:
@@ -103,7 +103,7 @@ actor HealPack2 : CustomInventory replaces Medikit
       Spawn:
         MED3 A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        MED3 A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        MED3 A 35 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 90)
         wait
 
       Pickup:
@@ -216,7 +216,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
       Spawn:
         SOUL A 0
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        SOUL A 35 BRIGHT ACS_NamedExecuteWithResult("SamsaraClientDecorate", 0, 4, 100, 90)
+        SOUL A 35 BRIGHT ACS_NamedExecuteAlways("SamsaraClientDecorate", 0, 4, 100, 95)
         wait
 
       Pickup:
@@ -346,8 +346,10 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
     States
     {
       Spawn:
+        FELD A 0 Bright
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate",32,0,0) == 1, "Nope")
-        FELD ABCDCB 4 bright
+      Spawn2:
+        FELD ABCD 2 Bright
         loop
 
       Pickup:
@@ -489,7 +491,7 @@ actor CorvusMegasphere : CustomInventory
     States
     {
       Spawn:
-        FELD ABCDCB 4 bright
+        FELD ABCD 2 Bright
         loop
 
       Use:

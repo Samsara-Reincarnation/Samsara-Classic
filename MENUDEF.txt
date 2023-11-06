@@ -1,233 +1,257 @@
-	OptionMenu "OptionsMenu"
-	{
-			Title "OPTIONS"
-			Submenu "Multiplayer Options",		"ZA_MultiplayerOptions" // [TP]
-			StaticText " " // [TP]
-			Submenu "Customize Controls",			"CustomizeControls"
-			Submenu "Mouse options",			"MouseOptions"
-			Submenu "Joystick options",			"JoystickOptions"
-			StaticText " "
-            Submenu "Samsara Clientside Options",           "SamsaraClientOptions"
-            Submenu "Samsara Serverside Options",           "SamsaraServerSideOptions"
-			StaticText " "
-			Submenu "Player Setup",			"PlayerMenu"
-			Submenu "Gameplay Options",			"GameplayOptions"
-			Submenu "Compatibility Options",	"CompatibilityOptions"
-			Submenu "Automap Options",			"AutomapOptions"
-			Submenu "HUD Options",				"HUDOptions"
-			Submenu "Miscellaneous Options",	"MiscOptions"
-			Submenu "Sound Options",			"SoundOptions"
-			Submenu "Display Options",			"VideoOptions"
-			Submenu "Set video mode",			"VideoModeMenu"
-			StaticText " "
-			SafeCommand "Reset to defaults",	"reset2defaults"
-			SafeCommand	"Reset to last saved",	"reset2saved"
-			Command "Go to console",			"menuconsole"
-	}
-     
-    OptionMenu "SamsaraClientOptions"
-    {
-            Title "SAMSARA CLIENTSIDE OPTIONS"
-			StaticText      "Player Preferences", 1	     
-            Option "BJ Movement",              "samsara_cl_wolfmove", "BJMovement"
-            Option "Doom Animations",               "samsara_cl_smoothanims", "DoomAnims"
-            Option "Weapon HUD Bar",                        "samsara_cl_weaponhud", "OnOff"
-            Option "Pickup Sprites",                        "samsara_cl_pickupmode", "PickupGraphics"
-            Option "Pickup Messages",                  "samsara_cl_printpickup", "PickupMsg"
-			Option "Funny Pickup Messages",            "samsara_cl_moremessages", "OnOff"
-			Option "Additive Pickups",             "samsara_cl_noadditivepickups",   "OffOn"
-			Option "Duke Talk",                     "samsara_cl_ballgag", "DukeTalk"
-			Option "Ranger Weapon Recoil",						"samsara_cl_norecoil", "OffOn"
-			Option "Ranger Sine Recoil",						"samsara_cl_sinerecoil", "OffOn"
-			Slider "Quake Explosion Particles",    "samsara_cl_expparticles",        -1, 200, 5
-			StaticText      ""
-			StaticText      "How Much BLOOD Do Ya Want?", 1
-            Option "Violence Level",                     "samsara_cl_bloodyhell", "BHellLevel"
-			Option "Gib Persistance",                     "samsara_cl_bloodypersistent", "OnOff"
-            }
+OptionMenu "OptionsMenu"
+{
+    Title "Options"
+    Submenu "Multiplayer Options", "ZA_MultiplayerOptions" // [TP]
+    StaticText "" // [TP]
+    Submenu "Customize Controls", "CustomizeControls"
+    Submenu "Mouse options",      "MouseOptions"
+    Submenu "Joystick options",   "JoystickOptions"
+    StaticText ""
+    Submenu "Samsara Clientside Options", "SamsaraClientOptions"
+    Submenu "Samsara Serverside Options", "SamsaraServerSideOptions"
+    StaticText ""
+    Submenu "Player Setup",          "PlayerMenu"
+    Submenu "Gameplay Options",      "GameplayOptions"
+    Submenu "Compatibility Options", "CompatibilityOptions"
+    Submenu "Automap Options",       "AutomapOptions"
+    Submenu "HUD Options",           "HUDOptions"
+    Submenu "Miscellaneous Options", "MiscOptions"
+    Submenu "Network Options",       "NetworkOptions"
+    Submenu "Sound Options",         "SoundOptions"
+    Submenu "Display Options",       "VideoOptions"
+    Submenu "Set video mode",        "VideoModeMenu"
+    StaticText ""
+    SafeCommand "Reset to defaults",   "reset2defaults"
+    SafeCommand "Reset to last saved", "reset2saved"
+    Command "Go to console",           "menuconsole"
+}
 
-	OptionValue BJMovement
-    {
-            0, "Modern"
-            1, "Wolf3D"
-    }
-	
-	OptionValue DukeTalk
-    {
-            0, "On"
-            1, "Ballgagged"
-    }
-	
-	OptionValue DoomAnims
-    {
-            0, "Vanilla"
-			1, "Improved"
-    }
-	
-	OptionValue PickupMsg
-    {
-            0, "Logged"
-            1, "Printed"
-    }
- 
- 
-    OptionValue PickupGraphics
-    {
-            0, "Old-Style"
-            1, "Hybrid"
-            2, "Class"
-    }
-           
-    OptionValue BHellLevel
-    {
-            -1, "Happyfun"
-            0, "Vanilla"
-            1, "Nashgore"
-            2, "Brutal"
-			3, "Nightmare"
-    }
-     
-    OptionMenu "SamsaraServerSideOptions"
-    {
-    Title "SAMSARA SERVERSIDE OPTIONS"
-            StaticText      ""
-            StaticText      "General Options", 1
-            Option "Jump Height",                    "samsara_jumpmod", "JumpModOptions"
-            Option "Armor Mode",                     "Samsara_Armormode", "ArmorModeOptions"
-            Option "No Health Cap",                  "samsara_nohealthcap", "OnOff"
-            Option "No Boss Monologues",             "samsara_nomonologues", "OnOff"
-            Option "Everybody Rocketjumps",          "samsara_allcanrj", "OnOff"
-			Option "Duke Talk Soundboard!",          "samsara_dukesoundboard", "OnOff"
-            StaticText      ""
-            StaticText      "LMS Options", 1
-            Option "LMS Rules in All Gamemodes",     "samsara_lmsrules", "OnOff"
-            Option "LMS HP/Armor Values",            "samsara_lmslife", "LMSLifeOption"
-            Option "Ultimate Weapon in LMS",         "samsara_lmsult", "OnOff"
-            StaticText      ""
-            StaticText      "PunchDrunk Options", 1
-            Option "PunchDrunk Mode",                "samsara_punchdrunk", "OnOff"
-            Option "PunchDrunk Uniques",             "samsara_punchdrunkuniques", "OnOff"
-            Option "PunchDrunk Chainsaws",           "samsara_punchdrunksaws", "OnOff"
-            StaticText      ""
-            StaticText      "Turkey Puncher Options", 1
-            Option "Super Turbo Turkey Puncher Mode", "samsara_superturboturkeypuncher3000", "ChickensOptionsA"
-            Option "Turkey Spawn Frequency",          "samsara_superturboturkeyfrequency", "ChickensOptionsB"
-            Slider "Turkey Puncher Kill Limit",       "samsara_superturboturkeylimit", 0, 250, 5
-            StaticText      ""
-            StaticText      "Other PartyModes", 1
-            Option "Players Explode when Killed",     "samsara_peoplediewhentheyarekilled", "pdwtakOptions"
-            StaticText      ""
-            StaticText      "Weapon Options", 1    
-            Option "Ultimate WeaponStay",             "samsara_permault", "OnOff"
-            Option "Start with Unique",               "samsara_uniquestart", "OnOff"
-            Option "Start with Slot 1",               "samsara_chainsawstart", "OnOff"
-            Option "Start with Backpack",             "samsara_backpackstart", "OnOff"
-			Option "Start with Railgun",              "samsara_railgunstart", "OnOff"
-			Option "Quad Damage Behavior",			  "samsara_permaquad", "QuadBehavior"
-			Option "Slot 1 Uses Ammo",			  	  "samsara_pistolammo", "OnOff"
-			Option "Pistol Start",                  "samsara_pistolstart", "OnOff"
-            StaticText      ""
-            StaticText      "Weapon Remove", 1
-            Option "No Invulnerability",              "samsara_noinvuln", "OnOff"
-            Option "No Unique Weapon",                "samsara_nounique", "OnOff"
-            Option "No Ultimate Weapon",              "samsara_noult", "OnOff"
-            StaticText      ""
-            StaticText      "Class Remove", 1
-            Option "Ban Doomguy",                     "samsara_bandoomguy", "OnOff"
-            Option "Ban ChexWarrior",                 "samsara_banchex", "OnOff"
-            Option "Ban Corvus",                      "samsara_bancorvus", "OnOff"
-            Option "Ban BJ Blazkowicz",               "samsara_banbj",  "OnOff"
-            Option "Ban Parias",                      "samsara_banparias", "OnOff"
-            Option "Ban Duke",                        "samsara_banduke", "OnOff"
-            Option "Ban SecurityOfficer",             "samsara_banso", "OnOff"
-            Option "Ban Ranger",                      "samsara_banranger", "OnOff"
-            StaticText      ""
-            StaticText      "Ability Remove", 1
-            Option "Old Laz Device",                  "samsara_classiclaz", "OnOff"
-            Option "Ban Duke's Jetpack",              "samsara_banjetpack", "OnOff"
-            Option "Ban Wolf Movement",               "samsara_banwolfmove", "OnOff"
-            Option "Ban Quake DOE Ammo",              "samsara_vanillaquake", "OnOff"
-            Option "No Custom Gravity",               "samsara_nocustomgravity", "OnOff"
-            StaticText      ""
-            StaticText      "Class Multiplier Options", 1
-            Slider "Doomguy Damage Multiplier",       "samsara_doomguydamage", -10, 30, 2
-            Slider "Doomguy Defense Multiplier",      "samsara_doomguydefense", -10, 20, 2
-            Slider "Chex Damage Multiplier",          "samsara_chexdamage", -10, 30, 2
-            Slider "Chex Defense Multiplier",         "samsara_chexdefense", -10, 20, 2
-            Slider "Corvus Damage Multiplier",        "samsara_corvusdamage", -10, 30, 2
-            Slider "Corvus Defense Multiplier",       "samsara_corvusdefense", -10, 20, 2
-            Slider "BJ Damage Multiplier",            "samsara_bjdamage", -10, 30, 2
-            Slider "BJ Defense Multiplier",           "samsara_bjdefense", -10, 20, 2
-            Slider "Parias Damage Multiplier",        "samsara_pariasdamage", -10, 30, 2
-            Slider "Parias Defense Multiplier",       "samsara_pariasdefense", -10, 20, 2
-            Slider "Duke Damage Multiplier",          "samsara_dukedamage", -10, 30, 2
-            Slider "Duke Defense Multiplier",         "samsara_dukedefense", -10, 20, 2
-            Slider "SO Damage Multiplier",            "samsara_sodamage", -10, 30, 2
-            Slider "SO Defense Multiplier",           "samsara_sodefense", -10, 20, 2
-            Slider "Ranger Damage Multiplier",        "samsara_rangerdamage", -10, 30, 2
-            Slider "Ranger Defense Multiplier",       "samsara_rangerdefense", -10, 20, 2
-            }
-     
-    OptionValue ChickensOptionsA
-    {
-            0, "Off"
-            1, "Aggressive"
-            2, "Cowardly"
-            3, "Friendly"
-    }
-     
-    OptionValue ChickensOptionsB
-    {
-            75, "Very Slow"
-            50, "Slow"
-            35, "Default"
-            20, "Fast"
-            5, "Very Fast"
-            1, "OH GOD"
-    }
-     
-    OptionValue LMSLifeOption
-    {
-            0, "100/0"
-            1, "100/100"
-            2, "200/200"
-            3, "300/300"
-            4, "400/400"
-            5, "500/500"
-    }
-     
-    OptionValue JumpModOptions
-    {
-            -25, "Grounded"
-            -16, "High Gravity"
-            -8, "Strife"
-            0, "Default"
-            9, "Hexen"
-            20, "Duke"
-            32, "Rocket Jumping"
-            64, "Jump Boots"
-            100, "Full Retard"
-    }
-     
-    OptionValue pdwtakOptions
-    {
-            0, "Off"
-            1, "512/384"
-            2, "1024/768"
-            3, "8192/2048"
-    }
-     
-    OptionValue ArmorModeOptions
-    {
-            0, "Default"
-            1, "Quake"
-            2, "Quake+"
-            3, "Marathon"
-            4, "No Armor"
-    }
+OptionMenu "SamsaraClientOptions"
+{
+    Title "Samsara Clientside Options"
+    StaticText "General Player Preferences", 1
+    Option "Weapon HUD Bar",        "samsara_cl_weaponhud",         "OnOff"
+    Option "Pickup Graphics",       "samsara_cl_pickupmode",        "PickupGraphics"
+    Option "Pickup Message Mode",   "samsara_cl_printpickup",       "PickupMsg"
+    Option "Extra Pickup Messages", "samsara_cl_moremessages",      "OnOff"
+    Option "Additive Pickups",      "samsara_cl_noadditivepickups", "OffOn"
+    StaticText ""
+    StaticText "Class-Based Player Preferences", 1
+    Option "Doomguy: Weapon Animations",       "samsara_cl_smoothanims",  "SmoothAnims"
+    Option "B.J.: Wolfenstein Style Movement", "samsara_cl_wolfmove",     "OnOff"
+    Option "Duke: Character Talk",             "samsara_cl_ballgag",      "OffOn"
+    Option "Ranger: Weapon Recoil",            "samsara_cl_norecoil",     "OffOn"
+    Option "Ranger: Weapon Recoil Type",       "samsara_cl_sinerecoil",   "RecoilTypeSetting"
+    Slider "Ranger: Explosion Particles",      "samsara_cl_expparticles", -1, 200, 5
+    StaticText ""
+    StaticText "Blood and Gore Preferences", 1
+    Option "Violence Level",  "samsara_cl_bloodyhell",       "BHellLevel"
+    Option "Gib Persistence", "samsara_cl_bloodypersistent", "OnOff"
+}
 
-	OptionValue QuadBehavior
-    {
-            0, "Q1 Style"
-            1, "Q2-ish Style"
-    }
+OptionValue "PickupGraphics"
+{
+    0, "Old-Style"
+    1, "Hybrid"
+    2, "Class"
+}
+
+OptionValue "PickupMsg"
+{
+    0, "Log"
+    1, "Print"
+}
+
+OptionValue "SmoothAnims"
+{
+    0, "Vanilla"
+    1, "Smooth"
+}
+
+OptionValue "RecoilTypeSetting"
+{
+    0, "Parabola"
+    1, "Sine Wave"
+}
+
+OptionValue "BHellLevel"
+{
+    -1, "Happyfun"
+    0,  "Vanilla"
+    1,  "Nashgore"
+    2,  "Brutal"
+    3,  "Nightmare"
+}
+
+OptionMenu "SamsaraServerSideOptions"
+{
+    Title "Samsara Serverside Options"
+    StaticText "General Options", 1
+    Option "Jump Height",                 "samsara_jumpmod",        "JumpModOptions"
+    Option "Armor Mode",                  "samsara_armormode",      "ArmorModeOptions"
+    Option "Health Cap",                  "samsara_nohealthcap",    "OffOn"
+    Option "Boss Monologues",             "samsara_nomonologues",   "OffOn"
+    Option "Rocket Jumping For Everyone", "samsara_allcanrj",       "OnOff"
+    Option "Duke Talk Soundboard!",       "samsara_dukesoundboard", "OnOff"
+    StaticText ""
+    StaticText "LMS Options", 1
+    Option "Use LMS Rules in All Gamemodes",   "samsara_lmsrules", "YesNo"
+    Option "LMS Starting Health/Armor Values", "samsara_lmslife",  "LMSLifeOptions"
+    Option "Allow Ultimate Weapons in LMS",    "samsara_lmsult",   "YesNo"
+    StaticText ""
+    StaticText "Gentleman Options", 1
+    Option "Gentleman Mode",           "samsara_punchdrunk",        "OnOff"
+    Option "Gentleman Slot I Weapons", "samsara_punchdrunksaws",    "OnOff"
+    Option "Gentleman Unique Weapons", "samsara_punchdrunkuniques", "OnOff"
+    StaticText ""
+    StaticText "Turkey Puncher Options", 1
+    Option "Super Turbo Turkey Puncher 3000 Mode", "samsara_superturboturkeypuncher3000", "ChickensOptionsA"
+    Option "Turkey Spawn Frequency",               "samsara_superturboturkeyfrequency",   "ChickensOptionsB"
+    Slider "Turkey Puncher Kill Limit",            "samsara_superturboturkeylimit",       0, 250, 5
+    StaticText ""
+    StaticText "Party Mode Options", 1
+    Option "Players Explode when Killed", "samsara_peoplediewhentheyarekilled", "PDWTAKOptions"
+    StaticText ""
+    StaticText "Weapon Options", 1
+    Option "Ultimate Weapons Stay",             "samsara_permault",      "YesNo"
+    Option "Start with Unique",                 "samsara_uniquestart",   "UniqueStartOptions"
+    Option "Start with Slot I",                 "samsara_chainsawstart", "ChainsawStartOptions"
+    Option "Start with Instagib",               "samsara_railgunstart",  "YesNo"
+    Option "Start with Ammo Expansion Pack",    "samsara_backpackstart", "YesNo"
+    Option "Fallback Ranged Weapon Ammo Usage", "samsara_pistolammo",    "OnOff"
+    Option "Pistol Start",                      "samsara_pistolstart",   "OnOff"
+    StaticText ""
+    StaticText "Pickup Spawn Options", 1
+    Option "Spawn Invulnerability Powerups", "samsara_noinvuln", "NoYes"
+    Option "Spawn Unique Weapons",           "samsara_nounique", "NoYes"
+    Option "Spawn Ultimate Weapons",         "samsara_noult",    "NoYes"
+    StaticText ""
+    StaticText "Class-Based Ability Options", 1
+    Option "Chex: LAZ Device Mode",                "samsara_classiclaz",   "ClassicLAZOptions"
+    Option "B.J.: Ban Wolfenstein Style Movement", "samsara_banwolfmove",  "YesNo"
+    Option "Duke: Ban Jetpack",                    "samsara_banjetpack",   "YesNo"
+    Option "Ranger: Quad Damage Behavior",         "samsara_permaquad",    "QuadBehavior"
+    Option "Ranger: Ban DOE Ammo",                 "samsara_vanillaquake", "YesNo"
+    StaticText ""
+    StaticText "Serverside Ability Options", 1
+    Option "Custom Gravity", "samsara_nocustomgravity", "OffOn"
+    StaticText ""
+    Submenu "Character Ban and Multiplier Options", "SamsaraCharacterBanAndMultiplierOptions"
+}
+
+OptionValue "JumpModOptions"
+{
+    -25, "Grounded"
+    -16, "High Gravity"
+    -8,  "Strife"
+    0,   "Default"
+    9,   "Hexen"
+    20,  "Build"
+    32,  "Rocket Jumping"
+    64,  "Jump Boots"
+    100, "Full Retard"
+    200, "Fuller Retard"
+}
+
+OptionValue "ArmorModeOptions"
+{
+    0, "Normal"
+    1, "Quake"
+    2, "Quake+"
+    3, "Marathon"
+    4, "None"
+}
+
+OptionValue "LMSLifeOptions"
+{
+    0, "100/0"
+    1, "100/100"
+    2, "200/200"
+    3, "300/300"
+    4, "400/400"
+    5, "500/500"
+}
+
+OptionValue "ChickensOptionsA"
+{
+    0, "Off"
+    1, "On (Aggressive)"
+    2, "On (Cowardly)"
+    3, "On (Friendly)"
+}
+
+OptionValue "ChickensOptionsB"
+{
+    75, "Very Slow"
+    50, "Slow"
+    35, "Default"
+    20, "Fast"
+    5,  "Very Fast"
+    1,  "OH GOD"
+}
+
+OptionValue "PDWTAKOptions"
+{
+    0, "No"
+    1, "Yes (512/384)"
+    2, "Yes (1024/768)"
+    3, "Yes (8192/2048)"
+}
+
+OptionValue "UniqueStartOptions"
+{
+    0, "No"
+    1, "Yes (One/First Spawn)"
+    2, "Yes (All/First Spawn)"
+    3, "Yes (One/Every Spawn)"
+    4, "Yes (All/Every Spawn)"
+}
+
+OptionValue "ChainsawStartOptions"
+{
+    0, "No"
+    1, "Yes"
+    2, "Yes (With Full Ammo)"
+}
+
+OptionValue "ClassicLAZOptions"
+{
+    0, "Modern"
+    1, "Classic"
+}
+
+OptionValue "QuadBehavior"
+{
+    0, "Q1 Style"
+    1, "Q2-ish Style"
+}
+
+OptionMenu "SamsaraCharacterBanAndMultiplierOptions"
+{
+    Title "Character Ban and Multiplier Options"
+    Option "Ban Doomguy",          "samsara_bandoomguy", "YesNo"
+    Option "Ban Chex Warrior",     "samsara_banchex",    "YesNo"
+    Option "Ban Corvus",           "samsara_bancorvus",  "YesNo"
+    Option "Ban B.J. Blazkowicz",  "samsara_banbj",      "YesNo"
+    Option "Ban Parias",           "samsara_banparias",  "YesNo"
+    Option "Ban Duke Nukem",       "samsara_banduke",    "YesNo"
+    Option "Ban Security Officer", "samsara_banso",      "YesNo"
+    Option "Ban Ranger",           "samsara_banranger",  "YesNo"
+    StaticText ""
+    Slider "Doomguy Damage Multiplier",  "samsara_doomguydamage",  -10, 30, 2
+    Slider "Doomguy Defense Multiplier", "samsara_doomguydefense", -10, 20, 2
+    Slider "Chex Damage Multiplier",     "samsara_chexdamage",     -10, 30, 2
+    Slider "Chex Defense Multiplier",    "samsara_chexdefense",    -10, 20, 2
+    Slider "Corvus Damage Multiplier",   "samsara_corvusdamage",   -10, 30, 2
+    Slider "Corvus Defense Multiplier",  "samsara_corvusdefense",  -10, 20, 2
+    Slider "B.J. Damage Multiplier",     "samsara_bjdamage",       -10, 30, 2
+    Slider "B.J. Defense Multiplier",    "samsara_bjdefense",      -10, 20, 2
+    Slider "Parias Damage Multiplier",   "samsara_pariasdamage",   -10, 30, 2
+    Slider "Parias Defense Multiplier",  "samsara_pariasdefense",  -10, 20, 2
+    Slider "Duke Damage Multiplier",     "samsara_dukedamage",     -10, 30, 2
+    Slider "Duke Defense Multiplier",    "samsara_dukedefense",    -10, 20, 2
+    Slider "SO Damage Multiplier",       "samsara_sodamage",       -10, 30, 2
+    Slider "SO Defense Multiplier",      "samsara_sodefense",      -10, 20, 2
+    Slider "Ranger Damage Multiplier",   "samsara_rangerdamage",   -10, 30, 2
+    Slider "Ranger Defense Multiplier",  "samsara_rangerdefense",  -10, 20, 2
+}

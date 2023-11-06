@@ -106,15 +106,20 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
         break;
 
       case 8:
-        result = defaultCVar("samsara_cl_expparticles", 0);
-        if (!result) { result = 100; }
+		if (GetCVar("samsara_runninginzdoom")) { result = GetCVar("samsara_zd_expparticles"); }
+		else { result = GetUserCVar(ConsolePlayerNumber(), "samsara_cl_expparticles"); }
 
-        result = max(0, result);
+		if (result == 0) { result = 100; } // default
 
-        result *= max(arg1, 1);
-        result /= max(arg2, 1);
+		if (result > 0)
+		{
+			result = max(0, result);
 
-        GiveInventory("QuakeExplosionCounter", result);
+			result *= max(arg1, 1);
+			result /= max(arg2, 1);
+
+			GiveInventory("QuakeExplosionCounter", result);
+		}
         break;
 
       case 9:
