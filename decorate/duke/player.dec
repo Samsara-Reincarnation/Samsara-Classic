@@ -313,10 +313,10 @@ actor DukePlayer : PlayerPawn
         
       XDeathNashgore:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("NashGore_Gib9_DukeOrange",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
-        TNT1 A 0 A_SpawnItemEx("NashGore_Gib10_DukeOrange",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
-        TNT1 AA 0 A_SpawnItemEx("NashGore_Gib11_DukeOrange",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
-        TNT1 AAAAAAAA 0 A_SpawnItemEx("NashGore_GibGenerator_DukeOrange",0,0,0,0,0,0,0,33)
+        TNT1 A 0 A_SpawnItemEx("NashGore_Gib9",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33|SXF_USEBLOODCOLOR)
+        TNT1 A 0 A_SpawnItemEx("NashGore_Gib10",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33|SXF_USEBLOODCOLOR)
+        TNT1 AA 0 A_SpawnItemEx("NashGore_Gib11",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33|SXF_USEBLOODCOLOR)
+        TNT1 AAAAAAAA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33|SXF_USEBLOODCOLOR)
         goto XDeath2
         
       DeathBrutal:
