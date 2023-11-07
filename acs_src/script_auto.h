@@ -444,6 +444,43 @@ script "SamsaraSpawn" (int respawning)
     
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
+        if (GetArmorType("MarathonRedArmor", pln) || GetArmorType("MRedArmorNoDrop", pln)) { SetInventory("SamsaraArmorCategory", 10); }
+        else if (GetArmorType("MarathonYellowArmor", pln) || GetArmorType("MYellowArmorNoDrop", pln) ||
+                 GetArmorType("EnchantedShield", pln))
+        { SetInventory("SamsaraArmorCategory", 9); }
+        else if (GetArmorType("QuakeGreenArmor", pln) || GetArmorType("QGreenArmorNoDrop", pln)) { SetInventory("SamsaraArmorCategory", 8); }
+        else if (GetArmorType("SilverShield", pln) ||
+                 GetArmorType("SamsaraSilverArmor", pln) || GetArmorType("SilverArmorNoDrop", pln) ||
+                 GetArmorType("SilverArmor", pln)) // just in case
+        { SetInventory("SamsaraArmorCategory", 7); }
+        else if (GetArmorType("YellowArmor", pln) || // just in case
+                 GetArmorType("SamsaraYellowArmor", pln) || GetArmorType("YellowArmorNoDrop", pln) ||
+                 GetArmorType("QuakeYellowArmor", pln) || GetArmorType("QYellowArmorNoDrop", pln) ||
+                 GetArmorType("MarathonBlueArmor", pln) || GetArmorType("MBlueArmorNoDrop", pln))
+        { SetInventory("SamsaraArmorCategory", 6); }
+        //else if (GetArmorType("", pln)) { SetInventory("SamsaraArmorCategory", 5); } // hexen 25 armor pickups give 25 points of tier 1 armor
+        else if (GetArmorType("QuakeRedArmor", pln) || GetArmorType("QRedArmorNoDrop", pln) ||
+                 GetArmorType("RedArmor", pln) || // why not?
+                 GetArmorType("ArmorPack3", pln) || GetArmorType("RedArmorNoDrop", pln))
+        { SetInventory("SamsaraArmorCategory", 4); }
+        else if (GetArmorType("BasicArmorPickup", pln) || GetArmorType("BlueArmor", pln) || GetArmorType("BlueArmorForMegasphere", pln) || GetArmorType("MetalArmor", pln) || GetArmorType("SuperChexArmor", pln) || // BasicArmorPickup is given by armor cheat
+                 GetArmorType("ArmorPack2", pln) || GetArmorType("BlueArmorNoDrop", pln) ||
+                 GetArmorType("HereticArmorPack2", pln) ||
+                 GetArmorType("FuckArmor", pln))
+        { SetInventory("SamsaraArmorCategory", 3); }
+        else if (GetArmorType("BasicArmorBonus", pln) || GetArmorType("ArmorBonus", pln) || GetArmorType("MaxArmorBonus", pln) || GetArmorType("SlimeRepellent", pln) ||
+                 GetArmorType("ArmorScrap", pln) || GetArmorType("InfiniteArmorBonus", pln) ||
+                 GetArmorType("HereticArmorDump", pln) ||
+                 GetArmorType("HexenArmor1", pln) ||
+                 GetArmorType("HexenArmor5B", pln) ||
+                 GetArmorType("MysticAmbitArmor", pln) ||
+                 GetArmorType("GreenArmor", pln) || GetArmorType("LeatherArmor", pln) || GetArmorType("ChexArmor", pln) ||
+                 GetArmorType("ArmorPack1", pln) || GetArmorType("GreenArmorNoDrop", pln) ||
+                 GetArmorType("HereticArmorPack1", pln))
+        { SetInventory("SamsaraArmorCategory", 2); }
+        else if (GetArmorType("MarathonGreenArmor", pln) || GetArmorType("MGreenArmorNoDrop", pln)) { SetInventory("SamsaraArmorCategory", 1); }
+        else { SetInventory("SamsaraArmorCategory", 0); } // other armors
+
 		SetInventory("SamsaraHasDoubleFiringSpeed", CheckInventory("PowerDoubleFiringSpeed") || CheckInventory("RuneDoubleFiringSpeed") || CheckInventory("CustomDoubleFiringSpeed"));
 		SetInventory("SamsaraHasProsperity", CheckInventory("PowerProsperity") || CheckInventory("RuneProsperity") || CheckInventory("CustomProsperity"));
 		SetInventory("SamsaraHasSpread", CheckInventory("PowerSpread") || CheckInventory("RuneSpread") || CheckInventory("CustomSpread"));
@@ -464,12 +501,16 @@ script "SamsaraSpawn" (int respawning)
 
         if (GetCVar("samsara_runninginzdoom") == 1) 
 		{
+			TakeInventory("SamsaraIsPlayingInZandronum", 1);
+
 			if (GetCVar("sv_nobfgaim") == 1) { GiveInventory("DoomNoBFGAim", 1); }
 			else { TakeInventory("DoomNoBFGAim",  0x7FFFFFFF); }
 		}
 		
 		if (GetCVar("samsara_runninginzandro") == 1)
         {
+			GiveInventory("SamsaraIsPlayingInZandronum", 1);
+
 			if (GetCVar("sv_bfgfreeaim") == 0) { GiveInventory("DoomNoBFGAim", 1); }
 			else { TakeInventory("DoomNoBFGAim",  0x7FFFFFFF); }
 		}

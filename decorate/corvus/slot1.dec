@@ -9,6 +9,7 @@ actor "Gauntlets of the Necromancer" : Gauntlets
     +INVENTORY.UNDROPPABLE
     Weapon.Kickback 0
     Weapon.YAdjust 16
+    Weapon.SisterWeapon ""
     Inventory.PickUpSound "heretic/weaponget"
     Weapon.UpSound "weapons/gauntletsactivate"
     Inventory.PickupMessage "You got the Gauntlets of the Necromancer!"

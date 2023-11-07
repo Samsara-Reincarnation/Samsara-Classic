@@ -47,6 +47,7 @@ actor DoomNoBFGAim: Boolean {}
 actor UsingDoEAmmo: Boolean {}
 actor OverMax: Counter { Inventory.MaxAmount 200 }
 actor OverOverMax: Counter { Inventory.MaxAmount 300 }
+actor SamsaraArmorCategory : Counter {}
 actor ForceRangerGravity: Boolean {}
 actor ForceSOGravity: Boolean {}
 

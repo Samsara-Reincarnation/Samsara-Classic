@@ -1,6 +1,7 @@
 actor CantQuad: Boolean {}
 actor DoNotQuad: Boolean {}
 actor QuakeQuadTimer: Counter {}
+actor SamsaraQuadDamageCooldownDisplay : Counter {}
 
 actor QuadDamagePower: PowerDamage
 {

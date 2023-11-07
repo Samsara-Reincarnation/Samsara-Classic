@@ -160,6 +160,9 @@ script "SamsaraQPowers" (int startTime)
             quadTimer = CheckQuad(); 
             TakeInventory("QuakeQuadTimer", quadTimer);
 
+            if (!CheckInventory("QuakeQuadTimer") || CheckInventory("QuakeQuadTimer") > 2100) { SetInventory("SamsaraQuadDamageCooldownDisplay", 0); }
+            else { SetInventory("SamsaraQuadDamageCooldownDisplay", CheckInventory("QuakeQuadTimer") / 35 + 1); }
+
             TakeInventory("QuakeRegenTimer", 0x7FFFFFFF);
             TakeInventory("QuakeInvisTimer", 0x7FFFFFFF);
             TakeInventory("QuakePentTimer", 0x7FFFFFFF);
@@ -424,6 +427,9 @@ script "SamsaraQPowers" (int startTime)
         }
 
         TakeInventory("QuakeQuadTimer", 1);
+        if (!CheckInventory("QuakeQuadTimer") || CheckInventory("QuakeQuadTimer") > 2100) { SetInventory("SamsaraQuadDamageCooldownDisplay", 0); }
+        else { SetInventory("SamsaraQuadDamageCooldownDisplay", CheckInventory("QuakeQuadTimer") / 35 + 1); }
+
         TakeInventory("QuakeRegenTimer", 1);
         TakeInventory("QuakeInvisTimer", 1);
         TakeInventory("QuakePentTimer", 1);

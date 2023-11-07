@@ -125,22 +125,22 @@ SAMSARA_WOLFEN_OB_SLOT7 = "%k \cjcleansed\c- %o \cjfrom this world with the Spea
 SAMSARA_WOLFEN_OB_PUNCHDRUNKB = "%k \cjput\c- %o \cjout of %p misery.\c-";
 SAMSARA_WOLFEN_OB_INSTAGIB = "%k \cjsniped\c- %o \cjwith the Mauser Rifle.\c-";
 
-SAMSARA_HEXEN_OB_FIST = "%k \clmaced\c- %o \clthe ol'-fashioned way.\c-";
-SAMSARA_HEXEN_OB_PISTOL = "%k \clunwove\c- %o\cl's life force with the Sapphire Wand.\c-";
-SAMSARA_HEXEN_OB_SLOT1 = "%k \clput\c- %o \clunder the gas.\c-";
-SAMSARA_HEXEN_OB_SLOT2 = "%k \clshattered\c- %o \cland left %p body to melt.\c-";
-SAMSARA_HEXEN_OB_SLOT3 = "%k \clexecuted\c- %o \clunder Timon's blessing.\c-";
-SAMSARA_HEXEN_OB_SLOT4_1 = "%k \cldrained\c- %o\cl's soul into the Serpent Staff.\c-";
-SAMSARA_HEXEN_OB_SLOT4_2 = "%k \clmelted\c- %o\cl's flesh off with the Serpent's venom.\c-";
-SAMSARA_HEXEN_OB_SLOT5_1 = "%k \clsplintered\c- %o\cl's skull and spine with the Hammer of Retribution.\c-";
-SAMSARA_HEXEN_OB_SLOT5_2 = "%k \clthrew\c- %o \clunder the Hammer.\c-";
-SAMSARA_HEXEN_OB_SLOT6 = "%k \clbaptized\c- %o \clin the Firestorm.\c-";
-SAMSARA_HEXEN_OB_SLOT7 = "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-";
+SAMSARA_HEXEN_OB_FIST = "%k \cgmaced\c- %o \cgthe ol'-fashioned way.\c-";
+SAMSARA_HEXEN_OB_PISTOL = "%k \cgunwove\c- %o\cg's life force with the Sapphire Wand.\c-";
+SAMSARA_HEXEN_OB_SLOT1 = "%k \cgput\c- %o \cgunder the gas.\c-";
+SAMSARA_HEXEN_OB_SLOT2 = "%k \cgshattered\c- %o \cgand left %p body to melt.\c-";
+SAMSARA_HEXEN_OB_SLOT3 = "%k \cgexecuted\c- %o \cgunder Timon's blessing.\c-";
+SAMSARA_HEXEN_OB_SLOT4_1 = "%k \cgdrained\c- %o\cg's soul into the Serpent Staff.\c-";
+SAMSARA_HEXEN_OB_SLOT4_2 = "%k \cgmelted\c- %o\cg's flesh off with the Serpent's venom.\c-";
+SAMSARA_HEXEN_OB_SLOT5_1 = "%k \cgsplintered\c- %o\cg's skull and spine with the Hammer of Retribution.\c-";
+SAMSARA_HEXEN_OB_SLOT5_2 = "%k \cgthrew\c- %o \cgunder the Hammer.\c-";
+SAMSARA_HEXEN_OB_SLOT6 = "%k \cgbaptized\c- %o \cgin the Firestorm.\c-";
+SAMSARA_HEXEN_OB_SLOT7 = "%k \cgadded\c- %o\cg's soul to the Wraithverge.\c-";
 SAMSARA_HEXEN_OB_PUNCHDRUNKB = "%k \cgsnapped\c- %o\cg's neck with a brutal punch.\c-";
 SAMSARA_HEXEN_OB_INSTAGIB = "%k \cgset\c- %o\cg's soul ablaze.\c-";
 
 SAMSARA_DUKE_OB_FIST = "%k \c[m1]put\c- %o \c[m1]out with a snap kick.\c-";
-SAMSARA_DUKE_OB_PISTOL = "%k \c[m1]made\c- %o \c[m1]suck on the M1911.\c-";
+SAMSARA_DUKE_OB_PISTOL = "%k \c[m1]made\c- %o \c[m1]suck on the Glock 17.\c-";
 SAMSARA_DUKE_OB_SLOT1 = "%k \c[m1]passed\c- %o \c[m1]the pipe.\c-";
 SAMSARA_DUKE_OB_SLOT2 = "%k \c[m1]deemed\c- %o \c[m1]a threat.\c-";
 SAMSARA_DUKE_OB_SLOT3 = "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-";
@@ -162,8 +162,8 @@ SAMSARA_MARATHON_OB_SLOT5 = "%k \cnspanked\c- %o\cn.\c-";
 SAMSARA_MARATHON_OB_SLOT6 = "%k \cnmade\c- %o \cnall TOZT.\c-";
 SAMSARA_MARATHON_OB_SLOT7_1 = "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-";
 SAMSARA_MARATHON_OB_SLOT7_2 = "%k \cnintroduced\c- %o \cnto the magic of orbital bombardment.\c-";
-SAMSARA_MARATHON_OB_BERSERK1 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"; // M2/I Alien Weapon.
-SAMSARA_MARATHON_OB_BERSERK2 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"; // M1 Alien Weapon
+SAMSARA_MARATHON_OB_BERSERK1 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"; // M2/I Alien Weapon.
+SAMSARA_MARATHON_OB_BERSERK2 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"; // M1 Alien Weapon
 SAMSARA_MARATHON_OB_PUNCHDRUNKC = "%k \cnbrought\c- %o \cnin for resisting security.\c-";
 SAMSARA_MARATHON_OB_PUNCHDRUNKB_1 = "%k \cndug into\c- %o\cn's spine.\c-";
 SAMSARA_MARATHON_OB_PUNCHDRUNKB_2 = "%k \cnput\c- %o \cnin the blender.\c-";
@@ -227,7 +227,7 @@ SAMSARA_ARMOR3_2 = "Picked up 150 shield.";
 SAMSARA_ARMOR3_3 = "Picked up 200 shield.";
 SAMSARA_ARMOR3_4 = "Picked up 300 shield.";
 SAMSARA_POWERUP_INVIS = "Picked up Partial Invisibility.";
-SAMSARA_POWERUP_HOLODUKE = "Picked up a HoloDuke";
+SAMSARA_POWERUP_HOLODUKE = "Picked up a HoloDuke.";
 SAMSARA_POWERUP_INVULN = "Picked up Invulnerability.";
 SAMSARA_POWERUP_RADSUIT = "Picked up Environmental Protection.";
 SAMSARA_POWERUP_INFRARED = "Picked up Light Amplification.";
@@ -287,9 +287,9 @@ NOPOWER = "You do not have enough power!";
 ALREADYFLYING = "You are already flying!";
 
 // DECORATE EXTERNALIZATIONS
-FLECCOOLDOWN = "The Flechette has not cooled down yet.";
+FLECCOOLDOWN = "The Poison Cloud Flechette has not cooled down yet.";
 TOMECOOLDOWN = "The Tome of Power has not cooled down yet.";
-QUADCOOLDOWN = "Quad Damage is recharging";
+QUADCOOLDOWN = "The Quad Damage has not recharged yet.";
 HOLOCOOLDOWN = "The HoloDuke has not cooled down yet.";
 
 // Boss Monologues

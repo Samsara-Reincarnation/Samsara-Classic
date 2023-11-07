@@ -17,42 +17,6 @@ favoriteweapon = "Super Shotgun"
 }
 
 {
-name = "\cqCorvus"
-script = DFULTBOT
-chatlump = CORVCHAT
-gender = male
-revealed = true
-class = "Corvus"
-color = "771100"
-accuracy = 2
-intellect = 4
-evade = 2
-anticipation = 1
-reactiontime = 1
-perception = 4
-chatfrequency = 30
-favoriteweapon = "Dragon Claw"
-}
-
-{
-name = "\clParias"
-script = DFULTBOT
-chatlump = PARSCHAT
-gender = male
-revealed = true
-class = "Parias"
-color = "FF0000"
-accuracy = 2
-intellect = 4
-evade = 3
-anticipation = 2
-reactiontime = 2
-perception = 3
-chatfrequency = 25
-favoriteweapon = "Firestorm"
-}
-
-{
 name = "\chFred Chexter"
 script = DFULTBOT
 chatlump = CHEXCHAT
@@ -71,6 +35,24 @@ favoriteweapon = "Zorch Propulsor"
 }
 
 {
+name = "\cqCorvus"
+script = DFULTBOT
+chatlump = CORVCHAT
+gender = male
+revealed = true
+class = "Corvus"
+color = "771100"
+accuracy = 2
+intellect = 4
+evade = 2
+anticipation = 1
+reactiontime = 1
+perception = 4
+chatfrequency = 30
+favoriteweapon = "Dragon Claw"
+}
+
+{
 name = "\cjB.J. Blazkowicz"
 script = DFULTBOT
 chatlump = BJCHAT
@@ -86,6 +68,24 @@ reactiontime = 3
 perception = 3
 chatfrequency = 30
 favoriteweapon = "  Chaingun  "
+}
+
+{
+name = "\cgParias"
+script = DFULTBOT
+chatlump = PARSCHAT
+gender = male
+revealed = true
+class = "Parias"
+color = "FF0000"
+accuracy = 2
+intellect = 4
+evade = 3
+anticipation = 2
+reactiontime = 2
+perception = 3
+chatfrequency = 25
+favoriteweapon = "Firestorm"
 }
 
 {

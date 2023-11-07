@@ -552,21 +552,18 @@ function int spawnDistance(int item, int dist, int tid)
     return Spawn(item, spawnX, spawnY, spawnZ, tid, myAng >> 8);
 }
 
-function void SetInventory(int item, int amount)
+function void SetInventory(str item, int amount)
 {
     int count = CheckInventory(item);
 
-    if (count == amount) { return; }
-    
-    if (count > amount)
-    {
-        TakeInventory(item, count - amount);
-        return;
-    }
+    if (count < amount) { GiveInventory(item, amount - count); }
 
-    GiveAmmo(item, amount - count);
-    return;
+    // Another check here to account for sv_doubleammo giving double ammo
+    int count2 = CheckInventory(item);
+
+    if (count2 > amount) { TakeInventory(item, count2 - amount); }
 }
+
 function void ToggleInventory(int inv)
 {
     if (CheckInventory(inv))

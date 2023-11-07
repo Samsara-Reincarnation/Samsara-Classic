@@ -403,6 +403,9 @@ function int GiveQuad(int toAdd)
     GiveInventory("QuakeQuadTimer", quadcount);
     GiveInventory("QuakeQuadTimer", toAdd);
 
+    if (!CheckInventory("QuakeQuadTimer") || CheckInventory("QuakeQuadTimer") > 2100) { SetInventory("SamsaraQuadDamageCooldownDisplay", 0); }
+    else { SetInventory("SamsaraQuadDamageCooldownDisplay", CheckInventory("QuakeQuadTimer") / 35 + 1); }
+
     if (GetCVar("samsara_permault"))
     {
         GiveInventory("DoNotQuad", 1);   // nasty hack
@@ -688,7 +691,8 @@ Script "Samsara_FillInventory" (void)
 			GiveInventory("CanDualShotties",1);
 			break;
 		case 7:
-			TakeInventory("QuakeQuadTimer",65536);
+			SetInventory("QuakeQuadTimer", 0);
+			SetInventory("SamsaraQuadDamageCooldownDisplay", 0);
 			GiveInventory("QuadDamageItem", 1);
 			if(!isLMS()) { GiveQuad(1050); }
 			break;

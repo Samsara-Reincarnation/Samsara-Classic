@@ -63,7 +63,7 @@
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define UNLOADCOUNT 61
+#define UNLOADCOUNT 62
 
 #define P_COUNT 2
 #define P_QUAD  0
@@ -203,18 +203,16 @@ int LMSItems[CLASSCOUNT] =
 
 int UnloadRemove[UNLOADCOUNT] =
 {
-    "TomeOfPowerCooldown", "DiscOfRepulsionCooldown", "RainTracker", 
-    "DukeTauntCooldown", "MaceAmmo", "MacePowered", "Mace", "DukeFlying", 
-    "DukePetJack", "DukeVision", "DukeReady", "DukeWaiting", "Infrared", 
-    "SynthFireActive", "SynthFireLeft", "SynthFireRight", "LevelLimiter", 
-    "LeftReload", "RightReload", "UsingSMG", "UsingFists", "UsingPistols", 
-    "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", 
-    "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
-    "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
-    "QuakeQuadTimer", "QuakeRegenTimer", "QuakeInvisTimer", "ChickenKillCount",
-	"GibfistSide", "DBSHOT", "DBSHOT1", "DB1", "DB2", "DB3", "DB4", "DB5", "DB6",
-	"DB7", "DB8", "DB9", "DB10", "DB11", "DB12", "DB13", "DB14", "DB15", "DB16", "DB17",
-    "DB18", "DB19", "QuakePentTimer", "FlechetteCooldown"
+    "TomeOfPowerCooldown", "DiscOfRepulsionCooldown", "RainTracker",  "DukeTauntCooldown",
+    "MaceAmmo", "MacePowered", "Mace", "DukeFlying",  "DukePetJack", "DukeVision", "DukeReady",
+    "DukeWaiting", "Infrared",  "SynthFireActive", "SynthFireLeft", "SynthFireRight",
+    "LevelLimiter", "LeftReload", "RightReload", "UsingSMG", "UsingFists", "UsingPistols",
+    "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", "UsingToasty",
+    "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC",  "UsingDualPistols", "UsingDualShotguns",
+    "InvasionDualShottyCheck", "QuakeQuadTimer", "SamsaraQuadDamageCooldownDisplay",
+    "QuakeRegenTimer", "QuakeInvisTimer", "ChickenKillCount", "GibfistSide", "DBSHOT", "DBSHOT1",
+    "DB1", "DB2", "DB3", "DB4", "DB5", "DB6", "DB7", "DB8", "DB9", "DB10", "DB11", "DB12", "DB13",
+    "DB14", "DB15", "DB16", "DB17", "DB18", "DB19", "QuakePentTimer", "FlechetteCooldown"
 };
 
 int PowerOutVols[5] = {96, 104, 112, 120, 127};
@@ -427,8 +425,8 @@ int BanStrings[CLASSCOUNT] =
 	"\c[m7]The admin has banned \chChex Warrior\c[m7] from play.",
 	"\c[m7]The admin has banned \cqCorvus\c[m7] from play.",
 	"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play.",
-	"\c[m7]The admin has banned \chParias\c[m7] from play.",
-	"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play.",
+	"\c[m7]The admin has banned \cgParias\c[m7] from play.",
+	"\c[m7]The admin has banned \c[m1]Duke Nukem\c[m7] from play.",
 	"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play.",
 	"\c[m7]The admin has banned \csRanger\c[m7] from play.",
 };

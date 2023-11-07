@@ -73,6 +73,11 @@ graphic f1_tposs, 800, 600
     patch samsarf1, 0, 0
 }
 
+Graphic "HHEALT2", 104, 2
+{
+	Patch "HARMO2", 0, 0
+}
+
 sprite RANGH1, 103, 261
 {
     offset 51, 257

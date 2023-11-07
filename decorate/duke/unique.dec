@@ -93,7 +93,7 @@ actor DukePortNiVi : CustomInventory
 
 actor DukePetjack : PowerFlight
 {
-    Powerup.Duration 0x7FFFFFFF
+    Powerup.Duration 0x7FFFFFFD
     Powerup.Color "Yellow", 0.05
 }
 

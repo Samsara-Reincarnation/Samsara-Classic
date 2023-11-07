@@ -3,7 +3,7 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     RenderStyle Add
     Alpha 0.88 // 0.875
     +Floatbob
-    Armor.Savepercent 33.33333
+    Armor.SavePercent 33.335
     Armor.MaxSaveAmount 200
     Armor.Saveamount 25
     Inventory.PickupMessage "$SAMSARA_ARMORHEXEN"
@@ -69,7 +69,7 @@ actor HexenArmor5A : CustomInventory
 
 actor HexenArmor5B : BasicArmorBonus
 {
-    Armor.Savepercent 33.33333
+    Armor.SavePercent 33.335
     Armor.MaxSaveAmount 300
     Armor.Saveamount 50
 }

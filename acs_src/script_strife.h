@@ -214,7 +214,7 @@ script "SamsaraSpectres" (int mode, int arg1, int arg2)
           case CLASS_QUAKE:
             if (!CheckInventory("QuadDamagePower"))
             {
-                Print(s:"You must be quadded to go spectral.");
+                Print(s:"You must be \ckquadded\c- to go spectral.");
                 result = 0;
             }
             break;
@@ -222,7 +222,7 @@ script "SamsaraSpectres" (int mode, int arg1, int arg2)
           case CLASS_HERETIC:
             if (!CheckInventory("PowerHereticTome"))
             {
-                Print(s:"You must be tomed to go spectral.");
+                Print(s:"You must be \cktomed\c- to go spectral.");
                 result = 0;
             }
             break;
