@@ -4372,13 +4372,19 @@ StatusBar Fullscreen
         {
             InInventory BJSuperKnife { DrawImage "STY2NUM1", 126, 10; }
         }
-        InInventory DiscOfRepulsionCooldown, 9 { DrawImage "STY2NUM1", 126, 10; }
+        InInventory HexenClass
+        {
+            InInventory DiscOfRepulsionCooldown, 9 { DrawImage "STY2NUM1", 126, 10; }
+        }
         IsSelected Pipebombs { DrawImage "STY2NUM1", 126, 10; }
         IsSelected "KKV-7 SMG Flechette" { DrawImage "STY2NUM1", 126, 10; }
         IsSelected Mjolnir { DrawImage "STY2NUM1", 126, 10; }
         IsSelected "Spectral Mjolnir" { DrawImage "STY2NUM1", 126, 10; }
 
-        InInventory DiscOfRepulsionCooldown { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 134, 16; }
+        InInventory HexenClass
+        {
+            InInventory DiscOfRepulsionCooldown { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 134, 16; }
+        }
 
         // Slot 2
         InInventory WolfenClass
