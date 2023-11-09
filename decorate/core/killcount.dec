@@ -1,5 +1,5 @@
 actor KillCountAmount : inventory { -INVBAR +INVENTORY.UNDROPPABLE +INVENTORY.HUBPOWER inventory.maxamount 999 }
-actor KillCountAmountTrue : inventory { -INVBAR +INVENTORY.UNDROPPABLE +INVENTORY.HUBPOWER inventory.maxamount 9999 }
+actor KillCountAmountTrue : inventory { -INVBAR +INVENTORY.UNDROPPABLE +INVENTORY.HUBPOWER inventory.maxamount 999999999 }
 actor KillCountNotch : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 9 }
 
 actor KillCount : CustomInventory
