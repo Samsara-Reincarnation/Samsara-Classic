@@ -263,6 +263,7 @@ actor ChexPuff : BulletPuff
     }
 }
 
+Actor ChexPuffCoop : ChexPuff { +MTHRUSPECIES +THRUSPECIES Species "Player" }
 actor ChexBullet : FastProjectile
 {
     Damage (Random(1,3)*5)

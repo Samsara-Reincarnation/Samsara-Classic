@@ -404,5 +404,7 @@ actor BlankPuff
         Stop
     }
 }
+actor BlankPuffCoop : BlankPuff { Species "Player" +THRUSPECIES +MTHRUSPECIES }
 
 actor BlankPuffBloodless : BlankPuff { -BLOODSPLATTER +BLOODLESSIMPACT }
+actor BlankPuffBloodlessCoop : BlankPuffBloodless { Species "Player" +THRUSPECIES +MTHRUSPECIES }

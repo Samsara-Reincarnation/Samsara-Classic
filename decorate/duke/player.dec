@@ -635,3 +635,9 @@ actor DukeBulletPuff : BulletPuff
         Stop
     }
 }
+actor DukeBulletPuffCoop : DukeBulletPuff
+{
+	Species "Player"
+	+THRUSPECIES
+	+MTHRUSPECIES
+}

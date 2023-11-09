@@ -49,8 +49,8 @@ actor "Machine Gun": InstantSwitchWeapon
 
       CoopFire:
         TNT1 A 0 A_PlayWeaponSound("wolfen/machinegun")
-        WPST C 0 A_FireCustomMissile("WolfenBulletSupplement2",0,0,0,0)
-        WMGN C 3 BRIGHT A_FireCustomMissile("WolfenBullet",0,1,0,1)
+        WPST C 0 A_FireBullets(0,0,1,2,"BlankPuffBloodlessCoop",0,256)
+        WMGN C 3 BRIGHT A_FireBullets(0,0,-1,7,"BlankPuffCoop")
         WMGN D 3
         TNT1 A 0 A_Refire
         WMGN E 3 A_ClearRefire

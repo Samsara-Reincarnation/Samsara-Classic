@@ -53,11 +53,11 @@ actor "  Chaingun  ": InstantSwitchWeapon
 
       CoopFire:
         WCHN A 0 A_PlayWeaponSound("wolfen/chaingun")
-        WPST C 0 A_FireCustomMissile("WolfenBulletSupplement2",0,0,0,0)
-        WCHN C 3 BRIGHT A_FireCustomMissile("WolfenBullet",0,1,0,1)
+        WPST C 0 A_FireBullets(0,0,1,2,"BlankPuffBloodlessCoop",0,256)
+        WCHN C 3 BRIGHT A_FireBullets(0,0,-1,7,"BlankPuffCoop")
         WCHN A 0 A_PlayWeaponSound("wolfen/chaingun")
-        WPST C 0 A_FireCustomMissile("WolfenBulletSupplement2",0,0,0,0)
-        WCHN D 3 BRIGHT A_FireCustomMissile("WolfenBullet",0,1,0,1)
+        WPST C 0 A_FireBullets(0,0,1,2,"BlankPuffBloodlessCoop",0,256)
+        WCHN D 3 BRIGHT A_FireBullets(0,0,-1,7,"BlankPuffCoop")
         TNT1 A 0 A_ReFire
         WCHN E 2 A_ClearRefire
         Goto Ready

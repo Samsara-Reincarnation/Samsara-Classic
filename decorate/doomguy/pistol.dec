@@ -45,7 +45,7 @@ actor " Pistol " : Weapon// : Pistol
       CoopFire:
         TNT1 A 0
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
-        TNT1 A 0 A_FireCustomMissile("DoomBullet2", 0, 1, 0, 1)
+        TNT1 A 0 A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff2_Coop")
         Goto FireAnim
 
       FireAnim:
@@ -93,7 +93,7 @@ actor " Pistol " : Weapon// : Pistol
       CoopHold:
         TNT1 A 0
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
-        TNT1 A 0 A_FireCustomMissile("DoomBullet2", random(-560,560)/100.00, 1, 0, 1)
+        TNT1 A 0 A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff2_Coop")
         Goto FireAnim
         
       Flash:
@@ -113,7 +113,9 @@ actor " Pistol " : Weapon// : Pistol
     }
 }
 
+actor DoomBulletPuff_Coop : DoomBulletPuff { +THRUSPECIES +MTHRUSPECIES Species "Player" }
 actor DoomBulletPuff2 : DoomBulletPuff { DamageType "Pistol" Species "Player" }
+actor DoomBulletPuff2_Coop : DoomBulletPuff2 { +THRUSPECIES +MTHRUSPECIES Species "Player" }
 
 actor DoomBullet2: FastProjectile
 {

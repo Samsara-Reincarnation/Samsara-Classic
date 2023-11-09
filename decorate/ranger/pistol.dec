@@ -45,7 +45,7 @@ actor "Single Shotgun": InstantSwitchWeapon
         goto Deselect
         
       CoopFire:
-        QSGN AAAAAA 0 A_FireCustomMissile("QuakeBullet2", random(-150,150)/100.0, 0, 0, 0, 0, random(-150,150)/100.0)
+        QSGN A 0 A_FireBullets(1.5, 1.5, 6, 4, "QuakePistolPuffCoop", FBF_NORANDOM)
         goto Fire2
         
       Fire2:

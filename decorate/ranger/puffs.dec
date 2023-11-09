@@ -14,6 +14,12 @@ actor QuakeBulletPuff
     }
 }
 
+actor QuakeBulletPuffCoop : QuakeBulletPuff
+{ 
+	Species "Player"
+	+THRUSPECIES
+	+MTHRUSPECIES
+}
 actor QuakeBulletPuff2 : BulletPuff
 {
     Radius 1
@@ -67,6 +73,12 @@ actor QuakeBulletPuff4 : QuakeBulletPuff2
 actor QuakePistolPuff: QuakeBulletPuff
 {
     DamageType "QuakePistol"
+}
+actor QuakePistolPuffCoop : QuakePistolPuff
+{
+	Species "Player"
+	+THRUSPECIES
+	+MTHRUSPECIES
 }
 
 actor QuakeSpectralPuff: QuakeBulletPuff
