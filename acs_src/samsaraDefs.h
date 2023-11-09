@@ -432,11 +432,14 @@ int BanStrings[CLASSCOUNT] =
 };
 
 
-#define DAMAGEMODES 41
+#define DAMAGEMODES 31
 #define DAMAGEZEROINDEX 10
 
 #define DEFENSEMODES 31
 #define DEFENSEZEROINDEX 10
+
+#define SPEEDMODES 17
+#define SPEEDZEROINDEX 6
 
 int DamageCVars[CLASSCOUNT] = 
 {
@@ -474,7 +477,7 @@ int CVarDamageItems[DAMAGEMODES] =
     "PowerDamageBuff-3",
     "PowerDamageBuff-2",
     "PowerDamageBuff-1",
-    "", // middle point
+    "Trigger", // middle point
     "PowerDamageBuff1",
     "PowerDamageBuff2",
     "PowerDamageBuff3",
@@ -495,16 +498,6 @@ int CVarDamageItems[DAMAGEMODES] =
     "PowerDamageBuff18",
     "PowerDamageBuff19",
     "PowerDamageBuff20",
-    "PowerDamageBuff21",
-    "PowerDamageBuff22",
-    "PowerDamageBuff23",
-    "PowerDamageBuff24",
-    "PowerDamageBuff25",
-    "PowerDamageBuff26",
-    "PowerDamageBuff27",
-    "PowerDamageBuff28",
-    "PowerDamageBuff29",
-    "PowerDamageBuff30",
 };
 
 int CVarDefenseItems[DEFENSEMODES] =
@@ -519,7 +512,7 @@ int CVarDefenseItems[DEFENSEMODES] =
     "PowerDefenseBuff-3",
     "PowerDefenseBuff-2",
     "PowerDefenseBuff-1",
-    "", // middle point
+    "Trigger", // middle point
     "PowerDefenseBuff1",
     "PowerDefenseBuff2",
     "PowerDefenseBuff3",
@@ -540,6 +533,48 @@ int CVarDefenseItems[DEFENSEMODES] =
     "PowerDefenseBuff18",
     "PowerDefenseBuff19",
     "PowerDefenseBuff20",
+};
+
+int CVarSpeedItems[SPEEDMODES] = 
+{
+    "PowerSpeedBuff-6",
+    "PowerSpeedBuff-5",
+    "PowerSpeedBuff-4",
+    "PowerSpeedBuff-3",
+    "PowerSpeedBuff-2",
+    "PowerSpeedBuff-1",
+    "Trigger", // middle point
+    "PowerSpeedBuff1",
+    "PowerSpeedBuff2",
+    "PowerSpeedBuff3",
+    "PowerSpeedBuff4",
+    "PowerSpeedBuff5",
+    "PowerSpeedBuff6",
+    "PowerSpeedBuff7",
+    "PowerSpeedBuff8",
+    "PowerSpeedBuff9",
+    "PowerSpeedBuff10",
+};
+
+int SpeedModeNames[SPEEDMODES] = 
+{
+    "Immobile",
+    "Almost Immobile",
+    "Extremely Slow",
+    "Slower",
+    "Slow",
+    "Slightly Slow",
+    "Normal",
+    "Slightly Fast",
+    "Fast",
+    "Faster",
+    "Doubled",
+    "Quadrupled",
+    "Extremely Fast",
+    "Uncontrollable",
+    "Insane",
+    "AAAAAAAAAAAAAAAAHHH",
+    "FOR THE LOVE OF GOD PLEASE SLOW DOWN",
 };
 
 

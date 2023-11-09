@@ -34,6 +34,7 @@ actor "Elven Wand" : Weapon
         TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"CheckForAmmo")
       Fire2:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"FireTomed")
         GWND B 3 BRIGHT
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         GWND C 0 A_PlayWeaponSound("heretic/wand")
@@ -44,6 +45,7 @@ actor "Elven Wand" : Weapon
         TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"CheckForAmmo")
       Hold2:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"FireTomed")
         GWND B 3 BRIGHT
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
         GWND C 0 A_PlayWeaponSound("heretic/wand")
@@ -140,11 +142,11 @@ actor "Elven Wand" : Weapon
         Goto Ready
         
       TakePistolAmmo:
-        TNT1 A 0 A_TakeInventory("Clip",1, TIF_NOTAKEINFINITE)
+        TNT1 A 0 A_TakeInventory("Clip",1,TIF_NOTAKEINFINITE)
         goto FireAnim2
         
       TakePistolAmmoTomed:
-        TNT1 A 0 A_TakeInventory("Clip",3, TIF_NOTAKEINFINITE)
+        TNT1 A 0 A_TakeInventory("Clip",3,TIF_NOTAKEINFINITE)
         goto FireAnimTomed2
     }
 }

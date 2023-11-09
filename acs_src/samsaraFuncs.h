@@ -602,11 +602,22 @@ function int HandleBuffCVars(int respawning)
     // Since the CVars can be negative, we add to the cvar readings a value we know
     //   points to the "zero" index in the DamageModes/DefenseModes arrays.
     //   That way, -10 points to index 0 if the zero point is at index 10.
+    // Before, this ran a couple loops to determine the correct item. This is not
+    //   necessary when the items are static and causes a lot more memory to be used
     
     int damagelevel  = min(max(GetCVar(dmgcvar) + DAMAGEZEROINDEX, 0), DAMAGEMODES-1);
     int defenselevel = min(max(GetCVar(defcvar) + DEFENSEZEROINDEX, 0), DEFENSEMODES-1);
+	int generaldamagelevel  = min(max(GetCVar("samsara_generaldamage") + DAMAGEZEROINDEX, 0), DAMAGEMODES-1);
+	int generaldefenselevel = min(max(GetCVar("samsara_generaldefense") + DEFENSEZEROINDEX, 0), DEFENSEMODES-1);
+	int speedlevel = min(max(GetCVar("samsara_speedmod") + SPEEDZEROINDEX, 0), SPEEDMODES-1);
+	GiveInventory(CVarDamageItems[damagelevel], 1);
+	GiveInventory(CVarDefenseItems[defenselevel], 1);
+	GiveInventory(CVarDamageItems[generaldamagelevel], 1);
+	GiveInventory(CVarDefenseItems[generaldefenselevel], 1);
+	GiveInventory(CVarSpeedItems[speedlevel], 1);
 
-    int i, j;
+    /*
+	int i, j;
 
     for (i = 0; i < DAMAGEMODES; i++)
     {
@@ -637,6 +648,7 @@ function int HandleBuffCVars(int respawning)
             TakeInventory(j, 0x7FFFFFFF);
         }
     }
+	*/
 
     return 1;
 }

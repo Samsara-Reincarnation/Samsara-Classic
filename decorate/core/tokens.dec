@@ -12,10 +12,16 @@ actor Counter: Inventory
     -INVBAR
 }
 
-actor Trigger: CustomInventory
+Actor Trigger: CustomInventory
 {
-    Inventory.MaxAmount 0
-    +AUTOACTIVATE
+	Inventory.MaxAmount 0
+	+AUTOACTIVATE
+	States
+	{
+	PickupStop:
+		TNT1 A 0 A_RailWait
+		Stop
+	}
 }
 
 actor ACSSpawnDummy
@@ -66,6 +72,7 @@ actor GotWeapon7: Boolean {}
 actor SamsaraHasDoubleFiringSpeed : Boolean {}
 actor SamsaraHasProsperity : Boolean {}
 actor SamsaraHasSpread : Boolean {}
+Actor SamsaraHasPermaWeaponLevel2 : Boolean {}
 
 actor WeaponGetYaaaay : Ammo
 {

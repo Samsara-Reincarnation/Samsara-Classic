@@ -11,6 +11,7 @@ server bool samsara_lmsult = false;
 server int samsara_uniquestart = 0;
 server int samsara_chainsawstart = 0;
 server int samsara_peoplediewhentheyarekilled = 0;
+server bool samsara_permaweaponlevel2 = false;
 server bool samsara_punchdrunk = false;
 server bool samsara_punchdrunkuniques = false;
 server bool samsara_punchdrunksaws = false;
@@ -38,6 +39,7 @@ server bool samsara_banranger = false;
 
 server bool samsara_lmsrules = false;
 
+server int samsara_generaldamage = 0;
 server int samsara_doomguydamage = 0;
 server int samsara_chexdamage = 0;
 server int samsara_corvusdamage = 0;
@@ -47,6 +49,7 @@ server int samsara_dukedamage = 0;
 server int samsara_sodamage = 0;
 server int samsara_rangerdamage = 0;
 
+server int samsara_generaldefense = 0;
 server int samsara_doomguydefense = 0;
 server int samsara_chexdefense = 0;
 server int samsara_corvusdefense = 0;
@@ -66,6 +69,7 @@ server int samsara_superturboturkeyfrequency = 35;
 server bool samsara_pistolstart = false;
 
 server bool samsara_railgunstart = false;
+server int samsara_speedmod = 0;
 
 // clientside
 user bool samsara_cl_printpickup = false;

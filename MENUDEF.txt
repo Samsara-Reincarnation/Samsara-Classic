@@ -89,6 +89,7 @@ OptionMenu "SamsaraServerSideOptions"
     StaticText "General Options", 1
     Option "Jump Height",                 "samsara_jumpmod",        "JumpModOptions"
     Option "Armor Mode",                  "samsara_armormode",      "ArmorModeOptions"
+    Option "Speed Modifier",              "samsara_speedmod",       "RunModOptions"
     Option "Health Cap",                  "samsara_nohealthcap",    "OffOn"
     Option "Boss Monologues",             "samsara_nomonologues",   "OffOn"
     Option "Rocket Jumping For Everyone", "samsara_allcanrj",       "OnOff"
@@ -111,6 +112,7 @@ OptionMenu "SamsaraServerSideOptions"
     StaticText ""
     StaticText "Party Mode Options", 1
     Option "Players Explode when Killed", "samsara_peoplediewhentheyarekilled", "PDWTAKOptions"
+    Option "Permanent Tome of Power",     "samsara_permaweaponlevel2",          "OnOff"
     StaticText ""
     StaticText "Weapon Options", 1
     Option "Ultimate Weapons Stay",             "samsara_permault",      "YesNo"
@@ -160,6 +162,27 @@ OptionValue "ArmorModeOptions"
     2, "Quake+"
     3, "Marathon"
     4, "None"
+}
+
+OptionValue "RunModOptions"
+{
+    -6, "Immobile"
+    -5, "Cement Shoes"
+    -4, "Modern FPS Protagonist"
+    -3, "Slower"
+    -2, "Slow"
+    -1, "Slightly Slow"
+    0,  "Default"
+    1,  "Slightly Fast"
+    2,  "Fast"
+    3,  "Faster"
+    4,  "Even Faster"
+    5,  "Even More Faster"
+    6,  "Yet Even More Faster"
+    7,  "HELP"
+    8,  "FUCK"
+    9,  "AAAAAAAAAAA"
+    10, "JESUS TAKE THE WHEEL"
 }
 
 OptionValue "LMSLifeOptions"
@@ -238,20 +261,92 @@ OptionMenu "SamsaraCharacterBanAndMultiplierOptions"
     Option "Ban Security Officer", "samsara_banso",      "YesNo"
     Option "Ban Ranger",           "samsara_banranger",  "YesNo"
     StaticText ""
-    Slider "Doomguy Damage Multiplier",  "samsara_doomguydamage",  -10, 30, 2
-    Slider "Doomguy Defense Multiplier", "samsara_doomguydefense", -10, 20, 2
-    Slider "Chex Damage Multiplier",     "samsara_chexdamage",     -10, 30, 2
-    Slider "Chex Defense Multiplier",    "samsara_chexdefense",    -10, 20, 2
-    Slider "Corvus Damage Multiplier",   "samsara_corvusdamage",   -10, 30, 2
-    Slider "Corvus Defense Multiplier",  "samsara_corvusdefense",  -10, 20, 2
-    Slider "B.J. Damage Multiplier",     "samsara_bjdamage",       -10, 30, 2
-    Slider "B.J. Defense Multiplier",    "samsara_bjdefense",      -10, 20, 2
-    Slider "Parias Damage Multiplier",   "samsara_pariasdamage",   -10, 30, 2
-    Slider "Parias Defense Multiplier",  "samsara_pariasdefense",  -10, 20, 2
-    Slider "Duke Damage Multiplier",     "samsara_dukedamage",     -10, 30, 2
-    Slider "Duke Defense Multiplier",    "samsara_dukedefense",    -10, 20, 2
-    Slider "SO Damage Multiplier",       "samsara_sodamage",       -10, 30, 2
-    Slider "SO Defense Multiplier",      "samsara_sodefense",      -10, 20, 2
-    Slider "Ranger Damage Multiplier",   "samsara_rangerdamage",   -10, 30, 2
-    Slider "Ranger Defense Multiplier",  "samsara_rangerdefense",  -10, 20, 2
+    Option "General Damage Multiplier",  "samsara_generaldamage",  "OffenseModOptions"
+    Option "General Defense Multiplier", "samsara_generaldefense", "DefenseModOptions"
+    Option "Doomguy Damage Multiplier",  "samsara_doomguydamage",  "OffenseModOptions"
+    Option "Doomguy Defense Multiplier", "samsara_doomguydefense", "DefenseModOptions"
+    Option "Chex Damage Multiplier",     "samsara_chexdamage",     "OffenseModOptions"
+    Option "Chex Defense Multiplier",    "samsara_chexdefense",    "DefenseModOptions"
+    Option "Corvus Damage Multiplier",   "samsara_corvusdamage",   "OffenseModOptions"
+    Option "Corvus Defense Multiplier",  "samsara_corvusdefense",  "DefenseModOptions"
+    Option "B.J. Damage Multiplier",     "samsara_bjdamage",       "OffenseModOptions"
+    Option "B.J. Defense Multiplier",    "samsara_bjdefense",      "DefenseModOptions"
+    Option "Parias Damage Multiplier",   "samsara_pariasdamage",   "OffenseModOptions"
+    Option "Parias Defense Multiplier",  "samsara_pariasdefense",  "DefenseModOptions"
+    Option "Duke Damage Multiplier",     "samsara_dukedamage",     "OffenseModOptions"
+    Option "Duke Defense Multiplier",    "samsara_dukedefense",    "DefenseModOptions"
+    Option "SO Damage Multiplier",       "samsara_sodamage",       "OffenseModOptions"
+    Option "SO Defense Multiplier",      "samsara_sodefense",      "DefenseModOptions"
+    Option "Ranger Damage Multiplier",   "samsara_rangerdamage",   "OffenseModOptions"
+    Option "Ranger Defense Multiplier",  "samsara_rangerdefense",  "DefenseModOptions"
+}
+
+OptionValue "OffenseModOptions"
+{
+    -10, "-99.9% Damage"
+    -9,  "-99.0% Damage"
+    -8,  "-90.0% Damage"
+    -7,  "-75.0% Damage"
+    -6,  "-66.6% Damage"
+    -5,  "-50.0% Damage"
+    -4,  "-33.3% Damage"
+    -3,  "-25.0% Damage"
+    -2,  "-20.0% Damage"
+    -1,  "-10.0% Damage"
+    0,   "+0.0% Damage"
+    1,   "+10.0% Damage"
+    2,   "+20.0% Damage"
+    3,   "+25.0% Damage"
+    4,   "+33.3% Damage"
+    5,   "+50.0% Damage"
+    6,   "+66.6% Damage"
+    7,   "+75.0% Damage"
+    8,   "2.0x Damage"
+    9,   "3.0x Damage"
+    10,  "4.0x Damage"
+    11,  "5.0x Damage"
+    12,  "6.0x Damage"
+    13,  "7.0x Damage"
+    14,  "8.0x Damage"
+    15,  "9.0x Damage"
+    16,  "10.0x Damage"
+    17,  "25.0x Damage"
+    18,  "50.0x Damage"
+    19,  "100.0x Damage"
+    20,  "10000.0x Damage"
+}
+
+OptionValue "DefenseModOptions"
+{
+    -10, "-10.0x Defense"
+    -9,  "-4.0x Defense"
+    -8,  "-2.0x Defense"
+    -7,  "-66.6% Defense"
+    -6,  "-50.0% Defense"
+    -5,  "-33.3% Defense"
+    -4,  "-25.0% Defense"
+    -3,  "-20.0% Defense"
+    -2,  "-10.0% Defense"
+    -1,  "-5.0% Defense"
+    0,   "+0.0% Defense"
+    1,   "+5.0% Defense"
+    2,   "+10.0% Defense"
+    3,   "+20.0% Defense"
+    4,   "+25.0% Defense"
+    5,   "+33.3% Defense"
+    6,   "+50.0% Defense"
+    7,   "+66.6% Defense"
+    8,   "+75.0% Defense"
+    9,   "+90.0% Defense"
+    10,  "2.0x Defense"
+    11,  "2.4x Defense"
+    12,  "2.8x Defense"
+    13,  "3.2x Defense"
+    14,  "3.6x Defense"
+    15,  "4.0x Defense"
+    16,  "6.0x Defense"
+    17,  "8.0x Defense"
+    18,  "10.0x Defense"
+    19,  "20.0x Defense"
+    20,  "100.0x Defense"
 }

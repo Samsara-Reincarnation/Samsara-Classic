@@ -554,6 +554,8 @@ script "SamsaraSpawn" (int respawning)
 		TakeInventory("Soundboard - Critical Heal",1);
 		TakeInventory("Soundboard - Death Taunt",1);
 		TakeInventory("Soundboard - Doug Huggem",1); }
+		
+		SetInventory("SamsaraHasPermaWeaponLevel2", GetCVar("samsara_permaweaponlevel2") && (samsaraClassNum() == CLASS_HERETIC));
         
         HandleBans();
         HandleBuffCVars(respawning);

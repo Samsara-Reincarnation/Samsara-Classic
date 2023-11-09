@@ -12,6 +12,7 @@ Samsara Classic is similar to Samsara Reincarnation, another fork based off of t
 - Re-added the Strife and Hexen allies
 - Less compatibility with IWADs and TCs; only Doom, Heretic, Hexen, Strife, and Chex Quest are supported
 - Animations for some characters and weapons behaved more like they did in older versions of Samsara
+- No ReMixer support
 
 ## Philosophy
 In short, Samsara Classic wishes to maintain what made the original mod fun without deviating from its contents. It keeps the characters as-is and doesn't do anything to disrupt the weaker balance and larger emphesis on hero roles that the original mod had compared to Reincarnation, effectively putting substance over style in terms of presentation. If you wish to make contributions to the mod, please keep the context of the original mod in mind and make sure that they would've been made during its initial development back in 2012-2014. In other words, if they aren't suited for Samsara Classic, then they should be moved to Samsara Reincarnation instead.

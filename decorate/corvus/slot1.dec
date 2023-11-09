@@ -24,6 +24,7 @@ actor "Gauntlets of the Necromancer" : Gauntlets
 
       Ready:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"ReadyTome")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"ReadyTome")
         GAUN A 1 A_WeaponReady
         Loop
 
@@ -33,6 +34,7 @@ actor "Gauntlets of the Necromancer" : Gauntlets
 
       Deselect:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"DeselectTome")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"DeselectTome")
         GAUN A 1 A_Lower
         Loop
 
@@ -42,6 +44,7 @@ actor "Gauntlets of the Necromancer" : Gauntlets
 
       Select:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"SelectTome")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"SelectTome")
         GAUN A 1 A_Raise
         Loop
 
@@ -51,11 +54,13 @@ actor "Gauntlets of the Necromancer" : Gauntlets
 
       Fire:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTome")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"FireTome")
         GAUN B 4 A_PlayWeaponSound("weapons/gauntletsuse")
         GAUN C 4
 
       Hold:
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"HoldTome")
+        TNT1 A 0 A_JumpIfInventory("SamsaraHasPermaWeaponLevel2",1,"HoldTome")
         GAUN DEF 4 BRIGHT A_GauntletAttack(0)
         GAUN C 4 A_ReFire
         GAUN B 4 A_Light0
