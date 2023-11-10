@@ -12,7 +12,7 @@ actor Counter: Inventory
     -INVBAR
 }
 
-Actor Trigger: CustomInventory
+actor Trigger: CustomInventory
 {
 	Inventory.MaxAmount 0
 	+AUTOACTIVATE
@@ -72,7 +72,9 @@ actor GotWeapon7: Boolean {}
 actor SamsaraHasDoubleFiringSpeed : Boolean {}
 actor SamsaraHasProsperity : Boolean {}
 actor SamsaraHasSpread : Boolean {}
-Actor SamsaraHasPermaWeaponLevel2 : Boolean {}
+actor SamsaraHasInfiniteAmmo : Boolean {}
+actor SamsaraHasInfiniteInventory : Boolean {}
+actor SamsaraHasPermaWeaponLevel2 : Boolean {}
 
 actor WeaponGetYaaaay : Ammo
 {

@@ -484,7 +484,12 @@ script "SamsaraSpawn" (int respawning)
 		SetInventory("SamsaraHasDoubleFiringSpeed", CheckInventory("PowerDoubleFiringSpeed") || CheckInventory("RuneDoubleFiringSpeed") || CheckInventory("CustomDoubleFiringSpeed"));
 		SetInventory("SamsaraHasProsperity", CheckInventory("PowerProsperity") || CheckInventory("RuneProsperity") || CheckInventory("CustomProsperity"));
 		SetInventory("SamsaraHasSpread", CheckInventory("PowerSpread") || CheckInventory("RuneSpread") || CheckInventory("CustomSpread"));
-        
+		
+		if (GetCVar("sv_infiniteammo") || CheckInventory("PowerInfiniteAmmo") || CheckInventory("RuneInfiniteAmmo") || CheckInventory("CustomInfiniteAmmo")) // the latter two don't exist, but are there just in case
+		{ SetInventory("SamsaraHasInfiniteAmmo", 1); }
+		
+		SetInventory("SamsaraHasInfiniteInventory", GetCVar("sv_infiniteinventory"));
+		
 		if(CheckInventory("MetaCheatDetector")) { ACS_NamedExecuteWithResult("InventoryCheat",0,0,0); }
         
         if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }

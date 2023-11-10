@@ -657,9 +657,8 @@ script "DukeResourceDrain" (int dukeshit)
             if (CheckInventory("DukeJetpackFuel") > 0)
             {
                 delay(15);
-				if (GetCvar("sv_infiniteinventory") >= 1)
+				if (CheckInventory("SamsaraHasInfiniteInventory") >= 1)
 				{
-					GiveInventory("DukeJetpackFuel",100);
 					restart;
 				}
 				else
@@ -680,7 +679,7 @@ script "DukeResourceDrain" (int dukeshit)
             if (CheckInventory("DukeVisionFuel") > 0)
             {
                 delay(10);
-				if (GetCvar("sv_infiniteinventory") >= 1)
+				if (CheckInventory("SamsaraHasInfiniteInventory") >= 1)
 				{
 					restart;
 				}
