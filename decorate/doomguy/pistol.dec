@@ -45,7 +45,7 @@ actor " Pistol " : Weapon// : Pistol
       CoopFire:
         TNT1 A 0
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
-        TNT1 A 0 A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff2_Coop")
+        TNT1 A 0 A_FireBullets (0, 0, 1, 5, "DoomBulletPuff2_Coop")
         Goto FireAnim
 
       FireAnim:

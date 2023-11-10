@@ -41,7 +41,10 @@ actor "Double Shotgun": InstantSwitchWeapon
         goto Fire2
         
       CoopFire:
-        QDBS A 0 A_FireBullets(7, 5, 14, 4, "QuakeBulletPuffCoop", FBF_USEAMMO | FBF_NORANDOM)
+        QDBS A 0 A_FireBullets(7, 5, 5, 4, "QuakeBulletPuffCoop", FBF_NORANDOM)
+		QDBS A 0 A_FireBullets(6.5, 4.5, 5, 4, "QuakeBulletPuffCoop", FBF_NORANDOM)
+		QDBS A 0 A_FireBullets(6, 4, 3, 4, "QuakeBulletPuffCoop", FBF_NORANDOM)
+		QDBS A 0 A_FireBullets(4, 2, 1, 4, "QuakeBulletPuffCoop", FBF_USEAMMO | FBF_NORANDOM)
         goto Fire2
         
         // 25 tics

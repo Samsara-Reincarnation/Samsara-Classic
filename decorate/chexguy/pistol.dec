@@ -39,7 +39,7 @@ actor "Mini-Zorcher" : Weapon
         goto FireAnim
 
       CoopFire:
-        PISC B 0 A_FireBullets(5, 0, 1, 5, "ChexPuff2Coop")
+        PISC B 0 A_FireBullets(0, 0, 1, 5, "ChexPuff2Coop")
         PISC B 0 A_PlayWeaponSound("chex/pistol")
         goto FireAnim
 
