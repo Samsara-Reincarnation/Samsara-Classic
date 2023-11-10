@@ -108,8 +108,8 @@ actor DoomguyPlayer : PlayerPawn
         DGUY G 3 A_SetTranslucent(0.3,0)
         DGUY G 3 A_SetTranslucent(0.2,0)
         DGUY G 3 A_SetTranslucent(0.1,0)
-        ACLO E 1 A_SetTranslucent(1,0)
-        ACLO E -1
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
         stop
 
       CoOpModeOn:

@@ -101,7 +101,7 @@ actor CorvusPlayer : PlayerPawn
         FDTH P 4 BRIGHT
         FDTH Q 5 BRIGHT
         FDTH R 4 BRIGHT
-        ACLO E -1
+        TNT1 A -1
         stop
 
       Death.ZorchPistol:
@@ -124,8 +124,8 @@ actor CorvusPlayer : PlayerPawn
         CORV G 3 A_SetTranslucent(0.3,0)
         CORV G 3 A_SetTranslucent(0.2,0)
         CORV G 3 A_SetTranslucent(0.1,0)
-        ACLO E 1 A_SetTranslucent(1,0)
-        ACLO E -1
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
         stop
 
       CoOpModeOn:

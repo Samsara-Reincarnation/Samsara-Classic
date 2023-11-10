@@ -46,7 +46,7 @@ actor HexenArmorDump replaces ArtiBlastRadius
     States
     {
       Spawn:
-        ACLO E 1
+        TNT1 A 1
         TNT1 A 0 A_NoBlocking
         stop
     }

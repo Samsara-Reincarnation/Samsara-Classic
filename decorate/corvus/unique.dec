@@ -157,7 +157,7 @@ actor Chicken2 : Chicken replaces Chicken
         CHKN E 0 A_GiveToTarget("KillCount",1)
         CHKN EEEEEEE 0 A_Feathers
         CHKN E 0 A_SpawnItem("WolfensteinChickenLeg")
-        ACLO E -1
+        TNT1 A -1
         stop
 
       DeathBrutal:
@@ -238,7 +238,7 @@ actor ChickenPlayer2 : ChickenPlayer
         CHKN E 0 A_Scream
         CHKN EEEEEEEEE 0 A_Feathers
         CHKN E 0 A_SpawnItem("WolfensteinChickenLeg")
-        ACLO E -1
+        TNT1 A -1
         stop
 
       Pain.MightyBoot:
@@ -278,8 +278,8 @@ actor ChickenPlayer2 : ChickenPlayer
         CHKN D 3 A_SetTranslucent(0.3,0)
         CHKN D 3 A_SetTranslucent(0.2,0)
         CHKN D 3 A_SetTranslucent(0.1,0)
-        ACLO E 1 A_SetTranslucent(1,0)
-        ACLO E -1
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
         stop
 
       DeathBrutal:

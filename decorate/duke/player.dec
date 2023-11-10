@@ -169,8 +169,8 @@ actor DukePlayer : PlayerPawn
         TNT1 AAAAAAA 0 A_SpawnItemEx("DukeGibs6_DukeOrange",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
         TNT1 A 0 A_PlaySound("duke/enemygib")
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate", 0, 16)
-        ACLO E 5 A_NoBlocking
-        ACLO E -1
+        TNT1 A 5 A_NoBlocking
+        TNT1 A -1
         Stop
 
       Death.CorvusGrimBallista:
@@ -194,8 +194,8 @@ actor DukePlayer : PlayerPawn
         TNT1 AAAAAAA 0 A_SpawnItemEx("DukeGibs6_DukeOrange",random(-2,2),random(-2,2),random(24,45),random(-3,3),random(-3,3),random(3,10),random(-180,180),32)
         TNT1 A 0 A_PlaySound("duke/enemygib")
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate", 0, 16)
-        ACLO E 5 A_NoBlocking
-        ACLO E -1
+        TNT1 A 5 A_NoBlocking
+        TNT1 A -1
         Stop
 
       Death.ZorchPistol:
@@ -223,8 +223,8 @@ actor DukePlayer : PlayerPawn
         DUKE I 3 A_SetTranslucent(0.3,0)
         DUKE I 3 A_SetTranslucent(0.2,0)
         DUKE I 3 A_SetTranslucent(0.1,0)
-        ACLO E 1 A_SetTranslucent(1,0)
-        ACLO E -1
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
         stop
 
       CoOpModeOn:
@@ -291,8 +291,8 @@ actor DukePlayer : PlayerPawn
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate", 0, 16)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_SpawnItem("BurnDeathDuke")
-        ACLO E 1 A_PlaySound("*burndeath")
-        ACLO E -1
+        TNT1 A 1 A_PlaySound("*burndeath")
+        TNT1 A -1
         stop
 
       Pain.MightyBoot:
@@ -507,7 +507,7 @@ actor BurnDeathDuke
         Goto Death
 
       Death:
-        TNT1 E 0 A_PlaySound("duke/burndeath2")
+        TNT1 A 0 A_PlaySound("duke/burndeath2")
         TNT1 A 0 A_SpawnDebris("Firetrail3",0)
         TNT1 A 0 A_SpawnDebris("Firetrail4",0)
         DKBR EEFFGG 3 Bright

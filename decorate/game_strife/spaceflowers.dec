@@ -342,7 +342,7 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
     States
     {
       Spawn:
-        ACLO E 5 ACS_NamedExecuteAlways("SamsaraSpectres", -2)
+        TNT1 A 5 ACS_NamedExecuteAlways("SamsaraSpectres", -2)
         loop
 
       Missile:

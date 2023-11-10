@@ -141,8 +141,8 @@ actor WolfenPlayer : PlayerPawn
         BJBL G 3 A_SetTranslucent(0.3,0)
         BJBL G 3 A_SetTranslucent(0.2,0)
         BJBL G 3 A_SetTranslucent(0.1,0)
-        ACLO E 1 A_SetTranslucent(1,0)
-        ACLO E -1
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
         stop
 
       CoOpModeOn:
@@ -335,7 +335,7 @@ actor WolfenAmmoCrate : CustomInventory
     States
     {
       Spawn:
-        ACLO E 5
+        TNT1 A 5
         Stop
 
       Use:

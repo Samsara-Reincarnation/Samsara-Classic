@@ -104,7 +104,7 @@ Actor SuperCoopChicken
         CHKN E 0 A_GiveToTarget("KillCount",1)
         CHKN EEEEEEE 0 A_Feathers
         CHKN E 0 A_SpawnItem("WolfensteinChickenLeg")
-        ACLO E -1
+        TNT1 A -1
         stop
 
     Death.ZorchPistol:

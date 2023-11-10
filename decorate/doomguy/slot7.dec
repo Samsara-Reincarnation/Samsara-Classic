@@ -357,11 +357,11 @@ actor BFGSpittle : FastProjectile
     States
     {
       Spawn:
-        ACLO E 1
-        ACLO E 1 
+        TNT1 A 1
+        TNT1 A 1 
         loop
       Death:
-        ACLO E 1
+        TNT1 A 1
         stop
       Crash:
       XDeath:

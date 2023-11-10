@@ -6,7 +6,7 @@ actor LMSArmor : BasicArmorPickup
     states
     {
       Spawn:
-        ACLO E 1
+        TNT1 A 1
         Stop
     }
 }
@@ -19,7 +19,7 @@ actor LMSArmor2 : BasicArmorPickup
     states
     {
       Spawn:
-        ACLO E 1
+        TNT1 A 1
         Stop
     }
 }
@@ -32,7 +32,7 @@ actor LMSArmor3 : BasicArmorPickup
     states
     {
       Spawn:
-        ACLO E 1
+        TNT1 A 1
         Stop
     }
 }

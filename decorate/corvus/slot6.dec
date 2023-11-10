@@ -145,43 +145,43 @@ actor HornRodFX2A : HornRodFX2
         FX00 KLM 3 BRIGHT
         FX00 G 1
         FX00 G 1 A_AddPlayerRain
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
-        ACLO E 1 A_TakeInventory("Health",100)
-        ACLO E 0 A_SkullRodStorm
-        ACLO E 5
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 A 1 A_TakeInventory("Health",100)
+        TNT1 A 0 A_SkullRodStorm
+        TNT1 A 5
         stop
 
       Death2:
-        ACLO EEEEEEEEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0) // When the Heretic rain pillar "dies", its health is actually set at 16 and gives 16 more raindrops before going away.
-        ACLO E 1 A_TakeInventory("Health",100)
-        ACLO E 0 A_SkullRodStorm
-        ACLO E 5
+        TNT1 AAAAAAAAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0) // When the Heretic rain pillar "dies", its health is actually set at 16 and gives 16 more raindrops before going away.
+        TNT1 A 1 A_TakeInventory("Health",100)
+        TNT1 A 0 A_SkullRodStorm
+        TNT1 A 5
         stop
     }
 }
@@ -254,43 +254,43 @@ actor HornRodFX22 : HornRodFX2
         FX00 KLM 3 BRIGHT
         FX00 G 1
         FX00 G 1 A_AddPlayerRain
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
-        ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
-        ACLO E 1 A_TakeInventory("Health",100)
-        ACLO E 0 A_SkullRodStorm
-        ACLO E 5
+        TNT1 AAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0)
+        TNT1 A 1 A_TakeInventory("Health",100)
+        TNT1 A 0 A_SkullRodStorm
+        TNT1 A 5
         stop
 
       Death2:
-        ACLO EEEEEEEEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0) // When the Heretic rain pillar "dies", its health is actually set at 16 and gives 16 more raindrops before going away.
-        ACLO E 1 A_TakeInventory("Health",100)
-        ACLO E 0 A_SkullRodStorm
-        ACLO E 5
+        TNT1 AAAAAAAAAAAAAAAA 1 A_SpawnItemEx("HellstaffRain2",random(-64,64),random(-64,64),0,0,0,0) // When the Heretic rain pillar "dies", its health is actually set at 16 and gives 16 more raindrops before going away.
+        TNT1 A 1 A_TakeInventory("Health",100)
+        TNT1 A 0 A_SkullRodStorm
+        TNT1 A 5
         stop
     }
 }

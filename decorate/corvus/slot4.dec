@@ -174,7 +174,7 @@ actor BlasterFX1B : FastProjectile
     States
     {
       Spawn:
-        ACLO E 200
+        TNT1 A 200
         Loop
 
       Death:
@@ -222,7 +222,7 @@ actor BlasterFX1D : FastProjectile
     States
     {
       Spawn:
-        ACLO E 200
+        TNT1 A 200
         Loop
 
       Death:
