@@ -265,8 +265,21 @@ actor KnightAxe2 : KnightAxe replaces KnightAxe
     +THRUGHOST
 }
 
+// Blood actor for Undead Warrior RedAxe; made by Popsoap
+Actor SamsaraRedAxeBlood : Blood
+{
+	Gravity 0.125
+}
+
 actor RedAxe2 : RedAxe replaces RedAxe
 {
-    DamageType "HereAxeRed"
-    +THRUGHOST
+	DamageType "HereAxeRed"
+	+THRUGHOST
+	States
+	{
+	// Prevent the Undead Warrior RedAxe from spamming blood
+	Spawn:
+		RAXE AB 5 bright A_SpawnItemEx("SamsaraRedAxeBlood", Random(-80,80)/10.0, Random(-80,80)/10.0, 0, Random(-40,40)/10.0, Random(-40,40)/10.0, 0, 0)
+		Loop
+	}
 }
