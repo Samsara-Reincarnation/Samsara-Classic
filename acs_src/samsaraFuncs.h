@@ -503,6 +503,15 @@ function int HandlePunchDrunk(int respawning)
         TakeInventory(ClassWeapons[classnum][i][S_WEP], 0x7FFFFFFF);
         TakeInventory(ClassWeapons[classnum][i][S_AMMO1], 0x7FFFFFFF);
         TakeInventory(ClassWeapons[classnum][i][S_AMMO2], 0x7FFFFFFF);
+		
+        if (CheckInventory("DoomguyClass") == 1) { TakeInventory(" Pistol ", 0x7FFFFFFF); }
+        if (CheckInventory("ChexClass") == 1) { TakeInventory("Mini-Zorcher", 0x7FFFFFFF); }
+        if (CheckInventory("CorvusClass") == 1) { TakeInventory("Elven Wand", 0x7FFFFFFF); }
+        if (CheckInventory("WolfenClass") == 1) { TakeInventory("Luger", 0x7FFFFFFF); }
+        if (CheckInventory("HexenClass") == 1) { TakeInventory("Sapphire Wand", 0x7FFFFFFF); }
+        if (CheckInventory("DukeClass") == 1) { TakeInventory("Glock 17", 0x7FFFFFFF); }
+        if (CheckInventory("MarathonClass") == 1) { TakeInventory(".44 Magnum Mega Class A1", 0x7FFFFFFF); }
+        if (CheckInventory("QuakeClass") == 1) { TakeInventory("Single Shotgun", 0x7FFFFFFF); }
     }
 
     GiveClassWeapon(classnum, 0, 1);
