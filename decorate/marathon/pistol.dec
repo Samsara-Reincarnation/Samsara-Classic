@@ -88,6 +88,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 		TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"FireCoop")
 		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"FireCoop")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"SamsaraBlankPuff",FBF_NORANDOM|FBF_NOFLASH)
         TNT1 A 0 A_FireCustomMissile("MarathonMagnumBullet",random(-1,1),1,0,0,0,random(-1,1))//A_FireBullets(1,1,-1,20+random(0,8),"MarathonPuff")
         TNT1 A 0 A_PlayWeaponSound("marathon/pistol/fire")
         TNT1 A 0 A_FireCustomMissile("44mmCasingSpawner",0,0,8,0)
@@ -115,6 +116,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 
       FireCoop:
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"SamsaraBlankPuff",FBF_NORANDOM|FBF_NOFLASH)
         TNT1 A 0 A_FireCustomMissile("MarathonMagnumBulletCoop",random(-1,1),1,0,0,0,random(-1,1))//A_FireBullets(1,1,-1,20+random(0,8),"MarathonPuff")
         TNT1 A 0 A_PlayWeaponSound("marathon/pistol/fire")
         TNT1 A 0 A_FireCustomMissile("44mmCasingSpawner",0,0,8,0)
@@ -196,6 +198,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"LFireCoop")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
         TNT1 A 0 A_TakeInventory("MagnumBullet",1,TIF_NOTAKEINFINITE)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"SamsaraBlankPuff",FBF_NORANDOM|FBF_NOFLASH)
         TNT1 A 0 A_FireCustomMissile("MarathonMagnumBullet",random(-1,1),0,0,0,0,random(-1,1))//A_FireBullets(1,1,-1,20+random(0,8),"MarathonPuff")
         TNT1 A 0 A_PlayWeaponSound("marathon/pistol/fire")
         TNT1 A 0 A_FireCustomMissile("44mmCasingSpawner",0,0,8,0)
@@ -215,6 +218,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
       LFireCoop:
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
         TNT1 A 0 A_TakeInventory("MagnumBullet",1,TIF_NOTAKEINFINITE)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"SamsaraBlankPuff",FBF_NORANDOM|FBF_NOFLASH)
         TNT1 A 0 A_FireCustomMissile("MarathonMagnumBulletCoop",random(-1,1),0,0,0,0,random(-1,1))//A_FireBullets(1,1,-1,20+random(0,8),"MarathonPuff")
         TNT1 A 0 A_PlayWeaponSound("marathon/pistol/fire")
         TNT1 A 0 A_FireCustomMissile("44mmCasingSpawner",0,0,8,0)
@@ -285,6 +289,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"RFireCoop")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
         TNT1 A 0 A_TakeInventory("MagnumBulletRight",1,TIF_NOTAKEINFINITE)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"SamsaraBlankPuff",FBF_NORANDOM|FBF_NOFLASH)
         TNT1 A 0 A_FireCustomMissile("MarathonMagnumBullet",random(-1,1),0,0,0,0,random(-1,1))//A_FireBullets(1,1,-1,20+random(0,8),"MarathonPuff")
         TNT1 A 0 A_PlayWeaponSound("marathon/pistol/fire")
         TNT1 A 0 A_FireCustomMissile("44mmCasingSpawner2",0,0,-8,0)
@@ -303,6 +308,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
       RFireCoop:
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
         TNT1 A 0 A_TakeInventory("MagnumBulletRight",1,TIF_NOTAKEINFINITE)
+        TNT1 A 0 A_FireBullets(0,0,1,0,"SamsaraBlankPuff",FBF_NORANDOM|FBF_NOFLASH)
         TNT1 A 0 A_FireCustomMissile("MarathonMagnumBulletCoop",random(-1,1),0,0,0,0,random(-1,1))//A_FireBullets(1,1,-1,20+random(0,8),"MarathonPuff")
         TNT1 A 0 A_PlayWeaponSound("marathon/pistol/fire")
         TNT1 A 0 A_FireCustomMissile("44mmCasingSpawner2",0,0,-8,0)
