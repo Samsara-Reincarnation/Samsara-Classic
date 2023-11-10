@@ -357,7 +357,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death:
         TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItem")
       	TNT1 A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate",0,11)
 	  DeathFinish:
         AGRD G 4
@@ -366,7 +365,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         AGRD J 3
         AGRD K 3 A_NoBlocking
         AGRD L 3
-        AGRD M 3 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        AGRD M 3 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         AGRD N -1
         Stop
 		
@@ -384,7 +384,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         AGRD J 3
         AGRD K 3 A_NoBlocking
         AGRD L 3
-        AGRD M 3 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        AGRD M 3 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         AGRD N -1
         Stop
         
@@ -404,29 +405,10 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         AGRD J 3
         AGRD K 3 A_NoBlocking
         AGRD L 3
-        AGRD M 3 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        AGRD M 3 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         AGRD N -1
         Stop
-        
-    GiveQuestItem:
-        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1) // Damn. Doesn't play the sound.
-        AGRD G 1 A_GiveToTarget("QuestItem7",1)
-        goto DeathFinish
-        
-    GiveQuestItemXDeath:
-        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
-        AGRD G 1 A_GiveToTarget("QuestItem7",1)
-        goto XDeathFinish
-        
-    GiveQuestItemZorch:
-        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
-        AGRD O 1 A_GiveToTarget("QuestItem7",1)
-        goto ZorchFinish
-        
-    GiveQuestItemFreeze:
-        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
-        AGRD O 1 A_GiveToTarget("QuestItem7",1)
-        goto IceFinish
 
       Death.DukeExplosive:
       Death.DukeSpectral:
@@ -448,7 +430,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       XDeath:
         TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemXDeath")
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate",0,10)
 	  XDeathFinish:
         GIBS A 5 A_NoBlocking
@@ -458,7 +439,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         GIBS F 4 A_TossGib
         GIBS GH 4
         GIBS I 5
-        GIBS J 5 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        GIBS J 5 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         GIBS K 5
         GIBS L 1400
         Stop
@@ -477,7 +459,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         GIBS F 4 A_TossGib
         GIBS GH 4
         GIBS I 5
-        GIBS J 5 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        GIBS J 5 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         GIBS K 5
         GIBS L 1400
         Stop
@@ -503,7 +486,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         GIBS F 4 A_TossGib
         GIBS GH 4
         GIBS I 5
-        GIBS J 5 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        GIBS J 5 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         GIBS K 5
         GIBS L 1400
         Stop
@@ -533,7 +517,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         GIBS F 4 A_TossGib
         GIBS GH 4
         GIBS I 5
-        GIBS J 5 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        GIBS J 5 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         GIBS K 5
         GIBS L 1400
         Stop
@@ -567,7 +552,8 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         GIBS F 4 A_TossGib
         GIBS GH 4
         GIBS I 5
-        GIBS J 5 A_AcolyteDie
+        TNT1 A 0 A_AcolyteDie
+        GIBS J 5 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         GIBS K 5
         GIBS L 1400
         Stop
@@ -595,7 +581,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemZorch")
       ZorchFinish:
         AGRD O 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -614,7 +599,9 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         AGRD O 3 A_SetTranslucent(0.2,0)
         AGRD O 3 A_SetTranslucent(0.1,0)
         TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
+        TNT1 A 0 A_AcolyteDie
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
+		TNT1 A -1
         stop
 
       Death.DukeIce:
@@ -629,9 +616,10 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemFreeze")
       IceFinish:
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        TNT1 A 0 A_AcolyteDie
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
         AGRD O 0 A_GenericFreezeDeath
         AGRD O 70 A_UnsetSolid
         AGRD O 0 A_IceGuyDie

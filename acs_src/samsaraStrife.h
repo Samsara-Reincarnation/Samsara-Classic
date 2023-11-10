@@ -156,3 +156,27 @@ int AccuracyMessages[CLASSCOUNT][MSGCOUNT] =
         "Ia ia fhtagn, you floating flower pot.",
     },
 };
+
+script "SamsaraStrifeAcolyteBlueDeathChecker" (void) // Haaaaack.
+{
+    if (GetTimeProperty(0, 5, true) != 0 && !ThingCountName("AcolyteBlue2", 0))
+    {
+        for (int i = 0; i < PLAYERMAX; i++)
+        {
+            if (!PlayerInGame(i)) { continue; }
+
+            SetActivatorToPlayer(i);
+
+            if (!isDead(0) && !CheckInventory("QuestItem7"))
+            {
+                bool hadcommunicator = CheckInventory("Communicator"); // bypass item requirement if you're cheating
+
+                GiveInventory("QuestItem7", 1);
+
+                if (!hadcommunicator) { GiveInventory("Communicator", 1); }
+                SendToCommunicator(14, 0, 14, 0);
+                if (!hadcommunicator) { TakeInventory("Communicator", 0x7FFFFFFF); }
+            }
+        }
+    }
+}
