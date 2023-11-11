@@ -54,8 +54,9 @@ actor UsingDoEAmmo: Boolean {}
 actor OverMax: Counter { Inventory.MaxAmount 200 }
 actor OverOverMax: Counter { Inventory.MaxAmount 300 }
 actor SamsaraArmorCategory : Counter {}
-actor ForceRangerGravity: Boolean {}
+actor ForceNormalGravity: Boolean {}
 actor ForceSOGravity: Boolean {}
+actor ForceRangerGravity: Boolean {}
 
 actor SynthFireActive:  Boolean {} // enables synthetic-fire system.
 actor SynthFireLeft:    Boolean {} // special refire-trackers for

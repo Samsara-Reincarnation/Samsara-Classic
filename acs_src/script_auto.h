@@ -699,8 +699,11 @@ script "SamsaraSpawn" (int respawning)
             break;
         }
 
-        if (CheckInventory("ForceSOGravity"))
+        if (CheckInventory("ForceNormalGravity"))
         {
+            SetActorProperty(0, APROP_Gravity, 1.0);
+            SetActorProperty(0, APROP_Mass, 100);
+        } else if (CheckInventory("ForceSOGravity")) {
             SetActorProperty(0, APROP_Gravity, 0.15);
             SetActorProperty(0, APROP_Mass, 220);
         } else if (CheckInventory("ForceRangerGravity")) {
