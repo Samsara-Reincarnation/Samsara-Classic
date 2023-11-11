@@ -648,7 +648,7 @@ script "SamsaraSpawn" (int respawning)
 
         oarmor = armor;
         otype = type;
-        armor = CheckInventory("Armor");
+        armor = CheckInventory("BasicArmor");
         type = SamsaraArmorType();
 
         if (oarmor > armor && otype == 3)
@@ -672,37 +672,47 @@ script "SamsaraSpawn" (int respawning)
         switch (samsaraClassNum())
         {
           case CLASS_MARATHON:
-            if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
-            else { SetActorProperty(0, APROP_Gravity, 0.15); }
+            if (GetCVar("samsara_nocustomgravity"))
+            {
+                SetActorProperty(0, APROP_Gravity, 1.0);
+                SetActorProperty(0, APROP_Mass, 100);
+            } else {
+                SetActorProperty(0, APROP_Gravity, 0.15);
+                SetActorProperty(0, APROP_Mass, 220);
+            }
             break;
 
           case CLASS_QUAKE:
-            if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
-            else { SetActorProperty(0, APROP_Gravity, 0.75); }
+            if (GetCVar("samsara_nocustomgravity"))
+            {
+                SetActorProperty(0, APROP_Gravity, 1.0);
+                SetActorProperty(0, APROP_Mass, 100);
+            } else {
+                SetActorProperty(0, APROP_Gravity, 0.75);
+                SetActorProperty(0, APROP_Mass, 100);
+            }
             break;
 
           default:
             SetActorProperty(0, APROP_Gravity, 1.0);
+            SetActorProperty(0, APROP_Mass, 100);
             break;
         }
 
-        if (CheckInventory("ForceRangerGravity")) { SetActorProperty(0, APROP_Gravity, 0.75); }
-        if (CheckInventory("ForceSOGravity")) { SetActorProperty(0, APROP_Gravity, 0.15); }
+        if (CheckInventory("ForceSOGravity"))
+        {
+            SetActorProperty(0, APROP_Gravity, 0.15);
+            SetActorProperty(0, APROP_Mass, 220);
+        } else if (CheckInventory("ForceRangerGravity")) {
+            SetActorProperty(0, APROP_Gravity, 0.75);
+            SetActorProperty(0, APROP_Mass, 100);
+        }
 
-        // THIS WAS GOING RENEGADE AND KILLING JUMPING FOREVER - COMMENTED OUT UNTIL SOMEONE LOOKS AT IT
-
-        if (samsaraClassNum() == CLASS_HEXEN) 
-            { 
-                i = JumpZFromHeight(41 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); 
-            }
-        else 
-            { 
-                i = JumpZFromHeight(32 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity));
-            }
+        if (samsaraClassNum() == CLASS_HEXEN)  { i = JumpZFromHeight(41 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); }
+        else { i = JumpZFromHeight(32 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); }
 
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
 
-        
         //if (isDead(0)) { endloop = 1; }
         
         Delay(1);
@@ -710,7 +720,6 @@ script "SamsaraSpawn" (int respawning)
         opcount = pcount;
         pcount  = PlayerCount();
     }
-
 }
 
 script "SamsaraTurkeyPuncher" ENTER
