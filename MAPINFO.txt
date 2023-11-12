@@ -18,7 +18,7 @@ gameinfo
 	weaponslot = 4, " Chaingun ", "Dragon Claw", "Serpent Staff", "Rapid Zorcher", "  Chaingun  ", "Chaingun Cannon", "MA-75B Assault Rifle", "Nailgun"
 	weaponslot = 5, "Rocket Launcher", "Phoenix Rod", "Hammer of Retribution", "Zorch Propulsor", " Rocket Launcher ", "RPG", "SPNKR-XP SSM Launcher", "  Rocket Launcher  "
 	weaponslot = 6, "Plasma Rifle", "Hellstaff", "Firestorm", "Phasing Zorcher", " Flamethrower ", "Freezethrower", "Super Nailgun", "TOZT-7 Napalm Unit"
-	weaponslot = 7, "B.F.G. 9000", "Wraithverge", "LAZ Device", "Spear of Destiny", "Devastator", "ONI-71 Wave Motion Cannon", "Thunderbolt"
+	weaponslot = 7, "B.F.G. 9000", "Wraithverge", "LAZ Device", "Spear of Destiny", "Devastator Weapon", "ONI-71 Wave Motion Cannon", "Thunderbolt"
 	weaponslot = 8, "Alien Weapon", " Alien Weapon ", "Laser Cannon"
 }
 

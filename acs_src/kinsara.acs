@@ -431,7 +431,7 @@ script "PistolStart" ENTER
 			TakeInventory("Chaingun Cannon", 999);
 			TakeInventory("RPG", 999);
 			TakeInventory("Freezethrower", 999);
-			TakeInventory("Devastator", 999);
+			TakeInventory("Devastator Weapon", 999);
 			
 			GiveInventory("Glock 17", 1);
 			GiveInventory("Mighty Boot", 1);

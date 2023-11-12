@@ -1273,11 +1273,11 @@ StatusBar Normal, ForceScaled
                 DrawImage "WPDUKE7N", 247, 11;
             }
 
-            IsSelected Devastator
+            IsSelected "Devastator Weapon"
             {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPDUKE7Y", 247, 11;
-            } else IsSelected "Spectral Devastator" {
+            } else IsSelected "Spectral Devastator Weapon" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPDUKE7Y", 247, 11;
             }
@@ -3313,11 +3313,11 @@ StatusBar Automap
                 DrawImage "WPDUKE7N", 247, 11;
             }
 
-            IsSelected Devastator
+            IsSelected "Devastator Weapon"
             {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPDUKE7Y", 247, 11;
-            } else IsSelected "Spectral Devastator" {
+            } else IsSelected "Spectral Devastator Weapon" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPDUKE7Y", 247, 11;
             }
@@ -4470,8 +4470,8 @@ StatusBar Fullscreen
         IsSelected "Spear of Eternity" { DrawImage "STY2NUM7", 186, 10; }
         IsSelected Wraithverge { DrawImage "STY2NUM7", 186, 10; }
         IsSelected "Spectral Wraithverge" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected Devastator { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral Devastator" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
         IsSelected "ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
         IsSelected "Spectral ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
         IsSelected Thunderbolt { DrawImage "STY2NUM7", 186, 10; }

@@ -1,6 +1,6 @@
 actor DevastatorSide: Boolean {}
 
-actor Devastator : Weapon
+actor "Devastator Weapon" : Weapon
 {
     Weapon.BobRangeX 0.75
     Weapon.BobRangeY 0.95
@@ -12,7 +12,7 @@ actor Devastator : Weapon
 	Tag "Devastator"
     //Obituary "%k devastated %o."
 
-    Weapon.SisterWeapon "Spectral Devastator"
+    Weapon.SisterWeapon "Spectral Devastator Weapon"
 
     Inventory.Pickupmessage "You got the Devastator!"
     Inventory.PickupSound "duke/weaponget"
@@ -610,14 +610,14 @@ actor Devastator : Weapon
     }
 }
 
-actor "Spectral Devastator": Devastator
+actor "Spectral Devastator Weapon": "Devastator Weapon"
 {
     Weapon.AmmoType ""
     Weapon.AmmoUse  0
     Weapon.AmmoGive 0
 
     Tag "Spectral Devastator"
-    Weapon.SisterWeapon "Devastator"
+    Weapon.SisterWeapon "Devastator Weapon"
     +POWERED_UP
 
     States
