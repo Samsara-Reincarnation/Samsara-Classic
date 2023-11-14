@@ -103,7 +103,7 @@ actor WeaponGetYaaaay2 : Weapon
     Radius 4
     Height 1
 
-    Weapon.SelectionOrder 99999999999999999999999999999999
+    Weapon.SelectionOrder 99999999
     Weapon.AmmoUse 0
     Weapon.AmmoType "Clip"
 
