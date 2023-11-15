@@ -271,14 +271,14 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
         break;
 		
 	  case 26:
-	    if (CheckInventory("PowerInvisibility") == 0)
-		{ GiveInventory("PowerInvisibility",1); }
+	    if (CheckInventory("SamsaraPowerInvisibilityNormal") == 0)
+		{ GiveInventory("SamsaraPowerInvisibilityNormal",1); }
 		else
-		{ TakeInventory("PowerInvisibility",1); 
+		{ TakeInventory("SamsaraPowerInvisibilityNormal",1); 
 		delay(1);
-		GiveInventory("PowerShadow",1);
+		GiveInventory("SamsaraPowerInvisibilityShadow",1);
 		delay(1);
-		GiveInventory("PowerShadow",1); }
+		GiveInventory("SamsaraPowerInvisibilityShadow",1); }
 	    break;
 
       case 27:

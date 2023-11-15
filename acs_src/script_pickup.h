@@ -217,6 +217,11 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
                 Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
                 Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
 				
+				if(isSinglePlayer())
+				{
+					SetMugShotState("Grin");
+				}
+				
 				// work around for auto-switch seemingly being fucking broked in zdoom
 				If (GetCVar("samsara_runninginzdoom") == 1)
 				{
