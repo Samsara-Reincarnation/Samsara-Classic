@@ -1,3 +1,5 @@
+actor SamsaraMinesTransmitterUniqueGiven : Boolean {}
+
 actor StrifeAccuracyCounter: Ammo
 {
     +IGNORESKILL

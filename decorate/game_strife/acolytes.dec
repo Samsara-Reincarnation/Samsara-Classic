@@ -226,6 +226,17 @@ actor Acolyte2: Acolyte replaces Acolyte
         AGRD O 1 A_IceGuyDie
         TNT1 A -1
         stop
+
+      Death.HexGreenFire:
+      Death.QuakeFire:
+      Death.FireExplosive:
+      Burn:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto Super::Burn
+
+      Disintegrate:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto Super::Disintegrate
     }
 }
 
@@ -355,7 +366,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         goto Death
 
       Death:
-        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
       	TNT1 A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate",0,11)
 	  DeathFinish:
@@ -428,7 +438,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
 
       XDeath:
-        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate",0,10)
 	  XDeathFinish:
@@ -579,7 +588,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
-        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
       ZorchFinish:
         AGRD O 0 A_Stop
@@ -614,7 +622,6 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.HexenIce:
 
       Death.Ice:
-        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
       IceFinish:
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
@@ -626,7 +633,36 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         AGRD O 1 A_IceGuyDie
         TNT1 A -1
         stop
+
+      Death.HexGreenFire:
+      Death.QuakeFire:
+      Death.FireExplosive:
+      Burn:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        BURN A 3 Bright A_PlaySoundEx("human/imonfire","Voice")
+        BURN B 3 Bright A_DropFire
+        BURN C 3 Bright A_Wander
+        BURN D 3 Bright A_NoBlocking
+        BURN E 5 Bright A_DropFire
+        BURN FGH 5 Bright A_Wander
+        BURN I 5 Bright A_DropFire
+        BURN JKL 5 Bright A_Wander
+        BURN M 5 Bright A_DropFire
+        BURN NOPQPQ 5 Bright
+        BURN RSTU 7 Bright
+        TNT1 A 0 A_AcolyteDie
+        BURN V -1 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
+        stop
+
+      Disintegrate:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        DISR A 5 A_PlaySoundEx("misc/disruptordeath","Voice")
+        DISR BC 5
+        DISR D 5 A_NoBlocking
+        DISR EF 5
+        DISR GHIJ 4
+        TNT1 A 0 A_AcolyteDie
+        MEAT D 700 ACS_NamedExecuteWithResult("SamsaraStrifeAcolyteBlueDeathChecker")
+        stop
     }
 }
-
-actor AcolyteBlueDeathCount : Counter { Inventory.MaxAmount 5 }

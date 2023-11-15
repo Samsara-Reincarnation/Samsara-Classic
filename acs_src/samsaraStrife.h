@@ -157,6 +157,40 @@ int AccuracyMessages[CLASSCOUNT][MSGCOUNT] =
     },
 };
 
+script "SamsaraStrifeMinesTransmitterUniqueGiver" ENTER
+{
+    if (CheckInventory("SamsaraMinesTransmitterUniqueGiven") || GetLevelInfo(LEVELINFO_LEVELNUM) != 14) { terminate; }
+
+    // keep a constant check on our stats to ensure they function as intended
+    int orighp = GetActorProperty(0, APROP_Health);
+    int origsta = GetActorProperty(0, APROP_Stamina);
+    int origacc = GetActorProperty(0, APROP_Accuracy);
+
+    while (true)
+    {
+        if (CheckInventory("QuestItem29"))
+        {
+            if (!CheckInventory("SamsaraMinesTransmitterUniqueGiven"))
+            {
+                SetActorProperty(0, APROP_Health, orighp);
+                SetActorProperty(0, APROP_Stamina, origsta);
+                SetActorProperty(0, APROP_Accuracy, origacc);
+                GiveInventory("UpgradeStamina", 10);
+                GiveInventory("StrifeAccuracyReplacement", 1);
+                GiveInventory("SamsaraMinesTransmitterUniqueGiven", 1);
+            }
+
+            terminate;
+        } else {
+            orighp = GetActorProperty(0, APROP_Health);
+            origsta = GetActorProperty(0, APROP_Stamina);
+            origacc = GetActorProperty(0, APROP_Accuracy);
+        }
+
+        Delay(1);
+    }
+}
+
 script "SamsaraStrifeAcolyteBlueDeathChecker" (void) // Haaaaack.
 {
     if (GetTimeProperty(0, 5, true) != 0 && !ThingCountName("AcolyteBlue2", 0))
