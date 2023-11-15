@@ -83,7 +83,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 
       Fire:
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"LFire")
-        TNT1 A 0 A_JumpIfNoAmmo(14)
+        TNT1 A 0 A_JumpIfNoAmmo(15)
         TNT1 A 0 A_FireBullets(0,0, 1, 0, "SamsaraBlankPuff", FBF_NORANDOM)
 		TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"FireCoop")
 		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"FireCoop")
