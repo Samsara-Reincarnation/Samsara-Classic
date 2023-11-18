@@ -155,7 +155,7 @@ script "SamsaraQPowers" (int startTime)
         oHealth = health;
         health = GetActorProperty(0, APROP_Health);
 
-        if (health < 0)
+        if (health <= 0)
         {
             quadTimer = CheckQuad(); 
             TakeInventory("QuakeQuadTimer", quadTimer);
