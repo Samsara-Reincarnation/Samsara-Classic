@@ -372,7 +372,7 @@ script "SamsaraQPowers" (int startTime)
                 HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
             }
 
-            if (health < getMaxHealth()) { healthGiven = 0; }
+            if (health <= getMaxHealth()) { healthGiven = 0; }
 
             if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
             {
