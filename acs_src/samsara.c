@@ -495,75 +495,75 @@ script "SamsaraGetSettings" (void) net
 
     SetHudSize(640, 480, 1);
 
-    if (isLMS())
+    if (isLMS() || GetCVar("samsara_lmsrules"))
     {
-        HudMessage(s:"Spawning with \ca", d:lmsHP, s:" health\c- and \cd", d:lmsArmor, s:" armor\c-";
+        HudMessage(s:"Spawning with \ca", d:lmsHP, s:" health\c- and \cd", d:lmsArmor, s:" armor", s:"\c-.";
             HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
         
-        HudMessage(s:"You spawn ", s:lmsUnique, s:"\c- your unique and ", s:lmsUlt, s:"\c- your slot 7";
+        HudMessage(s:"You spawn ", s:lmsUnique, s:"\c- your unique and ", s:lmsUlt, s:"\c- your Slot VII.";
             HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 104.0, 3.0, 1.0);
     }
     else
     {
-        HudMessage(s:"Slot 7 pickups ", s:ultStay, s:"\c- on pickup";
+        HudMessage(s:"Slot VII pickups ", s:ultStay, s:"\c- on pickup.";
             HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
 
-        HudMessage(s:"Armor mode is \cf", s:ArmorModeNames[ArmorMode];
+        HudMessage(s:"Armor mode is \cf", s:ArmorModeNames[ArmorMode], s:"\c-.";
             HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 96.0, 3.0, 1.0);
     }
 
     if (GetCVar("samsara_jumpmod"))
     {
-        HudMessage(s:"You jump \cn", d:abs(GetCVar("samsara_jumpmod")), s:"\c- units ", s:highLow, s:"\c- than normal";
+        HudMessage(s:"You jump \cn", d:abs(GetCVar("samsara_jumpmod")), s:"\c- units ", s:highLow, s:"\c- than normal.";
                 HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
     }
     else
     {
-        HudMessage(s:"Jumping is \cbnormal";
+        HudMessage(s:"Jumping is \cbnormal", s:"\c-.";
                 HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
     }
 
 
     if (GetCVar("samsara_banjetpack"))
     {
-        HudMessage(s:"Duke's jetpack is \cgBANNED.";
+        HudMessage(s:"Duke's jetpack is \cgbanned", s:"\c-.";
                 HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
     }
     else
     {
-        HudMessage(s:"Duke's jetpack is \cdALLOWED.";
+        HudMessage(s:"Duke's jetpack is \cdallowed", s:"\c-.";
                 HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
     }
 
     if (GetCVar("samsara_banwolfmove"))
     {
-        HudMessage(s:"Wolfenstein movement is \cgBANNED.";
+        HudMessage(s:"Wolfenstein movement is \cgbanned", s:"\c-.";
                 HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
     }
     else
     {
-        HudMessage(s:"Wolfenstein movement is \cdALLOWED.";
+        HudMessage(s:"Wolfenstein movement is \cdallowed", s:"\c-.";
                 HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
     }
 
     if (GetCVar("samsara_nocustomgravity"))
     {
-        HudMessage(s:"Custom gravities are \cadisabled.";
+        HudMessage(s:"Custom gravities are \cadisabled", s:"\c-.";
                 HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
     }
     else
     {
-        HudMessage(s:"Custom gravities are \cdenabled.";
+        HudMessage(s:"Custom gravities are \cdenabled", s:"\c-.";
                 HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
     }
 
-    HudMessage(s:"Party mode is ", s:cond(GetCVar("samsara_peoplediewhentheyarekilled"), "\cdON.", "\caOFF."), s:"\c- (", d:GetCVar("samsara_peoplediewhentheyarekilled"), s:")";
+    HudMessage(s:"Party mode is ", s:cond(GetCVar("samsara_peoplediewhentheyarekilled"), "\cdon\c-.", "\caoff\c-."), s:"\c- (", d:GetCVar("samsara_peoplediewhentheyarekilled"), s:")";
             HUDMSG_FADEOUT, 6767, CR_WHITE, 50.1, 176.0, 3.0, 1.0);
 
-    HudMessage(s:"Gentleman mode is ", s:cond(GetCVar("samsara_punchdrunk"), "\cdON.", "\caOFF."), s:"\c- (", d:GetCVar("samsara_punchdrunk"), s:")";
+    HudMessage(s:"Gentleman mode is ", s:cond(GetCVar("samsara_punchdrunk"), "\cdon\c-.", "\caoff\c-."), s:"\c- (", d:GetCVar("samsara_punchdrunk"), s:")";
             HUDMSG_FADEOUT, 6768, CR_WHITE, 50.1, 192.0, 3.0, 1.0);
 
-    HudMessage(s:"Limitless health is ", s:cond(GetCVar("samsara_nohealthcap"), "\cdON.", "\caOFF.");
+    HudMessage(s:"Limitless health is ", s:cond(GetCVar("samsara_nohealthcap"), "\cdon\c-.", "\caoff\c-.");
             HUDMSG_FADEOUT, 6769, CR_WHITE, 50.1, 208.0, 3.0, 1.0);
 
     HudMessage(s:"Chainsaw/unique start: \ca", d:GetCVar("samsara_chainsawstart"), s:"\c- / \cn", d:GetCvar("samsara_uniquestart");
