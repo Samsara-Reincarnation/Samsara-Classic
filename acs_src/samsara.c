@@ -325,18 +325,6 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
     SetResultValue(result);
 }
 
-function str GetBloodStateModifier(str state, int bloodSize)
-{
-	switch (bloodSize)
-	{
-		case 1: return StrParam(s: state, s: "Medium");
-		case 2: return StrParam(s: state, s: "Small");
-		case 3: return StrParam(s: state, s: "Spray");
-	}
-
-	return state;
-}
-
 script "SamsaraClientDecorate" (int which, int a1, int a2) clientside
 {
     int i, j, k;

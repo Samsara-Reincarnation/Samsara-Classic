@@ -1,3 +1,7 @@
+#define BLOOD_MEDIUM 1
+#define BLOOD_SMALL 2
+#define BLOOD_SPRAY 3
+
 function int GiveClassWeapon(int class, int slot, int ammoMode)
 {
     return _giveclassweapon(class, slot, ammoMode, 0, 0);
@@ -709,4 +713,16 @@ Script "Samsara_FillInventory" (void)
 			if(!isLMS()) { GiveQuad(1050); }
 			break;
 	}
+}
+
+function str GetBloodStateModifier(str state, int bloodSize)
+{
+	switch (bloodSize)
+	{
+		case BLOOD_MEDIUM: return StrParam(s: state, s: "Medium");
+		case BLOOD_SMALL: return StrParam(s: state, s: "Small");
+		case BLOOD_SPRAY: return StrParam(s: state, s: "Spray");
+	}
+
+	return state;
 }
