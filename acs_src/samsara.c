@@ -325,13 +325,24 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
     SetResultValue(result);
 }
 
+function str GetBloodStateModifier(str state, int bloodSize)
+{
+	switch (bloodSize)
+	{
+		case 1: return StrParam(s: state, s: "Medium");
+		case 2: return StrParam(s: state, s: "Small");
+		case 3: return StrParam(s: state, s: "Spray");
+	}
+
+	return state;
+}
+
 script "SamsaraClientDecorate" (int which, int a1, int a2) clientside
 {
     int i, j, k;
     int x, y, z;
 	int result;
-    int deathresult;
-    int xdeathresult;
+    int bloodyHellCVar;
 
     SetFont("SMALLFONT");
     switch (which)
@@ -403,61 +414,47 @@ script "SamsaraClientDecorate" (int which, int a1, int a2) clientside
         break;
 		
     case 10:
-        if (GetCVar("samsara_runninginzdoom") == 1)
+		if (GetCVar("samsara_runninginzdoom") == 1) { bloodyHellCVar = GetCvar("samsara_zd_bloodyhell"); }
+		else { bloodyHellCVar = GetUserCvar(ConsolePlayerNumber(), "samsara_cl_bloodyhell"); }
+
+		switch (bloodyHellCVar)
 		{
-			if(GetCvar("samsara_zd_bloodyhell") == -1) { SetActorState(0,"XDeathHappyfun"); }
-			if(GetCvar("samsara_zd_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
-			if(GetCvar("samsara_zd_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
-			if(GetCvar("samsara_zd_bloodyhell") == 3) { xdeathresult = random(1,2);	
-			if(xdeathresult==1) { SetActorState(0,"XDeathNightmare1"); }
-			if(xdeathresult==2) { SetActorState(0,"XDeathNightmare2"); } }	
-		} else {
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == -1) { SetActorState(0,"XDeathHappyfun"); }
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == 3) { xdeathresult = random(1,2);
-			if(xdeathresult==1) { SetActorState(0,"XDeathNightmare1"); }
-			if(xdeathresult==2) { SetActorState(0,"XDeathNightmare2"); } }
+			case BLOODYHELL_HAPPYFUN:		SetActorState(0,"XDeathHappyfun"); break;
+			case BLOODYHELL_VANILLA:		break;
+			case BLOODYHELL_NASHGORE:		SetActorState(0,"XDeathNashgore"); break;
+			case BLOODYHELL_BRUTAL:			SetActorState(0,"XDeathBrutal"); break;
+			case BLOODYHELL_NIGHTMARE:		SetActorState(0,StrParam(s: "XDeathNightmare", d: random(1,2))); break;
 		}
-        break;
+		break;
 		
     case 11:
-	    if (GetCVar("samsara_runninginzdoom") == 1)
+		if (GetCVar("samsara_runninginzdoom") == 1) { bloodyHellCVar = GetCvar("samsara_zd_bloodyhell"); }
+		else { bloodyHellCVar = GetUserCvar(ConsolePlayerNumber(), "samsara_cl_bloodyhell"); }
+
+		switch (bloodyHellCVar)
 		{
-			if(GetCvar("samsara_zd_bloodyhell") == -1) { SetActorState(0,"DeathHappyfun"); }
-			if(GetCvar("samsara_zd_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
-			if(GetCvar("samsara_zd_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
-			if(GetCvar("samsara_zd_bloodyhell") == 3) { deathresult = random(1,6);
-			if(deathresult==1) { SetActorState(0,"DeathNightmare1"); }
-			if(deathresult==2) { SetActorState(0,"DeathNightmare2"); }
-			if(deathresult==3) { SetActorState(0,"DeathNightmare3"); }
-			if(deathresult==4) { SetActorState(0,"DeathNightmare4"); }
-			if(deathresult==5) { SetActorState(0,"DeathNightmare5"); }
-			if(deathresult==6) { SetActorState(0,"DeathNightmare6"); } }
-			break;
-		} else {
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == -1) { SetActorState(0,"DeathHappyfun"); }
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
-			if(GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell") == 3) { deathresult = random(1,6);
-			if(deathresult==1) { SetActorState(0,"DeathNightmare1"); }
-			if(deathresult==2) { SetActorState(0,"DeathNightmare2"); }
-			if(deathresult==3) { SetActorState(0,"DeathNightmare3"); }
-			if(deathresult==4) { SetActorState(0,"DeathNightmare4"); }
-			if(deathresult==5) { SetActorState(0,"DeathNightmare5"); }
-			if(deathresult==6) { SetActorState(0,"DeathNightmare6"); } }
-			break;
+			case BLOODYHELL_HAPPYFUN:		SetActorState(0,"DeathHappyfun"); break;
+			case BLOODYHELL_VANILLA:		break;
+			case BLOODYHELL_NASHGORE:		SetActorState(0,"DeathNashgore"); break;
+			case BLOODYHELL_BRUTAL:			SetActorState(0,"DeathBrutal"); break;
+			case BLOODYHELL_NIGHTMARE:		SetActorState(0,StrParam(s: "DeathNightmare", d: random(1,6))); break;
 		}
-        break;
+		break;
 		
 	case 12:
-	    if (GetCVar("samsara_runninginzdoom") == 1)
+		//Many players won't use this option, so it's best to check default to cut back on if statements
+		if (GetCVar("samsara_runninginzdoom") == 1) { bloodyHellCVar = GetCvar("samsara_zd_bloodyhell"); }
+		else { bloodyHellCVar = GetUserCvar(ConsolePlayerNumber(), "samsara_cl_bloodyhell"); }
+
+		switch (bloodyHellCVar)
 		{
-			result = GetCVar("samsara_zd_bloodyhell");
-		} else {
-			result = GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodyhell");
+			case BLOODYHELL_HAPPYFUN:		SetActorState(0,GetBloodStateModifier("SpawnHappyfun", a1)); break;
+			case BLOODYHELL_VANILLA:		SetActorState(0,GetBloodStateModifier("SpawnNormal", a1)); break;
+			case BLOODYHELL_NASHGORE:		SetActorState(0,GetBloodStateModifier("SpawnNashgore", a1)); break;
+			case BLOODYHELL_BRUTAL:			SetActorState(0,"SpawnBrutal"); break;
+			case BLOODYHELL_NIGHTMARE:		SetActorState(0,GetBloodStateModifier("SpawnNightmare", a1)); break;
 		}
-        break;
+		break;
 	
 	case 13:
 	    if (GetCVar("samsara_runninginzdoom") == 1)
@@ -467,6 +464,20 @@ script "SamsaraClientDecorate" (int which, int a1, int a2) clientside
 			result = GetUserCVar(ConsolePlayerNumber(), "samsara_cl_bloodypersistent");
 		}
         break;
+		
+	case 15:
+		if (GetCVar("samsara_runninginzdoom") == 1) { bloodyHellCVar = GetCvar("samsara_zd_bloodyhell"); }
+		else { bloodyHellCVar = GetUserCvar(ConsolePlayerNumber(), "samsara_cl_bloodyhell"); }
+
+		switch (bloodyHellCVar)
+		{
+			case BLOODYHELL_HAPPYFUN:		SetActorState(0,"CrashHappyfun"); break;
+			case BLOODYHELL_VANILLA:		break;
+			case BLOODYHELL_NASHGORE:		SetActorState(0,"CrashNashgore"); break;
+			case BLOODYHELL_BRUTAL:			SetActorState(0,"CrashBrutal"); break;
+			case BLOODYHELL_NIGHTMARE:		SetActorState(0,"CrashNightmare"); break;
+		}
+		break;
     }
     
     SetResultValue(result);
