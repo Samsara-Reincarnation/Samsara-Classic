@@ -585,46 +585,55 @@ int SpeedModeNames[SPEEDMODES] =
 
 
 int ChangelogString =
-"FROM 0.3 TO 0.31\n\
-========================\n\
-GAMEPLAY:\n\
-- The Marathon 1 Alien Weapon has had its damage increased by a whole 1 to be more accurate to Marathon.\n\
-- Thanks to Popsoap, Duke is now capable of picking up his thrown pipebombs!\n\
-- Thanks to Scroton, Duke is now capable of kicking while shooting or reloading!\n\
-- The wonky rules about when Ranger could or could not get a Quad item have been chucked out the window in favor of a cvar--samsara_permaquad. Put at 1 to get a Quake II-style inventory Quad Damage, put at 0 to have just 30 seconds and nothing more.\n\
-- People keep asking me about Brutal Doom, if it will be implemented. No, it will not, but I will accomodate your thirst for gore! samsara_cl_bloodyhell has been implemented as an optional cvar--raise the numbers for even more bloodshed!\n\
- ^- : samsara_cl_bloodyhell 0 is default level, and is no different from vanilla.\n\
- ^- : samsara_cl_bloodyhell 1 is Nashgore level, and is for those who want a little bit more blood without anything over the top.\n\
- ^- : samsara_cl_bloodyhell 2 is Brutal level, and is for those who want as much bloodshed and brutality as possible.\n\
- ^- : samsara_cl_bloodyhell -1 is Happyfun level, and is...well, you'll see.\n\
-- samsara_cl_bloodypersistent has been implemented to keep gibs lasting on maps. Duke's gibs have been edited to accomodate this as well.\n\
-- By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...\n\
-- For those who would like to manually control when and how Duke taunts, samsara_dukesoundboard has been implemented.\n\
-- For people who would like survival runs or for their rocketarena duels to be a test of longevity, samsara_nohealth has been implemented. It removes all health pickups from the map.\n\
-- An acquaintence reminded me that Ranger's explosions did half damage to Shamblers. Ranger's splash damage now has half+FORCERADIUSDMG on it, allowing bosses to take half damage rather than nil damage to it.\n\
-\n\
-BUGFIXES:\n\
-- Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.\n\
-- Okay seriously now the Quad Damage will work in singleplayer ZDoom.\n\
-- Parias' Wraithverge no longer takes 160 mana in DM.\n\
-- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else. This has been fixed.\n\
-- Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.\n\
-- Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.\n\
-- The WSTE-M5 was the only Marathon weapon that would swap to another weapon when out of ammo. Thanks to ForrestMarkX, this inconsistency has been removed.\n\
-- When Heretic's Golems were gibbed by Duke, they had a chance to jump to a state that didn't exist.\n\
-- ZDoom's SBARINFO no longer shows doubles of the Heretic keys.\n\
-- The Nailguns no longer think Ranger's Grenade/Rocket Launcher run off Shells.\n\
-\n\
-POLISH:\n\
-- samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.\n\
-- Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.\n\
-- Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!\n\
-- Flemoid Blood should no longer conflict with any instances of Nashgore.\n\
-- Thanks to TehVappy50, a huge amount of the text lumps have been converted to LANGUAGE use. What does this mean? Well, if you want simpler obituaries, uncolored obituaries, or different ones, you can change them to be whatever you'd like!\n\
-- As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.\n\
-- Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.\n\
-- Thanks to ForrestMarkX, the Doom 2 bestiary now leaves proper decals on the wall.\n\
-- The Heretic/Hexen actors directory has been changed from a big, clunky, useless file in actors/ to a sorted and organized folder in decorate/.\n\
-- Duke 3D's pistol name has been changed from the M1911 that was in the .def to the Glock 17 its design is based off, due to...insistent request.\n\
-- Thanks to PresidentPeople, Duke Nukem now bleeds his slightly-orange blood color from Duke Nukem 3D.\n\
-- All SNDINFOs have been split into different files per each character, for easier tracking.";
+"FROM 0.3666 TO CLASSIC 2.0\n\
+==========================\n\
+- Fixed and slightly tweaked some hud elements\n\
+- Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara\n\
+- Used a better method of detecting Zandronum, courtesy of tehvappy50\n\
+- Pistol Start mode won't trigger in the title map\n\
+- Fixed the Holoduke not being taken away in Pistol Start\n\
+- Fixed Duke's jetpack and nightvision fuel being reduced with infinite inventory enabled\n\
+- Added class-specific PDWTAK death particles\n\
+- Fixed the grammer and spelling of a few pickup messages\n\
+- Added strafing support for the Wolfenstein 3D movement\n\
+- Fixed the Punchdrunk unique pickup messages not showing up\n\
+- Flemoid slime is now affected by the Persistant gibs setting\n\
+- The Super Large Zorcher no longer generates blood decals\n\
+- Added smooth animations for Doomguy's Chainsaw and Plasma Rifle\n\
+- Duke's Nuclear kicks no longer alerts enemies\n\
+- Added proper kicking and reloading for Duke's Golden Desert Eagle\n\
+- The Talon Ceramic Combat Knife no longer gets crushed by doors and it now fades away when thrown while infinite ammo is enabled\n\
+- Changed the Marathon Infrared powerup color to blue to match earlier versions of Samsara\n\
+- Fixed Acolytes not dropping their clips on death\n\
+- Fixed menus in newer versions of Zandronum\n\
+- Fixed Marathon weapons taking ammo when reloading with infinite ammo enabled\n\
+- Fixed the XDeath animations for the scripted marines\n\
+- Re-enabled the unused Bloody Hell setting\n\
+- Gave the Quake Grunt its own set of sprites\n\
+- Fixed the friendly imp not making sight or death sounds\n\
+- Fixed the class-specific pickup messages showing up for everyone in the server\n\
+- Added widescreen-friendly weapon bars from an older version of Samsara Extra Heroes\n\
+- Fixed Rage, Spread, and Prosperity runes not working in newer versions of Zandronum\n\
+- Added a setting to disable Ranger's DOE ammo\n\
+- Fixed the Strife Sigil not taking the player's health\n\
+- Added vanilla fire states for the Spectral LAZ Device\n\
+- Polished up the Chex Quest 3 enemies and gave them tags\n\
+- Fixed one of the quit messages having a miscolored character\n\
+- Changed how the smooth Doom animations are handled internally\n\
+- Changed the Megasphere powerup animation to better resemble how it did on the original ZDoom Forum thread\n\
+- Spectral weapons' fire rates should now match the normal versions\n\
+- Polished the Strife/Hexen allies and gave them their missing states back\n\
+- Fixed the HoloDuke cooldown display showing up on the weapon bar\n\
+- Added a few serverside settings from Samsara Reincarnation such as the speed modifier, permament powered weapons, and Reincarnation's buff and nerf settings\n\
+- Converted all of the coop hitscan weapons to use A_FireBullets instead of A_FireCustomMissile\n\
+- Added Corruption Cards and War Trophies Compatibility\n\
+- Removed every instance of the ACLOA0 sprite since it's no longer needed\n\
+- Polished the STTP3K mode to no longer use sprite translations, allowing it to be used outside of Doom\n\
+- Security Officer is now launched to the proper height from arch-viles with custom gravity disabled\n\
+- Fusion pistol charge sound now stops when letting go of altfire without attacking, as per Marathon\n\
+- Status bar mugshot grins are more consistent-working in singleplayer\n\
+- Fixed some active powerups not resetting their timers when picking another one up\n\
+- Fixed Fire and disintegrate deaths not triggering blue Acolyte death stuff\n\
+- Fixed Ranger's regeneration still ticking at 100 HP to no effect\n\
+- Updated the Bloody Hell code to match Reincarnation's codebase\n\
+- Updated the server settings hotkey display";
