@@ -2,7 +2,7 @@
 
 actor ItemHoloduke : CustomInventory
 {
-    tag "Holoduke"
+    tag "HoloDuke"
     +FLOATBOB
     Inventory.Amount 1
     Inventory.MaxAmount 3
