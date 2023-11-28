@@ -5,14 +5,9 @@
 // A handy method of detecting what Source Port you're using and using appropriate
 // scripts for it. Thanks to TheZombieKiller!
 
-// [tv50] GetTimeProperty is a new function in Zandronum that is treated as a dummy
-// [tv50] in ZDoom, returning 0 there (as opposed to 1970 in Zandronum with the
-// [tv50] parameters chosen). Compared to previous methods, no side effects have
-// [tv50] come from this, so this should be used for checking the current source port.
-
 script "IsThisZandro" OPEN
 {
-    if (GetTimeProperty(0, 5, true) == 0) // TM_YEAR = 5
+    if (isZDoom())
 	{
         //Log(s:"Zandronum check unsuccessful, assuming ZDoom.");
         SetCVar("samsara_runninginzandro",0);
@@ -43,81 +38,88 @@ script "ZDoomOptionMirror" ENTER
 // Fancy per-class secret notifications
 script "SecretNotifier" ENTER
 {
-	int pln = PlayerNumber(); // ensure only the activator gets the messages
-	int cpln = ConsolePlayerNumber();
+    int stotal;
+    int sfound;
+    int sfound2;
+
+    stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
+    sfound2 = sfound;
+    sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+
+    bool showmsgs = true;
+
+    if (isZDoom() && !GetCVar("cl_showsecretmessage")) { showmsgs = false; }
+
+    // Found a secret.
+    if (sfound > sfound2)
+    {
+        if (showmsgs) { ACS_NamedExecuteWithResult("SecretNotifierDisplay", sfound, stotal); }
+
+        if (CheckInventory("DukeClass"))
+        {
+            if (showmsgs) { ACS_NamedExecuteWithResult("SecretNotifierDukeTaunt"); } // don't let the delay get in the way of this script
+        }
+    }
+
+    Delay(1);
+    restart;
+}
+
+script "SecretNotifierDukeTaunt" (void)
+{
+    Delay(10);
+
+    if (!CheckInventory("DukeBallgag") && !CheckInventory("DukeTauntCooldown"))
+    {
+        LocalAmbientSound("duke/secret", 127);
+        GiveInventory("DukeTauntCooldown", 5);
+        ACS_NamedExecuteAlways("DukeTauntCooldown", 0);
+    }
+}
+
+script "SecretNotifierDisplay" (int sfound, int stotal) CLIENTSIDE
+{
+    int pln = PlayerNumber(); // ensure only the activator gets the messages
+    int cpln = ConsolePlayerNumber();
 
     if (pln != cpln) { terminate; }
-	
-	int stotal;
-	int sfound;
-	int sfound2;
-	
-	stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
-	sfound2 = sfound;
-	sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
-	// Found a secret.
-	if (sfound > sfound2)
-	{
-		if (CheckInventory("DoomguyClass"))
-		{
-			LocalAmbientSound("secretfound/doom", 127);
-			Log(l:"SECRETFOUND_DOOM");
-		} else if (CheckInventory("WolfenClass"))
-		{
-			LocalAmbientSound("secretfound/wolf", 127);
-			Log(l:"SECRETFOUND_WOLF");
 
-		} else if (CheckInventory("ChexClass"))
-		{
-			LocalAmbientSound("secretfound/chex", 127);
-			Log(l:"SECRETFOUND_CHEX");
-
-		} else if (CheckInventory("DukeClass"))
-		{
-			LocalAmbientSound("secretfound/duke", 127);
-			SetHudSize(400, 300, 0);
-				Hudmessage(l:"SECRETFOUND_DUKE";
-				HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,2.0);
-			//Log(l:"SECRETFOUND_DUKE");
-			delay(10);
-			if (!CheckInventory("DukeBallgag"))
-            {
-                LocalAmbientSound("duke/secret",127);
-                GiveInventory("DukeTauntCooldown",5);
-                ACS_NamedExecuteAlways("DukeTauntCooldown",0,0);
-            }
-
-		} else if (CheckInventory("MarathonClass"))
-		{
-			LocalAmbientSound("secretfound/marathon", 127);
-			Log(l:"SECRETFOUND_MARATHON");
-
-		} else if (CheckInventory("HexenClass"))
-		{
-			if (sfound == stotal)
-			{
-			LocalAmbientSound("secretfound/PuzzleSuccess", 127);
-			Print(s:"\cjYou have completed the puzzle of the secrets in this level.");
-			} else {
-			LocalAmbientSound("secretfound/SwitchOtherLevel", 127);
-			Print(s:"\cjYou have found ",i:sfound,s:" of the ",i:stotal,s:" secrets in this level.");
-			}
-		} else if (CheckInventory("CorvusClass"))
-		{
-			LocalAmbientSound("secretfound/heretic", 127);
-			Log(l:"SECRETFOUND_RAVEN");
-
-		} else if (CheckInventory("QuakeClass"))
-		{
-			LocalAmbientSound("secretfound/quake", 127);
-			Print(l:"SECRETFOUND_QUAKE");
-		} else {
-			LocalAmbientSound("secretfound/default", 127);
-			Print(l:"SECRETFOUND_DEFAULT");
-		}
-	}
-	delay(1);
-	restart;
+    if (CheckInventory("DoomguyClass"))
+    {
+        AmbientSound("secretfound/doom", 127);
+        Log(l:"SECRETFOUND_DOOM");
+    } else if (CheckInventory("ChexClass")) {
+        AmbientSound("secretfound/chex", 127);
+        Log(l:"SECRETFOUND_CHEX");
+    } else if (CheckInventory("CorvusClass")) {
+        AmbientSound("secretfound/heretic", 127);
+        Log(l:"SECRETFOUND_RAVEN");
+    } else if (CheckInventory("WolfenClass")) {
+        AmbientSound("secretfound/wolf", 127);
+        Log(l:"SECRETFOUND_WOLF");
+    } else if (CheckInventory("HexenClass")) {
+        if (sfound >= stotal)
+        {
+            AmbientSound("secretfound/PuzzleSuccess", 127);
+            Print(s:"\cjYou have completed the puzzle of the secrets in ", n:PRINTNAME_LEVELNAME, s:".");
+        } else {
+            AmbientSound("secretfound/SwitchOtherLevel", 127);
+            Print(s:"\cjYou have found ", i:sfound, s:" of the ", i:stotal, s:" secrets in ", n:PRINTNAME_LEVELNAME, s:".");
+        }
+    } else if (CheckInventory("DukeClass")) {
+        AmbientSound("secretfound/duke", 127);
+        SetHudSize(400, 300, 0);
+        HudMessage(l:"SECRETFOUND_DUKE"; HUDMSG_PLAIN, 1, CR_LIGHTBLUE, 200.4, 9.1, 2.0);
+    } else if (CheckInventory("MarathonClass")) {
+        AmbientSound("secretfound/marathon", 127);
+        Log(l:"SECRETFOUND_MARATHON");
+    } else if (CheckInventory("QuakeClass")) {
+        AmbientSound("secretfound/quake", 127);
+        Print(l:"SECRETFOUND_QUAKE");
+    } else {
+        AmbientSound("secretfound/default", 127);
+        Print(l:"SECRETFOUND_DEFAULT");
+    }
 }
 
 // class-specific item pickup messages

@@ -63,7 +63,7 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
         break;
         
       case 2:
-        if (CheckInventory("WolfenMovement") == 1) { SetActorState(0, "Spawn"); }
+        if (CheckInventory("WolfenMovement") && !isDead(0)) { SetActorState(0, "Spawn"); }
         break;
         
       case 3:
@@ -141,21 +141,20 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
       case 15:
         SetActorProperty(0, APROP_Speed, percFloat(arg1, arg2));
         break;
-        
-      case 16:
-        if (GameType () != GAME_SINGLE_PLAYER)
-        {
-            SetHudSize(400, 300, 0);
-            Hudmessage(l:"DUKEDEADMESSAGE";
-            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
-            delay(15);
 
-            if (!CheckInventory("DukeBallgag"))
-            {
-                LocalAmbientSound("duke/mpdeath",127);
-                GiveInventory("DukeTauntCooldown",5);
-                ACS_NamedExecuteAlways("DukeTauntCooldown",0,0);
-            }
+      case 16:
+        SetHudSize(400, 300, 0);
+
+        if (IsSinglePlayer() && !GetCVar("sv_singleplayerrespawn")) { HudMessage(l:"DUKEDEADMESSAGERESTART"; HUDMSG_PLAIN, 1, CR_LIGHTBLUE, 200.4, 9.1, 1.75); }
+        else { HudMessage(l:"DUKEDEADMESSAGERESPAWN"; HUDMSG_PLAIN, 1, CR_LIGHTBLUE, 200.4, 9.1, 1.75); }
+
+        Delay(15);
+
+        if (!CheckInventory("DukeBallgag"))
+        {
+            LocalAmbientSound("duke/mpdeath", 127);
+            GiveInventory("DukeTauntCooldown", 5);
+            ACS_NamedExecuteAlways("DukeTauntCooldown", 0);
         }
         break;
 

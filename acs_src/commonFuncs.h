@@ -886,3 +886,10 @@ function int AddActorProperty(int tid, int prop, int amount)
     SetActorProperty(tid, prop, newAmount);
     return newAmount;
 }
+
+// [tv50] GetTimeProperty is a new function in Zandronum that is treated as a dummy
+// [tv50] in ZDoom, returning 0 there (as opposed to 1970 in Zandronum with the
+// [tv50] parameters chosen). Compared to previous methods, no side effects have
+// [tv50] come from this, so this should be used for checking the current source port.
+
+function bool isZDoom (void) { return GetTimeProperty(0, 5, true) == 0; } // TM_YEAR = 5

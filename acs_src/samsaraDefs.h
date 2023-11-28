@@ -636,4 +636,7 @@ int ChangelogString =
 - Fixed Strife blue acolyte death stuff not triggering properly.\n\
 - Fixed Ranger's regeneration still ticking at 100 HP to no effect.\n\
 - Updated the Bloody Hell code to match Reincarnation's codebase.\n\
-- Updated the server settings hotkey display.";
+- Updated the server settings hotkey display.\n\
+- Fixed B.J. occasionally leaving a standing corpse with Wolfenstein 3D movement.\n\
+- Fixed Duke not playing death taunts in single player.\n\
+- Fixed secret messages not being logged properly in netplay.";

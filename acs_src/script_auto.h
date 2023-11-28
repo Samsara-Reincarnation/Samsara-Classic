@@ -484,25 +484,21 @@ script "SamsaraSpawn" (int respawning)
 		SetInventory("SamsaraHasDoubleFiringSpeed", CheckInventory("PowerDoubleFiringSpeed") || CheckInventory("RuneDoubleFiringSpeed") || CheckInventory("CustomDoubleFiringSpeed"));
 		SetInventory("SamsaraHasProsperity", CheckInventory("PowerProsperity") || CheckInventory("RuneProsperity") || CheckInventory("CustomProsperity"));
 		SetInventory("SamsaraHasSpread", CheckInventory("PowerSpread") || CheckInventory("RuneSpread") || CheckInventory("CustomSpread"));
-		
+
 		if (GetCVar("sv_infiniteammo") || CheckInventory("PowerInfiniteAmmo") || CheckInventory("RuneInfiniteAmmo") || CheckInventory("CustomInfiniteAmmo")) // the latter two don't exist, but are there just in case
 		{ SetInventory("SamsaraHasInfiniteAmmo", 1); }
-		
+
 		SetInventory("SamsaraHasInfiniteInventory", GetCVar("sv_infiniteinventory"));
-		
+
 		if(CheckInventory("MetaCheatDetector")) { ACS_NamedExecuteWithResult("InventoryCheat",0,0,0); }
-        
-        if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }
-        else { TakeInventory("WolfenMovement", 0x7FFFFFFF); }
-        
-        if (array_ballgag[pln]) { GiveInventory("DukeBallgag", 1); }
-        else { TakeInventory("DukeBallgag", 0x7FFFFFFF); }
-        
-        if (!array_vanillaAnim[pln]) { GiveInventory("VanillaDoom", 1); }
-        else { TakeInventory("VanillaDoom", 0x7FFFFFFF); }
-        
-        if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
-        else { TakeInventory("ExpandedHud", 0x7FFFFFFF); }
+
+        SetInventory("WolfenMovement", GetUserCVar(pln, "samsara_cl_wolfmove") && !GetCVar("samsara_banwolfmove"));
+
+        SetInventory("DukeBallgag", GetUserCVar(pln, "samsara_cl_ballgag"));
+
+        SetInventory("VanillaDoom", !GetUserCVar(pln, "samsara_cl_smoothanims"));
+
+        SetInventory("ExpandedHud", GetUserCVar(pln, "samsara_cl_weaponhud"));
 
         if (GetCVar("samsara_runninginzdoom") == 1) 
 		{
@@ -854,19 +850,18 @@ script "SamsaraWolfMove" (void)
         }
 
         if (!CheckInventory("CanWolfMovement")) { break; }
-        if (!CheckInventory("WolfenMovement") || GetCVar("samsara_banwolfmove"))
+
+        if (!CheckInventory("WolfenMovement"))
         {
-            if (GetActorProperty(0, APROP_Speed) == 0)
-            {
-                SetActorProperty(0, APROP_Speed, realspeed);
-            }
+            if (GetActorProperty(0, APROP_Speed) == 0) { SetActorProperty(0, APROP_Speed, realspeed); }
+
+            SetInventory("WolfMoving", 0);
 
             Delay(1);
             continue;
         }
 
-        
-        if (GetActorProperty(0, APROP_Health) < 1)
+        if (isDead(0))
         {
             SetActorProperty(0, APROP_Speed, realspeed);
             velx = 0;
@@ -890,6 +885,7 @@ script "SamsaraWolfMove" (void)
 				if(GetPlayerInput(-1,INPUT_YAW) != 0)
 					side    = -sign(GetPlayerInput(-1,INPUT_YAW));
 				}
+
             side    *= SPEED_SIDE;
             
             angle   = GetActorAngle(0);
@@ -902,22 +898,17 @@ script "SamsaraWolfMove" (void)
             
             velx = forwardx + sidex;
             vely = forwardy + sidey;
+
 			forward = 0;
 			side = 0;
         }
 
         if (keyDown(BT_CROUCH)) { velx /= 2; vely /= 2; }
         
-        if ((velx != 0) || (vely != 0))
-        {
-            GiveInventory("WolfMoving", 1);
-        }
-        else if (CheckInventory("WolfMoving"))
-        {
-            TakeInventory("WolfMoving", 0x7FFFFFFF);
-        }
+        SetInventory("WolfMoving", velx != 0 || vely != 0);
         
         SetActorVelocity(0, velx, vely, GetActorVelZ(0), 0, 0);
+
         Delay(1);
     }
 
@@ -1075,11 +1066,4 @@ script "SamsaraPuke" (int values, int pln) net
     array_ballgag[pln]      = values & 4;
     array_weaponBar[pln]    = values & 8;
     array_pickupswitch[pln] = values & 16;
-}
-
-
-script "SamsaraDeath" death
-{
-    Delay(1);
-    TakeInventory("QuadDamagePower", 1);
 }

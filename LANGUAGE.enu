@@ -279,9 +279,10 @@ SAMSARA_ALLAMMO_STRIFE_1 = "Picked up 5/2/4 rounds of Ammo 1/2/4.";
 SAMSARA_ALLAMMO_STRIFE_2 = "Picked up 20/10/1/10 rounds of Ammo 1/2/3/4.";
 
 // SAMSARA.C EXTERNALIZATIONS
-DUKEDEADMESSAGE = "PRESS SPACE TO RESTART LEVEL"; //"Press any button to respawn.";
+DUKEDEADMESSAGERESTART = "Press Use To Restart Level";
+DUKEDEADMESSAGERESPAWN = "Press Use To Respawn"; //"Press any button to respawn.";
 NOTUNLESSINJURED = "You cannot use this unless injured.";
-FOOTENGAGED = "MIGHTY FOOT ENGAGED";
+FOOTENGAGED = "Mighty Foot Engaged";
 NOFUEL = "You do not have enough fuel!";
 NOPOWER = "You do not have enough power!";
 ALREADYFLYING = "You are already flying!";
@@ -365,13 +366,13 @@ BOSS_MONOLOGUE_ICON11 = "Your Doom.";
 
 SECRETMESSAGE = ""; //"A secret is revealed!";
 
-SECRETFOUND_DOOM = "\cgYou found a secret!"; 
-SECRETFOUND_WOLF = "\cjYou found a hidden passage!"; 
-SECRETFOUND_CHEX = "\cdWow, a secret area!"; 
-SECRETFOUND_DUKE = "A SECRET PLACE!"; 
-SECRETFOUND_MARATHON = "\cdYou have discovered a secret room."; 
-SECRETFOUND_RAVEN = "\ccA secret is revealed!"; 
-SECRETFOUND_QUAKE = "\ccYou found a secret area!"; 
+SECRETFOUND_DOOM = "\cgYou found a secret area!";
+SECRETFOUND_CHEX = "\cdWow, a secret area!";
+SECRETFOUND_RAVEN = "\ccA secret is revealed!";
+SECRETFOUND_WOLF = "\cjYou found a hidden passage!";
+SECRETFOUND_DUKE = "A Secret Place!";
+SECRETFOUND_MARATHON = "\cdYou have discovered a secret room.";
+SECRETFOUND_QUAKE = "\ccYou found a secret area!";
 SECRETFOUND_DEFAULT = "A secret is revealed!";
 
 // PISTOL START MESSAGES
@@ -382,7 +383,7 @@ PISTOLSTART_WIT2 = "You're practically naked! ... Lewd.";
 PISTOLSTART_WIT3 = "Shut up Medi.";
 PISTOLSTART_WIT4 = "Progression is for losers.";
 PISTOLSTART_WIT5 = "Just be thankful I didn't take your pants.";
-PISTOLSTART_WIT6 = "(Notably not called ''Pistol and Dignity Start'')";
+PISTOLSTART_WIT6 = "(Notably not called \"Pistol and Dignity Start\")";
 PISTOLSTART_WIT7 = "Laaame.";
 PISTOLSTART_WIT8 = "Hold my beer and watch this!";
 PISTOLSTART_WIT9 = "All the cool kids on Doomworld HAVE to notice you now!";

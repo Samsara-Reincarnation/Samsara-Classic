@@ -193,7 +193,7 @@ script "SamsaraStrifeMinesTransmitterUniqueGiver" ENTER
 
 script "SamsaraStrifeAcolyteBlueDeathChecker" (void) // Haaaaack.
 {
-    if (GetTimeProperty(0, 5, true) != 0 && !ThingCountName("AcolyteBlue2", 0))
+    if (!isZDoom() && !ThingCountName("AcolyteBlue2", 0))
     {
         for (int i = 0; i < PLAYERMAX; i++)
         {
