@@ -1076,3 +1076,12 @@ script "Samsara679" (int tx, int ty, int tz) clientside
         k = i;
     }
 }
+
+script "TauntButton" (void) NET CLIENTSIDE
+{
+    if (!GetCVar("samsara_runninginzdoom") && GetCVar("samsara_runninginzandro")) { ConsoleCommand("taunt"); }
+    else
+    {
+        if (!isDead(0) && GameType() != GAME_TITLE_MAP) { PlaySound(0, "*taunt", CHAN_VOICE); }
+    }
+}

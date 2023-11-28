@@ -639,4 +639,6 @@ int ChangelogString =
 - Updated the server settings hotkey display.\n\
 - Fixed B.J. occasionally leaving a standing corpse with Wolfenstein 3D movement.\n\
 - Fixed Duke not playing death taunts in single player.\n\
-- Fixed secret messages not being logged properly in netplay.";
+- Fixed secret messages not being logged properly in netplay.\n\
+- Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
+- Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.";
