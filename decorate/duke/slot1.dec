@@ -1219,7 +1219,7 @@ actor DukePipebomb
       Death1:
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",1)
         TNT1 A 0 A_Gravity
-        TNT1 A 0 A_JumpIfHealthLower(0,"Explode")
+        TNT1 A 0 A_JumpIfHealthLower(1,"Explode")
         TNT1 A 0 A_JumpIfInTargetInventory ("DukeKaboom",1,"Explode")
         PBOM A 1
         TNT1 A 0 A_JumpIfCloser(20,"Remove1")
@@ -1228,7 +1228,7 @@ actor DukePipebomb
       Death2:
         TNT1 A 0 A_ChangeFlag("SHOOTABLE",1)
         TNT1 A 0 A_Gravity
-        TNT1 A 0 A_JumpIfHealthLower(0,"Explode")
+        TNT1 A 0 A_JumpIfHealthLower(1,"Explode")
         TNT1 A 0 A_JumpIfInTargetInventory ("DukeKaboom",1,"Explode")
         PBOM B 1
         TNT1 A 0 A_JumpIfCloser(20,"Remove2")
