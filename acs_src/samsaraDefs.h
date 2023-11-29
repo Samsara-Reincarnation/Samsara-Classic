@@ -629,6 +629,7 @@ int ChangelogString =
 - Changed the Megasphere powerup animation to better resemble how it did on the original ZDoom Forum thread.\n\
 - Fixed the HoloDuke cooldown display showing up on the weapon bar.\n\
 - Added a few serverside settings from Samsara Reincarnation such as the speed modifier, permanent powered weapons, and updated buff/nerf settings.\n\
+- Changed how the chainsaw, shotgun, and backpack start settings are handled to match Samsara Reincarnation's logic.\n\
 - Converted all of the coop hitscan weapons to use A_FireBullets instead of A_FireCustomMissile.\n\
 - Added Corruption Cards and War Trophies compatibility.\n\
 - Removed every instance of the ACLOE0 sprite since it's no longer needed.\n\

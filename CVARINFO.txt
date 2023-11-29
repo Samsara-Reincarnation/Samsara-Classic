@@ -10,6 +10,7 @@ server int samsara_lmslife = 0;
 server bool samsara_lmsult = false;
 server int samsara_uniquestart = 0;
 server int samsara_chainsawstart = 0;
+server int samsara_shotgunstart = 0;
 server int samsara_peoplediewhentheyarekilled = 0;
 server bool samsara_permaweaponlevel2 = false;
 server bool samsara_punchdrunk = false;

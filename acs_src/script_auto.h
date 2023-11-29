@@ -400,22 +400,23 @@ script "SamsaraSpawn" (int respawning)
         ACS_NamedExecuteAlways("SamsaraScheduled", 0, respawning,1,0);
 
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
-        if (GetCvar("samsara_backpackstart") == 1 && !CheckInventory("HexenClass")) { GiveInventory("Backpack",1); }
-		if (GetCvar("samsara_backpackstart") == 1 && CheckInventory("HexenClass")) { GiveInventory("PortKraterOfMight",1); }
+        if (GetCvar("samsara_backpackstart") == 1 && !CheckInventory("HexenClass") && !CheckInventory("SamsaraBackpackGiven")) { GiveInventory("Backpack",1); GiveInventory("SamsaraBackpackGiven",1); }
+		if (GetCvar("samsara_backpackstart") == 1 && CheckInventory("HexenClass") && !CheckInventory("SamsaraBackpackGiven")) { GiveInventory("PortKraterOfMight",1); GiveInventory("SamsaraBackpackGiven",1); }
 	}
     else
     { if (GameType() != GAME_NET_COOPERATIVE)
     {
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
-        if (GetCvar("samsara_backpackstart") == 1 && !CheckInventory("HexenClass")) { GiveInventory("Backpack",1); }
-		if (GetCvar("samsara_backpackstart") == 1 && CheckInventory("HexenClass")) { GiveInventory("PortKraterOfMight",1); }
+        if (GetCvar("samsara_backpackstart") == 1 && !CheckInventory("HexenClass") && !CheckInventory("SamsaraBackpackGiven")) { GiveInventory("Backpack",1); GiveInventory("SamsaraBackpackGiven",1); }
+		if (GetCvar("samsara_backpackstart") == 1 && CheckInventory("HexenClass") && !CheckInventory("SamsaraBackpackGiven")) { GiveInventory("PortKraterOfMight",1); GiveInventory("SamsaraBackpackGiven",1); }
     }}
 
     HandleChainsawSpawn(respawning);
+    HandleShotgunSpawn(respawning);
     HandleUniqueSpawn(respawning);
+    HandleRailgunSpawn(respawning);
     HandlePunchdrunk(respawning);
     HandleInstagib(respawning);
-	HandleRailgunSpawn(respawning);
 	
     ACS_NamedExecuteAlways("SamsaraScheduled", 0, respawning,0,0);
 

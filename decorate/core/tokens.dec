@@ -57,6 +57,9 @@ actor SamsaraArmorCategory : Counter {}
 actor ForceNormalGravity: Boolean {}
 actor ForceSOGravity: Boolean {}
 actor ForceRangerGravity: Boolean {}
+actor SamsaraSlotIGiven : Boolean {}
+actor SamsaraSlotIIGiven : Boolean {}
+actor SamsaraBackpackGiven : Boolean {}
 
 actor SynthFireActive:  Boolean {} // enables synthetic-fire system.
 actor SynthFireLeft:    Boolean {} // special refire-trackers for

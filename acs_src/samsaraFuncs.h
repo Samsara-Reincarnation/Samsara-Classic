@@ -458,7 +458,31 @@ function int HandleChainsawSpawn(int respawning)
 
     if (cs == 2) { ammomode = 1; }
 
-    GiveClassWeapon(classnum, SLOT_CHAINSAW, ammomode);
+    if (!CheckInventory("SamsaraSlotIGiven"))
+        GiveClassWeapon(classnum, SLOT_CHAINSAW, ammomode);
+
+    if (CheckInventory("MarathonClass")) {
+        GiveInventory("CanDualPistols", 1);
+    }
+
+    GiveInventory("SamsaraSlotIGiven", 1);
+    return 1;
+}
+
+function int HandleShotgunSpawn(int respawning)
+{
+    int cs = GetCVar("samsara_shotgunstart");
+    int classnum = samsaraClassNum();
+    int ammomode = 3;
+
+    if (cs == 0 || (respawning && isCoop())) { return 0; }
+
+    if (cs == 2) { ammomode = 1; }
+
+    if (!CheckInventory("SamsaraSlotIIGiven"))
+        GiveClassWeapon(classnum, SLOT_SHOTGUN, ammomode);
+
+    GiveInventory("SamsaraSlotIIGiven", 1);
     return 1;
 }
 
