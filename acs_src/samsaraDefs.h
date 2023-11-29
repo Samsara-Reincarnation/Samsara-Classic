@@ -585,7 +585,7 @@ int SpeedModeNames[SPEEDMODES] =
 
 
 int ChangelogString =
-"FROM 0.3666 TO CLASSIC 2.0\n\
+"  FROM 0.3666 TO CLASSIC 2.0\n\
 ==========================\n\
 - Slightly tweaked and fixed some Punchdrunk stuff:\n\
   - Fixed the Punchdrunk unique pickup messages not showing up.\n\
@@ -640,6 +640,7 @@ int ChangelogString =
 - Fixed Ranger's regeneration still ticking at 100 HP to no effect.\n\
 - Updated the Bloody Hell code to match Reincarnation's codebase.\n\
 - Updated the server settings hotkey display.\n\
+- Fixed Duke's Nashgore gibs using the wrong blood color.\n\
 - Fixed B.J. occasionally leaving a standing corpse with Wolfenstein 3D movement.\n\
 - Fixed Duke not playing death taunts in single player.\n\
 - Fixed secret messages not being logged properly in netplay.\n\
