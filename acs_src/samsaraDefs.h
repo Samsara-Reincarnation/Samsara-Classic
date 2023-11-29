@@ -587,42 +587,46 @@ int SpeedModeNames[SPEEDMODES] =
 int ChangelogString =
 "FROM 0.3666 TO CLASSIC 2.0\n\
 ==========================\n\
-- Fixed and slightly tweaked some HUD elements.\n\
+- Slightly tweaked and fixed some Punchdrunk stuff:\n\
+  - Fixed the Punchdrunk unique pickup messages not showing up.\n\
+  - Duke's Nuclear kicks no longer alerts enemies.\n\
+  - The Talon Ceramic Combat Blade no longer gets crushed by doors, and it now fades away when thrown while infinite ammo is enabled.\n\
+- Updated the code for newer versions of Zandronum:\n\
+  - Used a better method of detecting Zandronum, courtesy of tehvappy50.\n\
+  - Fixed menus in newer versions of Zandronum.\n\
+  - Fixed Rage, Spread, and Prosperity runes not working in newer versions of Zandronum.\n\
+- Added some fixes and additions for non-Doom IWAD support:\n\
+  - Flemoid slime is now affected by the Persistant gibs setting.\n\
+  - Polished up the Chex Quest 3 enemies and gave them tags.\n\
+  - Fixed Strife acolytes not dropping their clips on death.\n\
+  - Gave the Quake Grunt its own set of sprites.\n\
+  - Fixed the friendly imp not making sight or death sounds.\n\
+  - Fixed the Strife Sigil not taking the player's health.\n\
+  - Polished the Strife/Hexen allies and gave them their missing states back.\n\
+  - Fixed Fire and disintegrate deaths not triggering blue Acolyte death stuff.\n\
+  - Spectral weapons' fire rates should now match the normal versions.\n\
 - Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n\
-- Used a better method of detecting Zandronum, courtesy of tehvappy50.\n\
+- Fixed and slightly tweaked some hud elements.\n\
 - Pistol Start mode won't trigger in the title map.\n\
 - Fixed the HoloDuke not being taken away in Pistol Start.\n\
 - Fixed Duke's jetpack and night vision fuel being reduced with infinite inventory enabled.\n\
 - Added class-specific PDWTAK death particles.\n\
 - Fixed the grammar and spelling of a few pickup messages, and updated some others.\n\
 - Added strafing support for the Wolfenstein 3D movement.\n\
-- Fixed the Punchdrunk unique pickup messages not showing up.\n\
-- Flemoid slime is now affected by the Gib Persistence setting.\n\
 - The Super Large Zorcher no longer generates blood decals.\n\
 - Added smooth animations for Doomguy's Chainsaw and Plasma Rifle.\n\
-- Duke's nuclear kicks no longer alert enemies.\n\
 - Added proper kicking and reloading for Duke's Golden Desert Eagle.\n\
-- The Talon Ceramic Combat Blade no longer gets crushed by doors, and it now fades away when thrown while infinite ammo is enabled.\n\
 - Changed the Marathon infrared powerup color to BlueMap to match earlier ZDoom-compatible versions of Samsara.\n\
-- Fixed Strife acolytes not dropping their clips on death.\n\
-- Fixed menus in newer versions of Zandronum.\n\
 - Fixed Marathon weapons taking ammo when reloading with infinite ammo enabled.\n\
 - Fixed the XDeath animations for the scripted marines.\n\
 - Re-enabled the unused Nightmare setting for Bloody Hell.\n\
-- Gave the Quake Grunt its own set of sprites.\n\
-- Fixed the friendly imp not making sight or death sounds.\n\
 - Fixed the class-specific pickup messages showing up for everyone in the server.\n\
 - Added widescreen-friendly weapon bars from an older version of Samsara Extra Heroes.\n\
-- Fixed Rage, Spread, and Prosperity runes not working in newer versions of Zandronum.\n\
 - Added a setting to disable Ranger's DOE ammo.\n\
-- Fixed the Strife Sigil not taking the player's health.\n\
 - Added vanilla fire states for the Spectral LAZ Device.\n\
-- Polished up the Chex Quest 3 enemies and gave them tags.\n\
 - Fixed one of the quit messages having a miscolored character.\n\
-- Changed how the smooth Doom animations are handled internally.\n\
-- Changed the megasphere powerup animation to better resemble how it did on the original ZDoom forum thread.\n\
-- Spectral weapons' fire rates should now match the normal versions.\n\
-- Polished the Strife/Hexen allies and gave them their missing states back.\n\
+- Changed how some of the clientside options are handled internally.\n\
+- Changed the Megasphere powerup animation to better resemble how it did on the original ZDoom Forum thread.\n\
 - Fixed the HoloDuke cooldown display showing up on the weapon bar.\n\
 - Added a few serverside settings from Samsara Reincarnation such as the speed modifier, permanent powered weapons, and updated buff/nerf settings.\n\
 - Converted all of the coop hitscan weapons to use A_FireBullets instead of A_FireCustomMissile.\n\
@@ -633,13 +637,12 @@ int ChangelogString =
 - Fusion pistol charge sound now stops when letting go of altfire without attacking, as per Marathon.\n\
 - Status bar mugshot grins work more consistently in single player.\n\
 - Fixed some active powerups not resetting their timers when picking another one up.\n\
-- Fixed Strife blue acolyte death stuff not triggering properly.\n\
 - Fixed Ranger's regeneration still ticking at 100 HP to no effect.\n\
 - Updated the Bloody Hell code to match Reincarnation's codebase.\n\
 - Updated the server settings hotkey display.\n\
 - Fixed B.J. occasionally leaving a standing corpse with Wolfenstein 3D movement.\n\
 - Fixed Duke not playing death taunts in single player.\n\
 - Fixed secret messages not being logged properly in netplay.\n\
-- Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
 - Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.\n\
-- Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.";
+- Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.\n\
+- Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!";
