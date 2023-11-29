@@ -1,16 +1,4 @@
-//actor WolfExtraLife : Counter { Inventory.MaxAmount 9 } // Inventory.InterHubAmount doesn't work unless either this has +INVBAR or that value is set to 0
-
-actor WolfExtraLife : Inventory//CustomInventory
-{
-    tag "Extra Life"
-    Inventory.Icon WOLFLIFE
-    Inventory.Amount 1
-    Inventory.MaxAmount 9
-    +INVBAR
-    +HUBPOWER
-    +UNDROPPABLE
-    -INTERHUBSTRIP
-}
+actor WolfExtraLife : Counter { Inventory.MaxAmount 9 }
 
 actor WolfLifeProtection : PowerProtection
 {

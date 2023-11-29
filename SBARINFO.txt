@@ -766,7 +766,7 @@ StatusBar Normal, ForceScaled
         InInventory PowerFakeInvulnerable { DrawImage "BJFGOD0", 143, 167; }
         else { DrawMugShot 5, 143, 167; }
 
-        //InInventory WolfExtraLife { DrawNumber 3, INDEXFONT, White, WolfExtraLife, 174, 193; }
+        InInventory WolfExtraLife { DrawNumber 3, INDEXFONT, White, WolfExtraLife, 174, 193; }
 
         InInventory ExpandedHud
         {
@@ -2806,7 +2806,7 @@ StatusBar Automap
         InInventory PowerFakeInvulnerable { DrawImage "BJFGOD0", 143, 167; }
         else { DrawMugShot 5, 143, 167; }
 
-        //InInventory WolfExtraLife { DrawNumber 3, INDEXFONT, White, WolfExtraLife, 174, 193; }
+        InInventory WolfExtraLife { DrawNumber 3, INDEXFONT, White, WolfExtraLife, 174, 193; }
 
         /*InInventory ExpandedHud
         {
@@ -4516,7 +4516,7 @@ StatusBar Fullscreen
     // Inventory
     DrawSelectedInventory AlwaysShowCounter, HUDFONT_DOOM, 290, 22, 293, 30, Untranslated;
 
-    /*InInventory WolfenClass
+    InInventory WolfenClass
     {
         InInventory WolfExtraLife
         {
@@ -4524,7 +4524,7 @@ StatusBar Fullscreen
 
             DrawNumber 10, HUDFONT_DOOM, Untranslated, WolfExtraLife, 293, 56;
         }
-    }*/
+    }
 
     InInventory DukeClass
     {

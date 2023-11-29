@@ -641,4 +641,5 @@ int ChangelogString =
 - Fixed Duke not playing death taunts in single player.\n\
 - Fixed secret messages not being logged properly in netplay.\n\
 - Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
-- Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.";
+- Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.\n\
+- Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.";
