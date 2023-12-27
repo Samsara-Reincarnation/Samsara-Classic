@@ -57,6 +57,7 @@ actor SamsaraArmorCategory : Counter {}
 actor ForceNormalGravity: Boolean {}
 actor ForceSOGravity: Boolean {}
 actor ForceRangerGravity: Boolean {}
+actor SamsaraCurrentWaterLevel : Counter { Inventory.MaxAmount 3 }
 actor SamsaraSlotIGiven : Boolean {}
 actor SamsaraSlotIIGiven : Boolean {}
 actor SamsaraBackpackGiven : Boolean {}

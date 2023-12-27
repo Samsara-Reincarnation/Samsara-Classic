@@ -482,16 +482,22 @@ script "SamsaraSpawn" (int respawning)
         else if (GetArmorType("MarathonGreenArmor", pln) || GetArmorType("MGreenArmorNoDrop", pln)) { SetInventory("SamsaraArmorCategory", 1); }
         else { SetInventory("SamsaraArmorCategory", 0); } // other armors
 
-		SetInventory("SamsaraHasDoubleFiringSpeed", CheckInventory("PowerDoubleFiringSpeed") || CheckInventory("RuneDoubleFiringSpeed") || CheckInventory("CustomDoubleFiringSpeed"));
-		SetInventory("SamsaraHasProsperity", CheckInventory("PowerProsperity") || CheckInventory("RuneProsperity") || CheckInventory("CustomProsperity"));
-		SetInventory("SamsaraHasSpread", CheckInventory("PowerSpread") || CheckInventory("RuneSpread") || CheckInventory("CustomSpread"));
+        SetInventory("SamsaraHasDoubleFiringSpeed", CheckInventory("PowerDoubleFiringSpeed") || CheckInventory("RuneDoubleFiringSpeed") || CheckInventory("CustomDoubleFiringSpeed") ||
+                                                    CheckInventory("PowerRage1"));
 
-		if (GetCVar("sv_infiniteammo") || CheckInventory("PowerInfiniteAmmo") || CheckInventory("RuneInfiniteAmmo") || CheckInventory("CustomInfiniteAmmo")) // the latter two don't exist, but are there just in case
-		{ SetInventory("SamsaraHasInfiniteAmmo", 1); }
+        SetInventory("SamsaraHasProsperity", CheckInventory("PowerProsperity") || CheckInventory("RuneProsperity") || CheckInventory("CustomProsperity"));
 
-		SetInventory("SamsaraHasInfiniteInventory", GetCVar("sv_infiniteinventory"));
+        SetInventory("SamsaraHasSpread", CheckInventory("PowerSpread") || CheckInventory("RuneSpread") || CheckInventory("CustomSpread") ||
+                                         CheckInventory("PowerSpread1"));
 
-		if(CheckInventory("MetaCheatDetector")) { ACS_NamedExecuteWithResult("InventoryCheat",0,0,0); }
+        SetInventory("SamsaraHasInfiniteAmmo", GetCVar("sv_infiniteammo") ||
+                                               CheckInventory("PowerInfiniteAmmo") || CheckInventory("RuneInfiniteAmmo") || CheckInventory("CustomInfiniteAmmo")); // the latter two don't exist, but are there just in case
+
+        SetInventory("SamsaraHasInfiniteInventory", GetCVar("sv_infiniteinventory"));
+
+        SetInventory("SamsaraCurrentWaterLevel", GetActorProperty(0, APROP_WaterLevel));
+
+        if(CheckInventory("MetaCheatDetector")) { ACS_NamedExecuteWithResult("InventoryCheat",0,0,0); }
 
         SetInventory("WolfenMovement", GetUserCVar(pln, "samsara_cl_wolfmove") && !GetCVar("samsara_banwolfmove"));
 
@@ -605,7 +611,7 @@ script "SamsaraSpawn" (int respawning)
             }
         }
 
-        // useless but harmless in Zandro - triggers buddha mode when Blazko has an extra life in ZDoom
+        // triggers buddha mode when Blazko has an extra life
         if (CheckInventory("WolfExtraLife") && !canbuddha) { SetPlayerProperty(0, 1, 16); }
         if (!CheckInventory("WolfExtraLife") && canbuddha) { SetPlayerProperty(0, 0, 16); }
         canbuddha = CheckInventory("WolfExtraLife");

@@ -211,27 +211,27 @@ script "SamsaraSpectres" (int mode, int arg1, int arg2)
 
         switch (i)
         {
-          case CLASS_QUAKE:
-            if (!CheckInventory("QuadDamagePower"))
+          case CLASS_HERETIC:
+            if (!CheckInventory("PowerHereticTome"))
             {
-                Print(s:"You must be \ckquadded\c- to go spectral.");
+                Print(s:"You must have the \ckTome of Power\c- active to go spectral.");
                 result = 0;
             }
             break;
 
-          case CLASS_HERETIC:
-            if (!CheckInventory("PowerHereticTome"))
+          case CLASS_QUAKE:
+            if (!CheckInventory("QuadDamagePower"))
             {
-                Print(s:"You must be \cktomed\c- to go spectral.");
+                Print(s:"You must have the \ckQuad Damage\c- active to go spectral.");
                 result = 0;
             }
             break;
-          
+
           default:
             if (!HasClassWeapon(i, 8))
             {
-                result = 0;
                 Print(s:"You need the \ck", s:ClassWeapons[i][8][S_WEP], s:"\c- to go spectral.");
+                result = 0;
             }
         }
         break;

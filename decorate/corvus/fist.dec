@@ -7,7 +7,6 @@ actor " Staff " : Weapon
     +NOALERT
     +STAFF2_KICKBACK
     +INVENTORY.UNDROPPABLE
-    +THRUGHOST
     Obituary "$SAMSARA_CORVUS_OB_FIST"
 	Inventory.RestrictedTo "CorvusPlayer"
 	Tag "Staff"
