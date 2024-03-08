@@ -255,7 +255,7 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
         tmpcount = 0;
         for (i = 0; i < UNIQUECOUNT; i++)
         {
-            j = ClassUniques[cnum][i];
+            j = ClassUniques[cnum][i * 2];
             if (!strcmp(j, "")) { continue; }
 
             TempUniques[tmpcount++] = i;
