@@ -35,6 +35,13 @@ script "SamsaraOpen" open
         }
         
         SamsaraGlobal[GLOBAL_DONEBITCHING] = 1;
+
+        // Warn the player about playing Samsara in GZDoom multiplayer
+        if (PlayerCount() > 1 && isZDoom())
+        {
+            SetFont("SMALLFONT");
+            HudMessageBold(l:"SAMSARA_INCOMPATIBILITY_GZDOOMMP"; HUDMSG_TYPEON | HUDMSG_LOG, 0, CR_WHITE, 1.5, 0.8, 5.0, 0.05, 2.0);
+        }
     }
 
     ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);

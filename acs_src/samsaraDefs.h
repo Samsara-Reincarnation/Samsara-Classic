@@ -648,4 +648,5 @@ int ChangelogString =
 - Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.\n\
 - Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.\n\
 - Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
-- Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.";
+- Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\
+- Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.";

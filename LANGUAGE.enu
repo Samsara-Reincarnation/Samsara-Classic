@@ -293,6 +293,10 @@ TOMECOOLDOWN = "The Tome of Power has not cooled down yet.";
 QUADCOOLDOWN = "The Quad Damage has not recharged yet.";
 HOLOCOOLDOWN = "The HoloDuke has not cooled down yet.";
 
+// SAMSARA INCOMPATIBILITY MESSAGES
+// ================================
+SAMSARA_INCOMPATIBILITY_GZDOOMMP = "Samsara Classic is incompatible with multiplayer in GZDoom.\nThis will cause bugs, glitches, and possible crashes.\nPlease consider using Zandronum for multiplayer instead.";
+
 // Boss Monologues
 
 // Korax
