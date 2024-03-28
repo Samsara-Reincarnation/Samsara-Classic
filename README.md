@@ -1,4 +1,5 @@
 # Samsara Classic
+![SamsaraClassicLogoAlt](https://github.com/Samsara-Reincarnation/Samsara-Classic/assets/24487663/6211ef76-7b89-4251-86c6-1f9e5c874636)
 ### Originally created by TerminusEst13, with initial improvements from Kinsie
 Samsara Classic is a gameplay modification for ZDoom, GZDoom, and Zandronum that brings the protagonists of retro first-person shooters into the Doom engine. Samsara Classic is a continuation of Kinsie's [fork](https://drive.google.com/file/d/0B1iDp2UZTDreRW40NXJJQVE1Unc/view?usp=sharing) of Samsara released in 2016, with the original version of the mod being released in 2012 by [TerminusEst13](https://doomwiki.org/wiki/TerminusEst13).
 
