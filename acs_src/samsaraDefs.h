@@ -652,4 +652,4 @@ int ChangelogString =
 - Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
 - Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\
 - Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.\n\
-- Added widescreen sprites for Corvus' staff and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.";
+- Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.";

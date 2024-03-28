@@ -10,7 +10,7 @@ addkeysection "Samsara: System" samsarasyskeys
 addmenukey "Weapon HUD Bar" samsara_cmd_wephud
 addmenukey "Pickup Graphics" samsara_cmd_weppickups
 addmenukey "Pickup Message Mode" samsara_cmd_msgmode
-addmenukey "Tipbox: Show"  samsara_tipbox
+addmenukey "Tipbox: Show"  samsara_compendium
 addmenukey "Tipbox: Next Character" samsara_tipright
 addmenukey "Tipbox: Next Page"  samsara_tipdown
 addmenukey "Server Settings" samsara_cmd_settings
@@ -36,7 +36,7 @@ alias samsara_cmd_weppickups       "samsara_id_pickupmode;   eval %  + $samsara_
 
 alias samsara_cmd_settings "pukename SamsaraGetSettings"
 alias samsara_zdtaunt "pukename TauntButton always"
-alias samsara_tipbox   "pukename \"Samsara_Compendium_Initiate\"
+alias samsara_compendium "pukename \"Samsara_Compendium_Initiate\"
 alias samsara_tipleft  "pukename SamsaraPukeClient 0 -1"
 alias samsara_tipright "pukename SamsaraPukeClient 0 1"
 alias samsara_tipup    "pukename SamsaraPukeClient 1 -1"
