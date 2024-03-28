@@ -881,6 +881,7 @@ script "SamsaraWolfMove" (void)
             SetActorProperty(0, APROP_Speed, realspeed);
             velx = 0;
             vely = 0;
+            velz = 0;
         }
         else
         {
@@ -913,14 +914,15 @@ script "SamsaraWolfMove" (void)
             
             velx = forwardx + sidex;
             vely = forwardy + sidey;
+            velz = sin(-GetActorPitch(0)) * forward;
 
 			forward = 0;
 			side = 0;
         }
 
-        if (keyDown(BT_CROUCH)) { velx /= 2; vely /= 2; }
+        if (keyDown(BT_CROUCH)) { velx /= 2; vely /= 2; velz /= 2; }
         
-        SetInventory("WolfMoving", velx != 0 || vely != 0);
+        SetInventory("WolfMoving", velx != 0 || vely != 0 || velz != 0);
         
         if ((GetActorProperty(0, APROP_WaterLevel) >= 1) || isFlying)
         {
