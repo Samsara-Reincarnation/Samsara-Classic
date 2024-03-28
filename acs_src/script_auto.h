@@ -845,10 +845,11 @@ script "SamsaraWolfMove" (void)
     int realspeed = GetActorProperty(0, APROP_Speed);
     int forward, side, angle, xthrust, ythrust;
     int forwardx, forwardy, sidex, sidey;
-    int velx, vely;
+    int velx, vely, velz;
     int moving;
     int fired;
     int startTime = Timer();
+    int isFlying = CheckInventory("PowerFlight") || CheckInventory("PowerFlight2") || (GetActorProperty(0, APROP_Gravity) == 0);
 
     WolfenEnterTimes[pln] = startTime;
 
@@ -921,7 +922,14 @@ script "SamsaraWolfMove" (void)
         
         SetInventory("WolfMoving", velx != 0 || vely != 0);
         
-        SetActorVelocity(0, velx, vely, GetActorVelZ(0), 0, 0);
+        if ((GetActorProperty(0, APROP_WaterLevel) >= 1) || isFlying)
+        {
+            SetActorVelocity(0, velx, vely, velz, 0, 0);
+        }
+        else
+        {
+            SetActorVelocity(0, velx, vely, GetActorVelZ(0), 0, 0);
+        }
 
         Delay(1);
     }

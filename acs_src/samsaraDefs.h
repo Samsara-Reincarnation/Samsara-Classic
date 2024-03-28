@@ -632,6 +632,7 @@ int ChangelogString =
 - Changed how the chainsaw, shotgun, and backpack start settings are handled to match Samsara Reincarnation's logic.\n\
 - Converted all of the coop hitscan weapons to use A_FireBullets instead of A_FireCustomMissile.\n\
 - Added Corruption Cards and War Trophies compatibility.\n\
+- Added partial support for Nash's Gore Mod: Vengeance Edition.\n\
 - Removed every instance of the ACLOE0 sprite since it's no longer needed.\n\
 - Polished the STTP3K mode to no longer use sprite translations, allowing it to be used outside of Doom.\n\
 - Security Officer is now launched to the proper height from arch-viles with custom gravity disabled.\n\
@@ -647,6 +648,7 @@ int ChangelogString =
 - Fixed secret messages not being logged properly in netplay.\n\
 - Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.\n\
 - Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.\n\
+- Added swimming support for the WolfMovement system.\n\
 - Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
 - Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\
 - Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.\n\
