@@ -4,74 +4,74 @@
 // =============
 
 //Quake
-QUITMSG = "\ccAre you gonna quit this game\n\ccjust like everything else?"; // Quake quit message
+SAMSQUITMSG = "\ccAre you gonna quit this game\n\ccjust like everything else?"; // Quake quit message
 //Doom
-QUITMSG1 = "\cghey, ron!\n\cgcan we say 'fuck' in the game?"; // Unused Doom quit message
-QUITMSG2 = "\cgi'd leave:\n\cgthis is just more monsters and levels.\n\cgwhat a load."; // Unused Doom quit message
+SAMSQUITMSG1 = "\cghey, ron!\n\cgcan we say 'fuck' in the game?"; // Unused Doom quit message
+SAMSQUITMSG2 = "\cgi'd leave:\n\cgthis is just more monsters and levels.\n\cgwhat a load."; // Unused Doom quit message
 //Chex Quest
-QUITMSG3 = "\cdI hope you're just taking a\n\cdbreak for Chex(R) party mix."; // Chex Quest 1 quit message
-QUITMSG4 = "\cdThe only people who don't run\n\cdare either fools or heroes.\n\cdLet's hope you're the latter."; // Chex Quest 2 manual
+SAMSQUITMSG3 = "\cdI hope you're just taking a\n\cdbreak for Chex(R) party mix."; // Chex Quest 1 quit message
+SAMSQUITMSG4 = "\cdThe only people who don't run\n\cdare either fools or heroes.\n\cdLet's hope you're the latter."; // Chex Quest 2 manual
 //Heretic
-QUITMSG5 = "\cj...the world is surely damned."; // Heretic Manual
-QUITMSG6 = "\cjIt is not my destiny to be a hero."; // Heretic II
+SAMSQUITMSG5 = "\cj...the world is surely damned."; // Heretic Manual
+SAMSQUITMSG6 = "\cjIt is not my destiny to be a hero."; // Heretic II
 //HeXen
-QUITMSG7 = "\cjWorship me, and I may yet be merciful.\n\cjThen again, maybe not."; // Hexen, Hub 3
-QUITMSG8 = "\cjMy servants can smell your blood, human."; // Hexen, Hub 2
+SAMSQUITMSG7 = "\cjWorship me, and I may yet be merciful.\n\cjThen again, maybe not."; // Hexen, Hub 3
+SAMSQUITMSG8 = "\cjMy servants can smell your blood, human."; // Hexen, Hub 2
 //Wolfenstein
-QUITMSG9 = "\cjHeroes don't quit, but\n\cjgo ahead and press Y\n\cjif you aren't one."; // Wolfenstein quit message
-QUITMSG10 = "\cjSieg heil...huh.\n\cjSieg hell."; // Wolfenstein E3 end text
+SAMSQUITMSG9 = "\cjHeroes don't quit, but\n\cjgo ahead and press Y\n\cjif you aren't one."; // Wolfenstein quit message
+SAMSQUITMSG10 = "\cjSieg heil...huh.\n\cjSieg hell."; // Wolfenstein E3 end text
 //Duke Nukem
-QUITMSG11 = "\cnAfter a few days of R&R,\n\cnI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
-QUITMSG12 = "\cnI guess I'll lean against this oozing,\n\cnbulbous wall and wait for death."; // Duke Nukem II
+SAMSQUITMSG11 = "\cnAfter a few days of R&R,\n\cnI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
+SAMSQUITMSG12 = "\cnI guess I'll lean against this oozing,\n\cnbulbous wall and wait for death."; // Duke Nukem II
 //Marathon
-QUITMSG13 = "\cdDo you know what kind of hat I'm wearing?\n\cdA party hat. You don't get one."; // Marathon: Infinity terminal
-QUITMSG14 = "\cdP.S.: If things around here aren't working,\n\cdit's because I'm laughing so hard."; // Marathon terminal
+SAMSQUITMSG13 = "\cdDo you know what kind of hat I'm wearing?\n\cdA party hat. You don't get one."; // Marathon: Infinity terminal
+SAMSQUITMSG14 = "\cdP.S.: If things around here aren't working,\n\cdit's because I'm laughing so hard."; // Marathon terminal
 
 // Zandronum cuts off here. The ZDoom-specific messages are as follows:
 //Doom
-QUITMSG15 = "\cglook, bud. you leave now and\n\cgyou forfeit your body count!"; // Doom 2 quit message
-QUITMSG16 = "\cgget outta here and go back\n\cgto your boring programs."; // Doom 2 quit message
-QUITMSG17 = "\cggo ahead and leave. see if i care."; // Doom quit message
-QUITMSG18 = "\cglet's beat it -- this is turning\n\cginto a bloodbath!"; // Doom quit message
+SAMSQUITMSG15 = "\cglook, bud. you leave now and\n\cgyou forfeit your body count!"; // Doom 2 quit message
+SAMSQUITMSG16 = "\cgget outta here and go back\n\cgto your boring programs."; // Doom 2 quit message
+SAMSQUITMSG17 = "\cggo ahead and leave. see if i care."; // Doom quit message
+SAMSQUITMSG18 = "\cglet's beat it -- this is turning\n\cginto a bloodbath!"; // Doom quit message
 //Chex Quest
-QUITMSG19 = "\cdThe real Chex(R) Warrior\n\cdwouldn't give up so fast!"; // Chex Quest 1 quit message
-QUITMSG20 = "\cdDon't abandon the\n\cdIntergalactic Federation of Cereals!"; // Chex Quest 1 quit message
-QUITMSG21 = "\cdDon't quit now! We need your help!"; // Chex Quest 1 quit message
-QUITMSG22 = "\cdThe mission continues..."; // Various Chex Quest promo
+SAMSQUITMSG19 = "\cdThe real Chex(R) Warrior\n\cdwouldn't give up so fast!"; // Chex Quest 1 quit message
+SAMSQUITMSG20 = "\cdDon't abandon the\n\cdIntergalactic Federation of Cereals!"; // Chex Quest 1 quit message
+SAMSQUITMSG21 = "\cdDon't quit now! We need your help!"; // Chex Quest 1 quit message
+SAMSQUITMSG22 = "\cdThe mission continues..."; // Various Chex Quest promo
 //Heretic
-QUITMSG23 = "\cjBut what else can you do,\n\cjif the will to fight is gone?"; // E5 end text
-QUITMSG24 = "\cjYou find, in the end,\n\cjthat it is not within you\n\cjto surrender without a fight."; // E5 end text
-QUITMSG25 = "\cjNo one ever said being a Heretic was easy!"; // E1 end text.
-QUITMSG26 = "\cjYour fight has been in vain."; // Heretic II.
+SAMSQUITMSG23 = "\cjBut what else can you do,\n\cjif the will to fight is gone?"; // E5 end text
+SAMSQUITMSG24 = "\cjYou find, in the end,\n\cjthat it is not within you\n\cjto surrender without a fight."; // E5 end text
+SAMSQUITMSG25 = "\cjNo one ever said being a Heretic was easy!"; // E1 end text.
+SAMSQUITMSG26 = "\cjYour fight has been in vain."; // Heretic II.
 //HeXen
-QUITMSG27 = "\cjRegardless of the path you choose,\n\cjDeath awaits you."; // Hexen II, Hub 1
-QUITMSG28 = "\cjFollow the light, for while the path\n\cjis wrought with danger, your destiny lies below."; // Hexen II, Hub 2
-QUITMSG29 = "\cjYour meddling will only\n\cjresult in your death.\n\cjLeave while you can."; // Hexen II: Portal of Praevus
-QUITMSG30 = "\cjYou've made it to your final goal,\n\cjto turn back would be cowardice."; // Hexen II: Portal of Praevus
+SAMSQUITMSG27 = "\cjRegardless of the path you choose,\n\cjDeath awaits you."; // Hexen II, Hub 1
+SAMSQUITMSG28 = "\cjFollow the light, for while the path\n\cjis wrought with danger, your destiny lies below."; // Hexen II, Hub 2
+SAMSQUITMSG29 = "\cjYour meddling will only\n\cjresult in your death.\n\cjLeave while you can."; // Hexen II: Portal of Praevus
+SAMSQUITMSG30 = "\cjYou've made it to your final goal,\n\cjto turn back would be cowardice."; // Hexen II: Portal of Praevus
 //Wolfenstein
-QUITMSG31 = "\cjWe owe you a great debt, Mr. Blazkowicz.\n\cjYou have served your country well."; // Spear of Destiny end text
-QUITMSG32 = "\cjFor guns and glory, press N.\n\cjFor work and worry, press Y."; // Wolfenstein 3D quit message
-QUITMSG33 = "\cjThe next adventure awaits!\n\cjSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
-QUITMSG34 = "\cjBut the adventure is just beginning!"; // The Nocturnal Missions promo text
+SAMSQUITMSG31 = "\cjWe owe you a great debt, Mr. Blazkowicz.\n\cjYou have served your country well."; // Spear of Destiny end text
+SAMSQUITMSG32 = "\cjFor guns and glory, press N.\n\cjFor work and worry, press Y."; // Wolfenstein 3D quit message
+SAMSQUITMSG33 = "\cjThe next adventure awaits!\n\cjSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
+SAMSQUITMSG34 = "\cjBut the adventure is just beginning!"; // The Nocturnal Missions promo text
 //Duke Nukem
-QUITMSG35 = "\cnI need a stiff drink... a shower...\n\cnand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
-QUITMSG36 = "\cnThe last thing that's gonna go thru\n\cnyour mind before you die... is my size 13 boot!"; // Duke Nukem 3D: E2 end text
-QUITMSG37 = "\cnI always said if there's a way to go,\n\cnit would have something to do with\n\cnwomen, whips and oil."; // Duke Nukem: Manhattan Project
-QUITMSG38 = "\cnI should probably kill everything,\n\cnthen watch a movie."; // Duke Nukem: Land of the Babes
+SAMSQUITMSG35 = "\cnI need a stiff drink... a shower...\n\cnand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
+SAMSQUITMSG36 = "\cnThe last thing that's gonna go thru\n\cnyour mind before you die... is my size 13 boot!"; // Duke Nukem 3D: E2 end text
+SAMSQUITMSG37 = "\cnI always said if there's a way to go,\n\cnit would have something to do with\n\cnwomen, whips and oil."; // Duke Nukem: Manhattan Project
+SAMSQUITMSG38 = "\cnI should probably kill everything,\n\cnthen watch a movie."; // Duke Nukem: Land of the Babes
 //Marathon
-QUITMSG39 = "\cdIf I had a rocket launcher, I'd make somebody pay."; // Marathon 2
-QUITMSG40 = "\cdThe candles burn out for you; I am free."; // Marathon
-QUITMSG41 = "\cdT-Minus 15.193792102158E+9 years\n\cduntil the universe closes!"; // Marathon
-QUITMSG42 = "\cdYou can stay behind to work on your tan,\n\cdif you'd like, but I'm leaving."; // Marathon 2
+SAMSQUITMSG39 = "\cdIf I had a rocket launcher, I'd make somebody pay."; // Marathon 2
+SAMSQUITMSG40 = "\cdThe candles burn out for you; I am free."; // Marathon
+SAMSQUITMSG41 = "\cdT-Minus 15.193792102158E+9 years\n\cduntil the universe closes!"; // Marathon
+SAMSQUITMSG42 = "\cdYou can stay behind to work on your tan,\n\cdif you'd like, but I'm leaving."; // Marathon 2
 //Quake
-QUITMSG43 = "\ccDid the scary monsters frighten you?\n\ccOr did Mr. Sandman tug at your little lids? "; // Quit message
-QUITMSG44 = "\ccIf you quit now, I'll throw a\n\ccblanket-party for you next time!"; // Quit message
-QUITMSG45 = "\ccUm, Asmodeus dislikes his\n\ccchildren trying to quit.\n\ccPress Y to return to your tinkertoys."; // Quit message
-QUITMSG46 = "\ccNo matter! What is important is\n\ccyou love our game. Congratulations,\n\ccyou are probably not a thief."; // Copyright message
+SAMSQUITMSG43 = "\ccDid the scary monsters frighten you?\n\ccOr did Mr. Sandman tug at your little lids? "; // Quit message
+SAMSQUITMSG44 = "\ccIf you quit now, I'll throw a\n\ccblanket-party for you next time!"; // Quit message
+SAMSQUITMSG45 = "\ccUm, Asmodeus dislikes his\n\ccchildren trying to quit.\n\ccPress Y to return to your tinkertoys."; // Quit message
+SAMSQUITMSG46 = "\ccNo matter! What is important is\n\ccyou love our game. Congratulations,\n\ccyou are probably not a thief."; // Copyright message
 //Buddha
-QUITMSG47 = "\cfNeither fire nor wind,\n\cfbirth nor death,\n\cfcan erase our good deeds.";
-QUITMSG48 = "\cfIf on the hand there is no wound,\n\cfone may carry even poison in it.\n\cfPoison does not affect one who is free from wounds.";
-QUITMSG49 = "\cfNeither in the sky nor in mid-ocean,\n\cfnor by entering into mountain clefts,\n\cfnowhere in the world is there a place\n\cfwhere one will not be overcome by death.";
+SAMSQUITMSG47 = "\cfNeither fire nor wind,\n\cfbirth nor death,\n\cfcan erase our good deeds.";
+SAMSQUITMSG48 = "\cfIf on the hand there is no wound,\n\cfone may carry even poison in it.\n\cfPoison does not affect one who is free from wounds.";
+SAMSQUITMSG49 = "\cfNeither in the sky nor in mid-ocean,\n\cfnor by entering into mountain clefts,\n\cfnowhere in the world is there a place\n\cfwhere one will not be overcome by death.";
 
 
 
