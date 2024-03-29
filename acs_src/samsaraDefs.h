@@ -585,8 +585,8 @@ int SpeedModeNames[SPEEDMODES] =
 
 
 int ChangelogString =
-"  FROM 0.3666 TO CLASSIC 2.0\n\
-==========================\n\
+"  FROM 0.3666 TO CLASSIC 2.1-pre\n\
+==============================\n\
 - Slightly tweaked and fixed some Punchdrunk stuff:\n\
   - Fixed the Punchdrunk unique pickup messages not showing up.\n\
   - Duke's nuclear kicks no longer alerts enemies.\n\
