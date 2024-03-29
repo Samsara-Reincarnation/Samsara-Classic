@@ -640,6 +640,7 @@ int ChangelogString =
 - Status bar mugshot grins work more consistently in single player.\n\
 - Fixed some active powerups not resetting their timers when picking another one up.\n\
 - Fixed Ranger's regeneration still ticking at 100 HP to no effect.\n\
+- Fixed Ranger's nails not having a height defined.\n\
 - Updated the Bloody Hell code to match Reincarnation's codebase.\n\
 - Updated the server settings hotkey display.\n\
 - Fixed Duke's Nashgore gibs using the wrong blood color.\n\

@@ -439,7 +439,7 @@ actor QNTrail3: QNTrail1
 actor QuakeNail: FastProjectile
 {
     Radius 1
-    Height 0
+    Height 2
     Speed 75
 
     Projectile
