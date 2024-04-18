@@ -31,7 +31,7 @@ SAMSQUITMSG14 = "\cdP.S.: If things around here aren't working,\n\cdit's because
 //Doom
 SAMSQUITMSG15 = "\cgLook, bud. You leave now and\n\cgyou forfeit your body count!"; // Doom 2 quit message
 SAMSQUITMSG16 = "\cgGet outta here and go back\n\cgto your boring programs."; // Doom 2 quit message
-SAMSQUITMSG17 = "\cgGo ahead and leave. See if i care."; // Doom quit message
+SAMSQUITMSG17 = "\cgGo ahead and leave. See if I care."; // Doom quit message
 SAMSQUITMSG18 = "\cgLet's beat it -- this is turning\n\cginto a bloodbath!"; // Doom quit message
 //Chex Quest
 SAMSQUITMSG19 = "\cdThe real Chex(R) Warrior\n\cdwouldn't give up so fast!"; // Chex Quest 1 quit message
