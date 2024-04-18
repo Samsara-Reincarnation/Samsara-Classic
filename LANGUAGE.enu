@@ -6,20 +6,20 @@
 //Quake
 SAMSQUITMSG = "\ccAre you gonna quit this game\n\ccjust like everything else?"; // Quake quit message
 //Doom
-SAMSQUITMSG1 = "\cghey, ron!\n\cgcan we say 'fuck' in the game?"; // Unused Doom quit message
-SAMSQUITMSG2 = "\cgi'd leave:\n\cgthis is just more monsters and levels.\n\cgwhat a load."; // Unused Doom quit message
+SAMSQUITMSG1 = "\cgHey, Ron!\n\cgCan we say 'fuck' in the game?"; // Unused Doom quit message
+SAMSQUITMSG2 = "\cgI'd leave:\n\cgthis is just more monsters and levels.\n\cgWhat a load."; // Unused Doom quit message
 //Chex Quest
 SAMSQUITMSG3 = "\cdI hope you're just taking a\n\cdbreak for Chex(R) party mix."; // Chex Quest 1 quit message
 SAMSQUITMSG4 = "\cdThe only people who don't run\n\cdare either fools or heroes.\n\cdLet's hope you're the latter."; // Chex Quest 2 manual
 //Heretic
 SAMSQUITMSG5 = "\cj...the world is surely damned."; // Heretic Manual
 SAMSQUITMSG6 = "\cjIt is not my destiny to be a hero."; // Heretic II
-//HeXen
-SAMSQUITMSG7 = "\cjWorship me, and I may yet be merciful.\n\cjThen again, maybe not."; // Hexen, Hub 3
-SAMSQUITMSG8 = "\cjMy servants can smell your blood, human."; // Hexen, Hub 2
 //Wolfenstein
-SAMSQUITMSG9 = "\cjHeroes don't quit, but\n\cjgo ahead and press Y\n\cjif you aren't one."; // Wolfenstein quit message
-SAMSQUITMSG10 = "\cjSieg heil...huh.\n\cjSieg hell."; // Wolfenstein E3 end text
+SAMSQUITMSG7 = "\cjHeroes don't quit, but\n\cjgo ahead and press Y\n\cjif you aren't one."; // Wolfenstein quit message
+SAMSQUITMSG8 = "\cjSieg heil...huh.\n\cjSieg hell."; // Wolfenstein E3 end text
+//HeXen
+SAMSQUITMSG9 = "\cjWorship me, and I may yet be merciful.\n\cjThen again, maybe not."; // Hexen, Hub 3
+SAMSQUITMSG10 = "\cjMy servants can smell your blood, human."; // Hexen, Hub 2
 //Duke Nukem
 SAMSQUITMSG11 = "\cnAfter a few days of R&R,\n\cnI'll be ready for more action!"; // Last line before credits in Duke Nukem 3D
 SAMSQUITMSG12 = "\cnI guess I'll lean against this oozing,\n\cnbulbous wall and wait for death."; // Duke Nukem II
@@ -27,12 +27,12 @@ SAMSQUITMSG12 = "\cnI guess I'll lean against this oozing,\n\cnbulbous wall and 
 SAMSQUITMSG13 = "\cdDo you know what kind of hat I'm wearing?\n\cdA party hat. You don't get one."; // Marathon: Infinity terminal
 SAMSQUITMSG14 = "\cdP.S.: If things around here aren't working,\n\cdit's because I'm laughing so hard."; // Marathon terminal
 
-// Zandronum cuts off here. The ZDoom-specific messages are as follows:
+// Extra quit messages since Zandronum now supports them!
 //Doom
-SAMSQUITMSG15 = "\cglook, bud. you leave now and\n\cgyou forfeit your body count!"; // Doom 2 quit message
-SAMSQUITMSG16 = "\cgget outta here and go back\n\cgto your boring programs."; // Doom 2 quit message
-SAMSQUITMSG17 = "\cggo ahead and leave. see if i care."; // Doom quit message
-SAMSQUITMSG18 = "\cglet's beat it -- this is turning\n\cginto a bloodbath!"; // Doom quit message
+SAMSQUITMSG15 = "\cgLook, bud. You leave now and\n\cgyou forfeit your body count!"; // Doom 2 quit message
+SAMSQUITMSG16 = "\cgGet outta here and go back\n\cgto your boring programs."; // Doom 2 quit message
+SAMSQUITMSG17 = "\cgGo ahead and leave. See if i care."; // Doom quit message
+SAMSQUITMSG18 = "\cgLet's beat it -- this is turning\n\cginto a bloodbath!"; // Doom quit message
 //Chex Quest
 SAMSQUITMSG19 = "\cdThe real Chex(R) Warrior\n\cdwouldn't give up so fast!"; // Chex Quest 1 quit message
 SAMSQUITMSG20 = "\cdDon't abandon the\n\cdIntergalactic Federation of Cereals!"; // Chex Quest 1 quit message
@@ -43,16 +43,16 @@ SAMSQUITMSG23 = "\cjBut what else can you do,\n\cjif the will to fight is gone?"
 SAMSQUITMSG24 = "\cjYou find, in the end,\n\cjthat it is not within you\n\cjto surrender without a fight."; // E5 end text
 SAMSQUITMSG25 = "\cjNo one ever said being a Heretic was easy!"; // E1 end text.
 SAMSQUITMSG26 = "\cjYour fight has been in vain."; // Heretic II.
-//HeXen
-SAMSQUITMSG27 = "\cjRegardless of the path you choose,\n\cjDeath awaits you."; // Hexen II, Hub 1
-SAMSQUITMSG28 = "\cjFollow the light, for while the path\n\cjis wrought with danger, your destiny lies below."; // Hexen II, Hub 2
-SAMSQUITMSG29 = "\cjYour meddling will only\n\cjresult in your death.\n\cjLeave while you can."; // Hexen II: Portal of Praevus
-SAMSQUITMSG30 = "\cjYou've made it to your final goal,\n\cjto turn back would be cowardice."; // Hexen II: Portal of Praevus
 //Wolfenstein
-SAMSQUITMSG31 = "\cjWe owe you a great debt, Mr. Blazkowicz.\n\cjYou have served your country well."; // Spear of Destiny end text
-SAMSQUITMSG32 = "\cjFor guns and glory, press N.\n\cjFor work and worry, press Y."; // Wolfenstein 3D quit message
-SAMSQUITMSG33 = "\cjThe next adventure awaits!\n\cjSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
-SAMSQUITMSG34 = "\cjBut the adventure is just beginning!"; // The Nocturnal Missions promo text
+SAMSQUITMSG27 = "\cjWe owe you a great debt, Mr. Blazkowicz.\n\cjYou have served your country well."; // Spear of Destiny end text
+SAMSQUITMSG28 = "\cjFor guns and glory, press N.\n\cjFor work and worry, press Y."; // Wolfenstein 3D quit message
+SAMSQUITMSG29 = "\cjThe next adventure awaits!\n\cjSo don't wait...start the next adventure!"; // The Nocturnal Missions promo text
+SAMSQUITMSG30 = "\cjBut the adventure is just beginning!"; // The Nocturnal Missions promo text
+//HeXen
+SAMSQUITMSG31 = "\cjRegardless of the path you choose,\n\cjDeath awaits you."; // Hexen II, Hub 1
+SAMSQUITMSG32 = "\cjFollow the light, for while the path\n\cjis wrought with danger, your destiny lies below."; // Hexen II, Hub 2
+SAMSQUITMSG33 = "\cjYour meddling will only\n\cjresult in your death.\n\cjLeave while you can."; // Hexen II: Portal of Praevus
+SAMSQUITMSG34 = "\cjYou've made it to your final goal,\n\cjto turn back would be cowardice."; // Hexen II: Portal of Praevus
 //Duke Nukem
 SAMSQUITMSG35 = "\cnI need a stiff drink... a shower...\n\cnand a soft-skinned belly to lie my head on."; // Duke Nukem 3D: E2 end text
 SAMSQUITMSG36 = "\cnThe last thing that's gonna go thru\n\cnyour mind before you die... is my size 13 boot!"; // Duke Nukem 3D: E2 end text
