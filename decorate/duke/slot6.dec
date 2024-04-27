@@ -27,8 +27,8 @@ actor Freezethrower : Weapon
         Stop
 
       ReadyB:
-        FRZG A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
-        FRZG A 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+        TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+        TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
         TNT1 A 0 A_JumpIfInventory("DB1",1,"AltFireA1")
         TNT1 A 0 A_JumpIfInventory("DB2",1,"AltFireA2")
         TNT1 A 0 A_JumpIfInventory("DB3",1,"AltFireA3")

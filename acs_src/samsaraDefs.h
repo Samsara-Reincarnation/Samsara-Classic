@@ -605,11 +605,13 @@ int ChangelogString =
   - Polished the Strife/Hexen allies and gave them their missing states back.\n\
   - Fixed Strife blue acolyte death stuff not triggering properly.\n\
   - Spectral weapons' fire rates should now match the normal versions.\n\
+  - Fixed Doomguy's accuracy powerup being given outside Strife with keyboard cheats.\n\
 - Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n\
 - Fixed and slightly tweaked some HUD elements.\n\
 - Pistol Start mode won't trigger in the title map.\n\
 - Fixed the HoloDuke not being taken away in Pistol Start.\n\
 - Fixed Duke's jetpack and night vision fuel being reduced with infinite inventory enabled.\n\
+- Fixed Duke's Freezethrower showing the ready sprites while firing.\n\
 - Added class-specific PDWTAK death particles.\n\
 - Fixed the grammar and spelling of a few pickup messages, and updated some others.\n\
 - Added strafing support for the Wolfenstein 3D movement.\n\
@@ -632,7 +634,7 @@ int ChangelogString =
 - Changed how the chainsaw, shotgun, and backpack start settings are handled to match Samsara Reincarnation's logic.\n\
 - Converted all of the coop hitscan weapons to use A_FireBullets instead of A_FireCustomMissile.\n\
 - Added Corruption Cards and War Trophies compatibility.\n\
-- Added partial support for Nash's Gore Mod: Vengeance Edition.\n\
+- Added partial support for NashGore Next.\n\
 - Removed every instance of the ACLOE0 sprite since it's no longer needed.\n\
 - Polished the STTP3K mode to no longer use sprite translations, allowing it to be used outside of Doom.\n\
 - Security Officer is now launched to the proper height from arch-viles with custom gravity disabled.\n\

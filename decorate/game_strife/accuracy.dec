@@ -48,12 +48,7 @@ actor RangerMaxCells: Trigger
     }
 }
 
-actor DoomZerkCounter: Ammo
-{
-    +IGNORESKILL
-    Inventory.Amount 1
-    Inventory.MaxAmount 10
-}
+actor DoomZerkCounter : Counter { Inventory.MaxAmount 10 }
 
 actor DoomguyStrifeZerk: PowerDamage
 {
