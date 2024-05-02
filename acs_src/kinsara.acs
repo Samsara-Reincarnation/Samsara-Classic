@@ -48,7 +48,7 @@ script "SecretNotifier" ENTER
 
     bool showmsgs = true;
 
-    if (isZDoom() && !GetCVar("cl_showsecretmessage")) { showmsgs = false; }
+    if (isZDoom() && !GetCVar("cl_showsecretmessage") && !GetCVar("samsara_cl_showsecretmessage")) { showmsgs = false; }
 
     // Found a secret.
     if (sfound > sfound2)

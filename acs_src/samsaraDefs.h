@@ -653,6 +653,7 @@ int ChangelogString =
 - Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.\n\
 - Added swimming support for the WolfMovement system.\n\
 - Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
+- Added a clientside setting to toggle the secret discovery messages for Samsara. This setting is overridden by the ZDoom secret notifications setting.\n\
 - Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\
 - Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.\n\
 - Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.";

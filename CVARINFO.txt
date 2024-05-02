@@ -81,6 +81,7 @@ user bool samsara_cl_smoothanims = true; // was samsara_cl_vanilladoom (false by
 user bool samsara_cl_wolfmove = false;
 user bool samsara_cl_ballgag = false;
 user bool samsara_cl_moremessages = false;
+user bool samsara_cl_showsecretmessage = true;
 
 // for checking what stupid port you have
 server bool samsara_runninginzandro = false;
