@@ -174,4 +174,5 @@ actor GenericGoreActor
     -SOLID
     +CLIENTSIDEONLY
     +FORCEXYBILLBOARD
+    +DONTBLAST
 }
