@@ -613,6 +613,7 @@ int ChangelogString =
 - Fixed Duke's jetpack and night vision fuel being reduced with infinite inventory enabled.\n\
 - Fixed Duke's Freezethrower showing the ready sprites while firing.\n\
 - Added class-specific PDWTAK death particles.\n\
+- Added a new clientside setting for weapon pickups, which are the sprites used in Samsara Reincarnation.\n\
 - Fixed the grammar and spelling of a few pickup messages, and updated some others.\n\
 - Added strafing support for the Wolfenstein 3D movement.\n\
 - The Super Large Zorcher no longer generates blood decals.\n\

@@ -53,8 +53,9 @@ OptionMenu "SamsaraClientOptions"
 OptionValue "PickupGraphics"
 {
     0, "Old-Style"
-    1, "Hybrid"
-    2, "Class"
+    1, "Old-Style (Reincarnation)"
+    2, "Hybrid"
+    3, "Class"
 }
 
 OptionValue "PickupMsg"
