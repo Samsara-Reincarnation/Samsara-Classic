@@ -639,6 +639,7 @@ int ChangelogString =
 - Polished the STTP3K mode to no longer use sprite translations, allowing it to be used outside of Doom.\n\
 - Security Officer is now launched to the proper height from arch-viles with custom gravity disabled.\n\
 - Fusion pistol charge sound now stops when letting go of altfire without attacking, as per Marathon.\n\
+- Possibly fixed the Security Officer's fist not hitting enemies online.\n\
 - Status bar mugshot grins work more consistently in single player.\n\
 - Fixed some active powerups not resetting their timers when picking another one up.\n\
 - Fixed Ranger's regeneration still ticking at 100 HP to no effect.\n\
