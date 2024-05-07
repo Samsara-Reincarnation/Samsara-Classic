@@ -658,4 +658,5 @@ int ChangelogString =
 - Added a clientside setting to toggle the secret discovery messages for Samsara. This setting is overridden by the ZDoom secret notifications setting.\n\
 - Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\
 - Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.\n\
-- Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.";
+- Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.\n\
+- Fixed Zandronum's compat_clientssendfullbuttoninfo CVar not being automatically enabled.";

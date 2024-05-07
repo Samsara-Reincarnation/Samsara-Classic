@@ -105,12 +105,14 @@ script "SamsaraOpen" open
         {   SetCVar ("samsara_peoplediewhentheyarekilled", 0);
         //ConsoleCommand("archivecvar samsara_peoplediewhentheyarekilled");  
         }
-        
-        if (!GetCVar("compat_clientssendfullbuttoninfo"))
-        {   SetCVar ("compat_clientssendfullbuttoninfo", 1);
-        //ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo");  
+        */
+
+        if (!isZDoom())
+        {
+            if (!GetCVar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("compat_clientssendfullbuttoninfo 1"); } // cannot use SetCVar with cvars defined in the source ports
         }
-        
+
+        /*
         if (!GetCVar("samsara_armormode"))
         {   SetCVar ("samsara_armormode", 0);
         //ConsoleCommand("archivecvar samsara_armormode");  
