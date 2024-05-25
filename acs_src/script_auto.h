@@ -109,7 +109,7 @@ script "SamsaraOpen" open
 
         if (!isZDoom())
         {
-            if (!GetCVar("compat_clientssendfullbuttoninfo")) { ConsoleCommand("compat_clientssendfullbuttoninfo 1"); } // cannot use SetCVar with cvars defined in the source ports
+            if (!GetCVar("compat_clientssendfullbuttoninfo") && IsNetworkGame()) { ConsoleCommand("compat_clientssendfullbuttoninfo 1"); } // cannot use SetCVar with cvars defined in the source ports
         }
 
         /*
