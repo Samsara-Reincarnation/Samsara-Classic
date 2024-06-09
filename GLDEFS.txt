@@ -1,5 +1,3 @@
-#include "gldefs/keys.txt"
-
 #include "gldefs/doom.txt"
 #include "gldefs/chex.txt"
 #include "gldefs/heretic.txt"
