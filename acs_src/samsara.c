@@ -47,6 +47,22 @@ global int 0:SamsaraGlobal[];
 #include "script_scheduled.h"
 #include "script_pdwtak.h"
 
+//SCRIPTS
+//200:
+//201: Check if SP/DM/co-op for the Tome of Power/Morph Ovum.
+//202: Cooldown for Tome of Power.
+//203: Take away all the shit on level ending!
+//204: Boss monologues.
+//205: Cooldown for Duke's taunts.
+//207: Flechette cooldown.
+//208: Buddha mode for B.J.'s Extra Life.
+//209: Activate Send Full Button Info and activate sv_banjetpack/sv_lmslife/sv_lmsult.
+//212: Displaying text.
+//214: Duke Jetpack/Visor fuel draining.
+//901-902: I'm pretty sure Synert is a wizard, too.
+//224: Doomguy's vanilla animations. By Ijon Tichy, transcribed by Llewellyn.
+//225: Weapon bar. By Ijon Tichy, transcribed by Llewellyn.
+
 script "SamsaraDecorate" (int choice, int arg1, int arg2)
 {
     int clipcount;
@@ -567,78 +583,6 @@ script "SamsaraGetSettings" (void) net
 
     HudMessage(s:"Chainsaw/unique start: \ca", d:GetCVar("samsara_chainsawstart"), s:"\c- / \cn", d:GetCvar("samsara_uniquestart");
             HUDMSG_FADEOUT, 6770, CR_WHITE, 50.1, 224.0, 3.0, 1.0);
-}
-
-/*
- *
- * This is still to be converted.
- *
- */
-
-int keys[3][26] = {{0},
-    {"RedCard", "YellowCard", "BlueCard", "RedSkull", "YellowSkull", "BlueSkull", "KeyBlue", "KeyGreen", "KeyYellow", "ChexRedCard", "ChexYellowCard", "ChexBlueCard", "RedFlemKey", "YellowFlemKey", "BlueFlemKey", "KeyAxe", "KeyCastle", "KeyCave", "KeyDungeon", "KeyEmerald", "KeyFire", "KeyHorn", "KeyRusted", "KeySilver", "KeySteel", "KeySwamp"},
-{"\cgRed Keycard", "\ckYellow Keycard", "\chBlue Keycard", "\cgRed Skull", "\ckYellow Skull", "\chBlue Skull", "\chBlue Prism Key", "\cqGreen Prism Key", "\ckYellow Prism Key", "\cgRed Card", "\ckYellow Card", "\chBlue Card", "\cgRed Flem Key", "\ckYellow Flem Key", "\chBlue Flem Key", "\cuAxe Key", "\cfCastle Key", "\csCave Key", "\cuDungeon Key", "\cdEmerald Key", "\cgFire Key", "\ceHorn Key", "\cbRusted Key", "\cuSilver Key", "\cmSteel Key", "\cpSwamp Key"}};
-//0, 1, 2: Doom R/Y/B Keycard. - \cg, \ck, \ch
-//3, 4, 5: Doom R/Y/B Skull. - \cg, \ck, \ch
-//6, 7, 8: Heretic B/G/Y Prism Key. - \ch, \cq, \ck
-//9, 10, 11: Chex Quest R/Y/B Keycard. - \cg, \ck, \ch
-//12, 13, 14: Chex Quest R/Y/B Flem Key. - \cg, \ck, \ch
-//15: Axe Key - \cu (Grey)
-//16: Castle Key - \cf (Gold)
-//17: Cave Key - \cs (Brown)
-//18: Dungeon Key - \cu (Grey)
-//19: Emerald Key - \cd (Light Green)
-//20: Fire Key - \cg (Red)
-//21: Horn Key - \ce (Beige)
-//22: Rusted Key - \cb (Very light off-white)
-//23: Silver Key - \cu (Grey)
-//24: Steel Key - \cm (Black)
-//25: Swamp Key - \cp (Drab green-brown)
-//SCRIPTS
-//200:
-//201: Check if SP/DM/co-op for the Tome of Power/Morph Ovum.
-//202: Cooldown for Tome of Power.
-//203: Take away all the shit on level ending!
-//204: Boss monologues.
-//205: Cooldown for Duke's taunts.
-//207: Flechette cooldown.
-//208: Buddha mode for B.J.'s Extra Life.
-//209: Activate Send Full Button Info and activate sv_banjetpack/sv_lmslife/sv_lmsult.
-//212: Displaying text.
-//214: Duke Jetpack/Visor fuel draining.
-//901-902: I'm pretty sure Synert is a wizard, too.
-//224: Doomguy's vanilla animations. By Ijon Tichy, transcribed by Llewellyn.
-//225: Weapon bar. By Ijon Tichy, transcribed by Llewellyn.
-////////////////////
-// SHARED KEYS
-// (by Synert)
-/////////////////
-
-// Give keys as needed, for people joining the game.
-
-script "SamsaraKeyShare" ENTER
-{
-    if (!(IsSinglePlayer() || IsCoop())) { terminate; }
-
-    while (1)
-    {
-        for (int a = 0; a < 26; a++)
-        {
-            if (keys[0][a] == 1)
-            {
-                GiveInventory(keys[1][a], 1);
-            }
-        }
-        delay(10);
-    }
-}
-
-script "SamsaraKeyBroadcast" (int a) { // Picked up a key, broadcast that shit to the whole world!
-    if(keys[0][a] == 0 && isCoop() && !isSinglePlayer()) {
-        Log(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*."); // Let the server admins know.
-        HudMessageBold(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*.";HUDMSG_FADEOUT, 900, CR_GOLD, 0.5, 0.1, 3.0, 0.5);
-    }
-    keys[0][a] = 1;
 }
 
 ///////////////
