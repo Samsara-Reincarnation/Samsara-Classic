@@ -144,6 +144,7 @@ actor PeopleDieWhenTheyAreKilled
 actor PeopleDieWhenTheyAreZorched: PeopleDieWhenTheyAreKilled
 {
     DamageType "ZorchKamikaze"
+    +BLOODLESSIMPACT
 }
 
 actor PDWTAK2: PeopleDieWhenTheyAreKilled
@@ -163,6 +164,7 @@ actor PDWTAK2: PeopleDieWhenTheyAreKilled
 actor PDWTAZ2: PDWTAK2
 {
     DamageType "ZorchKamikaze"
+    +BLOODLESSIMPACT
 }
 
 actor PDWTAK3: PeopleDieWhenTheyAreKilled
@@ -182,6 +184,7 @@ actor PDWTAK3: PeopleDieWhenTheyAreKilled
 actor PDWTAZ3: PDWTAK2
 {
     DamageType "ZorchKamikaze"
+    +BLOODLESSIMPACT
 }
 
 

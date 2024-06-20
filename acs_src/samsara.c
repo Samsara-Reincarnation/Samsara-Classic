@@ -65,7 +65,6 @@ global int 0:SamsaraGlobal[];
 
 script "SamsaraDecorate" (int choice, int arg1, int arg2)
 {
-    int clipcount;
     int result;
     int i, j, k;
     int x, y, z;
@@ -139,12 +138,9 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
         break;
 
       case 9:
-        clipcount = CheckInventory("Clip");
-
-        if (clipcount < 50)
+        if (CheckInventory("Clip") < 50)
         {
-            GiveInventory("Clip", 50 - clipcount);
-            TakeInventory("Clip", CheckInventory("Clip") - 50);
+            SetInventory("Clip", 50);
             result = 1;
         }
         break;

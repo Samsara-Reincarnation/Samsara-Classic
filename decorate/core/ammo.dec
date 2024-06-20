@@ -296,9 +296,6 @@ actor AmmoBackpack : CustomInventory replaces Backpack
     Inventory.PickupSound "silence"
     +COUNTITEM
     -INVENTORY.ALWAYSPICKUP
-
-    ConversationID 187, 181, 184
-
     States
     {
       Spawn:

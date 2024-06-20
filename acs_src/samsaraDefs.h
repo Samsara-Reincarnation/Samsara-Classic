@@ -606,6 +606,8 @@ int ChangelogString =
   - Fixed Strife blue acolyte death stuff not triggering properly.\n\
   - Spectral weapons' fire rates should now match the normal versions.\n\
   - Fixed Doomguy's accuracy powerup being given outside Strife with keyboard cheats.\n\
+  - Fixed Security Officer being able to pick up combined ammo pickups in Hexen when maxed out on all ammo.\n\
+  - The ammo fillup from Strife NPCs now properly fails if you have 50 or more rounds of Ammo 1.\n\
 - Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n\
 - Fixed and slightly tweaked some HUD elements.\n\
 - Pistol Start mode won't trigger in the title map.\n\
@@ -660,4 +662,5 @@ int ChangelogString =
 - Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.\n\
 - Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.\n\
 - Fixed Zandronum's compat_clientssendfullbuttoninfo CVar not being automatically enabled.\n\
-- Removed the key replacers, since Zandronum now handles key sharing automatically.";
+- Removed the key replacers, since Zandronum now handles key sharing automatically.\n\
+- Fixed the zorch version of the player death explosions causing blood decals.";

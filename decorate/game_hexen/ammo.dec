@@ -140,6 +140,16 @@ actor HexenEverythingAmmo : CustomInventory replaces Mana3
         stop
 
       PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,1)
+        goto PickupMarathonSuccess
+        TNT1 A 0 A_JumpIfInventory("Shell",0,1)
+        goto PickupMarathonSuccess
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,1)
+        goto PickupMarathonSuccess
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        goto PickupMarathonSuccess
+
+      PickupMarathonSuccess:
         TNT1 A 0 A_GiveInventory("Clip",15)
         TNT1 A 0 A_GiveInventory("Shell",15)
         TNT1 A 0 A_GiveInventory("RocketAmmo",15)
@@ -166,5 +176,9 @@ actor HexenEverythingAmmo : CustomInventory replaces Mana3
 		TNT1 A 0 A_GiveInventory("MultiRocketAmmo",10)
         TNT1 A 0 A_GiveInventory("Cell",15)
         stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
     }
 }

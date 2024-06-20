@@ -301,6 +301,11 @@ object HexenAmmoBackpack3
 	frame AMPK { light AMMOPACKPACK1 }
 }
 
+object StrifeBackpack
+{
+	frame AMPK { light AMMOPACKPACK1 }
+}
+
 // Fuck A Hexen!
 
 pointlight SMAMMO1POINT

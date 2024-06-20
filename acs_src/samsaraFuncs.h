@@ -388,7 +388,6 @@ function int ammoCount(int ammoname)
     {
       case "Clip":          return 10;
       case "Shell":         return 4;
-      case "AmmoShell":     return 4;
       case "RocketAmmo":    return 1;
       case "Cell":          return 20;
     }

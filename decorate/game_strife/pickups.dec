@@ -1,7 +1,4 @@
-actor StrifeBackpack: RandomSpawner replaces AmmoSatchel
-{
-    dropitem "AmmoBackpack"
-}
+actor StrifeBackpack: AmmoBackpack replaces AmmoSatchel { ConversationID 187 }
 
 actor StrifeClipOfBullets: Ammo1Small replaces ClipOfBullets {}
 
@@ -256,17 +253,13 @@ actor StrifeEnergyPod2: Ammo4Small
     }
 }
 
-actor StrifeAmmoFillup: CustomInventory replaces AmmoFillup
+actor StrifeAmmoFillup: Trigger replaces AmmoFillup
 {
     ConversationID 298
-
-    Inventory.MaxAmount 0
-    +AUTOACTIVATE
-
     States
     {
       Pickup:
-        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate", 0, 9)
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraDecorate", 9)
         stop
     }
 }

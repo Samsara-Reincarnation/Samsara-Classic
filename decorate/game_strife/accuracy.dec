@@ -1,11 +1,6 @@
 actor SamsaraMinesTransmitterUniqueGiven : Boolean {}
 
-actor StrifeAccuracyCounter: Ammo
-{
-    +IGNORESKILL
-    Inventory.Amount 1
-    Inventory.MaxAmount 10
-}
+actor StrifeAccuracyCounter: Counter { Inventory.MaxAmount 10 }
 
 actor StrifeAccuracyReplacement: Trigger replaces UpgradeAccuracy
 {
