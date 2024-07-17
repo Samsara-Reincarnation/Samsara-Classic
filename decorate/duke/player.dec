@@ -86,6 +86,7 @@ actor DukePlayer : PlayerPawn
     States
     {
       Spawn:
+        DUKE A 0 NoDelay ACS_NamedExecuteWithResult("DisableVoodooDoll")
         DUKE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_JumpIf(momz >> 0, "Jumping")
         TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTooLong")
         TNT1 A 0 A_GiveInventory("DukeWaiting",1)
@@ -233,6 +234,12 @@ actor DukePlayer : PlayerPawn
         TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
         DUKE A 1
         goto Spawn
+
+      DisableVoodooDoll:
+        DUKE A 0 A_ChangeFlag("NOPAIN",1)
+      VoodooLoop:
+        DUKE A 1
+        Loop
 
       Death.DukeDamage:
       Death.DukePistol:

@@ -1017,6 +1017,12 @@ script "Samsara679" (int tx, int ty, int tz) clientside
     }
 }
 
+Script "DisableVoodooDoll" (void)
+{
+	if(ClassifyActor(0) & ACTOR_VOODOODOLL)
+		SetActorState(0,"DisableVoodooDoll",true);
+}
+
 script "TauntButton" (void) NET CLIENTSIDE
 {
     if (!GetCVar("samsara_runninginzdoom") && GetCVar("samsara_runninginzandro")) { ConsoleCommand("taunt"); }
