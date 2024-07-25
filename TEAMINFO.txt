@@ -1,0 +1,69 @@
+ClearTeams
+
+Team "Blue" // Nilah
+{
+	PlayerColor "00 00 FF"
+	TextColor "Blue"
+	WinnerPic "winerblu"
+	LoserPic "loserblu"
+
+	FlagItem "BlueFlag"
+	SkullItem "BlueSkullST"
+
+	PlayerStartThingNumber 5080
+	SmallFlagHUDIcon "STFLA1"
+	SmallSkullHUDIcon "STKEYS3"
+	LargeFlagHUDIcon "BFLASMAL"
+	LargeSkullHUDIcon "BSKUA0"
+}
+
+Team "Red" // Raktah
+{
+	PlayerColor "FF 00 00"
+	TextColor "Red"
+	WinnerPic "winerred"
+	LoserPic "loserred"
+
+	FlagItem "RedFlag"
+	SkullItem "RedSkullST"
+
+	PlayerStartThingNumber 5081
+	SmallFlagHUDIcon "STFLA2"
+	SmallSkullHUDIcon "STKEYS5"
+	LargeFlagHUDIcon "RFLASMAL"
+	LargeSkullHUDIcon "RSKUA0"
+}
+
+Team "Green" // Haritah
+{
+	PlayerColor "00 FF 00"
+	TextColor "Green"
+	WinnerPic "winergre"
+	LoserPic "losergre"
+
+	FlagItem "GreenFlag"
+	SkullItem "GreenSkullST"
+
+	PlayerStartThingNumber 5083
+	SmallFlagHUDIcon "STFLA4"
+	SmallSkullHUDIcon "GSKLSMAL"
+	LargeFlagHUDIcon "GFLASMAL"
+	LargeSkullHUDIcon "GSKLBIG"
+}
+
+Team "Gold" // Pitah
+{
+	PlayerColor "FF FF 00"
+	TextColor "Gold"
+	WinnerPic "wineryel"
+	LoserPic "loseryel"
+
+	FlagItem "GoldFlag"
+	SkullItem "GoldSkullST"
+
+	PlayerStartThingNumber 5084
+	SmallFlagHUDIcon "STFLA5"
+	SmallSkullHUDIcon "STKEYS4"
+	LargeFlagHUDIcon "YFLASMAL"
+	LargeSkullHUDIcon "YSKUA0"
+}

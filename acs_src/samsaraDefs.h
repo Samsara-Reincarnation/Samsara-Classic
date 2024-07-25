@@ -663,4 +663,5 @@ int ChangelogString =
 - Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.\n\
 - Fixed Zandronum's compat_clientssendfullbuttoninfo CVar not being automatically enabled.\n\
 - Removed the key replacers, since Zandronum now handles key sharing automatically.\n\
+- Added back the previously-removed winner and loser team screens.\n\
 - Fixed the zorch version of the player death explosions causing blood decals.";
