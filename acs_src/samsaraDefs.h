@@ -662,7 +662,7 @@ int ChangelogString =
 - Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\
 - Due to bugs, glitches, and possible crashes, a warning is now provided when playing multiplayer in GZDoom.\n\
 - Added widescreen sprites for Doomguy's Super Shotgun, Corvus' staff, and Parias' Mace of Contrition, Timon's Axe, and Hammer of Retribution.\n\
-- Fixed Zandronum's compat_clientssendfullbuttoninfo CVar not being automatically enabled.\n\
+- Fixed Zandronum's compat_clientssendfullbuttoninfo CVar not being automatically enabled in netplay.\n\
 - Removed the key replacers, since Zandronum now handles key sharing automatically.\n\
 - Added back the previously-removed winner and loser team screens.\n\
 - Fixed the zorch version of the player death explosions causing blood decals.\n\
