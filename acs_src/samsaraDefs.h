@@ -608,6 +608,7 @@ int ChangelogString =
   - Fixed Doomguy's accuracy powerup being given outside Strife with keyboard cheats.\n\
   - Fixed Security Officer being able to pick up combined ammo pickups in Hexen when maxed out on all ammo.\n\
   - The ammo fillup from Strife NPCs now properly fails if you have 50 or more rounds of Ammo 1.\n\
+  - Fixed certain events not triggering when killing crusaders through certain means.\n\
 - Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n\
 - Fixed and slightly tweaked some HUD elements.\n\
 - Pistol Start mode won't trigger in the title map.\n\
@@ -664,4 +665,5 @@ int ChangelogString =
 - Fixed Zandronum's compat_clientssendfullbuttoninfo CVar not being automatically enabled.\n\
 - Removed the key replacers, since Zandronum now handles key sharing automatically.\n\
 - Added back the previously-removed winner and loser team screens.\n\
-- Fixed the zorch version of the player death explosions causing blood decals.";
+- Fixed the zorch version of the player death explosions causing blood decals.\n\
+- Fixed arachnotrons playing their normal Raise state upon being resurrected after an ice death.";

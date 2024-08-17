@@ -79,7 +79,7 @@ actor Crusader2 : Crusader replaces Crusader
         ROB2 E 4 A_SetTranslucent(0.2,0)
         ROB2 E 4 A_SetTranslucent(0.1,0)
         TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
+        TNT1 A -1 A_CrusaderDeath
         stop
 
       Death.DukeIce:
@@ -94,15 +94,39 @@ actor Crusader2 : Crusader replaces Crusader
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        //TNT1 A 0 A_NoBlocking
-        //TNT1 A 0 A_SpawnItem("NaziFrozen")
-        TNT1 A 0 A_Gravity
-        ROB2 E 0 A_GenericFreezeDeath
-        ROB2 E 70 A_UnsetSolid
-        ROB2 E 0 A_IceGuyDie
-        ROB2 E 1 A_IceGuyDie
-        TNT1 A -1
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_SpawnItemEx("CrusaderFrozen",0,0,0,0,0,0,0,32)
+        //TNT1 A 0 A_Gravity
+        //ROB2 E 0 A_GenericFreezeDeath
+        //ROB2 E 70 A_UnsetSolid
+        //ROB2 E 0 A_IceGuyDie
+        //ROB2 E 1 A_IceGuyDie
+        TNT1 A -1 A_CrusaderDeath
         stop
     }
 }
 
+actor CrusaderFrozen
+{
+  Health 10
+  Radius 40
+  Height 56
+  Mass 400
+  Monster
+  +FLOORCLIP
+  +NEVERRESPAWN
+  +NOTELEPORT
+  +NOTARGET
+  States
+  {
+  Spawn:
+    ROB2 E 1
+    ROB2 E 0 A_GenericFreezeDeath
+    ROB2 E 70 A_UnsetSolid
+  Death:
+    ROB2 E 0 A_IceGuyDie
+    ROB2 E 1 A_IceGuyDie
+    TNT1 A -1
+    stop
+}
+}
