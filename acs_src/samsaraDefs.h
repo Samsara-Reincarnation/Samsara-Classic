@@ -666,4 +666,5 @@ int ChangelogString =
 - Removed the key replacers, since Zandronum now handles key sharing automatically.\n\
 - Added back the previously-removed winner and loser team screens.\n\
 - Fixed the zorch version of the player death explosions causing blood decals.\n\
-- Fixed arachnotrons playing their normal Raise state upon being resurrected after an ice death.";
+- Fixed arachnotrons playing their normal Raise state upon being resurrected after an ice death.\n\
+- Frozen arachnotrons, mancubi, and barons no longer count as extra kills, nor can they be morphed by Corvus' morph ovum.";

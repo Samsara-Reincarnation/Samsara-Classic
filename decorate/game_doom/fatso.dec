@@ -153,7 +153,9 @@ actor FatsoFrozen
   +FLOORCLIP
   +NEVERRESPAWN
   +NOTELEPORT
-  +NOTARGET
+  +NEVERTARGET
+  -COUNTKILL
+  +DONTMORPH
   States
   {
   Spawn:

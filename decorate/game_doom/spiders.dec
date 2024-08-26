@@ -152,7 +152,9 @@ actor ArachnotronFrozen
   +FLOORCLIP
   +NEVERRESPAWN
   +NOTELEPORT
-  +NOTARGET
+  +NEVERTARGET
+  -COUNTKILL
+  +DONTMORPH
   States
   {
   Spawn:

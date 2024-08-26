@@ -116,7 +116,9 @@ actor CrusaderFrozen
   +FLOORCLIP
   +NEVERRESPAWN
   +NOTELEPORT
-  +NOTARGET
+  +NEVERTARGET
+  -COUNTKILL
+  +DONTMORPH
   States
   {
   Spawn:

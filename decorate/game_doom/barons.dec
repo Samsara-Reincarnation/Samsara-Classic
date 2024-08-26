@@ -154,7 +154,9 @@ actor BaronOfHellFrozen
   +FLOORCLIP
   +NEVERRESPAWN
   +NOTELEPORT
-  +NOTARGET
+  +NEVERTARGET
+  -COUNTKILL
+  +DONTMORPH
   States
   {
   Spawn:
