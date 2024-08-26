@@ -120,7 +120,7 @@ int AccuracyMessages[CLASSCOUNT][MSGCOUNT] =
         "",
     },
     {
-        "Jetpack!",
+        "Jetpack",
         "I believe I can touch the sky.",
         "Guaranteed to make friends with mappers.",
         "And this is why Virus will never be in.",
