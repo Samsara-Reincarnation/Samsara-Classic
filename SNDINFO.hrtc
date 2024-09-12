@@ -56,6 +56,8 @@ heretic/staffcrackle		stfcrk
 weapons/bowshoot			bowsht
 weapons/bowhit				hrnhit
 heretic/dragonclaw			blssht
+weapons/blasterhit			blshit
+weapons/blasterpowhit		hrnhit
 weapons/gauntletsactivate	gntact
 weapons/gauntletsuse		gntuse
 weapons/gauntletson			gntful

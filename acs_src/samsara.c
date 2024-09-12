@@ -605,6 +605,7 @@ script "DukeResourceDrain" (int dukeshit)
             }
             else
             {
+                PlaySound(0, "duke/jetpackoff", CHAN_ITEM);
                 TakeInventory("DukeFlying",1);
                 TakeInventory("DukePetJack",1);
             }
@@ -627,6 +628,7 @@ script "DukeResourceDrain" (int dukeshit)
             }
             else
             {
+                PlaySound(0, "duke/nightvision", CHAN_ITEM);
                 TakeInventory("DukeVision",1);
                 TakeInventory("PowerLightAmp",1);
             }

@@ -667,4 +667,9 @@ int ChangelogString =
 - Added back the previously-removed winner and loser team screens.\n\
 - Fixed the zorch version of the player death explosions causing blood decals.\n\
 - Fixed arachnotrons playing their normal Raise state upon being resurrected after an ice death.\n\
-- Frozen arachnotrons, mancubi, and barons no longer count as extra kills, nor can they be morphed by Corvus' morph ovum.";
+- Frozen arachnotrons, mancubi, and barons no longer count as extra kills, nor can they be morphed by Corvus' morph ovum.\n\
+- If \"Turkey Spawn Frequency\" is set to 0 tics or lower, it now forces the minimum of 1 tic.\n\
+- Added missing hit sounds for Corvus' dragon claw.\n\
+- Added missing use sounds for Corvus' Tome of Power, as well as Parias' poison cloud flechette and mystic ambit incant.\n\
+- Fixed B.J.'s ammo crate being usable with full Ammo 1.\n\
+- Fixed Duke's jetpack and night vision goggles not playing sounds when depleted.";

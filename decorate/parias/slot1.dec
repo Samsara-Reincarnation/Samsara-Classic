@@ -22,13 +22,14 @@ actor PortFlechette : CustomInventory
 
       Use:
         TNT1 A 0 A_JumpIfInventory("DiscOfRepulsionCooldown",1,"UseFail")
+        TNT1 A 0 A_PlaySound("hexen/artiuse",CHAN_ITEM)
         TNT1 A 0 A_SpawnItemEx("PoisonBagCoop",0,0,0,0,0,0,0,28,0)
-        TNT1 A 1 ACS_NamedExecuteAlways("DiscOfRepulsionCooldown")
+        TNT1 A 0 ACS_NamedExecuteAlways("DiscOfRepulsionCooldown")
         TNT1 A 0 A_GiveInventory("DiscOfRepulsionCooldown",15)
         fail
 
       UseFail:
-        TNT1 A 1 A_Print("$FLECCOOLDOWN")
+        TNT1 A 0 A_Print("$FLECCOOLDOWN")
         fail
     }
 }

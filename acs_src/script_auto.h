@@ -739,7 +739,12 @@ script "SamsaraSpawn" (int respawning)
 
 script "SamsaraTurkeyPuncher" ENTER
 {
-    delay(GetCvar("samsara_superturboturkeyfrequency"));
+    int delayTics = GetCVar("samsara_superturboturkeyfrequency");
+
+    if (delayTics <= 0) { delayTics = 1; }
+
+	Delay(delayTics);
+
     if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
     { GiveInventory("ChickenModeOn",1);
     

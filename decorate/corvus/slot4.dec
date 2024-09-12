@@ -141,7 +141,8 @@ actor DragonBullet : FastProjectile
 
       XDeath:
       Crash:
-        FX17 FGHIJKL 4 BRIGHT
+        FX17 F 4 BRIGHT A_PlaySound("weapons/blasterhit")
+        FX17 GHIJKL 4 BRIGHT
         stop
     }
 }
@@ -149,6 +150,7 @@ actor DragonBullet : FastProjectile
 actor BlasterPuff2 : BlasterPuff
 {
     DamageType "DragonClaw"
+    SeeSound "weapons/blasterhit"
     +CLIENTSIDEONLY
 }
 
@@ -158,6 +160,7 @@ actor BlasterPuff2Coop : BlasterPuff2
 	+THRUSPECIES
 	+MTHRUSPECIES
 }
+
 actor BlasterFX1B : FastProjectile
 {
     Radius 12
@@ -204,6 +207,7 @@ actor Ripper2 : Ripper
     Species "Player"
     DONTHURTSHOOTER
     Decal HImpScorch
+    DeathSound "weapons/blasterpowhit"
 }
 
 actor BlasterFX1D : FastProjectile
@@ -249,4 +253,5 @@ actor Ripper3 : Ripper
     DamageType "Spectral"
     DONTHURTSHOOTER
     Decal HImpScorch
+    DeathSound "weapons/blasterpowhit"
 }
