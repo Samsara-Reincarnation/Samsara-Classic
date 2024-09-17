@@ -1,0 +1,83 @@
+// General Options
+server int samsara_jumpmod = 0;
+server int samsara_armormode = 0;
+server int samsara_speedmod = 0;
+server bool samsara_nohealth = false;
+server bool samsara_nohealthcap = false;
+server bool samsara_nomonologues = false;
+server bool samsara_allcanrj = false;
+server bool samsara_dukesoundboard = false;
+
+// LMS Options
+server bool samsara_lmsrules = false;
+server int samsara_lmslife = 0;
+server bool samsara_lmsult = false;
+
+// Gentleman Options
+server bool samsara_punchdrunk = false;
+server bool samsara_punchdrunksaws = false;
+server bool samsara_punchdrunkuniques = false;
+
+// Turkey Puncher Options
+server int samsara_superturboturkeypuncher3000 = 0;
+server int samsara_superturboturkeyfrequency = 35;
+server int samsara_superturboturkeylimit = 0;
+
+// Party Mode Options
+server int samsara_peoplediewhentheyarekilled = 0;
+server bool samsara_permaweaponlevel2 = false;
+
+// Weapon Options
+server bool samsara_permault = false;
+server int samsara_uniquestart = 0;
+server int samsara_chainsawstart = 0;
+server int samsara_shotgunstart = 0;
+server bool samsara_backpackstart = false;
+server bool samsara_railgunstart = false;
+server bool samsara_pistolammo = false;
+server bool samsara_pistolstart = false;
+
+// Pickup Spawn Options
+server bool samsara_noinvuln = false;
+server bool samsara_nounique = false;
+server bool samsara_noult = false;
+
+// Class-Based Ability Options
+server bool samsara_classiclaz = false;
+server bool samsara_banwolfmove = false;
+server bool samsara_banjetpack = false;
+server bool samsara_permaquad = false;
+server bool samsara_vanillaquake = false;
+
+// Serverside Ability Options
+server bool samsara_nocustomgravity = false;
+
+// Character Ban Options
+server bool samsara_bandoomguy = false;
+server bool samsara_banchex = false;
+server bool samsara_bancorvus = false;
+server bool samsara_banbj = false;
+server bool samsara_banparias = false;
+server bool samsara_banduke = false;
+server bool samsara_banso = false;
+server bool samsara_banranger = false;
+
+// Character Multiplier Options
+server int samsara_generaldamage = 0;
+server int samsara_generaldefense = 0;
+server int samsara_doomguydamage = 0;
+server int samsara_doomguydefense = 0;
+server int samsara_chexdamage = 0;
+server int samsara_chexdefense = 0;
+server int samsara_corvusdamage = 0;
+server int samsara_corvusdefense = 0;
+server int samsara_bjdamage = 0;
+server int samsara_bjdefense = 0;
+server int samsara_pariasdamage = 0;
+server int samsara_pariasdefense = 0;
+server int samsara_dukedamage = 0;
+server int samsara_dukedefense = 0;
+server int samsara_sodamage = 0;
+server int samsara_sodefense = 0;
+server int samsara_rangerdamage = 0;
+server int samsara_rangerdefense = 0;

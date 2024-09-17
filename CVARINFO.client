@@ -1,0 +1,24 @@
+// General Player Preferences
+user bool samsara_cl_weaponhud = true;
+user int samsara_cl_pickupmode = 0;
+server int samsara_zd_pickupmode = 0;
+user bool samsara_cl_printpickup = false;
+user bool samsara_cl_showsecretmessage = true;
+user bool samsara_cl_moremessages = false;
+user bool samsara_cl_noadditivepickups = false;
+server bool samsara_zd_noadditivepickups = false;
+
+// Class-Based Player Preferences
+user bool samsara_cl_smoothanims = true; // was samsara_cl_vanilladoom (false by default)
+user bool samsara_cl_wolfmove = false;
+user bool samsara_cl_ballgag = false;
+user bool samsara_cl_norecoil = false;
+user bool samsara_cl_sinerecoil = false;
+user int samsara_cl_expparticles = 0;
+server int samsara_zd_expparticles = 0;
+
+// Blood and Gore Preferences
+user int samsara_cl_bloodyhell = 0;
+server int samsara_zd_bloodyhell = 0;
+user bool samsara_cl_bloodypersistent = false;
+server bool samsara_zd_bloodypersistent = false;

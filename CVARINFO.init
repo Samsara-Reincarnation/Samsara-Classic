@@ -1,0 +1,6 @@
+// Mod Initialization
+server bool samsara_runninginzandro = false;
+server bool samsara_runninginzdoom = false;
+
+// Server Initialization
+server bool samsara_cvarinfo = false;
