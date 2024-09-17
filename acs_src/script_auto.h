@@ -665,65 +665,7 @@ script "SamsaraEnterClient" (void) clientside
     
     execInt = 0; oExecInt = 0;
     
-    if (GetCVar("samsara_cl_exists") != SAMSARA_CL_VERSION)
-    {
-
-        // More setting default stuff, which is what CVARINFO does.
-
-        /*
-        //ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
-        SetCVar ("samsara_cl_exists", SAMSARA_CL_VERSION);
-        //ConsoleCommand("archivecvar samsara_cl_exists");
-	
-        if (!GetCVar("samsara_cl_wolfmove"))
-        {   SetCVar ("samsara_cl_wolfmove", 0);
-        //ConsoleCommand("archivecvar samsara_cl_wolfmove");  
-        }
-        
-        if (!GetCVar("samsara_cl_vanilladoom"))
-        {   SetCVar ("samsara_cl_vanilladoom", 0);
-        //ConsoleCommand("archivecvar samsara_cl_vanilladoom");  
-        }
-        
-        if (!GetCVar("samsara_cl_weaponhud"))
-        {   SetCVar ("samsara_cl_weaponhud", 1);
-        //ConsoleCommand("archivecvar samsara_cl_weaponhud");  
-        }
-        
-        if (!GetCVar("samsara_cl_ballgag"))
-        {   SetCVar ("samsara_cl_ballgag", 0);
-        //ConsoleCommand("archivecvar samsara_cl_ballgag");  
-        }
-        
-        if (!GetCVar("samsara_cl_moremessages"))
-        {   SetCVar ("samsara_cl_moremessages", 0);
-        //ConsoleCommand("archivecvar samsara_cl_moremessages");  
-        }
-        
-        if (!GetCVar("samsara_cl_pickupmode"))
-        {   SetCVar ("samsara_cl_pickupmode", 1);
-        //ConsoleCommand("archivecvar samsara_cl_pickupmode");  
-        }
-        
-        if (!GetCVar("samsara_cl_printpickup"))
-        {   SetCVar ("samsara_cl_printpickup", 0);
-        //ConsoleCommand("archivecvar samsara_cl_printpickup");  
-        }
-        */  
-    }
-        /*
-        if (!GetCVar("samsara_cl_bloodyhell"))
-        {   SetCVar ("samsara_cl_bloodyhell", 0);
-        //ConsoleCommand("archivecvar samsara_cl_bloodyhell");  
-        }
-        
-        if (!GetCVar("samsara_cl_bloodypersistent"))
-        {   SetCVar ("samsara_cl_bloodypersistent", 0);
-        //ConsoleCommand("archivecvar samsara_cl_bloodypersistent");  
-        }
-        */
-          
-
+    //if (GetCVar("samsara_cl_exists") != SAMSARA_CL_VERSION) {}
 
     for (i = 0; i < RESCOUNT; i++)
     {
