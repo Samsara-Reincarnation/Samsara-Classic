@@ -1,0 +1,58 @@
+OptionMenu "SamsaraClientOptions"
+{
+    Title "Samsara Clientside Options"
+    StaticText "General Player Preferences", 1
+    Option "Weapon HUD Bar",                 "samsara_cl_weaponhud",         "OnOff"
+    Option "Pickup Graphics",                "samsara_cl_pickupmode",        "PickupGraphics"
+    Option "Pickup Message Mode",            "samsara_cl_printpickup",       "PickupMsg"
+    Option "Secret Discovery Notifications", "samsara_cl_showsecretmessage", "OnOff"
+    Option "Extra Pickup Messages",          "samsara_cl_moremessages",      "OnOff"
+    Option "Additive Pickups",               "samsara_cl_noadditivepickups", "OffOn"
+    StaticText ""
+    StaticText "Class-Based Player Preferences", 1
+    Option "Doomguy: Weapon Animations",       "samsara_cl_smoothanims",  "SmoothAnims"
+    Option "B.J.: Wolfenstein Style Movement", "samsara_cl_wolfmove",     "OnOff"
+    Option "Duke: Character Talk",             "samsara_cl_ballgag",      "OffOn"
+    Option "Ranger: Weapon Recoil",            "samsara_cl_norecoil",     "OffOn"
+    Option "Ranger: Weapon Recoil Type",       "samsara_cl_sinerecoil",   "RecoilTypeSetting"
+    Slider "Ranger: Explosion Particles",      "samsara_cl_expparticles", -1, 200, 5
+    StaticText ""
+    StaticText "Blood and Gore Preferences", 1
+    Option "Violence Level",  "samsara_cl_bloodyhell",       "BHellLevel"
+    Option "Gib Persistence", "samsara_cl_bloodypersistent", "OnOff"
+}
+
+OptionValue "PickupGraphics"
+{
+    0, "Old-Style"
+    1, "Old-Style (Reincarnation)"
+    2, "Hybrid"
+    3, "Class"
+}
+
+OptionValue "PickupMsg"
+{
+    0, "Log"
+    1, "Print"
+}
+
+OptionValue "SmoothAnims"
+{
+    0, "Vanilla"
+    1, "Smooth"
+}
+
+OptionValue "RecoilTypeSetting"
+{
+    0, "Parabola"
+    1, "Sine Wave"
+}
+
+OptionValue "BHellLevel"
+{
+    -1, "Happyfun"
+    0,  "Vanilla"
+    1,  "Nashgore"
+    2,  "Brutal"
+    3,  "Nightmare"
+}
