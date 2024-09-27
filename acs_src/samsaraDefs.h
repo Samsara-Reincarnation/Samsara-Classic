@@ -673,4 +673,5 @@ int ChangelogString =
 - Added missing use sounds for Corvus' Tome of Power, as well as Parias' poison cloud flechette and mystic ambit incant.\n\
 - Fixed B.J.'s ammo crate being usable with full Ammo 1.\n\
 - Fixed Duke's jetpack and night vision goggles not playing sounds when depleted.\n\
-- Fixed the Megasphere pickup message not showing for the Security Officer.";
+- Fixed the Megasphere pickup message not showing for the Security Officer.\n\
+- Parias' sapphire wand now properly plays its sound from the player in netplay.";
