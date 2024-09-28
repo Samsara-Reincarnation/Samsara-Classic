@@ -430,6 +430,9 @@ script "SamsaraSpawn" (int respawning)
 
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
 
+        SetInventory("StopBreakingEverything_Bomb", 0);
+        SetInventory("StopBreakingEverything_Quad", 0);
+
         //if (isDead(0)) { endloop = 1; }
         
         Delay(1);

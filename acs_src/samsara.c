@@ -46,6 +46,7 @@ global int 0:SamsaraGlobal[];
 #include "script_strife.h"
 #include "script_scheduled.h"
 #include "script_pdwtak.h"
+#include "script_pistorbit.h"
 
 //SCRIPTS
 //200:

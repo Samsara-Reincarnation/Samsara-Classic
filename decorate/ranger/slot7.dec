@@ -2,6 +2,7 @@ actor CantQuad: Boolean {}
 actor DoNotQuad: Boolean {}
 actor QuakeQuadTimer: Counter {}
 actor SamsaraQuadDamageCooldownDisplay : Counter {}
+actor StopBreakingEverything_Quad : Boolean {}
 
 actor QuadDamagePower: PowerDamage
 {
@@ -53,10 +54,12 @@ actor QuadDamageItem: CustomInventory
         stop
 
       Use:
+        TNT1 A 0 A_JumpIfInventory("StopBreakingEverything_Quad",1,"UseFail")
         TNT1 A 0 A_JumpIfInventory("CantQuad", 1, "NoU")
         TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraDecorate", 7, 1050)
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"Usefail")
-        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"Usefail")
+        TNT1 A 0 A_GiveInventory("StopBreakingEverything_Quad")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"UseFail")
         TNT1 A 0 A_TakeInventory("QuadDamageItem")
         stop
       
