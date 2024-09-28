@@ -188,3 +188,9 @@ friendlygrunt/death		sounds/allies/GRNTDETH.wav
 friendlygrunt/active	sounds/allies/GRNTIDLE.wav
 grunt/pain1				sounds/allies/GRNTPN1.wav
 grunt/pain2				sounds/allies/GRNTPN2.wav
+
+//////////////////
+// Other sounds //
+//////////////////
+
+$alias Samsara/PiePickup wolfen/chicken

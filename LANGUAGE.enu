@@ -201,6 +201,7 @@ SAMSARA_OB_PDWTAK = "%k exploded %o.";
 // ITEMS
 // ======
 
+SAMSARA_PIE = "You ate some pie. It was pretty terrible.";
 SAMSARA_WOLFENCHICKEN = "Ate up a chicken leg for 10 Health.";
 SAMSARA_WOLFENDRINK = "Drank up for 1 Health.";
 SAMSARA_HEALPACK0 = "Picked up 1 Health.";
