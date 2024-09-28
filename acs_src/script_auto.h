@@ -153,7 +153,17 @@ script "SamsaraSpawn" (int respawning)
     }
 
     pcount = PlayerCount();
-    
+
+    if (CheckInventory("LevelSwitch_HadDoE") && !respawning)
+    {
+        GiveInventory("UsingDoEAmmo", 1);
+
+        if (CheckWeapon("Grenade Launcher")) { GiveInventory("UsingMultiNades", 1); }
+        if (CheckWeapon("  Rocket Launcher  ")) { GiveInventory("UsingMultiRockets", 1); }
+        if (CheckWeapon("Nailgun")) { GiveInventory("FiredLavaNails", 1); }
+        if (CheckWeapon("Super Nailgun")) { GiveInventory("FiredSLNails", 1); }
+    }
+
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
         if (GetArmorType("MarathonRedArmor", pln) || GetArmorType("MRedArmorNoDrop", pln)) { SetInventory("SamsaraArmorCategory", 10); }
@@ -284,6 +294,8 @@ script "SamsaraSpawn" (int respawning)
         TakeInventory("Mace", 1);
         TakeInventory("MacePowered", 1);
         if (GetCvar("samsara_lmsrules") == 0) { ConvertClassWeapons(-1); }
+
+        SetInventory("LevelSwitch_HadDoE", CheckInventory("UsingDoEAmmo"));
 
         if (CheckInventory("SpectralFiring"))
         {
