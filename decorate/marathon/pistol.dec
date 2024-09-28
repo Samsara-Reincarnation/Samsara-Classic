@@ -26,10 +26,11 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         STOP
 
       Ready:
+        TNT1 A 0 A_TakeInventory("SamsaraLevelSwitch_DualRaising")
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Ready2")
         PIST A 1 A_WeaponReady
         TNT1 A 0 A_JumpIfNoAmmo("SingleReload")
-        LOOP
+        loop
 
       SingleReload:
         TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"SingleReloadCheck")
@@ -56,10 +57,11 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         goto Ready
 
       Deselect:
+        TNT1 A 0 A_TakeInventory("SamsaraLevelSwitch_DualWielding")
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Deselect2")
         TNT1 A 0 A_Lower
         PIST A 1 A_Lower
-        LOOP
+        loop
 
       Select:
         TNT1 A 0 A_TakeInventory("UsingSMG",1)
@@ -73,13 +75,25 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         TNT1 A 0 A_TakeInventory("UsingAlienWeapon",1)
         TNT1 A 0 A_TakeInventory("UsingAlienWeapon2",1)
         TNT1 A 0 A_TakeInventory("UsingWMC",1)
-        TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
+        //TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
         
         TNT1 A 0 A_GiveInventory("UsingPistols",1)
+        TNT1 A 0 A_JumpIfInventory("SamsaraLevelSwitch_DualWielding",1,"SelectDual")
+        TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"SelectDual")
+        TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
         TNT1 A 0 A_Raise
         PIST A 1 A_Raise
         LOOP
+
+      SelectDual:
+        TNT1 A 0 A_GiveInventory("UsingDualPistols",1)
+        TNT1 A 0 A_GiveInventory("SamsaraLevelSwitch_DualRaising")
+        TNT1 A 0 A_GiveInventory("SynthFireActive")
+        TNT1 A 0 A_GunFlash("Flash",GFF_NOEXTCHANGE)
+        TNT1 A 0 A_Raise
+        PIS1 A 1 A_Raise
+        goto Select
 
       Fire:
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"LFire")
@@ -105,12 +119,11 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"RFire")
         TNT1 A 0 A_JumpIfInventory("CanDualPistols",1,1)
         goto Ready
-        PIS3 A 1 A_GiveInventory("SynthFireActive",1)
-        PIS3 B 1 A_GiveInventory("UsingDualPistols",1)
-        PIS3 C 1
-        PIS3 DEFGHIJ 1 A_GiveInventory("UsingDualPistols",1)//ABCDEFGHIJKLMNOPQ 1
-        TNT1 A 0 A_GunFlash
-        PIS3 K 1 A_GiveInventory("SynthFireActive",1)
+        TNT1 A 0 A_GiveInventory("UsingDualPistols",1)
+        PIS3 A 1 A_GiveInventory("SamsaraLevelSwitch_DualWielding",1)
+        PIS3 BCDEFGHIJ 1
+        TNT1 A 0 A_GiveInventory("SynthFireActive",1)
+        PIS3 K 1 A_GunFlash("Flash",GFF_NOEXTCHANGE)
         goto Ready2
 
       FireCoop:
@@ -131,6 +144,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         
         
       Deselect2:
+        TNT1 A 0 A_TakeInventory("SamsaraLevelSwitch_DualWielding")
         TNT1 A 0 A_TakeInventory("SynthFireActive",1)
         TNT1 A 0 A_TakeInventory("SynthFireLeft",1)
         TNT1 A 0 A_TakeInventory("SynthFireRight",1)
@@ -140,11 +154,11 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
       DS:
         TNT1 A 0 A_Lower
         PIS1 A 1 A_Lower
-        Goto DS
+        loop
 
       Ready2:
-        PIS1 A 1 A_GunFlash
         TNT1 A 0 A_GiveInventory("SynthFireActive",1)
+        PIS1 A 1 A_GunFlash("Flash",GFF_NOEXTCHANGE)
         // Left Magnum
       LIdle:
         TNT1 A 0 A_JumpIfInventory("RightReload",1,"LInvisible")
@@ -192,6 +206,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         TNT1 A 0 A_JumpIfInventory("RightReload",1,"LInvisible")
         TNT1 A 0 A_JumpIfInventory("MagnumBullet",1,1)
         Goto LReload//LIdle
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraForcePlayerAttackState")
 		TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"LFireCoop")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"LFireCoop")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
@@ -234,11 +249,12 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         Goto LIdle
         // Right Magnum
       Flash:
-        PIS2 A 8
+        PIS2 A 1
 
       RIdle:
         TNT1 A 0 A_JumpIfInventory("LeftReload",1,"RInvisible")
         PIS2 A 1
+        TNT1 A 0 A_JumpIfInventory("SamsaraLevelSwitch_DualRaising",1,"RIdle")
         TNT1 A 0 A_JumpIfInventory("MagnumBulletRight",1,1)
         Goto RReload
         TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
@@ -283,6 +299,7 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         TNT1 A 0 A_JumpIfInventory("LeftReload",1,"RInvisible")
         TNT1 A 0 A_JumpIfInventory("MagnumBulletRight",1,1)
         Goto RReload//RIdle
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraForcePlayerAttackState")
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"RFireCoop")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"RFireCoop")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)

@@ -1034,3 +1034,12 @@ script "TauntButton" (void) NET CLIENTSIDE
         if (!isDead(0) && GameType() != GAME_TITLE_MAP) { PlaySound(0, "*taunt", CHAN_VOICE); }
     }
 }
+
+script "SamsaraForcePlayerAttackState" (int flash)
+{
+    if (!isDead(0))
+    {
+        if (flash) { SetActorState(0, "Melee"); }
+        else { SetActorState(0, "Missile"); }
+    }
+}

@@ -35,15 +35,17 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         STOP
 
       Ready:
+        TNT1 A 0 A_TakeInventory("SamsaraLevelSwitch_DualRaising")
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Ready2")
         MSHT A 1 A_WeaponReady
-        LOOP
+        loop
 
       Deselect:
+        TNT1 A 0 A_TakeInventory("SamsaraLevelSwitch_DualWielding")
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Deselect2")
         TNT1 A 0 A_Lower
         MSHT A 1 A_Lower
-        LOOP
+        loop
 
       Select:
         TNT1 A 0 A_TakeInventory("WastemUnloaded")
@@ -61,12 +63,24 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_TakeInventory("UsingAlienWeapon2",1)
         TNT1 A 0 A_TakeInventory("UsingWMC",1)
         TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
-        TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
+        //TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
         
         TNT1 A 0 A_GiveInventory("UsingShotguns",1)
+        TNT1 A 0 A_JumpIfInventory("SamsaraLevelSwitch_DualWielding",1,"SelectDual")
+        TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"SelectDual")
+        TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
         TNT1 A 0 A_Raise
         MSHT A 1 A_Raise
         LOOP
+
+      SelectDual:
+        TNT1 A 0 A_GiveInventory("UsingDualShotguns",1)
+        TNT1 A 0 A_GiveInventory("SamsaraLevelSwitch_DualRaising")
+        TNT1 A 0 A_GiveInventory("SynthFireActive")
+        TNT1 A 0 A_GunFlash("Flash",GFF_NOEXTCHANGE)
+        TNT1 A 0 A_Raise
+        RSHT A 1 A_Raise
+        goto Select
 
       Fire:
         TNT1 A 0 A_JumpIf(waterlevel == 3, "NothingFire")
@@ -120,9 +134,11 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"RFire")
         TNT1 A 0 A_JumpIfInventory("CanDualShotties",1,1)
         goto Ready
-        SHT3 BDFHJLNOPQ 1 A_GiveInventory("UsingDualShotguns",1)
-        TNT1 A 0 A_GunFlash
-        SHT3 R 1 A_GiveInventory("SynthFireActive",1)
+        TNT1 A 0 A_GiveInventory("UsingDualShotguns",1)
+        SHT3 B 1 A_GiveInventory("SamsaraLevelSwitch_DualWielding",1)
+        SHT3 DFHJLNOPQ 1
+        TNT1 A 0 A_GiveInventory("SynthFireActive",1)
+        SHT3 R 1 A_GunFlash("Flash",GFF_NOEXTCHANGE)
         goto Ready2
 
       NothingFire:
@@ -132,6 +148,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         // Dual shotgun modes
         
       Deselect2:
+        TNT1 A 0 A_TakeInventory("SamsaraLevelSwitch_DualWielding")
         TNT1 A 0 A_TakeInventory("SynthFireActive",1)
         TNT1 A 0 A_TakeInventory("SynthFireLeft",1)
         TNT1 A 0 A_TakeInventory("SynthFireRight",1)
@@ -139,11 +156,11 @@ actor "WSTE-M5 Combat Shotgun": Weapon
       DS:
         TNT1 A 0 A_Lower
         RSHT A 1 A_Lower
-        Goto DS
+        loop
 
       Ready2:
-        RSHT A 1 A_GunFlash
         TNT1 A 0 A_GiveInventory("SynthFireActive",1)
+        RSHT A 1 A_GunFlash("Flash",GFF_NOEXTCHANGE)
         // Left Shotgun
       LIdle:
         RSHT A 1 A_WeaponReady(12)
@@ -156,6 +173,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_JumpIfInventory("Shell",2,1)
         Goto LIdle
         RSHT A 1
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraForcePlayerAttackState")
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"LCoopFire")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"LCoopFire")
         TNT1 AAAAAAAAA 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),0,0,0,0,random(-4,4))
@@ -202,10 +220,11 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         Goto LIdle
         // Right Shotgun
       Flash:
-        SHT2 A 8
+        SHT2 A 1
 
       RIdle:
         SHT2 A 1
+        TNT1 A 0 A_JumpIfInventory("SamsaraLevelSwitch_DualRaising",1,"RIdle")
         TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
         Loop
 
@@ -215,6 +234,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_JumpIfInventory("Shell",2,1)
         Goto RIdle
         SHT2 A 1
+        TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraForcePlayerAttackState")
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"RCoopFire")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"RCoopFire")
         TNT1 AAAAAAAAA 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),0,0,0,0,random(-4,4))
