@@ -1,9 +1,9 @@
 // Banking off the fact that this never changes...
 
+#library "strfhelp"
 #include "zcommon.acs"
 
 #include "samsaraDefs.h"
-#library "strfhelp"
 
 #define VDOORSPEED  16
 #define VDOORWAIT   150

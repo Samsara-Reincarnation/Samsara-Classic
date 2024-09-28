@@ -9,7 +9,7 @@ actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
         stop
         
       SpawnLoop:      
-        "----" A 35 bright ACS_NamedExecuteAlways("SamsaraClientClass", 0, 5)
+        "----" A 35 bright ACS_NamedExecuteAlways("SamsaraClientClass", 0, 6)
         loop
         
         NoGuy:    WEPG E 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -43,7 +43,7 @@ actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
         QuakeEmpty:    PQRL A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
-        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 5) & 3) == 1, "PickupSuccess")
+        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 6) & 3) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }
@@ -57,7 +57,7 @@ actor SamsaraSlotFiveDrop: SamsaraSlotFivePickup
         goto SpawnLoop
         
       Pickup:
-        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 5, 1) & 1) == 1, "PickupSuccess")
+        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 6, 1) & 1) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }
