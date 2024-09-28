@@ -154,7 +154,7 @@ script "SamsaraSpawn" (int respawning)
 
     pcount = PlayerCount();
 
-    if (CheckInventory("LevelSwitch_HadDoE") && !respawning)
+    if (CheckInventory("SamsaraLevelSwitch_HadDoE") && !respawning)
     {
         GiveInventory("UsingDoEAmmo", 1);
 
@@ -295,7 +295,7 @@ script "SamsaraSpawn" (int respawning)
         TakeInventory("MacePowered", 1);
         if (GetCvar("samsara_lmsrules") == 0) { ConvertClassWeapons(-1); }
 
-        SetInventory("LevelSwitch_HadDoE", CheckInventory("UsingDoEAmmo"));
+        SetInventory("SamsaraLevelSwitch_HadDoE", CheckInventory("UsingDoEAmmo"));
 
         if (CheckInventory("SpectralFiring"))
         {
