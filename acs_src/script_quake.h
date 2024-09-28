@@ -450,8 +450,8 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
 {
     int givingQuad, givingLG;
 
-    int stay = GetCVar("sv_weaponstay") && !dropped;
-    int ultStay = GetCVar("samsara_permault") && !dropped;
+    int stay = GetCVar("sv_weaponstay") && dropped <= 0;
+    int ultStay = GetCVar("samsara_permault") && dropped <= 0;
 
     int doquad = 1;
 

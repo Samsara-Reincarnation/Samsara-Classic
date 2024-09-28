@@ -689,4 +689,6 @@ int ChangelogString =
 - Parias' sapphire wand now properly plays its sound from the player in netplay.\n\
 - Fixed an exploit with Corvus' Mine of the Ancients and Ranger's quad damage.\n\
 - Security Officer's dual magnums and dual shotguns player sprites are now used.\n\
-- Security Officer's dual wielding and Ranger's active DOE ammo are now preserved through map changes.";
+- Security Officer's dual wielding and Ranger's active DOE ammo are now preserved through map changes.\n\
+- Equipment pickups (except for uniques) spawned via ACS or summon cheats are no longer treated as if they were dropped by enemies, meaning they give the proper amount of ammo on pickup (instead of just half). They can still only be picked up one time.\n\
+- Fixed Duke's weapon pickup taunt not giving its cooldown in netplay.";

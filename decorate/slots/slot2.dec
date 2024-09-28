@@ -5,10 +5,14 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
     States
     {
       IWasDropped:
+        TNT1 A 0 A_SpawnItemEx("SamsaraSlotTwoNoStay", 0,0,0, momx,momy,momz, 0, SXF_ABSOLUTEMOMENTUM)
+        stop
+
+      IWasTossed:
         TNT1 A 0 A_SpawnItemEx("SamsaraSlotTwoDrop", 0,0,0, momx,momy,momz, 0, SXF_ABSOLUTEMOMENTUM)
         stop
-        
-      SpawnLoop:      
+
+      SpawnLoop:
         "----" A 35 bright ACS_NamedExecuteAlways("SamsaraClientClass", 0, 3)
         loop
         
@@ -43,7 +47,7 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
         QuakeEmpty:    PQSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
-        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 3) & 3) == 1, "PickupSuccess")
+        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 3, 0) & 3) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }
@@ -60,7 +64,7 @@ actor SamsaraSlotTwoPickupF: SamsaraSlotTwoPickup
     }
 }
 
-actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
+actor SamsaraSlotTwoNoStay: SamsaraSlotTwoPickup
 {
     States
     {
@@ -70,6 +74,20 @@ actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
         
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 3, 1) & 1) == 1, "PickupSuccess")
+        goto PickupFailure
+    }
+}
+
+actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
+{
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        goto SpawnLoop
+        
+      Pickup:
+        TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 3, 2) & 1) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }

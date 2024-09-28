@@ -75,7 +75,8 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
     switch (choice)
     {
       case 1:
-        result = GetActorProperty(0, APROP_Dropped);
+        if (arg1 >= 1) { result = CheckFlag(0, "TOSSED"); } // dropped by actor
+        else { result = CheckFlag(0, "DROPPED"); } // dropped by actor OR spawned by ACS/summon cheats
         break;
         
       case 2:

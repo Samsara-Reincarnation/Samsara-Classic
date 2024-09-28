@@ -178,7 +178,7 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
     // If we have the check-fail item, kill the pickup if this wasn't a drop
     // (it's for the wastems and LevelLimiter)
     // (the wastems are still fucking terrible)
-    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped))
+    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && dropped <= 0))
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
@@ -203,7 +203,7 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
     if (a1Bool) { a1Full = (CheckInventory(ammo1) == a1max); }
     if (a2Bool) { a2Full = (CheckInventory(ammo2) == a2max); }
 
-    if (dropped)
+    if (dropped >= 2)
     {
         if (a1bool) { SetAmmoCapacity(ammo1, a1max2); }
         if (a2bool) { SetAmmoCapacity(ammo2, a2max2); }
@@ -215,7 +215,7 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
     {
         weaponGet = 1;
     }
-    else if (!weaponStay || dropped)
+    else if (!weaponStay || dropped >= 1)
     {
         // still attempt a pickup if we can get ammo from it
         if ((a1bool && !a1Full) || (a2Bool && !a2Full)) { weaponGet = 1; }
@@ -248,11 +248,13 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
 				}
             }
 
-            ACS_NamedExecuteAlways("SamsaraClientWeaponPickup", 0, slot,GetCVar("compat_silentpickup"),dropped);			
+            ACS_NamedExecuteAlways("SamsaraClientWeaponPickup", 0, slot, GetCVar("compat_silentpickup"), dropped);
+
+            if (dropped <= 1) { ACS_NamedExecuteWithResult("SamsaraWeaponTaunt"); } // so it gives the taunt cooldown properly
 		}
 	}
 
-    if (dropped)
+    if (dropped >= 2)
     {
         // shave off half the ammo given
         TakeInventory(ammo1, (CheckInventory(ammo1) - a1cnt) / 2);
@@ -303,7 +305,7 @@ script "SamsaraClientWeaponPickup" (int slot, int soundmode, int dropped) client
     int logMsg;
     int pickupsound = ClassPickupSounds[pclass][slot];
     
-    if (dropped) { pickupsound = ClassDropSounds[pclass][slot]; }
+    if (dropped >= 2) { pickupsound = ClassDropSounds[pclass][slot]; }
     
     if (cpln == pln && GetCVar("msg") == 0)
     {
@@ -336,21 +338,6 @@ script "SamsaraClientWeaponPickup" (int slot, int soundmode, int dropped) client
     
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
-    
-    if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag") && !dropped)
-    {
-        Delay(8);
-
-        if (!DukeQuoteCooldown[pln] && !CheckInventory("DukeTauntCooldown"))
-        {
-            if (soundmode == 1) { LocalAmbientSound("duke/weapontaunt", 127); }
-            else { ActivatorSound("duke/weapontaunt", 127); }
-            GiveInventory("DukeTauntCooldown",5);
-            ACS_NamedExecuteAlways("DukeTauntCooldown",0,0);
-            DukeQuoteCooldown[pln] = 140;
-        }
-    }
-	
 }
 
 script "SamsaraClientUniquePickup" (int soundmode, int punchdrunk) clientside
@@ -397,4 +384,18 @@ script "SamsaraClientUniquePickup" (int soundmode, int punchdrunk) clientside
     
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
+}
+
+script "SamsaraWeaponTaunt" (void)
+{
+    switch (samsaraClassNum())
+    {
+      case CLASS_DUKE:
+        Delay(8);
+        GiveInventory("DukeWeaponTaunt", 1);
+        break;
+
+      default:
+        terminate;
+    }
 }

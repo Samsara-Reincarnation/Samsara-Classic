@@ -5,9 +5,9 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int hasBoth     = CheckInventory("CanDualShotties");
     int limited     = CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
-    int ammoFull    = CheckInventory("Shell") >= (GetAmmoCapacity("Shell") / ((dropped*3)+1));
+    int ammoFull    = CheckInventory("Shell") >= (GetAmmoCapacity("Shell") / (((dropped >= 2)*3)+1));
     int i;
-    // The above line is because of the quadupling of ammo capacity with dropped pickups
+    // The above line is because of the quadrupling of ammo capacity with dropped pickups
     // It's a really gross hack. I hate it. But it works.
     
     switch (slot)
@@ -18,28 +18,29 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         break;
         
       case 3:
-        if (limited && !dropped)
+        if (limited && dropped <= 0)
         {
             SetResultValue(0);
             terminate;
         }
 
-        if ((dropped && hasShotty && ammoFull) ||
-            (!dropped && (hasBoth || (hasShotty && limited)) && ammoFull))
+        if ((dropped >= 2 && hasShotty && ammoFull) ||
+            (dropped == 1 && hasBoth && ammoFull) ||
+            (dropped <= 0 && (hasBoth || (hasShotty && limited)) && ammoFull))
         {
             SetResultValue(0);
             terminate;
         }
         
-        GiveInventory("Shell", 8 / (!!dropped+1));
+        GiveInventory("Shell", 8 / (!!(dropped >= 2)+1));
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
         
-        if (giveboth || (hasShotty && !dropped))
+        if (giveboth || (hasShotty && dropped <= 1))
         {
             GiveInventory("CanDualShotties", 1);
         }
         
-        if (limit && !dropped)
+        if (limit && dropped <= 0)
         {
             GiveInventory("LevelLimiter", 1);
         }
@@ -49,7 +50,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
       case 4:
         GiveInventory("Fusion Pistol", 1);
 		
-		if (dropped)
+		if (dropped >= 2)
 		{
 			GiveInventory("FusionBullet", 20);
 			GiveInventory("Cell", 10);
@@ -66,7 +67,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
       case 5:
         GiveInventory("MA-75B Assault Rifle", 1);
 		
-		if (dropped)
+		if (dropped >= 2)
 		{
 			GiveInventory("RifleBullet", 52);
 			GiveInventory("Clip", 13);
@@ -94,7 +95,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
       case 7:
         GiveInventory("TOZT-7 Napalm Unit", 1);
 		
-		if (dropped)
+		if (dropped >= 2)
 		{
 			GiveInventory("NapalmInTank", 210);
 			GiveInventory("Cell", 105);
@@ -111,7 +112,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
       case 8:
         GiveInventory("ONI-71 Wave Motion Cannon", 1);
 		
-		if (dropped)
+		if (dropped >= 2)
 		{
 			GiveInventory("Cell", 20);
 		}
