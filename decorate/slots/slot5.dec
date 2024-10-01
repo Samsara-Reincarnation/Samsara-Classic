@@ -59,21 +59,17 @@ actor SamsaraSlotFiveNoStay: SamsaraSlotFivePickup
       Spawn:
         TNT1 A 0
         goto SpawnLoop
-        
+
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 6, 1) & 1) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }
 
-actor SamsaraSlotFiveDrop: SamsaraSlotFivePickup
+actor SamsaraSlotFiveDrop: SamsaraSlotFiveNoStay
 {
     States
     {
-      Spawn:
-        TNT1 A 0
-        goto SpawnLoop
-        
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_NamedExecuteWithResult("SamsaraGiveWeapon", 6, 2) & 1) == 1, "PickupSuccess")
         goto PickupFailure
