@@ -414,7 +414,7 @@ actor ChexguysDieParticle: PeopleDieParticle
     }
 }
 
-actor ChexguyDiePulse: PeopleDieParticle
+actor ChexguysDiePulse: PeopleDieParticle
 {
     ReactionTime 35
 
