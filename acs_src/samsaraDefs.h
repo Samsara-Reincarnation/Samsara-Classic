@@ -691,4 +691,5 @@ int ChangelogString =
 - Security Officer's dual magnums and dual shotguns player sprites are now used.\n\
 - Security Officer's dual wielding and Ranger's active DOE ammo are now preserved through map changes.\n\
 - Equipment pickups (except for uniques) spawned via ACS or summon cheats are no longer treated as if they were dropped by enemies, meaning they give the proper amount of ammo on pickup (instead of just half). They can still only be picked up one time.\n\
-- Fixed Duke's weapon pickup taunt not giving its cooldown in netplay.";
+- Fixed Duke's weapon pickup taunt not giving its cooldown in netplay.\n\
+- Fixed thrown pipebombs being unable to respond to the detonator when damaged by another actor.";

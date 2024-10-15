@@ -1195,6 +1195,7 @@ actor DukePipebomb
     +FORCERADIUSDMG
     +THRUGHOST
     +THRUSPECIES
+    +NOTARGETSWITCH
     States
     {
       Spawn:
@@ -1318,22 +1319,12 @@ actor PipebombFrag
     }
 }
 
-actor DukeAmmoIndicator: CustomInventory
-{
-    Inventory.MaxAmount 0
-    +AUTOACTIVATE
-    
+actor DukeAmmoIndicator: Trigger
+{    
     States
     {
-       Spawn:
-         TNT1 A 0
-         stop
-         
        Pickup:
-         TNT1 A 0
-         TNT1 A 0 A_PlaySoundEx("duke/itemget", 6)
-         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
-		 TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
+         TNT1 A 0 A_PlaySound("duke/itemget",CHAN_ITEM)
          TNT1 A 0 A_SetBlend("FFFF00",0.1,5)
          stop
     }

@@ -302,7 +302,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "It's a spook-shooting bow.",
             "Only partly ethereal energy hits ghosts. What?",
             "Iiiii aaaam the ghoooost boooolt! WHOOOO!",
-            "So haunted it belongs on eBay.",
+            "So haunted, it belongs on eBay.",
             "Gravity is stupid.",
             "If it's ethereal, how do you hold it?",
             "No, it's not that type of ether. Stop trying to huff the bolts.",
@@ -723,7 +723,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "You learned the ability to kick even faster!",
-            "\cnLIU KANG MODE ENGAGED",
+            "\cnLiu Kang Mode Engaged",
             "You're just jealous because you don't have an invisible bicycle.",
             "Now go run a marathon.",
             "Where the hell are my pipe bombs?!",
