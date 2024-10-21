@@ -51,6 +51,8 @@ alias showpickupmode "test == $samsara_cl_pickupmode 3 \"echo \\\\cdClass-specif
 alias showpickup2    "test == $samsara_cl_pickupmode 2 \"echo \\\\cdHybrid\\\\c- weapon mode set\" \"showpickup3\""
 alias showpickup3    "test == $samsara_cl_pickupmode 1 \"echo \\\\cdOld-style (Reincarnation)\\\\c- weapon mode set\" \"echo \\\\cdOld-style\\\\c- weapon mode set\""
 
+alias takemetothemoon		"pukename \"SamsaraSpaceFlight\""
+
 // THIS SHOULD NOT BE HERE, BUT ADDING IT TO MAPINFO DOESN'T SEEM TO BE PERFECT RIGHT NOW SO HERE'S TO A BACKUP PLAN
 addslotdefault 0 " Fist "
 addslotdefault 0 " Staff "
