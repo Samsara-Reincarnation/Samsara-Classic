@@ -320,18 +320,6 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
     {"InvPeopleDie3", "InvPeopleZorch3"},
 };
 
-int SpaceflightBlasts[CLASSCOUNT] = 
-{
-    "SpaceMalfunction_Quietguy",
-    "SpaceMalfunction_Waffleguy",
-    "SpaceMalfunction_Elfguy",
-    "SpaceMalfunction_Wolfguy",
-    "SpaceMalfunction_Priestguy",
-    "SpaceMalfunction_Cheekyguy",
-    "SpaceMalfunction_Sadguy",
-    "SpaceMalfunction_Angryguy",
-};
-
 #define ARMORCOUNT  6
 
 #define ARMOR_GREEN             0
