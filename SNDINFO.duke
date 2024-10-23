@@ -3,6 +3,7 @@
 //////////////
 
 $playersound	DukePlayer	male	*death			dkdeath
+$playersounddup	DukePlayer	male	*wimpydeath		*death
 $playersound	DukePlayer	male	*crazydeath		dkcrzdth
 $playersounddup	DukePlayer	male	*xdeath			*crazydeath
 $playersound	DukePlayer	male	*burndeath		dkburn
