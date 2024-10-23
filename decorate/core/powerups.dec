@@ -26,13 +26,13 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 1 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
 		TNT1 A 1 A_JumpIfInventory("DukeClass",1,"PickupDuke")
-        TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 0 A_PlaySound("invisibilityget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerInvisibilityNormalGiver")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("PortGhostly",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortGhostly")
         stop
 
@@ -41,24 +41,23 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         fail
 
       PickupHexen:
-        TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 0 A_PlaySound("invisibilityget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerInvisibilityGhostGiver")
         stop
 		
 	  PickupDuke:
-        TNT1 A 0 A_PlaySound("duke/itemget")
+        TNT1 A 0 A_PlaySound("duke/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("ItemHoloDuke",3)
         stop
 
       PickupQuake: 
         TNT1 A 0 A_GiveInventory("QuakeInvisTimer", 1050)
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate",0,25,0,0)//TNT1 A 0 A_PlaySoundEx("quake/invisannouncer","soundslot7",0,2)
-        TNT1 A 0
         stop
 
       PickupMarathon:
         TNT1 A 0 A_SetBlend("Green",0.5,6)
-        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 0 A_PlaySound("marathon/bigitemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         //TNT1 A 1 A_GiveInventory("Blursphere")
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraDecorate",0,26,0,0) //A_GiveInventory("PowerShadow")
         stop
@@ -170,19 +169,19 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
         TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
 		TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
-        TNT1 A 0 A_PlaySound("invulnget")
+        TNT1 A 0 A_PlaySound("invulnget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerInvulnerableNormalGiver")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("PortRingInvuln",0,"PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortRingInvuln")
         stop
 
       PickupHexen:
         TNT1 A 0 A_JumpIfInventory("PortIconDefender",0,"PickupFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortIconDefender")
         stop
 
@@ -191,14 +190,13 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
         stop
 	
 	  PickupDuke:
-		TNT1 A 0 A_PlaySound("invulnget")
+		TNT1 A 0 A_PlaySound("invulnget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerInvulnerableGoldMapGiver")
-		TNT1 A 0 A_TakeInventory("DukeTauntCooldown", 9999)
-		TNT1 A 0 A_StopSound("soundslot7")
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "PickupStop")
         TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupStop")
-        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 15)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
 		TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
-        TNT1 A 0 A_PlaySoundEx("duke/invuln", "soundslot7", 0, 0)
+        TNT1 A 0 A_PlaySound("duke/invuln", CHAN_7|CHAN_MAYBE_LOCAL)
         stop
 
       PickupFail:
@@ -410,31 +408,31 @@ actor Visor : CustomInventory replaces Infrared// replaces Infrared
         TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
-        TNT1 A 0 A_PlaySound("lettherebelight")
+        TNT1 A 0 A_PlaySound("lettherebelight",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerLightAmpNormalGiver")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("PortTorch",0,"PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortTorch")
         stop
 
       PickupHexen:
         TNT1 A 0 A_JumpIfInventory("PortTorch2",0,"PickupFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortTorch2")
         stop
 
       PickupDuke:
         TNT1 A 0 A_JumpIfInventory("DukeVisionFuel",0,"PickupFail")
-        TNT1 A 0 A_PlaySound("Duke/itemget")
+        TNT1 A 0 A_PlaySound("Duke/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("DukePortNiVi")
         TNT1 A 1 A_GiveInventory("DukeVisionFuel",100)
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 0 A_PlaySound("marathon/bigitemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerLightAmpBlueMapGiver")
         stop
 

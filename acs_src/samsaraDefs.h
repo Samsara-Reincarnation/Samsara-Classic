@@ -610,6 +610,7 @@ int ChangelogString =
   - The ammo fillup from Strife NPCs now properly fails if you have 50 or more rounds of Ammo 1.\n\
   - Fixed certain events not triggering when killing crusaders through certain means.\n\
   - Fixed Duke playing the default wimpy death sound when playing Heretic.\n\
+  - Fixed the Strife accuracy replacement not taking message settings into account.\n\
 - Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n\
 - Fixed and slightly tweaked some HUD elements.\n\
 - Pistol Start mode won't trigger in the title map.\n\
@@ -681,4 +682,6 @@ int ChangelogString =
 - Security Officer's dual wielding and Ranger's active DOE ammo are now preserved through map changes.\n\
 - Equipment pickups (except for uniques) spawned via ACS or summon cheats are no longer treated as if they were dropped by enemies, meaning they give the proper amount of ammo on pickup (instead of just half). They can still only be picked up one time.\n\
 - Fixed Duke's weapon pickup taunt not giving its cooldown in netplay.\n\
-- Fixed thrown pipebombs being unable to respond to the detonator when damaged by another actor.";
+- Fixed thrown pipebombs being unable to respond to the detonator when damaged by another actor.\n\
+- Fixed equipment pickup sounds alternating between every channel instead of CHAN_ITEM. Also fixed various pickups not playing their sounds on the correct sound channel.\n\
+- Various pickups, as well as Duke's critical heal and invulnerability taunts, are now affected by compat_silentpickup.";

@@ -248,7 +248,7 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
 				}
             }
 
-            ACS_NamedExecuteAlways("SamsaraClientWeaponPickup", 0, slot, GetCVar("compat_silentpickup"), dropped);
+            ACS_NamedExecuteAlways("SamsaraClientWeaponPickup", 0, slot, dropped);
 
             if (dropped <= 1) { ACS_NamedExecuteWithResult("SamsaraWeaponTaunt"); } // so it gives the taunt cooldown properly
 		}
@@ -289,7 +289,7 @@ script "SamsaraGiveUnique" (int alt)
     
     if (uniqueGet && IsServer)
     {
-        ACS_NamedExecuteAlways("SamsaraClientUniquePickup", 0, GetCVar("compat_silentpickup"), pd, 0);
+        ACS_NamedExecuteAlways("SamsaraClientUniquePickup", 0, pd);
     }
     
     SetResultValue(uniqueGet);
@@ -297,16 +297,16 @@ script "SamsaraGiveUnique" (int alt)
 
 int QuoteStorage[MSGCOUNT];
 
-script "SamsaraClientWeaponPickup" (int slot, int soundmode, int dropped) clientside
+script "SamsaraClientWeaponPickup" (int slot, int dropped) CLIENTSIDE
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
     int logMsg;
     int pickupsound = ClassPickupSounds[pclass][slot];
-    
+
     if (dropped >= 2) { pickupsound = ClassDropSounds[pclass][slot]; }
-    
+
     if (cpln == pln && GetCVar("msg") == 0)
     {
         if (GetCVar("samsara_cl_moremessages"))
@@ -314,33 +314,32 @@ script "SamsaraClientWeaponPickup" (int slot, int soundmode, int dropped) client
             for (i = 0; i < MSGCOUNT; i++)
             {
                 j = ClassPickupMessages[pclass][slot][i];
+
                 if (!StrLen(j)) { continue; }
-                
                 QuoteStorage[quoteCount++] = j;
             }
-            
+
             if (!quoteCount) { logMsg = "Oh bugger there's no messages for this weapon."; }
             else { logMsg = QuoteStorage[random(0, quoteCount-1)]; }
         }
         else
         {
             logMsg = ClassPickupMessages[pclass][slot][0];
-            
-            if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this weapon."; } 
+
+            if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this weapon."; }
         }
 
         if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
         else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
-    
-    if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
-    else { ActivatorSound(pickupsound, 127); }
-    
+
+    PlaySound(0, pickupsound, CHAN_ITEM|CHAN_MAYBE_LOCAL);
+
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }
 
-script "SamsaraClientUniquePickup" (int soundmode, int punchdrunk) clientside
+script "SamsaraClientUniquePickup" (int punchdrunk) CLIENTSIDE
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
@@ -350,7 +349,7 @@ script "SamsaraClientUniquePickup" (int soundmode, int punchdrunk) clientside
 
     if (punchdrunk) { pickupsound = PunchdrunkUniqueSounds[pclass]; }
     else { pickupsound = ClassUniqueSounds[pclass]; }
-    
+
     if (cpln == pln && GetCVar("msg") == 0)
     {
         if (GetCVar("samsara_cl_moremessages"))
@@ -363,7 +362,7 @@ script "SamsaraClientUniquePickup" (int soundmode, int punchdrunk) clientside
                 if (!StrLen(j)) { continue; }
                 QuoteStorage[quoteCount++] = j;
             }
-            
+
             if (!quoteCount) { logMsg = "Oh bugger there's no messages for this unique."; }
             else { logMsg = QuoteStorage[random(0, quoteCount-1)]; }
         }
@@ -371,17 +370,16 @@ script "SamsaraClientUniquePickup" (int soundmode, int punchdrunk) clientside
         {
             if (punchdrunk) { logMsg = PunchDrunkUniqueMessages[pclass][0]; }
             else { logMsg = ClassUniqueMessages[pclass][0]; }
-                        
-            if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this unique."; } 
+
+            if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this unique."; }
         }
 
         if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
         else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
-    
-    if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
-    else { ActivatorSound(pickupsound, 127); }
-    
+
+    PlaySound(0, pickupsound, CHAN_ITEM|CHAN_MAYBE_LOCAL);
+
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }

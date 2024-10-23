@@ -96,7 +96,7 @@ actor HealPack2 : CustomInventory replaces Medikit
     +FLOATBOB
 	+INVENTORY.QUIET
     //Inventory.PickupMessage "$SAMSARA_HEALPACK2"
-    //Inventory.PickupSound "silence"
+    Inventory.PickupSound "nosoundforyoubitch"
 
     states
     {
@@ -121,7 +121,7 @@ actor HealPack2 : CustomInventory replaces Medikit
 	    TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
 		TNT1 A 0 ACS_NamedExecute("HealPack2PickupMessage")
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortQuartzFlask")
         stop
         
@@ -130,7 +130,7 @@ actor HealPack2 : CustomInventory replaces Medikit
 	    TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
 		TNT1 A 0 ACS_NamedExecute("HealPack2PickupMessage")
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortQuartzFlask2")
         stop
 
@@ -155,30 +155,28 @@ actor HealPack2 : CustomInventory replaces Medikit
 		TNT1 A 0 ACS_NamedExecute("HealPack2PickupMessage")
         TNT1 A 0 A_JumpIfInventory("CorvusClass", 1, "HereticSound")
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "HexenSound")
-        TNT1 A 0 A_PlaySound("healpack2pickup")
+        TNT1 A 0 A_PlaySound("healpack2pickup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 0 A_JumpIfInventory("DukeClass", 1, "DukeSound")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "MarathonSound")
         stop
         
 
       HereticSound:
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
       HexenSound:
-        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
         
       DukeSound:
-        TNT1 A 0
         TNT1 A 0 A_JumpIfHealthLower(50, 1)
         stop
-        TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "PickupStop")
         TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupStop")
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
 		TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
-        TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
+        TNT1 A 0 A_PlaySound("duke/criticalheal", CHAN_7|CHAN_MAYBE_LOCAL)
         stop
         
       MarathonSound:
@@ -210,7 +208,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
 	+INVENTORY.QUIET
     Inventory.PickupAnnouncerEntry "soulsphere"
     //Inventory.PickupMessage "$SAMSARA_HEALPACK3"
-    //Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupSound "nosoundforyoubitch"
     states
     {
       Spawn:
@@ -232,7 +230,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         TNT1 A 0 A_JumpIfInventory("PortSuperHealth", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
         TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
-		TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortSuperHealth")
         stop
 
@@ -241,7 +239,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         TNT1 A 0 A_JumpIfInventory("PortSuperHealth2", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
         TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
-		TNT1 A 0 A_PlaySound("hexen/artiget", CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PortSuperHealth2")
         stop
 
@@ -257,15 +255,13 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         goto PickupSound
 
       PickupDuke:
-        TNT1 A 0
         TNT1 A 0 A_JumpIfHealthLower(25, 1)
         goto PickupDuke2
-        TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "PickupDuke2")
         TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupDuke2")
-        TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
+        TNT1 A 0 A_PlaySound("duke/criticalheal", CHAN_7|CHAN_MAYBE_LOCAL)
       PickupDuke2:
         TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
         TNT1 A 0 ACS_NamedExecute("SoulSpherePickupMessage")
@@ -290,29 +286,29 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         TNT1 A 0 A_JumpIfInventory("DukeClass", 1, "DukeSound")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "MarathonSound")
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "QuakeSound")
-        TNT1 A 0 A_PlaySound("healpack3pickup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("healpack3pickup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
       HereticSound:
-        TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
       HexenSound:
-        TNT1 A 0 A_PlaySound("hexen/artiget", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
       DukeSound:
         TNT1 A 0
-        TNT1 A 0 A_PlaySound("duke/atomhealth", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("duke/atomhealth",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
       MarathonSound:
         TNT1 A 0 A_SetBlend("F0F8FF", 0.5, 7) // Light Alice Blue
-        TNT1 A 0 A_PlaySound("marathon/bigitemget", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("marathon/bigitemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
       QuakeSound:
-        TNT1 A 0 A_PlaySound("quakeweps/megahealth", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("quakeweps/megahealth",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         stop
 
 
@@ -361,7 +357,7 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
       Pickup2:
         TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
         TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
-		TNT1 A 0 A_PlaySound("megapackpickup", CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("megapackpickup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraDecorate", 20, ARMOR_MEGASPHERE)
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "Infinite")
         TNT1 A 0 A_GiveInventory("FiniteHealth200", 200)
@@ -374,7 +370,7 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
       PickupMarathon:
         TNT1 A 0 A_SetBlend("F0F8FF", 0.7, 10) // Light Alice Blue
         TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
-        TNT1 A 0 A_PlaySound("megapackpickup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("megapackpickup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 0 ACS_NamedExecuteWithResult("SamsaraDecorate", 20, ARMOR_MEGASPHERE, -300)
         TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("SamsaraDecorate", 22), "InfiniteMarathon")
         TNT1 A 0 A_GiveInventory("FiniteHealth300", 300)
@@ -388,14 +384,14 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
         TNT1 A 0 A_JumpIfInventory("CorvusMegasphere", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
         TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
-		TNT1 A 0 A_PlaySound("heretic/itemget", CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("CorvusMegasphere")
         stop
 
       PickupQuake:
         TNT1 A 0 A_SetBlend("d7ba45", 0.3, 4)
         TNT1 A 0 ACS_NamedExecute("MegaSpherePickupMessage")
-		TNT1 A 0 A_PlaySound("quakeweps/megasphere", CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("quakeweps/megasphere",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 0 A_GiveInventory("QuakeRegenGiver")
         TNT1 A 0 A_GiveInventory("QuakeRedArmor")
         stop
@@ -407,12 +403,11 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
       PickupDuke:
         TNT1 A 0 A_JumpIfHealthLower(25, 1)
         goto Pickup2
-        TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "Pickup2")
         TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "Pickup2")
-        TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_NamedExecuteAlways("DukeTauntCooldown")
+        TNT1 A 0 A_PlaySound("duke/criticalheal", CHAN_7|CHAN_MAYBE_LOCAL)
         goto Pickup2
         
       Nope:

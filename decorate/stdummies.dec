@@ -286,13 +286,13 @@ actor Turbosphere : CustomInventory 5030
         
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
-        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("misc/p_pkup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerTurbo")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("TurbosphereHeretic", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("TurbosphereHeretic")
         stop
 
@@ -333,14 +333,14 @@ actor TimeFreezeSphere : CustomInventory 5032
         
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
-        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("misc/p_pkup",CHAN_ITEM|CHAN_MAYBE_LOCAL|CHAN_NOPAUSE)
         TNT1 A 1 A_GiveInventory("PowerTimeFreezer")
         TNT1 A 1 A_GiveInventory("PowerTimeFreezerColor")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("TimeFreezeSphereHeretic", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("TimeFreezeSphereHeretic")
         stop
 
@@ -392,13 +392,13 @@ actor InvisibilitySphere : CustomInventory 5035
         TNT1 A 1 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 1 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
         TNT1 A 1 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
-        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("misc/p_pkup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerTranslucency")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("InvisibilitySphereHeretic", 0, "PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("InvisibilitySphereHeretic")
         stop
 
@@ -407,13 +407,13 @@ actor InvisibilitySphere : CustomInventory 5035
         fail
 
       PickupHexen:
-        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("misc/p_pkup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerGhost")
         stop
 
       PickupMarathon:
         TNT1 A 0 A_SetBlend("Green",0.5,6)
-        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 0 A_PlaySound("marathon/bigitemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerShadow")
         TNT1 A 1 A_GiveInventory("PowerShadow")
         stop
@@ -459,14 +459,14 @@ actor Doomsphere2 : CustomInventory 5036
         
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
-        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("misc/p_pkup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerQuadDamage")
         TNT1 A 1 A_GiveInventory("PowerDoomsphereColor")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("DoomsphereHeretic", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("DoomsphereHeretic")
         stop
 
@@ -513,14 +513,14 @@ actor Guardsphere : CustomInventory 5037
         
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
-        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 0 A_PlaySound("misc/p_pkup",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerQuarterDamage")
         TNT1 A 1 A_GiveInventory("PowerGuardsphereColor")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("GuardsphereHeretic", 0, "PickupFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("GuardsphereHeretic")
         stop
 

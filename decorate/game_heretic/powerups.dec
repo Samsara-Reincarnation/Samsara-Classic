@@ -26,19 +26,19 @@ actor HereticFlightPickup : CustomInventory replaces ArtiFly
         TNT1 A 0 A_JumpIfInventory("DukePetjack",1,"PickupHereticFail")
         TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
-        TNT1 A 0 A_PlaySound("dsparil/rise")
+        TNT1 A 0 A_PlaySound("dsparil/rise",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerFlight2")
         stop
 
       PickupMarathon:
         TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_PlaySound("dsparil/rise")
+        TNT1 A 0 A_PlaySound("dsparil/rise",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("PowerFlight2")
         stop
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("ArtiFly",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("ArtiFly")
         stop
 
@@ -48,7 +48,7 @@ actor HereticFlightPickup : CustomInventory replaces ArtiFly
 
       PickupHexen:
         TNT1 A 0 A_JumpIfInventory("ArtiFly",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("ArtiFly")
         stop
     }
@@ -85,7 +85,7 @@ actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
 
       PickupHeretic:
         TNT1 A 0 A_JumpIfInventory("ArtiTeleport",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 0 A_PlaySound("heretic/itemget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("ArtiTeleport")
         stop
 
@@ -95,7 +95,7 @@ actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
 
       PickupHexen:
         TNT1 A 0 A_JumpIfInventory("ArtiTeleport",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 0 A_PlaySound("hexen/artiget",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("ArtiTeleport")
         stop
     }
@@ -116,7 +116,7 @@ actor HereticLesserTome : CustomInventory replaces ArtiTomeOfPower
         PWBK A -1
         stop
       Pickup:
-        TNT1 A 0 A_PlaySound("tome/lesser")
+        TNT1 A 0 A_PlaySound("tome/lesser",CHAN_ITEM|CHAN_MAYBE_LOCAL)
         TNT1 A 1 A_GiveInventory("SamsaraPowerLesserTomeGiver")
         stop
     }
