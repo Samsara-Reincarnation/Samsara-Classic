@@ -8,6 +8,7 @@ $playeralias	MarathonPlayer	male	*pain50		bob/pain
 $playeralias	MarathonPlayer	male	*pain25		bob/pain
 $playeralias	MarathonPlayer	male	*death		bob/death
 $playeralias	MarathonPlayer	male	*xdeath		bob/death
+$playeralias	MarathonPlayer	male	*crazydeath	bob/death
 $playeralias	MarathonPlayer	male	*gibbed		bob/death
 $playersound	MarathonPlayer	male	*burndeath  mtbobbrn
 $playersounddup	MarathonPlayer	male	*wimpydeath	*death
