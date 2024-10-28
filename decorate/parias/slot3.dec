@@ -144,10 +144,8 @@ actor AxePuffGlow2 : AxePuffGlow replaces AxePuffGlow
     Melee:
          TNT1 A 1
          TNT1 A 1 A_TakeFromTarget("Clip",3, TIF_NOTAKEINFINITE)
-         FAXE RSTUVWX 4 Bright
-         goto Spawn
     Crash:
-         FHFX STUVW 4
+         FAXE RSTUVWX 4 Bright
          stop
     }
 }

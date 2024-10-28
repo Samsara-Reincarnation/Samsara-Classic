@@ -684,4 +684,5 @@ int ChangelogString =
 - Fixed Duke's weapon pickup taunt not giving its cooldown in netplay.\n\
 - Fixed thrown pipebombs being unable to respond to the detonator when damaged by another actor.\n\
 - Fixed equipment pickup sounds alternating between every channel instead of CHAN_ITEM. Also fixed various pickups not playing their sounds on the correct sound channel.\n\
-- Various pickups, as well as Duke's critical heal and invulnerability taunts, are now affected by compat_silentpickup.";
+- Various pickups, as well as Duke's critical heal and invulnerability taunts, are now affected by compat_silentpickup.\n\
+- Fixed Timon's Axe using the wrong puff when hitting map geometry.";
