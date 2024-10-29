@@ -1,7 +1,7 @@
-int msgColors[22] = 
+int msgColors[26] = 
 {
-    "\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
-    "\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+    "\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck", "\cl", "\cm",
+    "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv", "\cw", "\cx", "\cy", "\cz",
 };
 
 script "SamsaraClientClass" (int slot) clientside
