@@ -1,0 +1,499 @@
+//////////////////////////////////////////////
+//////= NEW COLOUR CODES BY FUZZBALL!=////////
+//////////////////////////////////////////////
+
+
+
+// SOBA //
+10 Soba {
+        #1f1b17 #302a23 0 59
+        #393229 #b7a58d 60 255
+
+     Console:
+        #302a23 #b7a58d 0 255
+}
+
+// LILAC FANTASY //
+11 LilacFantasy "Lilac Fantasy" {
+        #2e2a4d #8476c2 0 160
+                #8e86ce #a3b9e7 161 256
+     Console:
+        #2e2a4d #8476c2 0 160
+                #8e86ce #a3b9e7 161 256
+}
+
+// TANGO FOR TWO //
+12 TangoForTwo "Tango For Two" {
+        #933b2f #c27e63 0 60
+        #c78768 #e1a65f 61 160
+                #e7bb70 #ffefa1 161 256
+     Console:
+        #ab5347 #c27e63 0 110
+        #c78768 #e1a65f 111 221
+                #e7bb70 #ffefa1 222 256
+}
+
+// NIGHTWATCH //
+13 Nightwatch {
+        #282e3a #315c55 0 155
+                #52766c #7ea890 156 256
+     Console:
+        #282e3a #315c55 0 155
+                #52766c #7ea890 156 256
+}
+
+// FLEEING REALITY //
+14 FleeingReality "Fleeing Reality" {
+        #a1205f #5d1956 0 110
+                #3c1858 #121014 111 256
+     Console:
+                #121014 #a1205f 0 256
+}
+
+// MATCHA MOCHI //
+15 MatchaMochi "Matcha Mochi" {
+        #515010 #a6a86f 0 89
+                #b2b57e #e9edd5 90 256
+     Console:
+        #515010 #a0a269 0 140
+                #b2b57e #e1e4d3 141 256
+}
+
+// TENTACOOLIO //
+16 Tentacoolio {
+        #33151d #581028 0 79
+        #672234 #a75363 80 160
+                #aa5a69 #e5d1d2 161 256
+     Console:
+        #33151d #581028 0 79
+        #672234 #a75363 80 160
+                #aa5a69 #e5d1d2 161 256
+}
+
+// PALPATINE //
+17 Palpatine {
+        #1f228b #9060ea 0 130
+                #c19ef7 #f6edfe 131 256
+     Console:
+        #3c3bda #845be8 0 180
+                #a574f2 #f6edfe 181 256
+}
+
+// ARANCIA //
+18 Arancia {
+        #90220f #ff551d 0 111
+                #ff5a1f #ff8b3e 112 256
+     Console:
+        #90220f #ff551d 0 111
+                #ff5a1f #ff8b3e 112 256
+}
+
+// SHAKEN SNOWBALL //
+19 ShakenSnowball "Shaken Snowball" {
+        #fdffe4 #fdffe4 0 10
+                #e4c600 #ead71f 11 256
+     Console:
+        #846a00 #cbd917 0 256
+
+}
+
+/////////////////////////////////////////////////////////////////////
+
+// EDM CRUSHER //
+20 EDMCrusher "EDM Crusher" {
+        #482c67 #482c67 0 10
+                #ff88b7 #bd185e 11 177
+                #bd185e #ff88b7 178 256
+     Console:
+        #d61f57 #dfbbd5 0 256
+
+}
+
+// WORLD OF DOOM //
+21 WorldOfDoom "World Of Doom" {
+        #082939 #189bd8 0 255
+
+     Console:
+        #082939 #189bd8 0 255
+}
+
+// LISIANTHUS //
+22 Lisianthus {
+        #3f2d59 #a86aaa 0 100
+                #bb7dbb #fbc6f6 101 256
+
+     Console:
+        #3f2d59 #a86aaa 0 100
+                #bb7dbb #fbc6f6 101 256
+}
+
+// SOLISEQUIOUS //
+23 Solisequious {
+        #7a2d35 #d3601e 0 78
+                #d7702d #fda12d 79 170
+                #ffbc47 #ffe4cd 171 256
+     Console:
+        #7a2d35 #d3601e 0 78
+                #d7702d #fda12d 79 170
+                #ffbc47 #ffe4cd 171 256
+}
+
+// PHARMARIFFIC //
+24 Pharmariffic {
+        #006f2f #006f2f 0 10
+                #7ca08c #9eb8a9 11 140
+                #a6bfb1 #f1fff7 141 256
+     Console:
+        #006f2f #dffdec 0 256
+
+}
+
+// SALT CARAMEL //
+25 SaltCaramel "Salt Caramel" {
+        #592417 #905128 0 81
+                #b36932 #c47125 82 160
+                #db7b14 #eba223 161 256
+     Console:
+        #592417 #9b572b 0 50
+                #b36932 #c47125 51 160
+                #db7b14 #eba223 161 256
+}
+
+// ISCHAEMIA //
+26 Ischaemia {
+        #be0000 #5f0b0b 0 50
+                #360606 #8f0303 51 190
+                #050000 #8f0303 191 256
+     Console:
+                #050000 #be0000 0 256
+}
+
+// CYANARA //
+27 Cyanara {
+        #154a4a #0b6d6c 0 50
+                #109192 #25faf4 51 204
+                #64efff #e2fcff 205 256
+     Console:
+                #087473 #45eceb 0 256
+}
+
+// LASER PIERCED //
+28 LaserPierced "Laser Pierced" {
+        #72ff00 #72ff00 0 10
+        #328f00 #000000 11 255
+
+     Console:
+        #000000 #328f00 0 255
+}
+
+// VOID MEISTER //
+29 VoidMeister "Void Meister" {
+        #d973f2 #d973f2 0 10
+        #da50ea #000f46 11 255
+
+     Console:
+        #000f46 #d973f2 0 255
+}
+
+/////////////////////////////////////////////////////////////////////
+
+// GLITZY GODDESS //
+30 GlitzyGoddess "Glitzy Goddess" {
+        #200b06 #a10813 0 210
+                #c41624 #e76678 211 256
+
+     Console:
+        #200b06 #a10813 0 210
+                #c41624 #ef8c9b 211 256
+}
+
+// QUETZALCOATL //
+31 Quetzalcoatl {
+        #179ae8 #4ad9ff 0 50
+                #67ea75 #b2f327 51 159
+                #d2f935 #fffd67 160 256
+
+     Console:
+        #036fd2 #67ea75 0 79
+                #86fd36 #fffd67 80 256
+}
+
+// MOMO SOFTNESS //
+32 MomoSoftness "Momo Softness" {
+        #912327 #f1523e 0 87
+                #ff8456 #ffdd7b 88 256
+
+     Console:
+        #912327 #f1523e 0 80
+                #ff8456 #ffdd7b 81 256
+}
+
+// SWEET POTATO //
+33 SweetPotato "Sweet Potato" {
+        #44091f #b94167 0 190
+        #d65079 #ee687e 191 256
+
+     Console:
+        #510b26 #d55079 0 256
+}
+
+// SEASALT //
+34 Seasalt {
+        #141e4a #3e5ba1 0 190
+        #4162a9 #5893e3 191 256
+
+     Console:
+        #16204e #3e5ba1 0 190
+        #4162a9 #5893e3 191 256
+}
+
+// BALLOON HANDS //
+35 BalloonHands "Balloon Hands" {
+        #d600b0 #d600b0 0 11
+        #ff00d2 #ffffff 12 256
+
+     Console:
+        #d600b0 #ffffff 0 256
+}
+
+// GOBLIN //
+36 Goblin {
+        #311842 #59717f 0 80
+                #599885 #6ec990 81 146
+                #80db8e #cdffab 147 256
+
+     Console:
+        #4d2a65 #c5ffab 0 256
+}
+
+// ACACIA //
+37 Acacia {
+        #251117 #772c33 0 176
+                #82382f #a23619 177 256
+
+     Console:
+        #251117 #a23619 0 256
+}
+
+// SHELLFISH //
+38 Shellfish {
+        #251b24 #614184 0 80
+                #79548f #bc71ac 81 146
+                #d975b3 #ffdcbe 147 256
+
+     Console:
+        #251b24 #614184 0 80
+                #79548f #bc71ac 81 146
+                #d975b3 #ffdcbe 147 256
+}
+
+// SHRIMP SPECIAL //
+39 ShrimpSpecial "Shrimp Special" {
+        #ffcdbe #ffcdbe 0 10
+        #ed3d33 #fe8f73 11 256
+
+     Console:
+        #ed3d33 #ffc9bb 0 256
+}
+
+/////////////////////////////////////////////////////////////////////
+
+// TWENTY SIXTEEN //
+40 TwentySixteen "Twenty Sixteen" {
+        #251403 #382001 0 60
+                #452802 #835108 61 180
+                #8d5b0a #eac23c 181 256
+
+     Console:
+        #251403 #8d5b0a 0 256
+}
+
+// CRUCIBLE //
+41 Crucible {
+        #fffaf8 #fffaf8 0 10
+        #920b03 #f53724 11 256
+
+     Console:
+        #920b03 #f53724 0 256
+}
+
+// MOTHER EARTH //
+42 MotherEarth "Mother Earth" {
+        #f9f100 #f9f100 0 10
+        #2f1549 #8237a0 11 55
+        #8c3fab #f98138 56 256
+
+     Console:
+        #883e82 #f98138 0 256
+}
+
+// DEAD STAR //
+43 DeadStar "Dead Star" {
+        #000000 #00001f 0 60
+                #00002b #1f007f 61 129
+                #1f007d #df007f 130 256
+
+     Console:
+        #1f007f #df007f 0 256
+}
+
+// CIRCLE FLORA //
+44 CircleFlora "Circle Flora" {
+        #24552c #62d467 0 159
+        #7ced75 #dbff98 160 256
+
+     Console:
+        #24552c #62d467 0 159
+        #7ced75 #dbff98 160 256
+}
+
+// JUST VIBING //
+45 JustVibing "Just Vibing" {
+        #03011f #290651 0 79
+                #300756 #322966 80 159
+                #2c3b68 #0e9473 160 256
+
+
+     Console:
+        #34075a #159e7c 0 256
+}
+
+// AGED SYSTEM //
+46 AgedSystem "Aged System" {
+        #433513 #e3b443 0 170
+        #eebe4b #f9da8f 171 256
+
+     Console:
+        #433513 #e3b443 0 170
+        #eebe4b #f9da8f 171 256
+}
+
+
+// ORDERTUNE //
+47 Ordertune {
+        #673a3a #a9787b 0 111
+        #ae8082 #d6bcbd 112 211
+        #dfd1d1 #ffffff 212 256
+
+     Console:
+        #30170e #a9787b 0 111
+        #ae8082 #d6bcbd 112 256
+}
+
+// DIGITAL KITSUNE //
+48 DigitalKitsune "Digital Kitsune" {
+        #6b5529 #dbaf3b 0 105
+        #e4bc4b #f9d768 106 256
+
+     Console:
+        #6b5529 #e3be54 0 256
+}
+
+// TORI GATE //
+49 ToriGate "Tori Gate" {
+        #000000 #600d09 0 174
+        #6a0e09 #fb1c1c 175 256
+
+     Console:
+        #000000 #de1500 0 256
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+// TAR PIT //
+50 TarPit "Tar Pit" {
+        #000000 #1e161d 0 132
+        #2f232b #63504a 133 256
+
+     Console:
+        #1e161d #63504a 0 256
+}
+
+// CORED AND SEEDLESS //
+51 CoredAndSeedless "Cored And Seedless" {
+        #384335 #4c9446 0 142
+        #69a45d #dee3b6 143 256
+
+     Console:
+        #384335 #4c9446 0 132
+        #69a45d #e2dcc2 133 256
+}
+
+// COMFORT IN FLOOF //
+52 ComfortInFloof "Comfort In Floof" {
+        #ac5156 #ac5156 0 10
+        #d17c81 #f2abb1 11 67
+        #f2abb1 #f9edd5 68 100
+        #d17c81 #f9edd5 101 150
+        #f2abb1 #f9edd5 151 256
+
+     Console:
+        #ac5156 #f9edd5 0 256
+}
+
+// ON THE JOB //
+53 OnTheJob "On The Job" {
+        #000000  #0d0d0d 0 10
+        #8f1b00  #ff3000 11 256
+    Console:
+        #8f1b00  #ff3000 0 256
+}
+
+// FLIPPED UPSIDE //
+54 FlippedUpside "Flipped Upside" {
+        #ffe92e  #88c824 0 48
+        #51b61a  #2e763c 49 158
+        #2a5d41  #0b3f33 159 256
+    Console:
+        #113420  #b095e8 0 256
+}
+
+// ONLY KEEPSAKE //
+55 OnlyKeepsake "Only Keepsake" {
+        #ad7ccc  #ad7ccc 0 10
+        #ffaf51  #ffcb67 11 134
+        #ffd967  #fdf3a3 135 179
+        #fff8c1  #ffffff 180 256
+    Console:
+        #ad7ccc  #fdf3a3 0 256
+}
+
+// UNSETTLEMENT //
+56 Unsettlement {
+        #ff57e9  #ff57e9 0 10
+        #ff0072  #20022f 11 256
+    Console:
+        #20022f  #ff0072 0 256
+}
+
+// SOLEMN CAIRN //
+57 SolemnCairn "Solemn Cairn" {
+        #1f1c1c #907772 0 65
+        #443025 #a2817e 66 256
+
+
+     Console:
+        #2d2d2d #867066 0 256
+}
+
+// INTERGALASTIC //
+58 Intergalastic {
+        #53bdff #253cc1 0 83
+        #4e41ae #4633a9 84 166
+        #6d2a7c #f7713d 167 256
+
+     Console:
+        #ffba57 #1eb3de 0 256
+
+}
+
+// SOUL THIEVERY CORP //
+59 SoulThieveryCorp "Soul Thievery Corp" {
+        #e95044 #e95044 0 10
+        #110f17 #9e2952 11 256
+
+
+     Console:
+        #292534 #91729b 0 256
+}

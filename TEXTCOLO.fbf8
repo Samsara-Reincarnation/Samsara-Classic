@@ -1,0 +1,291 @@
+//////////////////////////////////////////////
+//////= NEW COLOUR CODES BY FUZZBALL!=////////
+//////////////////////////////////////////////
+
+
+// ULTIMATE GREEN //
+90 UltimateGreen "Ultimate Green" {
+        #1b1f0f #526637 0 127
+        #5e743d #b4e688 128 256
+
+     Console:
+        #1b1f0f #526637 0 127
+        #5e743d #b4e688 128 256
+
+}
+
+// SIMPLY BLUE //
+91 SimplyBlue "Simply Blue" {
+        #121c33 #324e8d 0 127
+        #39599f #b6bdcc 128 256
+
+     Console:
+        #121c33 #324e8d 0 127
+        #39599f #b6bdcc 128 256
+
+}
+
+// ROSEUS TENEBRAE //
+92 RoseusTenebrae "Roseus Tenebrae" {
+        #30292c #706a83 0 127
+        #7a7791 #e15a81 128 189
+        #fe6492 #ff9ae4 190 256
+
+     Console:
+        #30292c #706a83 0 127
+        #7a7791 #e15a81 128 189
+        #fe6492 #ff9ae4 190 256
+
+}
+
+// PASTEL FANTASY //
+93 PastelFantasy "Pastel Fantasy" {
+        #e88383 #ffd6a5 0 64
+        #fdffb6 #caffbf 65 127
+        #9bf6ff #b9d4ff 128 190
+        #d3c1ff #ffddf3 191 256
+
+     Console:
+        #b9d4ff #ffddf3 0 256
+
+}
+
+// MAKING PROGRESS (For all the trans folks :) //
+94 MakingProgress "Making Progress" {
+        #1888c9 #1888c9 0 10
+        #01cffe #95bad6 11 110
+        #e6adc0 #feaaba 111 178
+        #feaaba #ffffff 179 256
+
+     Console:
+        #1888c9 #feaaba 0 127
+
+
+}
+
+// IN THE SUN //
+95 InTheSun "In The Sun" {
+        #a53b25 #a53b25 0 10
+        #eb8177 #f5bd9b 11 179
+        #f8d6a8 #fff4d6 180 256
+
+     Console:
+        #c85c4a #f8d6a8 0 127
+
+}
+
+// AFTERNOON NAP //
+96 AfternoonNap "Afternoon Nap" {
+        #7f101f #bc475a 0 128
+        #cb635a #f4ca94 129 256
+
+     Console:
+        #7f101f #bc475a 0 128
+        #cb635a #f4ca94 129 256
+
+}
+
+// BOOZE CRUISE //
+97 BoozeCruise "Booze Cruise" {
+        #01406f #176773 0 45
+        #2b7c80 #63c771 46 128
+        #84d376 #f9fd95 129 256
+
+     Console:
+        #01406f #176773 0 45
+        #2b7c80 #63c771 46 128
+        #84d376 #f9fd95 129 256
+
+}
+
+// BNUUY OF HEARTS //
+98 BnuuyOfHearts "Bnuuy Of Hearts" {
+        #bac2db #bac2db 0 10
+        #bf2255 #f775a1 11 256
+
+     Console:
+        #3f4152 #cdd0e6 0 256
+
+}
+
+// DO YOU REMEMBER? //
+99 DoYouRemember "Do You Remember" {
+        #4a1c1e #6b3b3b 0 78
+        #774544 #a58281 79 178
+        #b69a99 #ece3e1 179 256
+
+     Console:
+        #4a1c1e #6b3b3b 0 128
+        #774544 #a58281 129 178
+        #b69a99 #ece3e1 179 256
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+// BIG BODY //
+00 BigBody "Big Body" {
+        #472522 #a64527 0 56
+        #c95527 #fc9829 57 135
+        #fcb829 #fcfb32 136 256
+
+     Console:
+        #472522 #a64527 0 56
+        #c95527 #fc9829 57 135
+        #fcb829 #fcfb32 136 256
+
+}
+
+// KUNZITE BLEND //
+01 KunziteBlend "Kunzite Blend" {
+        #4c0517 #c42c69 0 165
+        #d6498b #ffffff 166 256
+
+     Console:
+        #4c0517 #c42c69 0 164
+        #d6498b #ffffff 165 256
+}
+
+
+// INVERT BINARY //
+02 InvertBinary "Invert Binary" {
+        #ffffff #ffffff 0 10
+        #000000 #000000 11 256
+
+     Console:
+        #ffffff #000000 0 256
+}
+
+// POST TRAUMATIC REST //
+03 PostTraumaticRest "Post Traumatic Rest" {
+        #3f2c30 #3f2c30 0 10
+        #433d9c #db72aa 11 166
+        #dd8fa1 #efcb79 167 256
+
+     Console:
+        #433d9c #db72aa 0 166
+        #dd8fa1 #efcb79 167 256
+}
+
+// ABBEY ROAD //
+04 AbbeyRoad "Abbey Road" {
+        #1d1a16 #3a3b3c 0 99
+        #4c5150 #586d5d 100 168
+        #488148 #75aec9 169 256
+
+     Console:
+        #1d1a16 #3a3b3c 0 99
+        #4c5150 #5e7165 100 168
+        #64866e #75aec9 169 256
+}
+
+// TSUNAMI EFFECT //
+05 TsunamiEffect "Tsunami Effect" {
+        #0b0b0f #3f3f57 0 155
+        #474767 #8b8bcb 156 256
+
+     Console:
+        #0b0b0f #3f3f57 0 177
+        #474767 #8b8bcb 178 256
+}
+
+// CUP O'MOCHA //
+06 CupO'Mocha "Cup O'Mocha" {
+        #3f231e #735340 0 126
+        #7d5b46 #aa7d5b 127 199
+        #7d5b46 #c0915a 200 256
+
+     Console:
+        #4d2b25 #735340 0 126
+        #7d5b46 #aa7d5b 127 256
+}
+
+// TRINKET //
+07 Trinket {
+        #1b1600 #f6ca02 0 177
+        #ffd40e #fff7d7 178 256
+
+     Console:
+        #1b1600 #f6ca02 0 177
+        #ffd40e #fff7d7 178 256
+}
+
+// GRAVITY AIRPORT //
+08 GravityAirport "Gravity Airport" {
+        #0d0d0d #1c1129 0 67
+        #251631 #42366f 68 166
+        #503d80 #7653ac 167 256
+
+     Console:
+        #131313 #3a3063 0 177
+        #42366f #7653ac 178 256
+}
+
+// GALACTIC BUS PASS //
+09 GalacticBusPass "Galactic Bus Pass" {
+        #0b0b0f #232323 0 88
+        #373737 #6f7357 89 154
+        #637d52 #6ebc56 155 173
+        #7eca5b #acf86c 174 256
+
+     Console:
+        #0b0b0f #232323 0 103
+        #373737 #6f7357 104 155
+        #479246 #6ebc56 156 199
+        #7eca5b #acf86c 200 256
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// WANTED TO ADD SOME RANDOM ONES... KINDA SECRET BUT NOT REALLY IF YOU'RE READING THIS! //
+///////////////////////////////////////////////////////////////////////////////////////////
+
+// SPOOD //
+ZZ Spood {
+        #2b212a #9f156a 0 110
+        #d34194 #ffffff 111 256
+
+     Console:
+        #2b212a #9f156a 0 110
+        #d34194 #ffffff 111 256
+
+}
+
+// PHANTOM BRICKWORKS //
+BB PhantomBrickworks "Phantom Brickworks" {
+        #2e3f2e #2e3f2e 0 10
+        #a99b7a #e3d7bb 11 256
+
+     Console:
+        #2e3f2e #e3d7bb 0 256
+
+}
+
+// MARACTUS //
+MR Maractus {
+        #29625b #29625b 0 10
+        #4a6d37 #91c972 11 256
+
+     Console:
+        #29625b #91c972 0 256
+
+}
+
+// ZAP //
+4V Zap {
+        #ffc600 #0e0091 0 166
+        #0b0070 #000000 167 256
+
+     Console:
+        #0b0070 #ffc600 0 256
+
+}
+
+// WHAT //
+XX What {
+        #fc00ff #5a1414 0 100
+        #fc00ff #5a1414 101 170
+        #fc00ff #5a1414 171 256
+     Console:
+        #631d6d #c70000 0 256
+
+}

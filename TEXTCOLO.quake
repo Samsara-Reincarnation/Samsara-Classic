@@ -1,0 +1,11 @@
+QuakeBrick
+{
+    #150000  #F05C5C
+
+  Console:
+    #150000  #F05C5C    0 127
+    #400000  #FFDEDE  128 256
+
+  Flat:
+    #A01515
+}

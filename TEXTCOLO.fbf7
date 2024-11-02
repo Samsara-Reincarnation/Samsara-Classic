@@ -1,0 +1,350 @@
+//////////////////////////////////////////////
+//////= NEW COLOUR CODES BY FUZZBALL!=////////
+//////////////////////////////////////////////
+
+
+// REQUEST DENIED //
+60 RequestDenied "Request Denied" {
+        #3b3130 #905f5b 0 120
+        #b6796b #df9995 121 199
+        #eaa4a4 #ffd1b6 200 255
+
+     Console:
+        #3b3130 #905f5b 0 100
+        #b6796b #df9995 101 189
+        #eaa4a4 #ffd1b6 190 255
+}
+
+// BRUTALIST RITUAL //
+61 BrutalistRitual "Brutalist Ritual" {
+        #36342f #71716c 0 94
+        #81827b #a2a69d 95 187
+        #505050 #f2efe4 188 256
+
+     Console:
+        #3b3130 #905f5b 0 256
+
+}
+
+
+// CRY FOR NATURE //
+62 CryForNature "Cry For Nature" {
+        #534b52 #69833d 0 118
+        #749846 #88c63c 119 200
+        #9bd94f #a8ec51 201 256
+
+     Console:
+        #3d353c #88c63c 0 256
+
+}
+
+// IN PASSING //
+63 InPassing "In Passing" {
+        #3a2e2c #354673 0 123
+        #43537b #847896 124 200
+        #a48c96 #b48e8e 201 256
+
+     Console:
+        #354673 #d8b0b5 0 256
+
+}
+
+// MELON FIZZ //
+64 MelonFizz "Melon Fizz" {
+        #bdf694 #bdf694 0 10
+        #046045 #47cb75 11 166
+        #5dd67c #7fea89 167 256
+
+     Console:
+        #046045 #5dd67c 0 256
+
+}
+
+// PEACH POP //
+65 PeachPop "Peach Pop" {
+        #ffc573 #ffc573 0 10
+        #af0c46 #f56a5a 11 166
+        #f6825f #ff9a56 167 256
+
+     Console:
+        #af0c46 #ff9a56 0 256
+
+}
+
+// RAMUNE //
+66 Ramune {
+        #a0eaff #a0eaff 0 10
+        #532d60 #2d67ff 11 166
+        #3c7dff #6cbcff 167 256
+
+     Console:
+        #532d60 #3c7dff 0 256
+
+}
+
+// BUDO BUZZ //
+67 BudoBuzz "BudoBuzz" {
+        #d198fd #d198fd 0 10
+        #7e1954 #ac2dd0 11 166
+        #b142e6 #d999fe 167 256
+
+     Console:
+        #7e1954 #d999fe 0 256
+
+}
+
+// WHAT COUNTS INSIDE //
+68 WhatCountsInside "What Counts Inside" {
+        #36111b #a75559 0 178
+        #c66361 #d79178 179 256
+
+     Console:
+        #532d60 #3c7dff 0 256
+
+}
+
+// PRETTY NICE (I couldn't resist :P) //
+69 PrettyNice "Pretty Nice" {
+        #ff5994 #ff8ed4 0 45
+        #ff9bda #f0c8d7 46 99
+        #faf3d4 #ffffff 100 256
+
+     Console:
+        #fe70c7 #ffffff 0 256
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+// VELVET SLEEVES //
+70 VelvetSleeves "Velvet Sleeves" {
+        #120713 #311432 0 157
+        #411d3b #744556 158 256
+
+     Console:
+        #120713 #311432 0 157
+        #411d3b #744556 158 256
+
+}
+
+// TASQUE'D //
+71 Tasque'd {
+        #1b2433 #3e4651 0 89
+        #3c5b7b #2789bc 90 156
+        #239ed8 #31caff 157 200
+        #61e3ff #ffffff 201 256
+
+     Console:
+        #1b2433 #4fb3e7 0 157
+
+}
+
+// SPONGE //
+72 Sponge {
+        #706f15 #c9d230 0 140
+        #d6e031 #f4ff3d 141 256
+
+     Console:
+        #597015 #e0ea34 0 256
+
+}
+
+// SMOKED FLESH //
+73 SmokedFlesh "Smoked Flesh" {
+        #0a0b07 #451616 0 159
+        #661717 #d21a1a 160 256
+
+     Console:
+        #0a0b07 #661717 0 256
+
+}
+
+// TRAFFIKLJUSSALLAD //
+74 Traffikljussallad {
+                #862600 #862600 0 10
+        #963c00 #ddb500 11 161
+        #f0d208 #b1ff28 162 256
+
+     Console:
+        #963c00 #ddb500 0 161
+        #f0d208 #b1ff28 162 256
+
+}
+
+// THE GREAT WARRIOR //
+75 TheGreatWarrior "The Great Warrior" {
+                #591d41 #591d41 0 10
+                #872e4e #c0474e 11 99
+        #fd6a5a #fe9a3a 100 161
+        #fcbc41 #ffdf74 162 256
+
+     Console:
+        #591d41 #872e4e 0 161
+        #c0474e #fcbc41 162 256
+
+}
+
+// MEGA PLUMBER //
+76 MegaPlumber "Mega Plumber" {
+        #01126a #01126a 0 10
+        #011eb3 #ff0808 11 221
+        #ff2727 #ff3d3d 222 256
+
+     Console:
+        #01126a #ff0808 0 256
+
+}
+
+// OTHER PLUMBER //
+77 OtherPlumber "Other Plumber" {
+        #01126a #01126a 0 10
+        #011eb3 #00ce05 11 221
+        #00e806 #30ff35 222 256
+
+     Console:
+        #01126a #00e806 0 256
+
+}
+
+// BAD AT PLUMBING //
+78 BadAtPlumbing "Bad At Plumbing" {
+        #4e016a #4e016a 0 10
+        #8912b5 #d5af00 11 187
+        #e5cb0c #ffe727 188 256
+
+     Console:
+        #4e016a #d4bc0b 0 256
+
+}
+
+// EVENTIDE FOLLOWING //
+79 EventideFollowing "Eventide Following" {
+        #0a0323 #25136a 0 161
+        #371e82 #7444b5 162 256
+
+     Console:
+        #0a0323 #25136a 0 161
+        #371e82 #7444b5 162 256
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+// EVITERNITEAL (By Jimmy) //
+80 Eviterniteal {
+        #10312B #3E8C5F 0 127
+        #3E8C5F #77FF6F 128 256
+
+    Console:
+        #10312B #3E8C5F 0 127
+        #3E8C5F #77FF6F 128 256
+}
+
+// ANGLED BLOKE //
+81 AngledBloke "Angled Bloke" {
+
+        #000000 #000000 0 10
+        #4c034f #4c034f 11 127
+        #7e0f7a #7e0f7a 128 199
+        #bd1eb9 #bd1eb9 200 256
+
+     Console:
+        #4c034f #dbdbdb 0 256
+
+}
+
+
+// STAGNANT POOLS //
+82 StagnantPools "Stagnant Pools" {
+
+        #1f1d1d #343c28 0 83
+        #504942 #4f6146 84 139
+        #4b5e44 #7f786c 140 199
+        #56463d #666666 200 256
+
+     Console:
+        #1f1d1d #7f786c 0 256
+
+}
+
+// DELUGE //
+83 Deluge {
+        #001f16 #0a593c 0 155
+        #15734f #25b37b 156 256
+
+     Console:
+        #001f16 #0a593c 0 155
+        #15734f #25b37b 156 256
+
+}
+
+// MUTED SPACES //
+84 MutedSpaces "Muted Spaces" {
+        #14111d #2f2c42 0 160
+        #3c3758 #4d4969 161 256
+
+     Console:
+        #14111d #2f2c42 0 160
+        #3c3758 #4d4969 161 256
+
+}
+
+
+// FRACTAL ANOMALY //
+85 FractalAnomaly "Fractal Anomaly" {
+        #071328 #373175 0 65
+        #433c8a #6456a7 66 157
+        #7462b4 #be82d9 158 194
+        #e393ec #f6d3f7 195 256
+
+     Console:
+        #433c8a #6456a7 0 160
+        #7462b4 #bc8bda 161 199
+        #d99ce9 #f6d2f8 200 256
+}
+
+// MICROTONAL PROTOCOL //
+86 MicrotonalProtocol "Microtonal Protocol" {
+        #c3d1b0 #c89a8a 0 63
+        #b97083 #994082 64 187
+        #80397f #36136d 188 256
+
+     Console:
+        #36136d #994082 0 256
+
+}
+
+// JUST KETCHUP //
+87 JustKetchup "Just Ketchup" {
+        #560000 #560000 0 10
+        #8e0000 #b20000 11 127
+        #c30000 #ff2e2e 128 256
+
+     Console:
+        #8e0000 #b20000 0 127
+        #c30000 #ff2e2e 128 256
+
+}
+
+// FOOL'S KING //
+88 Fool'sKing "Fool's King" {
+        #3e2406 #7f5d2e 0 67
+        #9c7543 #c3aa4e 68 160
+        #cdbb59 #f9efc5 161 256
+
+     Console:
+        #3e2406 #7f5d2e 0 78
+        #9c7543 #c3aa4e 79 160
+        #cdbb59 #fbe6ad 161 256
+}
+
+// WINTER HUG //
+89 WinterHug "Winter Hug" {
+        #20284b #7e8db6 0 160
+        #9db0d0 #dae5f7 161 256
+
+     Console:
+        #20284b #7e8db6 0 160
+        #9db0d0 #dae5f7 161 256
+}
