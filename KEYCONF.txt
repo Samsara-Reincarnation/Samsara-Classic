@@ -36,7 +36,7 @@ alias samsara_cmd_weppickups   "samsara_id_pickupmode;   eval %  + $samsara_cl_p
 
 alias samsara_cmd_settings "pukename SamsaraGetSettings"
 alias samsara_zdtaunt "pukename TauntButton always"
-alias samsara_compendium "pukename \"Samsara_Compendium_Initiate\"
+alias samsara_compendium "pukename Samsara_Compendium_Initiate"
 alias samsara_tipleft  "pukename SamsaraPukeClient 0 -1"
 alias samsara_tipright "pukename SamsaraPukeClient 0 1"
 alias samsara_tipup    "pukename SamsaraPukeClient 1 -1"
@@ -51,8 +51,8 @@ alias showpickupmode "test == $samsara_cl_pickupmode 3 \"echo \\\\cdClass-specif
 alias showpickup2    "test == $samsara_cl_pickupmode 2 \"echo \\\\cdHybrid\\\\c- weapon mode set\" \"showpickup3\""
 alias showpickup3    "test == $samsara_cl_pickupmode 1 \"echo \\\\cdOld-style (Reincarnation)\\\\c- weapon mode set\" \"echo \\\\cdOld-style\\\\c- weapon mode set\""
 
-alias takemetothemoon		"pukename \"SamsaraSpaceFlight\""
-alias THELATESTINSAMSARADEVELOPMENT		"pukename \"SamsaraSpectres\";echo \"the future of this mod is secure\"" // M_mDIBrkixg
+alias takemetothemoon		"pukename SamsaraSpaceFlight always"
+alias THELATESTINSAMSARADEVELOPMENT		"pukename SamsaraSpectres always;echo \"the future of this mod is secure\"" // M_mDIBrkixg
 
 // THIS SHOULD NOT BE HERE, BUT ADDING IT TO MAPINFO DOESN'T SEEM TO BE PERFECT RIGHT NOW SO HERE'S TO A BACKUP PLAN
 addslotdefault 0 " Fist "
