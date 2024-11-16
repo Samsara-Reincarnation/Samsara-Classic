@@ -654,6 +654,8 @@ int ChangelogString =
 - Updated the Bloody Hell code to match Reincarnation's codebase.\n\
 - Updated the server settings hotkey display.\n\
 - Fixed Duke's Nashgore gibs using the wrong blood color.\n\
+- Fixed some of the Skulltag enemies' Bloody Hell gibs using the wrong blood color.\n\
+- Fixed the dark imp and hectebus projectiles not having decals defined.\n\
 - Fixed B.J. occasionally leaving a standing corpse with Wolfenstein 3D movement.\n\
 - Fixed Duke not playing death taunts in single player.\n\
 - Fixed secret messages not being logged properly in netplay.\n\

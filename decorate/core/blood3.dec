@@ -684,3 +684,25 @@ actor NightmareChunk4_DukeOrange : NightmareChunk4 { Translation "16:47=[255, 64
 actor NightmareImpChunk_DukeOrange : NightmareImpChunk { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
 actor NightmareShotgunnerChunk_DukeOrange : NightmareShotgunnerChunk { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
 actor NightmareZombiemanChunk_DukeOrange : NightmareZombiemanChunk { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
+
+actor NightmareArm_Blue : NightmareArm { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareEye_Blue : NightmareEye { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareEye2_Blue : NightmareEye2 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareSkull_Blue : NightmareSkull { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan1_Blue : NightmareOrgan1 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan2_Blue : NightmareOrgan2 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan3_Blue : NightmareOrgan3 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan4_Blue : NightmareOrgan4 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan5_Blue : NightmareOrgan5 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan6_Blue : NightmareOrgan6 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan7_Blue : NightmareOrgan7 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareOrgan8_Blue : NightmareOrgan8 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareHip_Blue : NightmareHip { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareGibExplosionSmall1_Blue : NightmareGibExplosionSmall1 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareChunk1_Blue : NightmareChunk1 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareChunk2_Blue : NightmareChunk2 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareChunk3_Blue : NightmareChunk3 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareChunk4_Blue : NightmareChunk4 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareImpChunk_Blue : NightmareImpChunk { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareShotgunnerChunk_Blue : NightmareShotgunnerChunk { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+actor NightmareZombiemanChunk_Blue : NightmareZombiemanChunk { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }

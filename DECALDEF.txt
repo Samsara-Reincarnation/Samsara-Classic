@@ -82,6 +82,8 @@ generator CyberRocket			Scorch
 generator CacodemonBall2		CacoScorch
 generator FatShot2				Scorch
 generator SpiderMastermind2		BulletChip
+generator DarkImpBall			DoomImpScorch
+generator HectShot				Scorch
 
 generator BeastBall2			DoomImpScorch
 generator SnakeProjA2			SnakeScorch1
