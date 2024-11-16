@@ -611,6 +611,7 @@ int ChangelogString =
   - Fixed certain events not triggering when killing crusaders through certain means.\n\
   - Fixed Duke playing the default wimpy death sound when playing Heretic.\n\
   - Fixed the Strife accuracy replacement not taking message settings into account.\n\
+  - Fixed D'Sparil not having a proper Idle state.\n\
 - Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n\
 - Fixed and slightly tweaked some HUD elements.\n\
 - Pistol Start mode won't trigger in the title map.\n\

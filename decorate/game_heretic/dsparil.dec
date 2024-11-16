@@ -332,6 +332,10 @@ actor Sorcerer4 : Sorcerer2 replaces Sorcerer2
         SOR2 HG 6
         Goto See
 
+      Idle:
+        SOR2 MN 10 A_Look
+        loop
+
       Missile:
         SOR2 R 5 //A_Srcr2Decide
         SOR2 S 7 A_FaceTarget
