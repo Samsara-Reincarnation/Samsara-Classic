@@ -661,7 +661,7 @@ int ChangelogString =
 - Fixed secret messages not being logged properly in netplay.\n\
 - Made B.J.'s extra life start activating at 4 HP instead of 19 HP, as per ZDoom versions of Samsara.\n\
 - Integrated B.J.'s extra lives into the HUD as a counter. They also properly carry over between levels now.\n\
-- Added swimming support for the WolfMovement system.\n\
+- Added walking, swimming, and flying support for the WolfMovement system. Crouch check is also more reliable.\n\
 - Reimplemented the taunt button from ZDoom versions of Samsara, better than ever!\n\
 - Added a clientside setting to toggle the secret discovery messages for Samsara. This setting is overridden by the ZDoom secret notifications setting.\n\
 - Fixed samsara_uniquestart 1 and 3 sometimes not giving uniques for some characters.\n\

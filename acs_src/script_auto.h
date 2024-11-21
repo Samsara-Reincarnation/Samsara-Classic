@@ -643,7 +643,24 @@ script "SamsaraWolfMove" (void)
 			side = 0;
         }
 
-        if (keyDown(BT_CROUCH)) { velx /= 2; vely /= 2; velz /= 2; }
+        bool isRunning = (!GetCVar("cl_run") && keyDown(BT_SPEED)) || (GetCVar("cl_run") && !keyDown(BT_SPEED));
+
+        if (!isRunning)
+        {
+            velx /= 2;
+            vely /= 2;
+            velz /= 2;
+        }
+
+        bool isMorphed = CheckActorClass(0, "ChickenPlayer") || CheckActorClass(0, "ChickenPlayer2") || CheckActorClass(0, "ChickenPlayer3") ||
+                         CheckActorClass(0, "PigPlayer"); // hack variable
+
+        if (!GetCVar("sv_nocrouch") && !isMorphed && GetActorViewHeight(0) <= 28.0)
+        {
+            velx /= 2;
+            vely /= 2;
+            velz /= 2;
+        }
         
         SetInventory("WolfMoving", velx != 0 || vely != 0 || velz != 0);
         
