@@ -573,7 +573,6 @@ script "SamsaraWolfMove" (void)
     int moving;
     int fired;
     int startTime = Timer();
-    int isFlying = CheckInventory("PowerFlight") || CheckInventory("PowerFlight2") || (GetActorProperty(0, APROP_Gravity) == 0);
 
     WolfenEnterTimes[pln] = startTime;
 
@@ -648,7 +647,7 @@ script "SamsaraWolfMove" (void)
         
         SetInventory("WolfMoving", velx != 0 || vely != 0 || velz != 0);
         
-        if ((GetActorProperty(0, APROP_WaterLevel) >= 1) || isFlying)
+        if (GetActorProperty(0, APROP_WaterLevel) >= 1 || CheckInventory("PowerFlight") || CheckInventory("PowerFlight2") || GetActorProperty(0, APROP_Gravity) == 0.0)
         {
             SetActorVelocity(0, velx, vely, velz, 0, 0);
         }
