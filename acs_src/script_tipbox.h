@@ -132,7 +132,7 @@ script "SamsaraChangelog" (int changelogshit) NET CLIENTSIDE
 switch (changelogshit)
 {
         case 1:
-        Log(s:ChangelogString);
+        Log(l:"SAMSARA_CHANGELOG");
         break;
 		
         case 2:
