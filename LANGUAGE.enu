@@ -527,4 +527,5 @@ SAMSARA_CHANGELOG =
 "- Fixed equipment pickup sounds alternating between every channel instead of CHAN_ITEM. Also fixed various pickups not playing their sounds on the correct sound channel.\n"
 "- Various pickups, as well as Duke's critical heal and invulnerability taunts, are now affected by compat_silentpickup.\n"
 "- Fixed Timon's Axe using the wrong puff when hitting map geometry.\n"
+"- Added Bloody Hell Nightmare death states for the hell nobles.\n"
 "- Pickup messages now take the msg CVar and the four new colors added by GZDoom into account.";

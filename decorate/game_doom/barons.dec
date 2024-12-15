@@ -133,6 +133,31 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
         goto "Super::Death"
         
+	  DeathNightmare1:
+	  DeathNightmare3:
+	  DeathNightmare5:
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        BOSS I 8
+        BOSS J 8 A_Scream
+        BOSS K 8
+        BOSS L 8 A_NoBlocking
+        BOSS MN 8
+        BOSS O -1 A_BossDeath
+        Stop
+        
+	  DeathNightmare2:
+	  DeathNightmare4:
+	  DeathNightmare6:
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        12BR AB 4
+        12BR C 4 A_Scream
+        12BR DEF 4
+        12BR G 4 A_NoBlocking
+        12BR H 4
+        12BR I 12
+        12BR I -1 A_BossDeath
+        Stop
+		
       DeathHappyfun:
         TNT1 A 0
         TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
@@ -305,6 +330,31 @@ actor Hellknight2 : Hellknight replaces Hellknight
         TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
         goto "Super::Death"
         
+	  DeathNightmare1:
+	  DeathNightmare3:
+	  DeathNightmare5:
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        BOS2 I 8
+        BOS2 J 8 A_Scream
+        BOS2 K 8
+        BOS2 L 8 A_NoBlocking
+        BOS2 MN 8
+        BOS2 O -1 A_BossDeath
+        Stop
+        
+	  DeathNightmare2:
+	  DeathNightmare4:
+	  DeathNightmare6:
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160|SXF_USEBLOODCOLOR)
+        12HK AB 4
+        12HK C 4 A_Scream
+        12HK DEF 4
+        12HK G 4 A_NoBlocking
+        12HK H 4
+        12HK I 12
+        12HK I -1 A_BossDeath
+        Stop
+		
       DeathHappyfun:
         TNT1 A 0
         TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
