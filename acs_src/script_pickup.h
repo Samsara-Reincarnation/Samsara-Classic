@@ -160,7 +160,7 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
 
     int weaponGet  = 0;
     int pclass = samsaraClassNum();
-    int hasWep = HasClassWeapon(pclass, slot);
+    int hasWep = HasClassWeapon(pclass, slot, 1);
 
     if (slot == SLOT_BFG9000) { weaponStay = !!GetCVar("samsara_permault"); }
 
@@ -200,8 +200,8 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
         a2max2  = a2max * 4; // ditto
     }
 
-    if (a1Bool) { a1Full = (CheckInventory(ammo1) == a1max); }
-    if (a2Bool) { a2Full = (CheckInventory(ammo2) == a2max); }
+    if (a1bool) { a1Full = (CheckInventory(ammo1) >= a1max); }
+    if (a2bool) { a2Full = (CheckInventory(ammo2) >= a2max); }
 
     if (dropped >= 2)
     {
@@ -210,8 +210,9 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
     }
 
     // check for both the weapon AND the check item
-    // if we miss either, we're giving the weapon
-    if (!hasWep || (chkbool && !CheckInventory(check)))
+    // if we miss either, or we're checking for ForceCheck,
+    // we're giving the weapon
+    if (!hasWep || !StrCmp(check, "ForceCheck") || (chkbool && !CheckInventory(check)))
     {
         weaponGet = 1;
     }
@@ -256,9 +257,13 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
 
     if (dropped >= 2)
     {
-        // shave off half the ammo given
-        TakeInventory(ammo1, (CheckInventory(ammo1) - a1cnt) / 2);
-        TakeInventory(ammo2, (CheckInventory(ammo2) - a2cnt) / 2);
+        // shave off half the ammo given (NOTE: this method is inaccurate for doom deathmatch ammo giving on first weapon pickup; result should be amount / 2 * 5 / 2)
+        // (tossed pickups shouldn't really come up in deathmatch, though)
+        int a1drop = (CheckInventory(ammo1) - a1cnt) / 2;
+        int a2drop = (CheckInventory(ammo2) - a2cnt) / 2;
+
+        SetInventory(ammo1, a1cnt + a1drop);
+        SetInventory(ammo2, a2cnt + a2drop);
 
         // go back to normal ammo capacity
         if (a1bool) { SetAmmoCapacity(ammo1, a1max); }
@@ -266,8 +271,17 @@ script "SamsaraGiveWeapon" (int slot, int dropped, int silent)
     }
 
     // make sure we're not over max ammo capacity
-    TakeInventory(ammo1, CheckInventory(ammo1) - a1max);
-    TakeInventory(ammo2, CheckInventory(ammo2) - a2max);
+    if (CheckInventory(ammo1) > GetAmmoCapacity(ammo1))
+    {
+        if (a1cnt > GetAmmoCapacity(ammo1)) { SetInventory(ammo1, a1cnt); }
+        else { SetInventory(ammo1, GetAmmoCapacity(ammo1)); }
+    }
+
+    if (CheckInventory(ammo2) > GetAmmoCapacity(ammo2))
+    {
+        if (a2cnt > GetAmmoCapacity(ammo2)) { SetInventory(ammo2, a2cnt); }
+        else { SetInventory(ammo2, GetAmmoCapacity(ammo2)); }
+    }
 
     // tell the pickup if weaponstay was on, and if the pickup succeeded
     SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (success * WEPFLAGS_GOTWEAPON));

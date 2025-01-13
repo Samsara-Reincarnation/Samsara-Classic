@@ -228,7 +228,7 @@ script "SamsaraSpectres" (int mode, int arg1, int arg2)
             break;
 
           default:
-            if (!HasClassWeapon(i, 8))
+            if (!HasClassWeapon(i, 8, 1))
             {
                 Print(s:"You need the \ck", s:ClassWeapons[i][8][S_WEP], s:"\c- to go spectral.");
                 result = 0;

@@ -88,7 +88,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, in
     return !!success;
 }
 
-function int HasClassWeapon(int class, int slot)
+function int HasClassWeapon(int class, int slot, int ignorechecks)
 {
     if (class == -1) { return 0; }
 
@@ -103,6 +103,8 @@ function int HasClassWeapon(int class, int slot)
     hasWep  = CheckInventory(weapon);
     hasItem = StrLen(checkitem) && CheckInventory(checkitem);
     hasFail = StrLen(failitem) && CheckInventory(failitem);
+
+    if (ignorechecks) { return hasWep; }
 
     return hasWep || hasItem || hasFail;
 }
@@ -351,7 +353,7 @@ function int ConvertClassWeapons(int classnum)
 
         for (j = 0; j < SLOTCOUNT; j++)
         {
-            if (HasClassWeapon(i, j))
+            if (HasClassWeapon(i, j, 1))
             {
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
                 if (classnum != -1) { GiveClassWeapon(classnum, j, 1); }

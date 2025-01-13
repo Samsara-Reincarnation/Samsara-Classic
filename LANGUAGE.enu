@@ -528,4 +528,5 @@ SAMSARA_CHANGELOG =
 "- Various pickups, as well as Duke's critical heal and invulnerability taunts, are now affected by compat_silentpickup.\n"
 "- Fixed Timon's Axe using the wrong puff when hitting map geometry.\n"
 "- Added Bloody Hell Nightmare death states for the hell nobles.\n"
-"- Pickup messages now take the msg CVar and the four new colors added by GZDoom into account.";
+"- Pickup messages now take the msg CVar and the four new colors added by GZDoom into account.\n"
+"- Non-unique equipment pickups should now calculate given ammo correctly when dropped by actors.";

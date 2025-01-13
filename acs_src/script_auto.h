@@ -725,7 +725,7 @@ script "SamsaraEnterClient" (void) clientside
         for (i = 0; i < SLOTCOUNT; i++)
         {
             j = SamsaraClientWeps[i];
-            SamsaraClientWeps[i] = HasClassWeapon(class, i);
+            SamsaraClientWeps[i] = HasClassWeapon(class, i, 1);
             
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
