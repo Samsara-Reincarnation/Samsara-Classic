@@ -38,31 +38,35 @@ script "ZDoomOptionMirror" ENTER
 // Fancy per-class secret notifications
 script "SecretNotifier" ENTER
 {
-    int stotal;
-    int sfound;
-    int sfound2;
+    // mid-game join initialization
 
-    stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though.
-    sfound2 = sfound;
-    sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+    int stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS);
+    int sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
+    int sfound2 = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
 
-    bool showmsgs = true;
-
-    if (isZDoom() && !GetCVar("cl_showsecretmessage") && !GetCVar("samsara_cl_showsecretmessage")) { showmsgs = false; }
-
-    // Found a secret.
-    if (sfound > sfound2)
+    while (true)
     {
-        if (showmsgs) { ACS_NamedExecuteWithResult("SecretNotifierDisplay", sfound, stotal); }
+        stotal = GetLevelInfo(LEVELINFO_TOTAL_SECRETS); // Dunno if secret number can increase, though. // [tv50] it can with +COUNTSECRET, at least
+        sfound2 = sfound;
+        sfound = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
 
-        if (CheckInventory("DukeClass"))
+        bool showmsgs = true;
+
+        if (isZDoom() && !GetCVar("cl_showsecretmessage") && !GetCVar("samsara_cl_showsecretmessage")) { showmsgs = false; }
+
+        // Found a secret.
+        if (sfound > sfound2)
         {
-            if (showmsgs) { ACS_NamedExecuteWithResult("SecretNotifierDukeTaunt"); } // don't let the delay get in the way of this script
-        }
-    }
+            if (showmsgs) { ACS_NamedExecuteWithResult("SecretNotifierDisplay", sfound, stotal); }
 
-    Delay(1);
-    restart;
+            if (CheckInventory("DukeClass"))
+            {
+                if (showmsgs) { ACS_NamedExecuteWithResult("SecretNotifierDukeTaunt"); } // don't let the delay get in the way of this script
+            }
+        }
+
+        Delay(1);
+    }
 }
 
 script "SecretNotifierDukeTaunt" (void)

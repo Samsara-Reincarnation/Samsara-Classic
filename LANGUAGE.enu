@@ -529,4 +529,5 @@ SAMSARA_CHANGELOG =
 "- Fixed Timon's Axe using the wrong puff when hitting map geometry.\n"
 "- Added Bloody Hell Nightmare death states for the hell nobles.\n"
 "- Pickup messages now take the msg CVar and the four new colors added by GZDoom into account.\n"
-"- Non-unique equipment pickups should now calculate given ammo more accurately when dropped by actors.";
+"- Non-unique equipment pickups should now calculate given ammo more accurately when dropped by actors.\n"
+"- Joining mid-game should no longer trigger the secret revealed message if at least one secret was found prior.";
