@@ -134,7 +134,7 @@ actor QuakePlayer: PlayerPawn
         goto Explod
 		
 	  XDeath.Falling:
-        TNT1 A 0 A_PlaySound("ranger/crater", CHAN_VOICE)
+        TNT1 A 0 A_PlaySound("*splat", CHAN_VOICE)
         goto Explod
         
       XDeath.Telefrag:

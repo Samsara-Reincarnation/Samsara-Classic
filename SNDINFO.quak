@@ -53,7 +53,7 @@ $playeralias        Ranger      male    *crazydeath     ranger/hideath
 $playersounddup     Ranger      male    *wimpydeath     *death
 $playeralias        Ranger      male    *gibbed         ranger/gib
 $playersound        Ranger      male    *falling        sounds/ranger/falling1.ogg
-$playersound        Ranger      male    *splat			qrater
+$playersound        Ranger      male    *splat			qrator
 $playeralias        Ranger      male    *pain100        ranger/pain100
 $playeralias        Ranger      male    *pain75         ranger/pain75
 $playeralias        Ranger      male    *pain50         ranger/pain50
