@@ -531,4 +531,5 @@ SAMSARA_CHANGELOG =
 "- Pickup messages now take the msg CVar and the four new colors added by GZDoom into account.\n"
 "- Non-unique equipment pickups should now calculate given ammo more accurately when dropped by actors.\n"
 "- Joining mid-game should no longer trigger the secret revealed message if at least one secret was found prior.\n"
-"- The lost soul and pain elemental now play their pain sound when zorched.";
+"- The lost soul and pain elemental now play their pain sound when zorched.\n"
+"- A Burn sprite for Chex Warrior was unused; it is now used.";
