@@ -534,4 +534,5 @@ SAMSARA_CHANGELOG =
 "- The lost soul and pain elemental now play their pain sound when zorched.\n"
 "- A Burn sprite for Chex Warrior was unused; it is now used.\n"
 "- Fixed the falling gibbed sound not playing for Duke.\n"
-"- The fullscreen HUD now has a new armor icon, making it more consistent with the larger armor pickups.";
+"- The fullscreen HUD now has a new armor icon, making it more consistent with the larger armor pickups.\n"
+"- Fixed Ranger's cluster grenades having the wrong volume for their bounce sound.";

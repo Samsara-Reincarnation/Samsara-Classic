@@ -107,8 +107,8 @@ quakeweps/grenadebounce         sounds/ranger/bounce.ogg
 $limit quakeweps/grenadebounce  0
 
 quakeweps/grenadebounce_quiet   sounds/ranger/bounce.ogg
-$volume quakeweps/quakebounce_quiet 0.3
-$limit  quakeweps/quakebounce_quiet 0
+$volume quakeweps/grenadebounce_quiet 0.3
+$limit  quakeweps/grenadebounce_quiet 0
 
 quakeweps/explode               sounds/ranger/explode.ogg
 $limit quakeweps/explode        0

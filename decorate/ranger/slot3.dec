@@ -561,7 +561,7 @@ actor QuakeTinyGrenade: QuakeGrenade
     Radius 2
     Height 2
     
-    SeeSound "quakeweps/grenadebounce_quiet"
+    BounceSound "quakeweps/grenadebounce_quiet"
     
     Obituary "$SAMSARA_RANGER_OB_SLOT3_2"
     
