@@ -199,7 +199,7 @@ script "SamsaraStrifeAcolyteBlueDeathChecker" (void) // Haaaaack.
         {
             if (!PlayerInGame(i)) { continue; }
 
-            SetActivatorToPlayer(i);
+            SetPlayerActivator(i);
 
             if (!isDead(0) && !CheckInventory("QuestItem7"))
             {

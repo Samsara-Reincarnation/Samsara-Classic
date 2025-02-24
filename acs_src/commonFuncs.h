@@ -893,3 +893,9 @@ function int AddActorProperty(int tid, int prop, int amount)
 // [tv50] come from this, so this should be used for checking the current source port.
 
 function bool isZDoom (void) { return GetTimeProperty(0, 5, true) == 0; } // TM_YEAR = 5
+
+function void SetPlayerActivator (int pln)
+{
+    if (!isZDoom()) { SetActivatorToPlayer(pln); }
+    else { SetActivator(0, AAPTR_PLAYER1 << pln); }
+}
