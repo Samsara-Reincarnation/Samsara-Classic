@@ -1,0 +1,1 @@
+StatusBar Inventory { DrawInventoryBar Doom, 7, INDEXFONT, 50, 170, 76, 192, White; }

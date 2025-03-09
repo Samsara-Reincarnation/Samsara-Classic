@@ -1,0 +1,450 @@
+StatusBar Fullscreen
+{
+    // Team color display
+    GameMode TeamGame, CTF, OneFlagCTF, Skulltag, TeamPossession, TeamLMS, Domination
+    {
+        InInventory DoomguyClass { DrawImage Translatable "HUDBARD", 10, 176; }
+        InInventory ChexClass { DrawImage Translatable "HUDBARC", 10, 176; }
+        InInventory CorvusClass { DrawImage Translatable "HUDBARD", 10, 176; }
+        InInventory WolfenClass { DrawImage Translatable "HUDBARB", 10, 176; }
+        InInventory HexenClass { DrawImage Translatable "HUDBARP", 10, 176; }
+        InInventory DukeClass { DrawImage Translatable "HUDBARD", 10, 176; }
+        InInventory MarathonClass { DrawImage Translatable "HUDBARD", 10, 176; }
+        InInventory QuakeClass { DrawImage Translatable "HUDBARD", 10, 176; }
+    }
+
+    // Armor
+    DrawImage "HUDBAR", 13, 185;
+    InInventory QuakePentagram
+    {
+        DrawImage "HARMOR", 14, 186;
+        DrawImage "HARMO2", -38, 186;
+        DrawString INDEXFONT, White, "666", 16, 191, 0, Alignment(Left);
+        DrawImage "ARMRICON", 8, 191;
+    } else {
+        DrawBar "HARMOR", "HEMPTY", Armor (100), Horizontal, /*Reverse,*/ 14, 186;
+        DrawBar "HARMO2", "HEMPT2", Armor (200), Horizontal, /*Reverse,*/ -38, 186;
+        DrawNumber 4, INDEXFONT, White, Armor, Alignment(Left), 16, 191;
+        InInventory BasicArmor, 1
+        {
+            InInventory SamsaraArmorCategory, 10 { DrawImage "ARMRICO9", 8, 191; }
+            else InInventory SamsaraArmorCategory, 9 { DrawImage "ARMRICO8", 8, 191; }
+            else InInventory SamsaraArmorCategory, 8 { DrawImage "ARMRICO7", 8, 191; }
+            else InInventory SamsaraArmorCategory, 7 { DrawImage "ARMRICO6", 8, 191; }
+            else InInventory SamsaraArmorCategory, 6 { DrawImage "ARMRICO5", 8, 191; }
+            else InInventory SamsaraArmorCategory, 5 { DrawImage "ARMRICO4", 8, 191; }
+            else InInventory SamsaraArmorCategory, 4 { DrawImage "ARMRICO3", 8, 191; }
+            else InInventory SamsaraArmorCategory, 3 { DrawImage "ARMRICO2", 8, 191; }
+            else InInventory SamsaraArmorCategory, 2 { DrawImage "ARMRICO1", 8, 191; }
+            else InInventory SamsaraArmorCategory, 1 { DrawImage "ARMRICO0", 8, 191; }
+            else { DrawImage "ARMRICON", 8, 191; }
+        }
+        else { DrawImage "ARMRICON", 8, 191; }
+    }
+
+    // Health
+    DrawImage "HUDBAR", 18, 180;
+    DrawBar "HHEALTH", "HEMPTY", Health (100), Horizontal, /*Reverse,*/ 19, 181;
+    DrawBar "HHEALT2", "HEMPT2", Health (200), Horizontal, /*Reverse,*/ -33, 181;
+    DrawNumber 4, INDEXFONT, Gold, Health, Alignment(Left), 48, 191, Red, 24, White, 50;
+    InInventory PowerStrength { DrawImage "HLTHICO2", 40, 191; }
+    else { DrawImage "HLTHICON", 40, 191; }
+
+    // Ammo
+    InInventory PistolModeOn
+    {
+        IsSelected " Pistol "
+        {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 4, INDEXFONT, White, Ammo Clip, 298, 185;
+
+            DrawImage "AMSMA0", 238, 185, Center;
+        } else IsSelected "Mini-Zorcher" {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 4, INDEXFONT, White, Ammo Clip, 298, 185;
+
+            DrawImage "AMSMA0", 238, 185, Center;
+        } else IsSelected "Elven Wand" {
+            InInventory not SpectralFiring
+            {
+                DrawImage "HUDBAR", 250, 180;
+                DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+                DrawNumber 4, INDEXFONT, White, Ammo Clip, 298, 185;
+
+                DrawImage "AMSMA0", 238, 185, Center;
+            }
+        } else IsSelected Luger {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 4, INDEXFONT, White, Ammo Clip, 298, 185;
+
+            DrawImage "AMSMA0", 238, 185, Center;
+        } else IsSelected "Glock 17" {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo Clip, 270, 186;
+
+            DrawImage "AMSMA0", 238, 185, Center;
+        } else IsSelected ".44 Magnum Mega Class A1" {
+            InInventory UsingDualPistols { DrawNumber 4, INDEXFONT, Yellow, Ammo Clip, 273, 174; }
+            else
+            {
+                DrawImage "HUDBAR", 250, 192;
+                DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 193;
+                DrawNumber 4, INDEXFONT, White, Ammo Clip, 270, 186;
+            }
+
+            DrawImage "AMSMA0", 238, 185, Center;
+        } else IsSelected "Single Shotgun" {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Shell, Horizontal, Reverse, 251, 181;
+            DrawNumber 4, INDEXFONT, White, Ammo Shell, 298, 185;
+
+            DrawImage "AMSMB0", 238, 185, Center;
+        }
+    }
+
+    UsesAmmo
+    {
+        // No specific checks
+        IsSelected not " Firemace ", "Ethereal Crossbow" {
+        IsSelected not "Dragon Claw", "Phoenix Rod" {
+        IsSelected not Hellstaff, "Spectral Wraithverge" {
+        IsSelected not "Spectral ONI-71 Wave Motion Cannon", "Spectral GL" {
+        IsSelected not "Spectral NG", "Spectral RL" {
+        IsSelected not "Spectral SNG"
+        {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo1, Horizontal, Reverse, 251, 181;
+            DrawNumber 4, INDEXFONT, White, Ammo1, 298, 185;
+
+            DrawImage AmmoIcon1, 238, 185, Center;
+        }}}}}}
+
+        // Corvus
+        IsSelected " Firemace ", "Ethereal Crossbow"
+        {
+            InInventory not SpectralFiring
+            {
+                DrawImage "HUDBAR", 250, 180;
+                DrawBar "HAMBAR", "HEMPTY", Ammo1, Horizontal, Reverse, 251, 181;
+                DrawNumber 4, INDEXFONT, White, Ammo1, 298, 185;
+
+                DrawImage AmmoIcon1, 238, 185, Center;
+            }
+        }
+
+        IsSelected "Dragon Claw", "Phoenix Rod"
+        {
+            InInventory not SpectralFiring
+            {
+                DrawImage "HUDBAR", 250, 180;
+                DrawBar "HAMBAR", "HEMPTY", Ammo1, Horizontal, Reverse, 251, 181;
+                DrawNumber 4, INDEXFONT, White, Ammo1, 298, 185;
+
+                DrawImage AmmoIcon1, 238, 185, Center;
+            }
+        }
+
+        IsSelected Hellstaff
+        {
+            InInventory not SpectralFiring
+            {
+                DrawImage "HUDBAR", 250, 180;
+                DrawBar "HAMBAR", "HEMPTY", Ammo1, Horizontal, Reverse, 251, 181;
+                DrawNumber 4, INDEXFONT, White, Ammo1, 298, 185;
+
+                DrawImage AmmoIcon1, 238, 185, Center;
+            }
+        }
+
+        // Parias
+        IsSelected Wraithverge
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo2, 270, 186;
+
+            DrawImage AmmoIcon2, 228, 192, Center;
+        }
+
+        // Security Officer
+        IsSelected ".44 Magnum Mega Class A1"
+        {
+            InInventory UsingDualPistols
+            {
+                DrawImage "HUDBAR", 250, 192;
+                DrawBar "HAMBAR", "HEMPTY", Ammo MagnumBulletRight, Horizontal, Reverse, 251, 193;
+                DrawNumber 4, INDEXFONT, White, Ammo MagnumBulletRight, 270, 186;
+            }
+        }
+
+        IsSelected "KKV-7 SMG Flechette"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo Clip, 270, 186;
+
+            DrawImage "AMSMA0", 238, 185, Center;
+        }
+
+        IsSelected "Fusion Pistol"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Cell, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo Cell, 270, 186;
+
+            DrawImage "AMSMD0", 238, 185, Center;
+        }
+
+        IsSelected "MA-75B Assault Rifle"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo2, 270, 186;
+
+            DrawNumber 4, INDEXFONT, Yellow, Ammo Clip, 273, 174;
+
+            DrawNumber 4, INDEXFONT, Brown, Ammo RocketAmmo, 298, 174;
+
+            DrawImage "AMSMA0", 238, 185, Center;
+            DrawImage "AMSMC0", 228, 192, Center;
+        }
+
+        IsSelected "SPNKR-XP SSM Launcher"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo RocketAmmo, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo RocketAmmo, 270, 186;
+
+            DrawImage "AMSMC0", 238, 185, Center;
+        }
+
+        IsSelected "TOZT-7 Napalm Unit"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Cell, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo Cell, 270, 186;
+
+            DrawImage "AMSMD0", 238, 185, Center;
+        }
+
+        IsSelected "ONI-71 Wave Motion Cannon"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
+            DrawNumber 4, INDEXFONT, White, Ammo2, 270, 186;
+
+            DrawNumber 4, INDEXFONT, LightBlue, Ammo Cell, 273, 174;
+
+            DrawNumber 4, INDEXFONT, Brown, Ammo RocketAmmo, 298, 174;
+
+            DrawImage "AMSMD0", 238, 185, Center;
+            DrawImage "AMSMC0", 228, 192, Center;
+        }
+
+        // Ranger
+        IsSelected "Grenade Launcher", Nailgun
+        {
+            InInventory not QuakeModeOn
+            {
+                DrawImage "HUDBAR", 250, 192;
+                DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
+                DrawNumber 4, INDEXFONT, White, Ammo2, 270, 186;
+
+                DrawImage AmmoIcon2, 228, 192, Center;
+            }
+        }
+
+        IsSelected "  Rocket Launcher  ", "Super Nailgun"
+        {
+            InInventory not QuakeModeOn
+            {
+                DrawImage "HUDBAR", 250, 192;
+                DrawBar "HAMBAR", "HEMPTY", Ammo2, Horizontal, Reverse, 251, 193;
+                DrawNumber 4, INDEXFONT, White, Ammo2, 270, 186;
+
+                DrawImage AmmoIcon2, 228, 192, Center;
+            }
+        }
+    }
+
+    // Equipment
+    InInventory ExpandedHud
+    {
+        // Slot 1
+        InInventory GotWeapon0 { DrawImage "STYSNUM1", 126, 10; }
+
+        IsSelected " Chainsaw " { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected "Super Bootspork" { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected "Gauntlets of the Necromancer" { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected Knife
+        {
+            InInventory BJSuperKnife { DrawImage "STY2NUM1", 126, 10; }
+        }
+        InInventory HexenClass
+        {
+            InInventory DiscOfRepulsionCooldown, 9 { DrawImage "STY2NUM1", 126, 10; }
+        }
+        IsSelected Pipebombs { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected "KKV-7 SMG Flechette" { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected Mjolnir { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected "Spectral Mjolnir" { DrawImage "STY2NUM1", 126, 10; }
+
+        InInventory HexenClass
+        {
+            InInventory DiscOfRepulsionCooldown { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 134, 16; }
+        }
+
+        // Slot 2
+        InInventory WolfenClass
+        {
+            InInventory GotWeapon2 || GotWeapon3 { DrawImage "STYSNUM2", 136, 10; }
+        } else {
+            InInventory GotWeapon2 { DrawImage "STYSNUM2", 136, 10; }
+        }
+
+        IsSelected " Shotgun " { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected "Large Zorcher" { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected " Firemace " { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected "Machine Gun" { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected "Frost Shards" { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected "  Shotgun  " { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected "WSTE-M5 Combat Shotgun" { DrawImage "STY2NUM2", 136, 10; }
+        IsSelected "Double Shotgun" { DrawImage "STY2NUM2", 136, 10; } // Need to change
+        IsSelected "Spectral DSG" { DrawImage "STY2NUM2", 136, 10; } // Need to change
+
+        // Slot 3
+        InInventory not WolfenClass
+        {
+            InInventory GotWeapon3 { DrawImage "STYSNUM3", 146, 10; }
+        }
+
+        IsSelected "Super Shotgun" { DrawImage "STY2NUM3", 146, 10; }
+        IsSelected "Super Large Zorcher" { DrawImage "STY2NUM3", 146, 10; }
+        IsSelected "Ethereal Crossbow" { DrawImage "STY2NUM3", 146, 10; }
+        IsSelected "Timon's Axe" { DrawImage "STY2NUM3", 146, 10; }
+        IsSelected "Explosive Shotgun" { DrawImage "STY2NUM3", 146, 10; }
+        IsSelected "Fusion Pistol" { DrawImage "STY2NUM3", 146, 10; }
+        IsSelected "Grenade Launcher" { DrawImage "STY2NUM3", 146, 10; } // Need to change
+        IsSelected "Spectral GL" { DrawImage "STY2NUM3", 146, 10; } // Need to change
+
+        // Slot 4
+        InInventory GotWeapon4 { DrawImage "STYSNUM4", 156, 10; }
+
+        IsSelected " Chaingun " { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected "Rapid Zorcher" { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected "Dragon Claw" { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected "  Chaingun  " { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected "Serpent Staff" { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected "Chaingun Cannon" { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected "MA-75B Assault Rifle" { DrawImage "STY2NUM4", 156, 10; }
+        IsSelected Nailgun { DrawImage "STY2NUM4", 156, 10; } // Need to change
+        IsSelected "Spectral NG" { DrawImage "STY2NUM4", 156, 10; } // Need to change
+
+        // Slot 5
+        InInventory GotWeapon5 { DrawImage "STYSNUM5", 166, 10; }
+
+        IsSelected "Rocket Launcher" { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected "Zorch Propulsor" { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected "Phoenix Rod" { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected " Rocket Launcher " { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected "Hammer of Retribution" { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected RPG { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected "SPNKR-XP SSM Launcher" { DrawImage "STY2NUM5", 166, 10; }
+        IsSelected "  Rocket Launcher  " { DrawImage "STY2NUM5", 166, 10; } // Need to change
+        IsSelected "Spectral RL" { DrawImage "STY2NUM5", 166, 10; } // Need to change
+
+        // Slot 6
+        InInventory GotWeapon6 { DrawImage "STYSNUM6", 176, 10; }
+
+        IsSelected "Plasma Rifle" { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected "Phasing Zorcher" { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected Hellstaff { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected " Flamethrower " { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected Firestorm { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected "Freezethrower" { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected "TOZT-7 Napalm Unit" { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected "Super Nailgun" { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected "Spectral SNG" { DrawImage "STY2NUM6", 176, 10; }
+
+        // Slot 7
+        InInventory GotWeapon7 { DrawImage "STYSNUM7", 186, 10; }
+
+        IsSelected "B.F.G. 9000" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral B.F.G. 9000" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "LAZ Device" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral LAZ Device" { DrawImage "STY2NUM7", 186, 10; }
+        InInventory PowerHereticTome { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spear of Destiny" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spear of Eternity" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected Wraithverge { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral Wraithverge" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected Thunderbolt { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spectral LG" { DrawImage "STY2NUM7", 186, 10; }
+
+        InInventory TomeOfPowerCooldown { DrawNumber 3, INDEXFONT, Red, TomeOfPowerCooldown, 195, 16; }
+
+        // Inventory cooldowns
+        InInventory DukeClass
+        {
+            InInventory DiscOfRepulsionCooldown
+            {
+                InInventory DukeVisionFuel
+                {
+                    InInventory DukeJetpackFuel { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 293, 64; }
+                    else { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 293, 56; }
+                }
+                else InInventory DukeJetpackFuel { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 293, 56; }
+                else { DrawNumber 3, INDEXFONT, Red, DiscOfRepulsionCooldown, 293, 48; }
+            }
+        }
+        InInventory SamsaraQuadDamageCooldownDisplay { DrawNumber 3, INDEXFONT, Red, SamsaraQuadDamageCooldownDisplay, 293, 48; }
+    }
+
+    // Rune icon
+    InInventory SamsaraIsPlayingInZandronum { DrawImage RuneIcon, 20, 163, Center; }
+
+    // Frags
+    InInventory ChickenModeOn { DrawNumber 4, INDEXFONT, White, ChickenKillCount, 70, 170; }
+    else
+    {
+        GameMode Deathmatch, Possession, TeamGame { DrawNumber 4, INDEXFONT, White, Frags, 70, 170; }
+        else GameMode SinglePlayer, Cooperative, Invasion, Survival { DrawNumber 9, INDEXFONT, White, KillCountAmountTrue, 70, 170; }
+    }
+
+    // Keys
+    GameMode SinglePlayer, Cooperative, Invasion, Survival { DrawKeyBar 100, Horizontal, ReverseRows, 10, 221, 156, 0, 14, 12; }
+
+    // Mugshot
+    //DrawMugShot 5, 73, 168;
+
+    // Inventory
+    DrawSelectedInventory AlwaysShowCounter, HUDFONT_DOOM, 290, 22, 293, 30, Untranslated;
+
+    InInventory WolfenClass
+    {
+        InInventory WolfExtraLife
+        {
+            DrawImage "WOLFLIFE", 290, 48;
+
+            DrawNumber 10, HUDFONT_DOOM, Untranslated, WolfExtraLife, 293, 56;
+        }
+    }
+
+    InInventory DukeClass
+    {
+        InInventory DukeJetpackFuel { DrawNumber 3, INDEXFONT, Yellow, DukeJetpackFuel, 293, 48; }
+        InInventory DukeVisionFuel
+        {
+            InInventory DukeJetpackFuel { DrawNumber 3, INDEXFONT, Green, DukeVisionFuel, 293, 56; }
+            else { DrawNumber 3, INDEXFONT, Green, DukeVisionFuel, 293, 48; }
+        }
+    }
+}
