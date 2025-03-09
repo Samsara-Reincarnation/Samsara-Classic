@@ -196,11 +196,8 @@ StatusBar Automap
                 DrawImage "WPDOOM7N", 247, 11;
             }
 
-            IsSelected "B.F.G. 9000"
+            IsSelected "B.F.G. 9000", "Spectral B.F.G. 9000"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPDOOM7Y", 247, 11;
-            } else IsSelected "Spectral B.F.G. 9000" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPDOOM7Y", 247, 11;
             }
@@ -403,11 +400,8 @@ StatusBar Automap
                 DrawImage "WPCHEX7N", 247, 11;
             }
 
-            IsSelected "LAZ Device"
+            IsSelected "LAZ Device", "Spectral LAZ Device"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPCHEX7Y", 247, 11;
-            } else IsSelected "Spectral LAZ Device" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPCHEX7Y", 247, 11;
             }
@@ -841,11 +835,8 @@ StatusBar Automap
                 DrawImage "WPWOLF7N", 247, 11;
             }
 
-            IsSelected "Spear of Destiny"
+            IsSelected "Spear of Destiny", "Spear of Eternity"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPWOLF7Y", 247, 11;
-            } else IsSelected "Spear of Eternity" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPWOLF7Y", 247, 11;
             }
@@ -1058,11 +1049,8 @@ StatusBar Automap
                 DrawImage "WPHEXN7N", 247, 11;
             }
 
-            IsSelected Wraithverge
+            IsSelected Wraithverge, "Spectral Wraithverge"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPHEXN7Y", 247, 11;
-            } else IsSelected "Spectral Wraithverge" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPHEXN7Y", 247, 11;
             }
@@ -1267,11 +1255,8 @@ StatusBar Automap
                 DrawImage "WPDUKE7N", 247, 11;
             }
 
-            IsSelected "Devastator Weapon"
+            IsSelected "Devastator Weapon", "Spectral Devastator Weapon"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPDUKE7Y", 247, 11;
-            } else IsSelected "Spectral Devastator Weapon" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPDUKE7Y", 247, 11;
             }
@@ -1679,11 +1664,8 @@ StatusBar Automap
                 DrawImage "WPMARA7N", 247, 11;
             }
 
-            IsSelected "ONI-71 Wave Motion Cannon"
+            IsSelected "ONI-71 Wave Motion Cannon", "Spectral ONI-71 Wave Motion Cannon"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPMARA7Y", 247, 11;
-            } else IsSelected "Spectral ONI-71 Wave Motion Cannon" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPMARA7Y", 247, 11;
             }
@@ -1839,11 +1821,8 @@ StatusBar Automap
                 DrawImage "WPQUAK1N", 49, 11;
             }
 
-            IsSelected Mjolnir
+            IsSelected Mjolnir, "Spectral Mjolnir"
             {
-                DrawImage "WEPSELY1", 54, 0;
-                DrawImage "WPQUAK1Y", 49, 11;
-            } else IsSelected "Spectral Mjolnir" {
                 DrawImage "WEPSELY1", 54, 0;
                 DrawImage "WPQUAK1Y", 49, 11;
             }
@@ -1855,11 +1834,8 @@ StatusBar Automap
                 DrawImage "WPQUAK2N", 82, 11;
             }
 
-            IsSelected "Double Shotgun"
+            IsSelected "Double Shotgun", "Spectral DSG"
             {
-                DrawImage "WEPSELY2", 87, 0;
-                DrawImage "WPQUAK2Y", 82, 11;
-            } else IsSelected "Spectral DSG" {
                 DrawImage "WEPSELY2", 87, 0;
                 DrawImage "WPQUAK2Y", 82, 11;
             }
@@ -1871,11 +1847,8 @@ StatusBar Automap
                 DrawImage "WPQUAK3N", 115, 11;
             }
 
-            IsSelected "Grenade Launcher"
+            IsSelected "Grenade Launcher", "Spectral GL"
             {
-                DrawImage "WEPSELY3", 120, 0;
-                DrawImage "WPQUAK3Y", 115, 11;
-            } else IsSelected "Spectral GL" {
                 DrawImage "WEPSELY3", 120, 0;
                 DrawImage "WPQUAK3Y", 115, 11;
             }
@@ -1887,11 +1860,8 @@ StatusBar Automap
                 DrawImage "WPQUAK4N", 148, 11;
             }
 
-            IsSelected Nailgun
+            IsSelected Nailgun, "Spectral NG"
             {
-                DrawImage "WEPSELY4", 154, 0;
-                DrawImage "WPQUAK4Y", 148, 11;
-            } else IsSelected "Spectral NG" {
                 DrawImage "WEPSELY4", 154, 0;
                 DrawImage "WPQUAK4Y", 148, 11;
             }
@@ -1903,11 +1873,8 @@ StatusBar Automap
                 DrawImage "WPQUAK5N", 181, 11;
             }
 
-            IsSelected "  Rocket Launcher  "
+            IsSelected "  Rocket Launcher  ", "Spectral RL"
             {
-                DrawImage "WEPSELY5", 186, 0;
-                DrawImage "WPQUAK5Y", 181, 11;
-            } else IsSelected "Spectral RL" {
                 DrawImage "WEPSELY5", 186, 0;
                 DrawImage "WPQUAK5Y", 181, 11;
             }
@@ -1919,11 +1886,8 @@ StatusBar Automap
                 DrawImage "WPQUAK6N", 214, 11;
             }
 
-            IsSelected "Super Nailgun"
+            IsSelected "Super Nailgun", "Spectral SNG"
             {
-                DrawImage "WEPSELY6", 219, 0;
-                DrawImage "WPQUAK6Y", 214, 11;
-            } else IsSelected "Spectral SNG" {
                 DrawImage "WEPSELY6", 219, 0;
                 DrawImage "WPQUAK6Y", 214, 11;
             }
@@ -1935,11 +1899,8 @@ StatusBar Automap
                 DrawImage "WPQUAK7N", 247, 11;
             }
 
-            IsSelected Thunderbolt
+            IsSelected Thunderbolt, "Spectral LG"
             {
-                DrawImage "WEPSELY7", 251, 0;
-                DrawImage "WPQUAK7Y", 247, 11;
-            } else IsSelected "Spectral LG" {
                 DrawImage "WEPSELY7", 251, 0;
                 DrawImage "WPQUAK7Y", 247, 11;
             }

@@ -290,8 +290,7 @@ StatusBar Fullscreen
         }
         IsSelected Pipebombs { DrawImage "STY2NUM1", 126, 10; }
         IsSelected "KKV-7 SMG Flechette" { DrawImage "STY2NUM1", 126, 10; }
-        IsSelected Mjolnir { DrawImage "STY2NUM1", 126, 10; }
-        IsSelected "Spectral Mjolnir" { DrawImage "STY2NUM1", 126, 10; }
+        IsSelected Mjolnir, "Spectral Mjolnir" { DrawImage "STY2NUM1", 126, 10; }
 
         InInventory HexenClass
         {
@@ -313,8 +312,7 @@ StatusBar Fullscreen
         IsSelected "Frost Shards" { DrawImage "STY2NUM2", 136, 10; }
         IsSelected "  Shotgun  " { DrawImage "STY2NUM2", 136, 10; }
         IsSelected "WSTE-M5 Combat Shotgun" { DrawImage "STY2NUM2", 136, 10; }
-        IsSelected "Double Shotgun" { DrawImage "STY2NUM2", 136, 10; } // Need to change
-        IsSelected "Spectral DSG" { DrawImage "STY2NUM2", 136, 10; } // Need to change
+        IsSelected "Double Shotgun", "Spectral DSG" { DrawImage "STY2NUM2", 136, 10; } // Need to change
 
         // Slot 3
         InInventory not WolfenClass
@@ -328,8 +326,7 @@ StatusBar Fullscreen
         IsSelected "Timon's Axe" { DrawImage "STY2NUM3", 146, 10; }
         IsSelected "Explosive Shotgun" { DrawImage "STY2NUM3", 146, 10; }
         IsSelected "Fusion Pistol" { DrawImage "STY2NUM3", 146, 10; }
-        IsSelected "Grenade Launcher" { DrawImage "STY2NUM3", 146, 10; } // Need to change
-        IsSelected "Spectral GL" { DrawImage "STY2NUM3", 146, 10; } // Need to change
+        IsSelected "Grenade Launcher", "Spectral GL" { DrawImage "STY2NUM3", 146, 10; } // Need to change
 
         // Slot 4
         InInventory GotWeapon4 { DrawImage "STYSNUM4", 156, 10; }
@@ -341,8 +338,7 @@ StatusBar Fullscreen
         IsSelected "Serpent Staff" { DrawImage "STY2NUM4", 156, 10; }
         IsSelected "Chaingun Cannon" { DrawImage "STY2NUM4", 156, 10; }
         IsSelected "MA-75B Assault Rifle" { DrawImage "STY2NUM4", 156, 10; }
-        IsSelected Nailgun { DrawImage "STY2NUM4", 156, 10; } // Need to change
-        IsSelected "Spectral NG" { DrawImage "STY2NUM4", 156, 10; } // Need to change
+        IsSelected Nailgun, "Spectral NG" { DrawImage "STY2NUM4", 156, 10; } // Need to change
 
         // Slot 5
         InInventory GotWeapon5 { DrawImage "STYSNUM5", 166, 10; }
@@ -354,8 +350,7 @@ StatusBar Fullscreen
         IsSelected "Hammer of Retribution" { DrawImage "STY2NUM5", 166, 10; }
         IsSelected RPG { DrawImage "STY2NUM5", 166, 10; }
         IsSelected "SPNKR-XP SSM Launcher" { DrawImage "STY2NUM5", 166, 10; }
-        IsSelected "  Rocket Launcher  " { DrawImage "STY2NUM5", 166, 10; } // Need to change
-        IsSelected "Spectral RL" { DrawImage "STY2NUM5", 166, 10; } // Need to change
+        IsSelected "  Rocket Launcher  ", "Spectral RL" { DrawImage "STY2NUM5", 166, 10; } // Need to change
 
         // Slot 6
         InInventory GotWeapon6 { DrawImage "STYSNUM6", 176, 10; }
@@ -367,27 +362,19 @@ StatusBar Fullscreen
         IsSelected Firestorm { DrawImage "STY2NUM6", 176, 10; }
         IsSelected "Freezethrower" { DrawImage "STY2NUM6", 176, 10; }
         IsSelected "TOZT-7 Napalm Unit" { DrawImage "STY2NUM6", 176, 10; }
-        IsSelected "Super Nailgun" { DrawImage "STY2NUM6", 176, 10; }
-        IsSelected "Spectral SNG" { DrawImage "STY2NUM6", 176, 10; }
+        IsSelected "Super Nailgun", "Spectral SNG" { DrawImage "STY2NUM6", 176, 10; }
 
         // Slot 7
         InInventory GotWeapon7 { DrawImage "STYSNUM7", 186, 10; }
 
-        IsSelected "B.F.G. 9000" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral B.F.G. 9000" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "LAZ Device" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral LAZ Device" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "B.F.G. 9000", "Spectral B.F.G. 9000" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "LAZ Device", "Spectral LAZ Device" { DrawImage "STY2NUM7", 186, 10; }
         InInventory PowerHereticTome { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spear of Destiny" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spear of Eternity" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected Wraithverge { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral Wraithverge" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected Thunderbolt { DrawImage "STY2NUM7", 186, 10; }
-        IsSelected "Spectral LG" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Spear of Destiny", "Spear of Eternity" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected Wraithverge, "Spectral Wraithverge" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "Devastator Weapon", "Spectral Devastator Weapon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected "ONI-71 Wave Motion Cannon", "Spectral ONI-71 Wave Motion Cannon" { DrawImage "STY2NUM7", 186, 10; }
+        IsSelected Thunderbolt, "Spectral LG" { DrawImage "STY2NUM7", 186, 10; }
 
         InInventory TomeOfPowerCooldown { DrawNumber 3, INDEXFONT, Red, TomeOfPowerCooldown, 195, 16; }
 
