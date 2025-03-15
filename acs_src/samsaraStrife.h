@@ -172,7 +172,7 @@ script "SamsaraStrifeMinesTransmitterUniqueGiver" ENTER
         {
             if (!CheckInventory("SamsaraMinesTransmitterUniqueGiven"))
             {
-                SetActorProperty(0, APROP_Health, orighp);
+                if (!isDead(0)) { SetActorProperty(0, APROP_Health, orighp); }
                 SetActorProperty(0, APROP_Stamina, origsta);
                 SetActorProperty(0, APROP_Accuracy, origacc);
                 GiveInventory("UpgradeStamina", 10);
