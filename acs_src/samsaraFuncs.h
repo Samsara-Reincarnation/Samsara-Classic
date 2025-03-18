@@ -515,7 +515,7 @@ function int HandlePunchDrunk(int respawning)
          || ClassWeapons[classnum][i][S_WEP] == ClassWeapons[classnum][SLOT_PUNCHDRUNKSAW][S_WEP]) { continue; }
         if (i == SLOT_PISTOL)
         {
-            if (isCoop()) { continue; }
+            if (isCooperativeGameMode()) { continue; }
             else
             {
                 GiveInventory(ClassWeapons[classnum][i][S_WEP], 1);

@@ -427,6 +427,7 @@ SAMSARA_CHANGELOG =
 "==============================\n"
 "- Slightly tweaked and fixed some Punchdrunk stuff:\n"
 "  - Fixed the Punchdrunk unique pickup messages not showing up.\n"
+"  - Fixed the pistols not being given in singleplayer when Punchdrunk mode is on.\n"
 "  - Duke's nuclear kicks no longer alerts enemies.\n"
 "  - The Talon Ceramic Combat Blade no longer gets crushed by doors, and it now fades away when thrown while infinite ammo is active.\n"
 "- Updated the code for newer versions of Zandronum:\n"

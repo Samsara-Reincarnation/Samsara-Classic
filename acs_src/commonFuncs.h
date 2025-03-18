@@ -536,6 +536,24 @@ function int isTeamGame(void)
     return ret;
 }
 
+function int isCooperativeGameMode(void)
+{
+    int check1 = GameType() == GAME_SINGLE_PLAYER;
+    int check2 = GameType() == GAME_NET_COOPERATIVE;
+    int check3 = GetCVar("cooperative") || GetCVar("invasion") || GetCVar("survival");
+
+    return check1 || check2 || check3;
+}
+
+function int isCompetitiveGameMode(void)
+{
+    int check1 = GameType() == GAME_NET_DEATHMATCH;
+    int check2 = GetCVar("deathmatch") || GetCVar("possession") || GetCVar("lastmanstanding") || GetCVar("terminator") || GetCVar("duel");
+    int check3 = GetCVar("teamplay") || GetCVar("teamgame") || GetCVar("teamlms");
+
+    return check1 || check2 || check3;
+}
+
 function int spawnDistance(int item, int dist, int tid)
 {
     int myX, myY, myZ, myAng, myPitch, spawnX, spawnY, spawnZ;
