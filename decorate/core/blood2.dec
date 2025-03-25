@@ -6,9 +6,14 @@ actor RedMist
     Speed 9
     Gravity 0.5
     Projectile
+    +CANNOTPUSH
+    +DONTBLAST
+    +DONTREFLECT
+    +DONTSPLASH
     +MISSILE
-    +RANDOMIZE
     -NOGRAVITY
+    +NOTRIGGER
+    +RANDOMIZE
     States
     {
     Spawn:

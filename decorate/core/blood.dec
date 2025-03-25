@@ -166,13 +166,15 @@ actor Switchable_FlyingBlood_Blue : Switchable_FlyingBlood { Translation "16:31=
 actor GenericGoreActor
 {
     +CANNOTPUSH
-    +DONTSPLASH
-    +NOTELEPORT
-    +NOBLOCKMAP
-    +MOVEWITHSECTOR
-    -NOGRAVITY
-    -SOLID
     +CLIENTSIDEONLY
-    +FORCEXYBILLBOARD
     +DONTBLAST
+    +DONTREFLECT
+    +DONTSPLASH
+    +FORCEXYBILLBOARD
+    +MOVEWITHSECTOR
+    +NOBLOCKMAP
+    -NOGRAVITY
+    +NOTELEPORT
+    +NOTRIGGER
+    -SOLID
 }
