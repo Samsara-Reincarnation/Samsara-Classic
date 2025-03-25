@@ -537,4 +537,5 @@ SAMSARA_CHANGELOG =
 "- Fixed the falling gibbed sound not playing for Duke.\n"
 "- The fullscreen HUD now has a new armor icon, making it more consistent with the larger armor pickups.\n"
 "- Fixed Ranger's cluster grenades having the wrong volume for their bounce sound.\n"
-"- Happyfun and Brutal gibs should no longer activate switches.";
+"- Happyfun and Brutal gibs should no longer activate switches.\n"
+"- Fixed some status bar mugshots not changing when an invulnerability powerup is active.";
