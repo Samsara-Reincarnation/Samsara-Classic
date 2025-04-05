@@ -227,36 +227,43 @@ actor ChangeSparkle
     }
 }
 
+// silent, invisible, non-damaging bullet puff made specifically for classes that otherwise have no hitscans to speak of, such as Parias or Security Officer.
+// it doesn't make anything bleed, goes through everything, as a useless and nonsensical damage type that is overridden to always exactly zero damage no matter what
+// so if it somehow hits something it never does any damage. all to make sure it does absolutely nothing but activate switches
+// this is necessary because some maps require hitscans in order to progress, and some classes only use projectile-based weapons that would otherwise make those maps impossible.
+// such is life
+
 actor SamsaraBlankPuff
-{ 
-	+BLOODLESSIMPACT
-	+NOBLOCKMAP
-    +DONTSPLASH
-	+PAINLESS
-	+MTHRUSPECIES
-	+THRUSPECIES
-	+THRUACTORS
-	+CLIENTSIDEONLY
-	+NOEXTREMEDEATH
-	+NODAMAGETHRUST
-	+NODECAL
-	renderstyle add
-	alpha 1.0
-	Mass 0
+{
     Radius 1
     Height 1
-	Species "Player"
-	DamageType "NotImportant"
-	States
-	{
-		Spawn:
-			TNT1 A 1 
-			Stop
-	}		
-}	
+    DamageType "NotImportant"
+    Mass 0
+    //+ALLOWTHRUFLAGS // doesn't exist in zandronum yet
+    +BLOODLESSIMPACT
+    +CLIENTSIDEONLY
+    +DONTBLAST
+    +DONTREFLECT
+    +DONTSPLASH
+    +MTHRUSPECIES
+    +NOBLOCKMAP
+    +NODAMAGETHRUST
+    +NODECAL
+    +NOEXTREMEDEATH
+    +NOTELEPORT
+    +NOTONAUTOMAP
+    +PAINLESS
+    +THRUACTORS
+    States
+    {
+      Spawn:
+        TNT1 A 1
+        stop
+    }
+}
 
 DamageType NotImportant
 {
-   Factor 0.0
-   ReplaceFactor
+    Factor 0
+    ReplaceFactor
 }
