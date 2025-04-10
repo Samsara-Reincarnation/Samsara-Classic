@@ -454,7 +454,6 @@ SAMSARA_CHANGELOG =
 "- Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n"
 "- Fixed and slightly tweaked some HUD elements.\n"
 "- Pistol Start mode won't trigger in the title map.\n"
-"- Fixed the HoloDuke not being taken away in Pistol Start.\n"
 "- Fixed Duke's jetpack and night vision fuel being reduced with infinite inventory enabled.\n"
 "- Fixed Duke's Freezethrower showing the ready sprites while firing.\n"
 "- Added class-specific PDWTAK death particles.\n"
@@ -538,4 +537,5 @@ SAMSARA_CHANGELOG =
 "- The fullscreen HUD now has a new armor icon, making it more consistent with the larger armor pickups.\n"
 "- Fixed Ranger's cluster grenades having the wrong volume for their bounce sound.\n"
 "- Happyfun and Brutal gibs should no longer activate switches.\n"
-"- Fixed some status bar mugshots not changing when an invulnerability powerup is active.";
+"- Fixed some status bar mugshots not changing when an invulnerability powerup is active.\n"
+"- Fixed several weapons and items not being taken in Pistol Start mode.";
