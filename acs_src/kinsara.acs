@@ -542,6 +542,7 @@ script "PistolStart" ENTER
 			TakeInventory("  Rocket Launcher  ", 999);
 			TakeInventory("Super Nailgun", 999);
 			TakeInventory("Gauntlet", 999);
+			TakeInventory("UsingDoEAmmo", 999);
 			
 			GiveInventory("QuakeClass", 1);
 			GiveInventory("Single Shotgun", 1);
