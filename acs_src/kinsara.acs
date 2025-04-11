@@ -394,6 +394,17 @@ script "PistolStart" ENTER
 	if(GetCvar("samsara_pistolstart") == 1 && (GameType () != GAME_TITLE_MAP))
 	{
 		GiveInventory("PistolStartEnabled", 1);
+		TakeInventory("GotWeapon0", 1);
+		TakeInventory("GotWeapon1", 1);
+		TakeInventory("GotWeapon2", 1);
+		TakeInventory("GotWeapon3", 1);
+		TakeInventory("GotWeapon4", 1);
+		TakeInventory("GotWeapon5", 1);
+		TakeInventory("GotWeapon6", 1);
+		TakeInventory("GotWeapon7", 1);
+		TakeInventory("SamsaraSlotIGiven", 1);
+		TakeInventory("SamsaraSlotIIGiven", 1);
+		TakeInventory("SamsaraBackpackGiven", 1);
 		
 		SetActorProperty (0, APROP_Health, 100);
 		
@@ -401,8 +412,13 @@ script "PistolStart" ENTER
 		{
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
-			TakeInventory(" Chaingun ", 999);
 			TakeInventory(" Chainsaw ", 999);
+			TakeInventory(" Shotgun ", 999);
+			TakeInventory("Super Shotgun", 999);
+			TakeInventory(" Chaingun ", 999);
+			TakeInventory("Rocket Launcher", 999);
+			TakeInventory("Plasma Rifle", 999);
+			TakeInventory("B.F.G. 9000", 999);
 			TakeInventory(" Railgun ", 999);
 			
 			GiveInventory(" Pistol ", 1);
@@ -416,7 +432,12 @@ script "PistolStart" ENTER
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
 			TakeInventory("Super Bootspork", 999);
+			TakeInventory("Large Zorcher", 999);
+			TakeInventory("Super Large Zorcher", 999);
 			TakeInventory("Rapid Zorcher", 999);
+			TakeInventory("Zorch Propulsor", 999);
+			TakeInventory("Phasing Zorcher", 999);
+			TakeInventory("LAZ Device", 999);
 			TakeInventory("Gigazorcher 2100", 999);
 			
 			GiveInventory("Mini-Zorcher", 1);
@@ -431,9 +452,13 @@ script "PistolStart" ENTER
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
 			TakeInventory("BJSuperKnife", 999);
-			TakeInventory("  Chaingun  ", 999);
-			TakeInventory("Mauser Rifle", 999);
 			TakeInventory("Machine Gun", 999);
+			TakeInventory("  Chaingun  ", 999);
+			TakeInventory(" Rocket Launcher ", 999);
+			TakeInventory(" Flamethrower ", 999);
+			TakeInventory("Spear of Destiny", 999);
+			TakeInventory("Mauser Rifle", 999);
+			TakeInventory("BJUberKnife", 999);
 			TakeInventory("Spear of Longinus", 999);
 			TakeInventory("WolfExtraLife", 999);
 			
@@ -449,20 +474,21 @@ script "PistolStart" ENTER
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
 			TakeInventory("Pipebombs", 999);
-			TakeInventory("Chaingun Cannon", 999);
-			TakeInventory("Golden Desert Eagle", 999);
-			TakeInventory("DukePortJetpack", 999);
-			TakeInventory("DukePetjack", 999);
-			TakeInventory("DukeJetpackFuel", 999);
-			TakeInventory("DukePortNiVi", 999);
-			TakeInventory("DukeNightVision", 999);
-			TakeInventory("ItemHoloDuke", 999);
 			TakeInventory("  Shotgun  ", 999);
 			TakeInventory("Explosive Shotgun", 999);
 			TakeInventory("Chaingun Cannon", 999);
 			TakeInventory("RPG", 999);
 			TakeInventory("Freezethrower", 999);
 			TakeInventory("Devastator Weapon", 999);
+			TakeInventory("Golden Desert Eagle", 999);
+			TakeInventory("ItemHoloDuke", 999);
+			TakeInventory("CalmYoLegsDuke", 999);
+			TakeInventory("NuclearKicks", 999);
+			TakeInventory("DukePetjack", 999);
+			TakeInventory("DukeJetpackFuel", 999);
+			TakeInventory("DukePortNiVi", 999);
+			TakeInventory("DukeNightVision", 999);
+			TakeInventory("ItemHoloDuke", 999);
 			
 			GiveInventory("Glock 17", 1);
 			GiveInventory("Mighty Boot", 1);
@@ -482,8 +508,14 @@ script "PistolStart" ENTER
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
 			TakeInventory("Gauntlets of the Necromancer", 999);
+			TakeInventory(" Firemace ", 999);
+			TakeInventory("Ethereal Crossbow", 999);
 			TakeInventory("Dragon Claw", 999);
+			TakeInventory("Phoenix Rod", 999);
+			TakeInventory("Hellstaff", 999);
+			TakeInventory("PortTomeCoOp", 999);
 			TakeInventory("Grim Ballista", 999);
+			TakeInventory("ArtiEgg3", 999);
 			TakeInventory("PermaRemoteBomb", 999);
 			TakeInventory("PermaTimeBomb", 999);
 			TakeInventory("PortQuartzFlask", 999);
@@ -492,9 +524,7 @@ script "PistolStart" ENTER
 			TakeInventory("PortGhostly", 999);
 			TakeInventory("PortRingInvuln", 999);
 			TakeInventory("PortTorch", 999);
-			TakeInventory("PortTomeCoOp", 999);
 			TakeInventory("ArtiEgg2", 999);
-			TakeInventory("ArtiEgg3", 999);
 			
 			GiveInventory("Elven Wand", 1);
 			GiveInventory(" Staff ", 1);
@@ -509,18 +539,20 @@ script "PistolStart" ENTER
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
 			TakeInventory("PortFlechette", 999);
+			TakeInventory("Frost Shards", 999);
+			TakeInventory("Timon's Axe", 999);
+			TakeInventory("Serpent Staff", 999);
+			TakeInventory("Hammer of Retribution", 999);
+			TakeInventory("Firestorm", 999);
+			TakeInventory("Wraithverge", 999);
+			TakeInventory("Bloodscourge", 999);
+			TakeInventory("Spiked Gauntlet", 999);
 			TakeInventory("PortMysticAmbit", 999);
 			TakeInventory("PortIconDefender", 999);
 			TakeInventory("PortTorch2", 999);
 			TakeInventory("PortKraterOfMight", 999);
 			TakeInventory("PortSuperHealth2", 999);
 			TakeInventory("PortQuartzFlask2", 999);
-			TakeInventory("Serpent Staff", 999);
-			TakeInventory("Bloodscourge", 999);
-			TakeInventory("Hammer of Retribution", 999);
-			TakeInventory("Frost Shards", 999);
-			TakeInventory("Timon's Axe", 999);
-			TakeInventory("Spiked Gauntlet", 999);
 			
 			GiveInventory("Sapphire Wand", 1);
 			GiveInventory("Mace of Contrition", 1);
@@ -532,15 +564,16 @@ script "PistolStart" ENTER
 		{ 
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
-			TakeInventory("Laser Cannon", 999);
+			TakeInventory("Mjolnir", 999);
+			TakeInventory("Double Shotgun", 999);
+			TakeInventory("Grenade Launcher", 999);
 			TakeInventory("Nailgun", 999);
+			TakeInventory("  Rocket Launcher  ", 999);
+			TakeInventory("Super Nailgun", 999);
 			TakeInventory("QuadDamageItem", 999);
 			TakeInventory("Thunderbolt", 999);
 			TakeInventory("Rocket Powered Impaler", 999);
-			TakeInventory("Double Shotgun", 999);
-			TakeInventory("Grenade Launcher", 999);
-			TakeInventory("  Rocket Launcher  ", 999);
-			TakeInventory("Super Nailgun", 999);
+			TakeInventory("Laser Cannon", 999);
 			TakeInventory("Gauntlet", 999);
 			TakeInventory("UsingDoEAmmo", 999);
 			
@@ -556,20 +589,19 @@ script "PistolStart" ENTER
 			ClearInventory();
 			// for some reason certain weapons refuse to comply with clearinventory.
 			TakeInventory("KKV-7 SMG Flechette", 999);
-			TakeInventory("MA-75B Assault Rifle", 999);
-			TakeInventory("SPNKR-25 Auto Cannon", 999);
-			TakeInventory("Talon Ceramic Combat Blade", 999);
-			TakeInventory("Tech.50 Pacifier", 999);
-			TakeInventory("CanDualPistols", 999);
-			TakeInventory("CanDualShotties", 999);
 			TakeInventory("WSTE-M5 Combat Shotgun", 999);
 			TakeInventory("Fusion Pistol", 999);
+			TakeInventory("MA-75B Assault Rifle", 999);
 			TakeInventory("SPNKR-XP SSM Launcher", 999);
 			TakeInventory("TOZT-7 Napalm Unit", 999);
 			TakeInventory("ONI-71 Wave Motion Cannon", 999);
+			TakeInventory("SPNKR-25 Auto Cannon", 999);
+			TakeInventory("Talon Ceramic Combat Blade", 999);
+			TakeInventory("Tech.50 Pacifier", 999);
 			TakeInventory("Alien Weapon", 999);
 			TakeInventory(" Alien Weapon ", 999);
-			TakeInventory(".44 Magnum Mega Class A1", 999);
+			TakeInventory("CanDualPistols", 999);
+			TakeInventory("CanDualShotties", 999);
 
 			GiveInventory("OverMax", 200);
 			GiveInventory("OverOverMax", 300);

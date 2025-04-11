@@ -538,4 +538,4 @@ SAMSARA_CHANGELOG =
 "- Fixed Ranger's cluster grenades having the wrong volume for their bounce sound.\n"
 "- Happyfun and Brutal gibs should no longer activate switches.\n"
 "- Fixed some status bar mugshots not changing when an invulnerability powerup is active.\n"
-"- Fixed several weapons and items not being taken in Pistol Start mode.";
+"- Fixed weapons and items not being taken in Pistol Start mode as intended.";
