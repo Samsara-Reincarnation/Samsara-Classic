@@ -29,7 +29,6 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         stop
         
         NoGuy:    WEPG G 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        NoGuyNew: WEPC G 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         Doomguy:  WBFG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  CFUG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

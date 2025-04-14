@@ -17,7 +17,6 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         loop
         
         NoGuy:    WEPG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        NoGuyNew: WEPC A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         Doomguy:  WSAW A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  CSPR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

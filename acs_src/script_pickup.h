@@ -57,15 +57,11 @@ script "SamsaraClientClass" (int slot) clientside
             break;
             
           case 1:
-            SetActorState(0, "NoGuyNew");
-            break;
-            
-          case 2:
             if (pdUniques) { success = SetActorState(0, PickupStates[toClass][7]); }
             if (!pdUniques || !success) { SetActorState(0, PickupStates[toClass][3]); }
             break;
             
-          case 3:
+          case 2:
             if (pdUniques) { success = SetActorState(0, PickupStates[toClass][4]); }
             if (!pdUniques || !success) { SetActorState(0, PickupStates[toClass][0]); }
             break;
@@ -76,12 +72,8 @@ script "SamsaraClientClass" (int slot) clientside
       case 0:
         SetActorState(0, "NoGuy");
         break;
-        
-      case 1:
-        SetActorState(0, "NoGuyNew");
-        break;
 		
-      case 2:
+      case 1:
         if ((SamsaraClientWepFlashes[slot] >= (Timer() - 35)) && (Timer() >= 35))
         {
             Spawn("SamsaraChangeFlash2", GetActorX(0), GetActorY(0), GetActorZ(0));
@@ -106,7 +98,7 @@ script "SamsaraClientClass" (int slot) clientside
         }
         break;
         
-      case 3:
+      case 2:
         switch (slot)
         {
           case SLOT_CHAINSAW:

@@ -17,7 +17,6 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
         loop
         
         NoGuy:    WEPG C 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        NoGuyNew: WEPC C 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         Doomguy:  WSSG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  WSLZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

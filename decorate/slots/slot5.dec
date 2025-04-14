@@ -17,7 +17,6 @@ actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
         loop
         
         NoGuy:    WEPG E 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        NoGuyNew: WEPC E 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         Doomguy:  WDRL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  LAUC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

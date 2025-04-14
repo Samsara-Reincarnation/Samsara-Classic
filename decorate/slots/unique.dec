@@ -26,7 +26,6 @@ actor SamsaraUniquePickup1: CustomInventory
         loop
         
         NoGuy:    UNIQ B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        NoGuyNew: UNI2 A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         Doomguy:  DGBZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
