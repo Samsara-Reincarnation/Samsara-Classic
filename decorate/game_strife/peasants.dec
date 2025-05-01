@@ -217,7 +217,7 @@ ACTOR Peasant2B : PeasantB replaces Peasant2 	// Arion, the Gubnuh's Secretary.
 
 ACTOR Peasant3B : PeasantB replaces Peasant3 	// Some random asshole the ZDoom Wiki doesn't document.
 {
-	ConversationID 6
+	ConversationID 8
 	Speed 5
 }
 
