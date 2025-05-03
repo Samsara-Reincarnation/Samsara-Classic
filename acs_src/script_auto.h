@@ -109,21 +109,12 @@ script "SamsaraSpawn" (int respawning)
         ACS_NamedExecuteAlways("SamsaraScheduled", 0, respawning,1,0);
 	}
 
+    HandleBackpackSpawn(respawning);
+    for (i = SLOT_FIST; i <= SLOT_BFG9000; i++) { HandleSlotSpawn(i, respawning); }
     if ((!respawning || (respawning && !(isSinglePlayer() || isCoop()))) && !(isLMS() || GetCVar("samsara_lmsrules")))
     {
-        if (GetCVar("sv_shotgunstart")) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
-
-        if (GetCVar("samsara_backpackstart") && !CheckInventory("SamsaraBackpackGiven"))
-        {
-            if (samsaraClassNum() == CLASS_HEXEN) { GiveInventory("PortKraterOfMight", 1); }
-            else { GiveInventory("Backpack", 1); }
-
-            GiveInventory("SamsaraBackpackGiven", 1);
-        }
+        if (GetCVar("sv_shotgunstart")) { GiveClassWeapon(samsaraClassNum(), SLOT_SHOTGUN, 3);}
     }
-
-    HandleChainsawSpawn(respawning);
-    HandleShotgunSpawn(respawning);
     HandleUniqueSpawn(respawning);
     HandleRailgunSpawn(respawning);
     HandlePunchdrunk(respawning);

@@ -404,6 +404,11 @@ script "PistolStart" ENTER
 		TakeInventory("GotWeapon7", 1);
 		TakeInventory("SamsaraSlotIGiven", 1);
 		TakeInventory("SamsaraSlotIIGiven", 1);
+		TakeInventory("SamsaraSlotIIIGiven", 1);
+		TakeInventory("SamsaraSlotIVGiven", 1);
+		TakeInventory("SamsaraSlotVGiven", 1);
+		TakeInventory("SamsaraSlotVIGiven", 1);
+		TakeInventory("SamsaraSlotVIIGiven", 1);
 		TakeInventory("SamsaraBackpackGiven", 1);
 		
 		SetActorProperty (0, APROP_Health, 100);

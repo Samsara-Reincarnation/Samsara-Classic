@@ -145,19 +145,17 @@ function void ApplyLMS(void)
 	SetActorProperty(0, APROP_Health, getMaxHealth());
     
 	// If Parias is played, don't give the backpack.
-	if (!CheckInventory("HexenClass")) {
-	GiveInventory("Backpack", 1);
-	}
-	
-	if (CheckInventory("HexenClass")) {
-	GiveInventory("PortKraterOfMight", 1);
-	}
+    if (classNum == CLASS_HEXEN) { GiveInventory("PortKraterOfMight", 1); }
+    else { GiveInventory("Backpack", 1); }
 	
     for (i = 0; i < SLOT_BFG9000; i++) { GiveClassWeapon(classNum, i, 1); }
 
-
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 1); }
+    if (GetCVar("samsara_lmsuniques"))
+    {
+        for (i = 0; i < UNIQUECOUNT; i++) { GiveUnique(classnum, i); }
+    }
 
     i = (GetCVar("samsara_lmslife") + 1) * PlayerCount();
 
@@ -414,16 +412,21 @@ function int GiveQuad(int toAdd)
     return quadcount;
 }
 
-function int HandleUniqueSpawn(int respawning)
+function int HandleUniqueSpawn (int respawning)
 {
     int cs = GetCVar("samsara_uniquestart");
     int classnum = samsaraClassNum();
     int i;
 
+    if (cs > 4) { cs = 4; }
+    else if (cs < 0) { cs = 0; }
+
+    if (cs == 0 || isLMS() || GetCVar("samsara_lmsrules")) { return 0; }
+
     switch (cs)
     {
       case 1:
-        if (respawning && isCoop()) { return 0; }
+        if (respawning && (isSinglePlayer() || isCoop())) { return 0; }
         // Fallthrough
 
       case 3:
@@ -431,7 +434,7 @@ function int HandleUniqueSpawn(int respawning)
         break;
 
       case 2:
-        if (respawning && isCoop()) { return 0; }
+        if (respawning && (isSinglePlayer() || isCoop())) { return 0; }
         // Fallthrough
 
       case 4:
@@ -442,59 +445,133 @@ function int HandleUniqueSpawn(int respawning)
     return 1;
 }
 
-function int HandleChainsawSpawn(int respawning)
+function int HandleSlotSpawn (int slot, int respawning)
 {
-    int cs = GetCVar("samsara_chainsawstart");
+    int cs = 0;
     int classnum = samsaraClassNum();
     int ammomode = 3;
 
-    if (cs == 0 || (respawning && isCoop())) { return 0; }
+    str giventoken = "Placeholder";
 
-    if (cs == 2) { ammomode = 1; }
+    switch (slot)
+    {
+      default:
+        break;
 
-    if (!CheckInventory("SamsaraSlotIGiven"))
-        GiveClassWeapon(classnum, SLOT_CHAINSAW, ammomode);
+      case SLOT_CHAINSAW:
+        cs = GetCVar("samsara_chainsawstart");
+        giventoken = "SamsaraSlotIGiven";
+        break;
 
-    if (CheckInventory("MarathonClass")) {
-        GiveInventory("CanDualPistols", 1);
+      case SLOT_SHOTGUN:
+        cs = GetCVar("samsara_shotgunstart");
+        giventoken = "SamsaraSlotIIGiven";
+        break;
+
+      case SLOT_SUPERSHOTGUN:
+        cs = GetCVar("samsara_ssgstart");
+        giventoken = "SamsaraSlotIIIGiven";
+        break;
+
+      case SLOT_CHAINGUN:
+        cs = GetCVar("samsara_chaingunstart");
+        giventoken = "SamsaraSlotIVGiven";
+        break;
+
+      case SLOT_ROCKETLAUNCHER:
+        cs = GetCVar("samsara_rocketlauncherstart");
+        giventoken = "SamsaraSlotVGiven";
+        break;
+
+      case SLOT_PLASMARIFLE:
+        cs = GetCVar("samsara_plasmastart");
+        giventoken = "SamsaraSlotVIGiven";
+        break;
+
+      case SLOT_BFG9000:
+        cs = GetCVar("samsara_bfg9000start");
+        giventoken = "SamsaraSlotVIIGiven";
+        break;
     }
 
-    GiveInventory("SamsaraSlotIGiven", 1);
-    return 1;
-}
+    if (cs > 2) { cs = 2; }
+    else if (cs < 0) { cs = 0; }
 
-function int HandleShotgunSpawn(int respawning)
-{
-    int cs = GetCVar("samsara_shotgunstart");
-    int classnum = samsaraClassNum();
-    int ammomode = 3;
-
-    if (cs == 0 || (respawning && isCoop())) { return 0; }
+    if (cs == 0 || (respawning && (isSinglePlayer() || isCoop())) || isLMS() || GetCVar("samsara_lmsrules") || CheckInventory(giventoken)) { return 0; }
 
     if (cs == 2) { ammomode = 1; }
 
-    if (!CheckInventory("SamsaraSlotIIGiven"))
-        GiveClassWeapon(classnum, SLOT_SHOTGUN, ammomode);
+    GiveClassWeapon(classnum, slot, ammomode);
 
-    GiveInventory("SamsaraSlotIIGiven", 1);
+    GiveInventory(giventoken, 1);
     return 1;
 }
 
+function int HandleBackpackSpawn (int respawning)
+{
+    bool cs = GetCVar("samsara_backpackstart");
 
-function int HandleRailgunSpawn(int respawning)
+    if (!cs || (respawning && (isSinglePlayer() || isCoop())) || isLMS() || GetCVar("samsara_lmsrules") || CheckInventory("SamsaraBackpackGiven")) { return 0; }
+
+    switch (samsaraClassNum())
+    {
+      default:
+        GiveInventory("Backpack", 1);
+        break;
+
+      case CLASS_HEXEN:
+        GiveInventory("PortKraterOfMight", 1);
+        break;
+    }
+
+    GiveInventory("SamsaraBackpackGiven", 1);
+    return 1;
+}
+
+function int HandleRailgunSpawn (int respawning)
 {
     int cs = GetCVar("samsara_railgunstart");
 
-    if (cs == 0 || (respawning && isCoop())) { return 0; }
+    if (cs == 0 || (respawning && (isSinglePlayer() || isCoop()))) { return 0; }
 
-    if (CheckInventory("DoomguyClass") == 1) { GiveInventory(" Railgun ",1); }
-    if (CheckInventory("ChexClass") == 1) { GiveInventory("Gigazorcher 2100",1); }
-    if (CheckInventory("CorvusClass") == 1) { GiveInventory("Grim Ballista",1); }
-    if (CheckInventory("WolfenClass") == 1) { GiveInventory("Mauser Rifle",1); }
-    if (CheckInventory("HexenClass") == 1) { GiveInventory("Bloodscourge",1); }
-    if (CheckInventory("DukeClass") == 1) { GiveInventory("Golden Desert Eagle",1); }
-    if (CheckInventory("MarathonClass") == 1) { GiveInventory("SPNKR-25 Auto Cannon",1); }
-    if (CheckInventory("QuakeClass") == 1) { GiveInventory("Rocket Powered Impaler",1); }
+    switch (samsaraClassNum())
+    {
+      default:
+        return 0;
+
+      case CLASS_DOOM:
+        GiveInventory(" Railgun ", 1);
+        break;
+
+      case CLASS_CHEX:
+        GiveInventory("Gigazorcher 2100", 1);
+        break;
+
+      case CLASS_HERETIC:
+        GiveInventory("Grim Ballista", 1);
+        break;
+
+      case CLASS_WOLFEN:
+        GiveInventory("Mauser Rifle", 1);
+        break;
+
+      case CLASS_HEXEN:
+        GiveInventory("Bloodscourge", 1);
+        break;
+
+      case CLASS_DUKE:
+        GiveInventory("Golden Desert Eagle", 1);
+        break;
+
+      case CLASS_MARATHON:
+        GiveInventory("SPNKR-25 Auto Cannon", 1);
+        break;
+
+      case CLASS_QUAKE:
+        GiveInventory("Rocket Powered Impaler", 1);
+        break;
+    }
+
     return 1;
 }
 
@@ -578,6 +655,14 @@ function int HandleInstagib(int respawning)
 
     if (cs <= 0) { return 0; }
 
+    SetInventory("GotWeapon0", 0);
+    SetInventory("GotWeapon2", 0);
+    SetInventory("GotWeapon3", 0);
+    SetInventory("GotWeapon4", 0);
+    SetInventory("GotWeapon5", 0);
+    SetInventory("GotWeapon6", 0);
+    SetInventory("GotWeapon7", 0);
+
     for (i = 0; i < SLOTCOUNT; i++)
     {
         TakeInventory(ClassWeapons[classnum][i][S_WEP], 0x7FFFFFFF);
@@ -586,14 +671,45 @@ function int HandleInstagib(int respawning)
     }
 
     GiveInventory("InstagibModeOn",1);
-    if (CheckInventory("DoomguyClass") == 1) { GiveInventory(" Railgun ",1); }
-    if (CheckInventory("ChexClass") == 1) { GiveInventory("Gigazorcher 2100",1); }
-    if (CheckInventory("CorvusClass") == 1) { GiveInventory("Grim Ballista",1); }
-    if (CheckInventory("WolfenClass") == 1) { GiveInventory("Mauser Rifle",1); }
-    if (CheckInventory("HexenClass") == 1) { GiveInventory("Bloodscourge",1); }
-    if (CheckInventory("DukeClass") == 1) { GiveInventory("Golden Desert Eagle",1); }
-    if (CheckInventory("MarathonClass") == 1) { GiveInventory("SPNKR-25 Auto Cannon",1); }
-    if (CheckInventory("QuakeClass") == 1) { GiveInventory("Rocket Powered Impaler",1); }
+
+    switch (classnum)
+    {
+      default:
+        return 0;
+
+      case CLASS_DOOM:
+        GiveInventory(" Railgun ", 1);
+        break;
+
+      case CLASS_CHEX:
+        GiveInventory("Gigazorcher 2100", 1);
+        break;
+
+      case CLASS_HERETIC:
+        GiveInventory("Grim Ballista", 1);
+        break;
+
+      case CLASS_WOLFEN:
+        GiveInventory("Mauser Rifle", 1);
+        break;
+
+      case CLASS_HEXEN:
+        GiveInventory("Bloodscourge", 1);
+        break;
+
+      case CLASS_DUKE:
+        GiveInventory("Golden Desert Eagle", 1);
+        break;
+
+      case CLASS_MARATHON:
+        GiveInventory("SPNKR-25 Auto Cannon", 1);
+        break;
+
+      case CLASS_QUAKE:
+        GiveInventory("Rocket Powered Impaler", 1);
+        break;
+    }
+
     return 1;
 }
 

@@ -12,6 +12,7 @@ server bool samsara_dukesoundboard = false;
 server bool samsara_lmsrules = false;
 server int samsara_lmslife = 0;
 server bool samsara_lmsult = false;
+server bool samsara_lmsuniques = false;
 
 // Gentleman Options
 server bool samsara_punchdrunk = false;
@@ -32,6 +33,11 @@ server bool samsara_permault = false;
 server int samsara_uniquestart = 0;
 server int samsara_chainsawstart = 0;
 server int samsara_shotgunstart = 0;
+server int samsara_ssgstart = 0;
+server int samsara_chaingunstart = 0;
+server int samsara_rocketlauncherstart = 0;
+server int samsara_plasmastart = 0;
+server int samsara_bfg9000start = 0;
 server bool samsara_backpackstart = false;
 server bool samsara_railgunstart = false;
 server bool samsara_pistolammo = false;

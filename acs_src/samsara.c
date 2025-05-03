@@ -494,7 +494,7 @@ script "SamsaraGetSettings" (void) net
     if (lmsLevel) { lmsHP    = 100*lmsLevel; lmsArmor = 100*lmsLevel; }
     else { lmsHP = 100; lmsArmor = 0; }
 
-    if (GetCVar("samsara_lmsunique")) { lmsUnique = "\cdwith"; }
+    if (GetCVar("samsara_lmsuniques")) { lmsUnique = "\cdwith"; }
     else { lmsUnique = "\cgwithout"; }
 
     if (GetCVar("samsara_lmsult")) { lmsUlt = "\cdwith"; }
@@ -514,7 +514,7 @@ script "SamsaraGetSettings" (void) net
             HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
         
         HudMessage(s:"You spawn ", s:lmsUnique, s:"\c- your unique and ", s:lmsUlt, s:"\c- your Slot VII.";
-            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 104.0, 3.0, 1.0);
+            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 96.0, 3.0, 1.0);
     }
     else
     {

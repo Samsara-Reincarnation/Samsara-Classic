@@ -102,8 +102,9 @@ samsara_jumpmod: Gives the indicated multiplier to jump height. 9 for HeXen, -8 
 samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
 samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/respawn.\n\
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
+samsara_lmsuniques 0/1: Toggles whether players get their unique in LMS.\n\
 samsara_uniquestart [0-4]: Toggles whether players get their unique on enter or spawn.\n\
-samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.\n\
+samsara_[slot]start [0-2]: Toggles whether players get their specified slots on enter or spawn. chainsawstart for Slot I, shotgunstart for Slot II, etc.\n\
 samsara_peoplediewhentheyarekilled [0-3]: Players explode on death.\n\
 samsara_punchdrunk 0/1: Toggles melee-only mode. Only works in deathmatch or coop.\n\
 samsara_punchdrunkuniques 0/1: Toggles whether Punchdrunk uniques are present in normal play.\n\
