@@ -540,4 +540,5 @@ SAMSARA_CHANGELOG =
 "- Happyfun and Brutal gibs should no longer activate switches.\n"
 "- Fixed some status bar mugshots not changing when an invulnerability powerup is active.\n"
 "- Fixed weapons and items not being taken in Pistol Start mode as intended.\n"
-"- Added new \"Start with Slots\" settings for the remaining slots (samsara_[slot]start, where [slot] is ssg, chaingun, rocketlauncher, plasma, and bfg9000).";
+"- Added new \"Start with Slots\" settings for the remaining slots (samsara_[slot]start, where [slot] is ssg, chaingun, rocketlauncher, plasma, and bfg9000).\n"
+"- Fixed B.J.'s knife not jumping to the proper Ready state with the Punchdrunk slot 1 active.";
