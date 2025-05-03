@@ -586,6 +586,14 @@ function int HandlePunchDrunk(int respawning)
 
     if (cs <= 0) { return 0; }
 
+    SetInventory("GotWeapon0", 0);
+    SetInventory("GotWeapon2", 0);
+    SetInventory("GotWeapon3", 0);
+    SetInventory("GotWeapon4", 0);
+    SetInventory("GotWeapon5", 0);
+    SetInventory("GotWeapon6", 0);
+    SetInventory("GotWeapon7", 0);
+
     for (i = 0; i < SLOTCOUNT; i++)
     {
         if (ClassWeapons[classnum][i][S_WEP] == ClassWeapons[classnum][SLOT_FIST][S_WEP]
