@@ -83,6 +83,8 @@ actor ChexWarrior : PlayerPawn
     
     RadiusDamageFactor 0.75
     Player.DamageScreenColor "Yellow"
+    Player.DamageScreenColor "60B058", 1, Flem
+    Player.DamageScreenColor "60B058", 1, Slime
     Player.ColorRange 192, 207
     States
     {
@@ -106,12 +108,6 @@ actor ChexWarrior : PlayerPawn
         CHEX G 4 
         CHEX G 4 A_Pain
         Goto Spawn
-        
-      Pain.Flem:
-      Pain.Slime:
-        CHEX G 4 A_SetBlend("60 b0 58",0.9,10)
-        CHEX G 4 A_Pain
-        goto Spawn
 
       Pain.Chickenator:
         CHEX G 1
