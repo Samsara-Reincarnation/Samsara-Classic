@@ -24,7 +24,29 @@ actor ZorchEffectBossSmall
     }
 }
 
-actor ZPoisonShroom2 : ZPoisonShroom replaces ZPoisonShroom { +DONTRIP }
+actor ZPoisonShroom2 : ZPoisonShroom replaces ZPoisonShroom
+{
+	+DONTRIP 
+	States
+	{
+	Death:
+		SHRM CD 5
+	DeathContinue:
+		SHRM E 5 A_PoisonBagInit
+		SHRM F -1
+		Stop
+	Death.ZorchPistol:
+	Death.Zorch:
+	Death.ZorchKamikaze:
+	Death.PhasingZorch:
+	Death.ZorchSpectral:
+		SHRM E 5 A_SpawnItemEx("PoisonCloudZorch", 0, 0, 28, 0, 0, 0, 0, SXF_TRANSFERPOINTERS)
+		SHRM F -1
+		Stop
+	}
+}
+
+Actor PoisonCloudZorch : PoisonCloud { DamageType Zorch }
 
 actor Pig2 : Pig replaces Pig // Even without the Porkalator as a usable item, enemies can still get turned into pigs via traps!
 {

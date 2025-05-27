@@ -545,4 +545,5 @@ SAMSARA_CHANGELOG =
 "- Fixed weapons and items not being taken in Pistol Start mode as intended.\n"
 "- Added new \"Start with Slots\" settings for the remaining slots (samsara_[slot]start, where [slot] is shotgun, ssg, chaingun, rocketlauncher, plasma, and bfg9000).\n"
 "- Fixed B.J.'s knife not jumping to the proper Ready state with the Punchdrunk slot 1 active.\n"
+"- Explosive barrels, pods, and poison shrooms can now deal zorch damage when destroyed as Chex Warrior.\n"
 "- When Chex Warrior is damaged by slime and Flemoid attacks, Player.DamageScreenColor is now used instead of A_SetBlend for the damage effect.";
