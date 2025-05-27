@@ -130,3 +130,23 @@ actor Pig2 : Pig replaces Pig // Even without the Porkalator as a usable item, e
         goto "Super::Death"
     }
 }
+
+ACTOR PorkFX2 : MorphProjectile replaces PorkFX
+{
+	Game Hexen
+	SpawnID 40
+	Radius 8
+	Height 8
+	Speed 18
+	MorphProjectile.MonsterClass "Pig2"
+	MorphProjectile.MorphStyle MRF_UNDOBYTOMEOFPOWER|MRF_UNDOBYCHAOSDEVICE
+	States
+	{
+	Spawn:
+		PRKM ABCDE 4
+		Loop
+	Death:
+		FHFX IJKL 3 Bright
+		Stop
+	}
+}
