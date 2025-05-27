@@ -455,6 +455,7 @@ SAMSARA_CHANGELOG =
 "  - The Raven teleport powerups no longer count towards the item count.\n"
 "  - The map scroll is now replaced by a Slot III equipment pickup.\n"
 "  - The Porkalator projectiles no longer morph players.\n"
+"  - Fixed Hexen trees and shrubs not being able to be burned by some characters.\n"
 "- Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n"
 "- Fixed and slightly tweaked some HUD elements.\n"
 "- Pistol Start mode won't trigger in the title map.\n"

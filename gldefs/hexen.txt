@@ -438,3 +438,29 @@ object HolySpirit2
     frame SPIRB { light GHOST }
 }
 
+// ZXmasTree
+object SamsaraZXmasTree
+{
+    frame XMASB { light XMASFIRE1 }
+    frame XMASC { light XMASFIRE2 }
+    frame XMASD { light XMASFIRE3 }
+    frame XMASE { light XMASFIRE3 }
+    frame XMASF { light XMASFIRE4 }
+    frame XMASG { light XMASFIRE5 }
+    frame XMASH { light XMASFIRE6 }
+}
+
+// TreeDestructible
+object SamsaraTreeDestructible
+{
+    frame TRDTH { light TDESTRUCT1 }
+    frame TRDTI { light TDESTRUCT2 }
+    frame TRDTJ { light TDESTRUCT2 }
+    frame TRDTK { light TDESTRUCT2 }
+    frame TRDTL { light TDESTRUCT2 }
+    frame TRDTM { light TDESTRUCT3 }
+    frame TRDTN { light TDESTRUCT4 }
+    frame TRDTO { light TDESTRUCT4 }
+    frame TRDTP { light TDESTRUCT5 }
+}
+

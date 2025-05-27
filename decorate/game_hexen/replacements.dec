@@ -54,3 +54,77 @@ actor HexenArmorDump replaces ArtiBlastRadius
 
 actor HexenHealPack0 : HealPack0 replaces ArtiPoisonBag { }
 
+actor SamsaraTreeDestructible : TreeDestructible replaces TreeDestructible
+{
+    States
+    {
+      Burn:
+      Death.HexGreenFire:
+      Death.QuakeFire:
+      Death.FireExplosive:
+        TRDT H 5 Bright A_Pain
+        TRDT IJKL 5 Bright
+        TNT1 A 0 A_SetDamageType("Fire")
+        TRDT M 5 Bright A_Explode(10,128)
+      BurnFinish:
+        TRDT N 5 Bright
+        TRDT OP 5
+        TRDT Q -1
+        stop
+    }
+}
+
+actor SamsaraZShrub1 : ZShrub1 replaces ZShrub1
+{
+    States
+    {
+      Burn:
+      Death.HexGreenFire:
+      Death.QuakeFire:
+      Death.FireExplosive:
+        goto Super::Burn
+    }
+}
+
+actor SamsaraZShrub2 : ZShrub2 replaces ZShrub2
+{
+    States
+    {
+      Burn:
+      Death.HexGreenFire:
+      Death.QuakeFire:
+      Death.FireExplosive:
+        SHB2 B 7 Bright
+        SHB2 C 6 Bright A_Scream
+        TNT1 A 0 A_SetDamageType("Fire")
+        SHB2 D 5 Bright A_Explode(30,64)
+      BurnFinish:
+        SHB2 E 5 Bright
+        stop
+    }
+}
+
+actor SamsaraZXmasTree : ZXmasTree replaces ZXmasTree
+{
+    States
+    {
+      Burn:
+      Death.HexGreenFire:
+      Death.QuakeFire:
+      Death.FireExplosive:
+        XMAS B 6 Bright
+        XMAS C 6 Bright A_Scream
+        XMAS D 5 Bright
+        TNT1 A 0 A_SetDamageType("Fire")
+        XMAS E 5 Bright A_Explode(30,64)
+      BurnFinish:
+        XMAS F 5 Bright
+        XMAS G 4 Bright
+        XMAS H 5
+        XMAS I 4 A_NoBlocking
+        XMAS J 4
+        XMAS K -1
+        stop
+    }
+}
+
