@@ -427,7 +427,7 @@ actor HexenTeleportPickup : CustomInventory replaces ArtiTeleportOther
     +INVENTORY.BIGPOWERUP
     +INVENTORY.PICKUPFLASH
     +INVENTORY.HUBPOWER
-    +COUNTITEM
+    -COUNTITEM
     Inventory.PickupMessage "$SAMSARA_POWERUP_TELEPORTOTHER"
     Inventory.PickupSound "nosoundforyoubitch"
     states

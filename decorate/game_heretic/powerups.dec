@@ -68,7 +68,7 @@ actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
     +Floatbob
     +INVENTORY.BIGPOWERUP
     +INVENTORY.PICKUPFLASH
-    +COUNTITEM
+    -COUNTITEM
     +INVENTORY.HUBPOWER
     Inventory.PickupMessage "$SAMSARA_POWERUP_TELEPORTSELF"
     Inventory.PickupSound "nosoundforyoubitch"
@@ -101,7 +101,6 @@ actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
     }
 }
 
-// actor HereticAutomap : Automap replaces Supermap    // Can't be done until the automap gets a replacement!
 actor HereticLesserTome : CustomInventory replaces ArtiTomeOfPower
 {
     +COUNTITEM
