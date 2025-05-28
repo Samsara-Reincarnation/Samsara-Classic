@@ -89,6 +89,7 @@ actor SamsaraSlotThreeDrop: SamsaraSlotThreeNoStay
 
 actor SamsaraSlotThree_Allmap:   SamsaraSlotThreePickup replaces Allmap {}
 actor SamsaraSlotThree_Supermap: SamsaraSlotThreePickup replaces Supermap {}
+actor SamsaraSlotThree_Chexmap:  SamsaraSlotThreePickup replaces ComputerAreaMap {}
 actor SamsaraSlotThree_Chex:     SamsaraSlotThreePickup replaces SuperLargeZorcher {}
 actor SamsaraSlotThree_Hexen:    SamsaraSlotThreePickup replaces CWeapFlame {}
 actor SamsaraSlotThree_Strife:   SamsaraSlotThreePickup replaces MiniMissileLauncher {}

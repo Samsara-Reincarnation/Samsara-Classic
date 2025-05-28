@@ -453,7 +453,7 @@ SAMSARA_CHANGELOG =
 "  - Fixed D'Sparil not having a proper Idle state.\n"
 "  - Fixed one of the peasant actors having the wrong conversation ID.\n"
 "  - The Raven teleport powerups no longer count towards the item count.\n"
-"  - The map scroll is now replaced by a Slot III equipment pickup.\n"
+"  - The map scroll and computer area map have now been replaced by a Slot III equipment pickup.\n"
 "  - The Porkalator projectiles no longer morph players.\n"
 "  - Fixed Hexen trees and shrubs not being able to be burned by some characters.\n"
 "- Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n"
