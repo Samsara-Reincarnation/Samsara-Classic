@@ -22,6 +22,8 @@ gameinfo
 	weaponslot = 8, "Alien Weapon", " Alien Weapon ", "Laser Cannon"
 }
 
+clearskills
+
 skill baby
 {
 	AutoUseHealth
