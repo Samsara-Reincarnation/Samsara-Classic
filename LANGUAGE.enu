@@ -457,6 +457,7 @@ SAMSARA_CHANGELOG =
 "  - The Porkalator projectiles no longer morph players.\n"
 "  - Fixed Hexen trees and shrubs not being able to be burned by some characters.\n"
 "  - For GZDoom, player colors now show up properly (or at least as close to properly as possible) in different IWADs.\n"
+"  - Fixed killing the Loremaster's spectre giving only 1 point of stamina instead of 10.\n"
 "- Converted every numbered ACS script to use names instead, allowing for mapsets like TUTNT: Supportive Edition to work with Samsara.\n"
 "- Fixed and slightly tweaked some HUD elements.\n"
 "- Pistol Start mode won't trigger in the title map.\n"

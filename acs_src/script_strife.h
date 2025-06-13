@@ -183,7 +183,7 @@ script "SamsaraSpectres" (int mode, int arg1, int arg2)
         GiveInventory("QuestItem26", 1);
 
         ACS_NamedExecuteAlways("SamsaraStrifeAccuracy", 0, -1,0,0);
-        GiveInventory("UpgradeStamina", 1);
+        GiveInventory("UpgradeStamina", 10);
 
         if (CheckInventory("QuestItem23") && CheckInventory("QuestItem24") && CheckInventory("QuestItem21"))
         {
