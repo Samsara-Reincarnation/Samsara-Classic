@@ -423,8 +423,8 @@ PISTOLSTART_WIT36 = "It makes Chex Quest slightly more challenging.";
 // CHANGELOG
 
 SAMSARA_CHANGELOG =
-"FROM 0.3666 TO CLASSIC 2.1-pre\n"
-"==============================\n"
+"FROM 0.3666 TO CLASSIC 2.1-beta\n"
+"===============================\n"
 "- Slightly tweaked and fixed some Punchdrunk stuff:\n"
 "  - Fixed the Punchdrunk unique pickup messages not showing up.\n"
 "  - Fixed the pistols not being given in singleplayer when Punchdrunk mode is on.\n"
