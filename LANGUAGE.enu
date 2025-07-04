@@ -423,7 +423,7 @@ PISTOLSTART_WIT36 = "It makes Chex Quest slightly more challenging.";
 // CHANGELOG
 
 SAMSARA_CHANGELOG =
-"FROM 0.3666 TO CLASSIC 2.1-beta\n"
+"FROM 0.3666 TO CLASSIC 1.0\n"
 "===============================\n"
 "- Slightly tweaked and fixed some Punchdrunk stuff:\n"
 "  - Fixed the Punchdrunk unique pickup messages not showing up.\n"
