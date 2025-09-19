@@ -366,17 +366,17 @@ actor Sorcerer4 : Sorcerer2 replaces Sorcerer2
         TNT1 A 0 A_SetTranslucent(1,0)
         SDTH A 8 A_Sor2DthInit
         SDTH B 8
-        SDTH C 8 A_PlaySoundEx("dsparil/scream", "Body")
+        SDTH C 8 A_PlaySoundEx("dsparil/scream", "Body",0,2)
 
       DeathLoop:
         SDTH DE 7
         SDTH F 7 A_Sor2DthLoop
         TNT1 A 0 ACS_NamedExecuteAlways("SamsaraClientDecorate",0,11)
-        SDTH G 6 A_PlaySoundEx("dsparil/explode", "Body")
+        SDTH G 6 A_PlaySoundEx("dsparil/explode", "Body",0,2)
         SDTH H 6
         SDTH I 18
         SDTH J 6 A_NoBlocking
-        SDTH K 6 A_PlaySoundEx("dsparil/bones", "Body")
+        SDTH K 6 A_PlaySoundEx("dsparil/bones", "Body",0,2)
         SDTH LMN 6
         SDTH O -1 A_BossDeath
         Stop
