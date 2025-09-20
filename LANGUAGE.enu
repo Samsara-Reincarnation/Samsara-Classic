@@ -425,4 +425,5 @@ PISTOLSTART_WIT36 = "It makes Chex Quest slightly more challenging.";
 SAMSARA_CHANGELOG =
 "FROM CLASSIC 1.0 TO CLASSIC 1.0.1\n"
 "===============================\n"
-"- Fixed some of D'Sparil's sounds not being played globally.";
+"- Fixed some of D'Sparil's sounds not being played globally.\n"
+"- Slightly lowered the offsets of the Ranger's Gauntlet.";
