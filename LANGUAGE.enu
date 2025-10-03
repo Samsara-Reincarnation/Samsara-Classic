@@ -425,6 +425,9 @@ PISTOLSTART_WIT36 = "It makes Chex Quest slightly more challenging.";
 SAMSARA_CHANGELOG =
 "FROM CLASSIC 1.0 TO CLASSIC 1.0.1\n"
 "===============================\n"
-"- Fixed some of D'Sparil's sounds not being played globally.\n"
-"- Sigil pieces in multiplayer can now be picked up and gives the Sigil inventory item.\n"
+"- Added a few fixes and additions for non-Doom IWAD support:\n"
+"  - Fixed some of D'Sparil's sounds not being played globally.\n"
+"  - Fixed the Doom Imp ally not having sprites for its' Nashgore XDeath state.\n"
+"  - Added a gibbing sound for the Doom Imp ally.\n"
+"  - Sigil pieces in multiplayer can now be picked up and used.\n"
 "- Slightly lowered the offsets of the Ranger's Gauntlet.";

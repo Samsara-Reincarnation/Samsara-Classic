@@ -112,6 +112,7 @@ friendlyimp/pain		sounds/allies/dimppain.wav
 friendlyimp/melee		sounds/allies/dimpclaw.wav
 friendlyimp/death1		sounds/allies/dimpdth1.wav
 friendlyimp/death2		sounds/allies/dimpdth2.wav
+friendlyimp/xdeath		sounds/doomguy/dggibd.lmp
 friendlyimp/attack		sounds/allies/dimpshot.wav
 friendlyimp/shotx		sounds/allies/dimpxpl.wav
 $limit friendlyimp/active 6
