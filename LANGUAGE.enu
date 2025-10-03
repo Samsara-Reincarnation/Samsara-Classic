@@ -428,6 +428,9 @@ SAMSARA_CHANGELOG =
 "- Added a few fixes and additions for non-Doom IWAD support:\n"
 "  - Fixed some of D'Sparil's sounds not being played globally.\n"
 "  - Fixed the Doom Imp ally not having sprites for its' Nashgore XDeath state.\n"
+"  - Fixed the Doom Imp ally's Brutal XDeath state.\n"
 "  - Added a gibbing sound for the Doom Imp ally.\n"
+"  - Added dynamic lights for the Strife allies.\n"
+"  - Added decals for some Strife allies.\n"
 "  - Sigil pieces in multiplayer can now be picked up and used.\n"
 "- Slightly lowered the offsets of the Ranger's Gauntlet.";

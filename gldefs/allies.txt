@@ -1,0 +1,60 @@
+////////////////////////////////////////////
+// Dynamic Lights for Hexen/Strife Allies //
+////////////////////////////////////////////
+
+// Doomguy
+object FriendlyDoomImpBall
+{
+	frame DBL1A { light IMPBALL    }
+	frame DBL1B { light IMPBALL    }
+
+	frame DBL1C { light IMPBALL_X1 }
+	frame DBL1D { light IMPBALL_X2 }
+	frame DBL1E { light IMPBALL_X3 }
+}
+
+// Corvus
+object FriendlyNitrogolemShot
+{
+	frame FX15A { light MUMMYBALL }
+	frame FX15B { light MUMMYBALL }
+	frame FX15C { light MUMMYBALL }
+
+	frame FX15D { light MUMMYBALL_X1 }
+	frame FX15E { light MUMMYBALL_X2 }
+	frame FX15F { light MUMMYBALL_X3 }
+}
+
+// B.J. Blazkowicz
+object FriendlyNazi
+{
+	frame NGRDI { light ZOMBIEATK }
+}
+
+// Parias
+object FriendlyFireDemonMissile
+{
+    frame FDMBA { light FGARG }
+
+    frame FDMBB { light FGARGBALL_X1 }
+    frame FDMBC { light FGARGBALL_X2 }
+    frame FDMBD { light FGARGBALL_X3 }
+}
+
+// Duke Nukem
+object AlienTrooperShot
+{
+    frame ALTRS { light IMPBALL }
+}
+
+// Security Officer
+object FriendlyPfhorTrooper
+{
+    frame PTROF { light ZOMBIEATK }
+}
+
+// Ranger
+object AlienTrooperShot
+{
+    frame QGRTH { light ZOMBIEATK }
+}

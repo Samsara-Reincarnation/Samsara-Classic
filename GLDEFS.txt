@@ -4,6 +4,7 @@
 #include "gldefs/hexen.txt"
 #include "gldefs/quake.txt"
 #include "gldefs/enemies.txt"
+#include "gldefs/allies.txt"
 
 #include "gldefs/core_ammo.txt"
 #include "gldefs/core_health.txt"

@@ -127,3 +127,8 @@ generator SentinelFX3		PlasmaScorchLower
 generator Templar2			RailScorchLower
 generator Reaver2			BulletChip
 generator CeilingTurret2	BulletChip
+
+generator FriendlyDoomImpBall		DoomImpScorch
+generator FriendlyNitrogolemShot	MummyScorch
+generator FriendlyFireDemonMissile	FireDemonScorch
+generator PfhorTrooperBullet		BulletChip
