@@ -83,3 +83,98 @@ actor SpectralToggler2: SpectralToggler { Inventory.Icon "I_SGL2" }
 actor SpectralToggler3: SpectralToggler { Inventory.Icon "I_SGL3" }
 actor SpectralToggler4: SpectralToggler { Inventory.Icon "I_SGL4" }
 actor SpectralToggler5: SpectralToggler { Inventory.Icon "I_SGL5" }
+
+actor StrifeSigil1Pickup : CustomInventory replaces Sigil1
+{
+    Game Strife
+    ConversationID 196, 190, 194
+    Inventory.Icon "I_SGL1"
+    Inventory.PickupMessage "$TXT_SIGIL"
+    Inventory.PickupSound "weapons/sigilcharge"
+    Inventory.MaxAmount 0
+    +AUTOACTIVATE
+    States
+    {
+      Spawn:
+        SIGL A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 1, 1)
+        stop
+    }
+}
+
+actor StrifeSigil2Pickup : StrifeSigil1Pickup replaces Sigil2
+{
+    ConversationID 197, 191, 195
+    Inventory.Icon "I_SGL2"
+    States
+    {
+      Spawn:
+        SIGL B -1
+        stop
+
+      Pickup:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 1, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 2, 1)
+        stop
+    }
+}
+
+actor StrifeSigil3Pickup : StrifeSigil1Pickup replaces Sigil3
+{
+    ConversationID 198, 192, 196
+    Inventory.Icon "I_SGL3"
+    States
+    {
+      Spawn:
+        SIGL C -1
+        stop
+
+      Pickup:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 1, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 2, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 3, 1)
+        stop
+    }
+}
+
+actor StrifeSigil4Pickup : StrifeSigil1Pickup replaces Sigil4
+{
+    ConversationID 199, 193, 197
+    Inventory.Icon "I_SGL4"
+    States
+    {
+      Spawn:
+        SIGL D -1
+        stop
+
+      Pickup:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 1, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 2, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 3, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 4, 1)
+        stop
+    }
+}
+
+actor StrifeSigil5Pickup : StrifeSigil1Pickup replaces Sigil5
+{
+    ConversationID 200, 194, 198
+    Inventory.Icon "I_SGL5"
+    States
+    {
+      Spawn:
+        SIGL E -1
+        stop
+
+      Pickup:
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 1, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 2, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 3, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 4, 1)
+        TNT1 A 0 ACS_NamedExecuteAlways("SamsaraSpectres", 0, 6, 5, 1)
+        stop
+    }
+}

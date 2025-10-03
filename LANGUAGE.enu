@@ -426,4 +426,5 @@ SAMSARA_CHANGELOG =
 "FROM CLASSIC 1.0 TO CLASSIC 1.0.1\n"
 "===============================\n"
 "- Fixed some of D'Sparil's sounds not being played globally.\n"
+"- Sigil pieces in multiplayer can now be picked up and gives the Sigil inventory item.\n"
 "- Slightly lowered the offsets of the Ranger's Gauntlet.";
