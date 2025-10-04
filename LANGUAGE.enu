@@ -430,6 +430,8 @@ SAMSARA_CHANGELOG =
 "  - Fixed the Doom Imp ally not having sprites for its' Nashgore XDeath state.\n"
 "  - Fixed the Doom Imp ally's Brutal XDeath state.\n"
 "  - Added a gibbing sound for the Doom Imp ally.\n"
+"  - Fixed the Marathon Pfhor ally and Quake Grunt ally's death states not being affected by the Bloody Hell settings.\n"
+"  - Fixed the Ice death state for some Strife allies.\n"
 "  - Added dynamic lights for the Strife allies.\n"
 "  - Added decals for some Strife allies.\n"
 "  - Sigil pieces in multiplayer can now be picked up and used.\n"
