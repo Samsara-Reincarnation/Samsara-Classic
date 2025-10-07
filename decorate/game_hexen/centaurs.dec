@@ -134,6 +134,15 @@ actor Centaur2 : Centaur replaces Centaur
         CENT G 16 A_Pain
         Goto See
 
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        CENT G 5 A_FaceTarget
+        CENT G 30 A_Pain
+        CENT G 70
+        Goto See
+
       Melee:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         goto "Super::Melee"
@@ -353,6 +362,15 @@ actor CentaurLeader2 : CentaurLeader replaces CentaurLeader
         CENT G 2 A_FaceTarget
         TNT1 A 0 A_Recoil(14)
         CENT G 16 A_Pain
+        Goto See
+
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        CENT G 5 A_FaceTarget
+        CENT G 30 A_Pain
+        CENT G 70
         Goto See
 
       Missile:

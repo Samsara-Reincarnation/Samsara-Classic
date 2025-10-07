@@ -426,6 +426,8 @@ SAMSARA_CHANGELOG =
 "FROM CLASSIC 1.0 TO CLASSIC 1.0.1\n"
 "===============================\n"
 "- Added a few fixes and additions for non-Doom IWAD support:\n"
+"  - Added missing MarathonStun pain states for monsters that lacked them.\n"
+"  - Fixed the Iron Lich not getting pushed by Duke's mighty boot attack.\n"
 "  - Fixed some of D'Sparil's sounds not being played globally.\n"
 "  - Fixed the Doom Imp ally not having sprites for its' Nashgore XDeath state.\n"
 "  - Fixed the Doom Imp ally's Brutal XDeath state.\n"

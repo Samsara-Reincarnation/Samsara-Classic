@@ -10,7 +10,6 @@ actor RebelB : Rebel replaces Rebel
     states
     {
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -149,8 +148,16 @@ actor RebelB : Rebel replaces Rebel
         HMN1 O 16 A_Pain
         Goto See
 
-      Death.ZorchPistol:
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        HMN1 O 5 A_FaceTarget
+        HMN1 O 30 A_Pain
+        HMN1 O 70
+        Goto See
 
+      Death.ZorchPistol:
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -184,7 +191,6 @@ actor RebelB : Rebel replaces Rebel
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)

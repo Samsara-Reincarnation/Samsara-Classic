@@ -154,6 +154,16 @@ actor HereticImp2 : HereticImp replaces HereticImp
         IMPX G 16 A_Pain
         Goto See
 
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        IMPX G 5 A_FaceTarget
+        TNT1 A 0 A_Gravity
+        IMPX G 30 A_Pain
+        IMPX G 70
+        Goto See
+
       Missile:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         goto "Super::Missile"
@@ -412,6 +422,16 @@ actor HereticImpLeader2 : HereticImpLeader replaces HereticImpLeader
         IMPX G 2 A_FaceTarget
         TNT1 A 0 A_Recoil(14)
         IMPX G 16 A_Pain
+        Goto See
+
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        IMPX G 5 A_FaceTarget
+        TNT1 A 0 A_Gravity
+        IMPX G 30 A_Pain
+        IMPX G 70
         Goto See
 
       Missile:

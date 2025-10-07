@@ -122,6 +122,16 @@ actor Wraith2 : Wraith replaces Wraith
         WRTH H 16 A_Pain
         Goto See
 
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        WRTH H 5 A_FaceTarget
+        TNT1 A 0 A_Gravity
+        WRTH H 30 A_Pain
+        WRTH H 70
+        Goto See
+
       Missile:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         goto "Super::Missile"
@@ -347,6 +357,16 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
         WRTH H 2 A_FaceTarget
         TNT1 A 0 A_Recoil(14)
         WRTH H 16 A_Pain
+        Goto See
+
+      Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        WRTH H 5 A_FaceTarget
+        TNT1 A 0 A_Gravity
+        WRTH H 30 A_Pain
+        WRTH H 70
         Goto See
 
       Missile:
