@@ -333,6 +333,10 @@ script "SamsaraDecorate" (int choice, int arg1, int arg2)
       case 33:
         result = GetCVar("samsara_vanillaquake");
         break;
+
+      case 34:
+        result = GetCVar("samsara_extralifeteleport");
+        break;
     }
     
     SetResultValue(result);

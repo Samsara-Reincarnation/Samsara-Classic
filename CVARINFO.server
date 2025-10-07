@@ -51,6 +51,7 @@ server bool samsara_noult = false;
 // Class-Based Ability Options
 server bool samsara_classiclaz = false;
 server bool samsara_banwolfmove = false;
+server bool samsara_extralifeteleport = true;
 server bool samsara_banjetpack = false;
 server bool samsara_permaquad = false;
 server bool samsara_vanillaquake = false;
