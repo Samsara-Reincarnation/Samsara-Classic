@@ -10,6 +10,7 @@ actor IronLich2 : IronLich replaces IronLich
     DamageFactor "WMCNade", 0.75
     DamageFactor "DragonClaw", 1.5
     DamageFactor "CorvusHellstaffTomed", 0.2
+    PainChance "MightyBoot", 255
     DropItem "BlasterAmmo2", 84
     DropItem "ArtiEgg", 51, 0
     States
