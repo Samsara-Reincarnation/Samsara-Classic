@@ -437,5 +437,6 @@ SAMSARA_CHANGELOG =
 "  - Added dynamic lights for the Strife allies.\n"
 "  - Added decals for some Strife allies.\n"
 "  - Sigil pieces in multiplayer can now be picked up and used.\n"
-"- Slightly lowered the offsets of the Ranger's Gauntlet.\n"
-"- Added a new setting to control if B.J.'s extra lives teleport the player or not (samsara_extralifeteleport).";
+"- Added a new setting to control if B.J.'s extra lives teleport the player or not (samsara_extralifeteleport).\n"
+"- Fixed Duke's shotgun and chaingun cannon being able to hit ghosts.\n"
+"- Slightly lowered the offsets of the Ranger's Gauntlet.\n";

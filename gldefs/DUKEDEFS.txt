@@ -313,6 +313,30 @@ object DukeBulletPuff
 	frame DKPFH { light BPUFF2 }
 }
 
+object DukeBulletPuffThruGhost
+{
+    frame DKPFE { light BPUFF1 }
+	frame DKPFF { light BPUFF1 }
+    frame DKPFG { light BPUFF2 }
+	frame DKPFH { light BPUFF2 }
+}
+
+object DukeBulletPuffCoop
+{
+    frame DKPFE { light BPUFF1 }
+	frame DKPFF { light BPUFF1 }
+    frame DKPFG { light BPUFF2 }
+	frame DKPFH { light BPUFF2 }
+}
+
+object DukeBulletPuffThruGhostCoop
+{
+    frame DKPFE { light BPUFF1 }
+	frame DKPFF { light BPUFF1 }
+    frame DKPFG { light BPUFF2 }
+	frame DKPFH { light BPUFF2 }
+}
+
 pointlight DN3DFreezeBall
 {
     color 0.0 0.1 1.0
