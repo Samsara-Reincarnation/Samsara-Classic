@@ -423,7 +423,7 @@ PISTOLSTART_WIT36 = "It makes Chex Quest slightly more challenging.";
 // CHANGELOG
 
 SAMSARA_CHANGELOG =
-"FROM CLASSIC 1.0 TO CLASSIC 1.0.1\n"
+"FROM CLASSIC 1.0 TO CLASSIC 1.01\n"
 "===============================\n"
 "- Added a few fixes and additions for non-Doom IWAD support:\n"
 "  - Added missing MarathonStun pain states for monsters that lacked them.\n"
