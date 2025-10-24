@@ -64,6 +64,14 @@ object GoldWandPuff3
     frame PUF2D { light WANDPUFF4 }
 }
 
+object GoldWandPuff3Coop
+{
+    frame PUF2A { light WANDPUFF1 }
+    frame PUF2B { light WANDPUFF2 }
+    frame PUF2C { light WANDPUFF3 }
+    frame PUF2D { light WANDPUFF4 }
+}
+
 object GoldWandPuff4
 {
     frame PUF2C { light WANDPUFF3 }
@@ -113,6 +121,17 @@ object GoldWandFX3
 }
 
 object GoldWandFX32
+{
+    frame FX01C { light WANDBALL }
+    frame FX01D { light WANDBALL }
+
+    frame FX01E { light WANDBALL_X1 }
+    frame FX01F { light WANDBALL_X2 }
+    frame FX01G { light WANDBALL_X3 }
+    frame FX01H { light WANDBALL_X4 }
+}
+
+object GoldWandFX33
 {
     frame FX01C { light WANDBALL }
     frame FX01D { light WANDBALL }
@@ -173,6 +192,15 @@ object CrossbowFX3B
 //}
 
 object CrossbowFX32
+{
+    frame FX03A { light SMALLBOWBOLT }
+    
+    frame FX03C { light SMALLBOWBOLT_X1 }
+    frame FX03D { light SMALLBOWBOLT_X2 }
+    frame FX03E { light SMALLBOWBOLT_X3 }
+}
+
+object CrossbowFX33
 {
     frame FX03A { light SMALLBOWBOLT }
     
@@ -258,6 +286,15 @@ object CrossbowFX22
     frame FX03J { light BIGBOWBOLT_X3 }
 }
 
+object CrossbowFX23
+{
+    frame FX03B { light BIGBOWBOLT }
+    
+    frame FX03H { light BIGBOWBOLT_X1 }
+    frame FX03I { light BIGBOWBOLT_X2 }
+    frame FX03J { light BIGBOWBOLT_X3 }
+}
+
 // Tomed crossbow trail (slows down too much :P)
 pointlight BOWTRAIL1
 {
@@ -303,6 +340,18 @@ pointlight CLAWPUFF4
 }
 
 object BlasterPuff2
+{
+    frame FX17A { light CLAWPUFF1 }
+    frame FX17B { light CLAWPUFF2 }
+    frame FX17C { light CLAWPUFF3 }
+    frame FX17D { light CLAWPUFF4 }
+    frame FX17F { light CLAWPUFF1 }
+    frame FX17G { light CLAWPUFF2 }
+    frame FX17H { light CLAWPUFF3 }
+    frame FX17I { light CLAWPUFF4 }
+}
+
+object BlasterPuff2Coop
 {
     frame FX17A { light CLAWPUFF1 }
     frame FX17B { light CLAWPUFF2 }
@@ -363,7 +412,26 @@ object BlasterFX1C
     frame FX18G { light BIGCLAWPUFF5 }
 }
 
+object BlasterFX1D
+{
+    frame FX18C { light BIGCLAWPUFF1 }
+    frame FX18D { light BIGCLAWPUFF2 }
+    frame FX18E { light BIGCLAWPUFF3 }
+    frame FX18F { light BIGCLAWPUFF4 }
+    frame FX18G { light BIGCLAWPUFF5 }
+}
+
 object StaffPuff4
+{
+    frame PUF4A { light BIGCLAWPUFF1 }
+    frame PUF4B { light BIGCLAWPUFF1 }
+    frame PUF4C { light BIGCLAWPUFF2 }
+    frame PUF4D { light BIGCLAWPUFF3 }
+    frame PUF4E { light BIGCLAWPUFF4 }
+    frame PUF4F { light BIGCLAWPUFF5 }
+}
+
+object StaffPuff5
 {
     frame PUF4A { light BIGCLAWPUFF1 }
     frame PUF4B { light BIGCLAWPUFF1 }
@@ -472,6 +540,20 @@ object HornRodFX2A
     frame FX00L { light HELLSTAFFBALL_X5 }
 }
 
+object HornRodFX22
+{
+    frame FX00C { light HELLSTAFFBALL }
+    frame FX00D { light HELLSTAFFBALL }
+    frame FX00E { light HELLSTAFFBALL }
+    frame FX00F { light HELLSTAFFBALL }
+
+    frame FX00H { light HELLSTAFFBALL_X1 }
+    frame FX00I { light HELLSTAFFBALL_X2 }
+    frame FX00J { light HELLSTAFFBALL_X3 }
+    frame FX00K { light HELLSTAFFBALL_X4 }
+    frame FX00L { light HELLSTAFFBALL_X5 }
+}
+
 // Tomed hellstaff rain
 pointlight REDRAIN
 {
@@ -514,7 +596,29 @@ object RainPillar
     frame FX22F { light REDRAIN_X4 }
 }
 
+object RainPillar2
+{
+    frame FX22A { light REDRAIN }
+    frame FX22B { light REDRAIN }
+
+    frame FX22C { light REDRAIN_X1 }
+    frame FX22D { light REDRAIN_X2 }
+    frame FX22E { light REDRAIN_X3 }
+    frame FX22F { light REDRAIN_X4 }
+}
+
 object HellstaffRain
+{
+    frame FX22A { light REDRAIN }
+    frame FX22B { light REDRAIN }
+
+    frame FX22C { light REDRAIN_X1 }
+    frame FX22D { light REDRAIN_X2 }
+    frame FX22E { light REDRAIN_X3 }
+    frame FX22F { light REDRAIN_X4 }
+}
+
+object HellstaffRain2
 {
     frame FX22A { light REDRAIN }
     frame FX22B { light REDRAIN }
@@ -642,7 +746,25 @@ object PhoenixFX2
     frame FX09D { light PHOENIXFLAME3 }
 }
 
+object PhoenixFX2DM
+{
+    frame FX09A { light PHOENIXFLAME }
+    frame FX09B { light PHOENIXFLAME }
+
+    frame FX09C { light PHOENIXFLAME2 }
+    frame FX09D { light PHOENIXFLAME3 }
+}
+
 object PhoenixFX2A
+{
+    frame FX09A { light PHOENIXFLAME }
+    frame FX09B { light PHOENIXFLAME }
+
+    frame FX09C { light PHOENIXFLAME2 }
+    frame FX09D { light PHOENIXFLAME3 }
+}
+
+object PhoenixFX22
 {
     frame FX09A { light PHOENIXFLAME }
     frame FX09B { light PHOENIXFLAME }
@@ -725,6 +847,22 @@ object MaceFX32
 }
 
 object MaceFX42
+{
+    frame FX02G { light MACEBALL_X1 }
+    frame FX02H { light MACEBALL_X2 }
+    frame FX02I { light MACEBALL_X3 }
+    frame FX02J { light MACEBALL_X4 }
+}
+
+object MaceFX43
+{
+    frame FX02G { light MACEBALL_X1 }
+    frame FX02H { light MACEBALL_X2 }
+    frame FX02I { light MACEBALL_X3 }
+    frame FX02J { light MACEBALL_X4 }
+}
+
+object MaceFX44
 {
     frame FX02G { light MACEBALL_X1 }
     frame FX02H { light MACEBALL_X2 }

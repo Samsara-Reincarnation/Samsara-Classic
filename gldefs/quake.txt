@@ -122,6 +122,16 @@ object QuakeClusterRkCoop
     frame QRKT { light QuakeTinyRocketLight }
 }
 
+object SpectralRocket
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object SpectralClusterRocket
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
 
 object QuakeRocketQuad
 {
@@ -205,6 +215,10 @@ object LGPuff
     frame DPLE { light QuakeThunderboltPuff }
 }
 
+object SpectralLGPuff
+{
+    frame DPLE { light QuakeThunderboltPuff }
+}
 
 pointlight LavaGlow
 {
@@ -249,12 +263,22 @@ object QuakeLavaNailCoop
     frame QKNL { light LavaGlow }
 }
 
+object SpectralLavaNail
+{
+    frame QKNL { light LavaGlow }
+}
+
 object QuakeSLNail
 {
     frame QKNL { light LavaGlow }
 }
 
 object QuakeSLNailCoop
+{
+    frame QKNL { light LavaGlow }
+}
+
+object SpectralSLNail
 {
     frame QKNL { light LavaGlow }
 }

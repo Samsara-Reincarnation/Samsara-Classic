@@ -148,6 +148,11 @@ Object DukeDevastatorRocketCoop
 	frame RPGXA { light DN3DDevaGlow }
 }
 
+Object SpectralDevastatorRocket
+{
+	frame RPGXA { light DN3DDevaGlow }
+}
+
 pulselight DN3DExplosion
 {
     color 1.0 0.7 0.0
@@ -301,6 +306,11 @@ Object DukeExplosiveShotgunPuff
 }	
 
 Object DukeExplosiveShotgunPuffSP
+{
+	frame DKSX  { light DN3DExplosion }
+}
+
+Object DukeExplosiveShotgunPuffCoop
 {
 	frame DKSX  { light DN3DExplosion }
 }

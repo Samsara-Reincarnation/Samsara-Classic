@@ -18,7 +18,25 @@ object WolfRocket
     frame WFLBE { light BLAZF_X3 }
 }
 
+object WolfRocket2
+{
+    frame WMSLA { light MNADE }
+
+    frame WFLBC { light BLAZF_X1 }
+    frame WFLBD { light BLAZF_X2 }
+    frame WFLBE { light BLAZF_X3 }
+}
+
 object WolfRocketRJ
+{
+    frame WMSLA { light MNADE }
+
+    frame WFLBC { light BLAZF_X1 }
+    frame WFLBD { light BLAZF_X2 }
+    frame WFLBE { light BLAZF_X3 }
+}
+
+object WolfRocket2RJ
 {
     frame WMSLA { light MNADE }
 
@@ -99,6 +117,19 @@ object SpearBolt
 }
 
 object SpearBoltDM
+{
+    frame SPB1A { light SPEARBALL }
+    frame SPB1B { light SPEARBALL }
+
+    frame SPX1A { light SPEARBALL_X1 }
+    frame SPX1B { light SPEARBALL_X2 }
+    frame SPX1C { light SPEARBALL_X3 }
+    frame SPX1D { light SPEARBALL_X1 }
+    frame SPX1E { light SPEARBALL_X4 }
+    frame SPX1F { light SPEARBALL_X5 }
+}
+
+object SpearBolt2
 {
     frame SPB1A { light SPEARBALL }
     frame SPB1B { light SPEARBALL }

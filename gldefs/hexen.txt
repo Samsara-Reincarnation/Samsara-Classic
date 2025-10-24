@@ -31,6 +31,14 @@ object MageWandMissile2
     frame MWNDH { light MWAND_X4 }
 }
 
+object MageWandMissile3
+{
+    frame MWNDE { light MWAND_X1 }
+    frame MWNDF { light MWAND_X2 }
+    frame MWNDG { light MWAND_X3 }
+    frame MWNDH { light MWAND_X4 }
+}
+
 // Frost shards
 flickerlight MFROSTSHARD
 {
@@ -238,7 +246,53 @@ object HammerMissile2
     frame FHFXR { light THROWHAMMER_X6 }
 }
 
+object HammerMissile2RJ
+{
+    frame FHFXA { light THROWHAMMER }
+    frame FHFXB { light THROWHAMMER }
+    frame FHFXC { light THROWHAMMER }
+    frame FHFXD { light THROWHAMMER }
+    frame FHFXE { light THROWHAMMER }
+    frame FHFXF { light THROWHAMMER }
+    frame FHFXG { light THROWHAMMER }
+    frame FHFXH { light THROWHAMMER }
+
+    frame FHFXI { light THROWHAMMER_X1 }
+    frame FHFXJ { light THROWHAMMER_X2 }
+    frame FHFXK { light THROWHAMMER_X3 }
+    frame FHFXL { light THROWHAMMER_X4 }
+    frame FHFXM { light THROWHAMMER_X4 }
+    frame FHFXN { light THROWHAMMER_X4 }
+    frame FHFXO { light THROWHAMMER_X4 }
+    frame FHFXP { light THROWHAMMER_X4 }
+    frame FHFXQ { light THROWHAMMER_X5 }
+    frame FHFXR { light THROWHAMMER_X6 }
+}
+
 object HammerMissileDM
+{
+    frame FHFXA { light THROWHAMMER }
+    frame FHFXB { light THROWHAMMER }
+    frame FHFXC { light THROWHAMMER }
+    frame FHFXD { light THROWHAMMER }
+    frame FHFXE { light THROWHAMMER }
+    frame FHFXF { light THROWHAMMER }
+    frame FHFXG { light THROWHAMMER }
+    frame FHFXH { light THROWHAMMER }
+
+    frame FHFXI { light THROWHAMMER_X1 }
+    frame FHFXJ { light THROWHAMMER_X2 }
+    frame FHFXK { light THROWHAMMER_X3 }
+    frame FHFXL { light THROWHAMMER_X4 }
+    frame FHFXM { light THROWHAMMER_X4 }
+    frame FHFXN { light THROWHAMMER_X4 }
+    frame FHFXO { light THROWHAMMER_X4 }
+    frame FHFXP { light THROWHAMMER_X4 }
+    frame FHFXQ { light THROWHAMMER_X5 }
+    frame FHFXR { light THROWHAMMER_X6 }
+}
+
+object HammerMissileDMRJ
 {
     frame FHFXA { light THROWHAMMER }
     frame FHFXB { light THROWHAMMER }
@@ -427,12 +481,47 @@ flickerlight GHOST
     subtractive 1
 }
 
-object HolyMissile
+object SamsaraHolyMissile
+{
+    frame SPIRP { light GHOST }
+}
+
+object SpectralHolyMissile
 {
     frame SPIRP { light GHOST }
 }
 
 object HolySpirit2
+{
+    frame SPIRA { light GHOST }
+    frame SPIRB { light GHOST }
+}
+
+object HolySpiritDM
+{
+    frame SPIRA { light GHOST }
+    frame SPIRB { light GHOST }
+}
+
+object HolySpiritDM2
+{
+    frame SPIRA { light GHOST }
+    frame SPIRB { light GHOST }
+}
+
+object HolySpiritDM3
+{
+    frame SPIRA { light GHOST }
+    frame SPIRB { light GHOST }
+}
+
+object HolySpiritDM4
+{
+    frame SPIRA { light GHOST }
+    frame SPIRB { light GHOST }
+}
+
+object SpectralSpirit
 {
     frame SPIRA { light GHOST }
     frame SPIRB { light GHOST }

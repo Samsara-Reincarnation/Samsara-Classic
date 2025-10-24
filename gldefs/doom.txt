@@ -21,7 +21,19 @@ object DoomBulletPuff
     frame DPFFB { light BPUFF2 }
 }
 
+object DoomBulletPuff_Coop
+{
+    frame DPFFA { light BPUFF1 }
+    frame DPFFB { light BPUFF2 }
+}
+
 object DoomBulletPuff2
+{
+    frame DPFFA { light BPUFF1 }
+    frame DPFFB { light BPUFF2 }
+}
+
+object DoomBulletPuff2_Coop
 {
     frame DPFFA { light BPUFF1 }
     frame DPFFB { light BPUFF2 }
@@ -212,8 +224,28 @@ object DoomBFGBall2
     frame DBFEF { light BFGBALL_X5 }
 }
 
+object DoomBFGBallSpectral
+{
+    frame DBFSA { light BFGBALL }
+    frame DBFSB { light BFGBALL }
+
+    frame DBFEA { light BFGBALL_X1 }
+    frame DBFEB { light BFGBALL_X2 }
+    frame DBFEC { light BFGBALL_X3 }
+    frame DBFED { light BFGBALL_X1 }
+    frame DBFEE { light BFGBALL_X4 }
+    frame DBFEF { light BFGBALL_X5 }
+}
 
 object DoomBFGSplash
+{
+    frame DBFPA { light BFGBALL    }
+    frame DBFPB { light BFGBALL_X1 }
+    frame DBFPC { light BFGBALL_X4 }
+    frame DBFPD { light BFGBALL_X5 }
+}
+
+object BFGSpittle
 {
     frame DBFPA { light BFGBALL    }
     frame DBFPB { light BFGBALL_X1 }

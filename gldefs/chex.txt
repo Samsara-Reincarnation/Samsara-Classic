@@ -255,7 +255,21 @@ object ChexPuff
     frame CMISB { light CPUFF2 }
 }
 
+object ChexPuffCoop
+{
+    frame CMISD { light CPUFF1 }
+    frame CMISC { light CPUFF2 }
+    frame CMISB { light CPUFF2 }
+}
+
 object ChexPuff2
+{
+    frame CMISD { light CPUFF1 }
+    frame CMISC { light CPUFF2 }
+    frame CMISB { light CPUFF2 }
+}
+
+object ChexPuff2Coop
 {
     frame CMISD { light CPUFF1 }
     frame CMISC { light CPUFF2 }
@@ -309,7 +323,25 @@ object ChexRocket
     frame CMISD { light CROCKET_X3 }
 }
 
+object ChexRocketRJ
+{
+    frame CMISA { light CROCKET    }
+
+    frame CMISB { light CROCKET_X1 }
+    frame CMISC { light CROCKET_X2 }
+    frame CMISD { light CROCKET_X3 }
+}
+
 object ChexRocket2
+{
+    frame CMISA { light CROCKET    }
+
+    frame CMISB { light CROCKET_X1 }
+    frame CMISC { light CROCKET_X2 }
+    frame CMISD { light CROCKET_X3 }
+}
+
+object ChexRocket2RJ
 {
     frame CMISA { light CROCKET    }
 
@@ -369,7 +401,32 @@ object ChexPlasma
     frame CLSEE { light PHASE_X4 }
 }
 
+object ChexPlasma2
+{
+    frame CLSSA { light PHASEBALL }
+    frame CLSSB { light PHASEBALL }
+
+    frame CLSEA { light PHASE_X1 }
+    frame CLSEB { light PHASE_X2 }
+    frame CLSEC { light PHASE_X2 }
+    frame CLSED { light PHASE_X3 }
+    frame CLSEE { light PHASE_X4 }
+}
+
 object SLZorcherBolt
+{
+    frame SLZRA { light PHASEBALL }
+    frame SLZRB { light PHASEBALL }
+	
+	frame SLZDA { light PHASE_X1 }
+    frame SLZDB { light PHASE_X2 }
+    frame SLZDC { light PHASE_X2 }
+    frame SLZDD { light PHASE_X3 }
+    frame SLZDE { light PHASE_X3 }
+    frame SLZDF { light PHASE_X4 }
+}
+
+object SLZorcherBoltDM
 {
     frame SLZRA { light PHASEBALL }
     frame SLZRB { light PHASEBALL }
@@ -395,16 +452,43 @@ object SLZorcherBoltCoop
     frame SLZDF { light PHASE_X4 }
 }
 
-object ChexPlasma2
+object SLZorcherBolt3
 {
-    frame CLSSA { light PHASEBALL }
-    frame CLSSB { light PHASEBALL }
+    frame SLZRA { light PHASEBALL }
+    frame SLZRB { light PHASEBALL }
+	
+	frame SLZDA { light PHASE_X1 }
+    frame SLZDB { light PHASE_X2 }
+    frame SLZDC { light PHASE_X2 }
+    frame SLZDD { light PHASE_X3 }
+    frame SLZDE { light PHASE_X3 }
+    frame SLZDF { light PHASE_X4 }
+}
 
-    frame CLSEA { light PHASE_X1 }
-    frame CLSEB { light PHASE_X2 }
-    frame CLSEC { light PHASE_X2 }
-    frame CLSED { light PHASE_X3 }
-    frame CLSEE { light PHASE_X4 }
+object SLZorcherBoltDM3
+{
+    frame SLZRA { light PHASEBALL }
+    frame SLZRB { light PHASEBALL }
+	
+	frame SLZDA { light PHASE_X1 }
+    frame SLZDB { light PHASE_X2 }
+    frame SLZDC { light PHASE_X2 }
+    frame SLZDD { light PHASE_X3 }
+    frame SLZDE { light PHASE_X3 }
+    frame SLZDF { light PHASE_X4 }
+}
+
+object SLZorcherBoltCoop3
+{
+    frame SLZRA { light PHASEBALL }
+    frame SLZRB { light PHASEBALL }
+	
+	frame SLZDA { light PHASE_X1 }
+    frame SLZDB { light PHASE_X2 }
+    frame SLZDC { light PHASE_X2 }
+    frame SLZDD { light PHASE_X3 }
+    frame SLZDE { light PHASE_X3 }
+    frame SLZDF { light PHASE_X4 }
 }
 
 // LAZ Device
@@ -478,4 +562,64 @@ object ChexBFGBall2
     frame CFE1D { light LAZBALL_X1 }
     frame CFE1E { light LAZBALL_X4 }
     frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexBFGBall2Spectral
+{
+    frame CFS1A { light LAZBALL }
+    frame CFS1B { light LAZBALL }
+
+    frame CFE1A { light LAZBALL_X1 }
+    frame CFE1B { light LAZBALL_X2 }
+    frame CFE1C { light LAZBALL_X3 }
+    frame CFE1D { light LAZBALL_X1 }
+    frame CFE1E { light LAZBALL_X4 }
+    frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexLAZBall
+{
+    frame CFS1A { light LAZBALL }
+    frame CFS1B { light LAZBALL }
+
+    frame CFE1A { light LAZBALL_X1 }
+    frame CFE1B { light LAZBALL_X2 }
+    frame CFE1C { light LAZBALL_X3 }
+    frame CFE1D { light LAZBALL_X1 }
+    frame CFE1E { light LAZBALL_X4 }
+    frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexLAZBallCoop
+{
+    frame CFS1A { light LAZBALL }
+    frame CFS1B { light LAZBALL }
+
+    frame CFE1A { light LAZBALL_X1 }
+    frame CFE1B { light LAZBALL_X2 }
+    frame CFE1C { light LAZBALL_X3 }
+    frame CFE1D { light LAZBALL_X1 }
+    frame CFE1E { light LAZBALL_X4 }
+    frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexLAZBallSpectral
+{
+    frame CFS1A { light LAZBALL }
+    frame CFS1B { light LAZBALL }
+
+    frame CFE1A { light LAZBALL_X1 }
+    frame CFE1B { light LAZBALL_X2 }
+    frame CFE1C { light LAZBALL_X3 }
+    frame CFE1D { light LAZBALL_X1 }
+    frame CFE1E { light LAZBALL_X4 }
+    frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexLAZSplash
+{
+    frame CFE2A { light LAZBALL }
+    frame CFE2B { light LAZBALL_X1 }
+    frame CFE2C { light LAZBALL_X4 }
+    frame CFE2D { light LAZBALL_X5 }
 }
