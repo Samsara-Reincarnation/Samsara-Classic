@@ -1,7 +1,7 @@
 @echo off
 
 REM file name of the built PK3, feel free to edit - Stolen from COG lol
-set pk3name="SamsaraClassic_v1.01-Dev-Build"
+set pk3name="SamsaraClassic_v1.03-Dev-Build"
 
 
 
