@@ -32,7 +32,7 @@ ACTOR MetaCheatDetector : Pistol
 	States
 	{
 		Spawn:
-			WPIS A -1
+			WPST A -1
 			Stop
 		Ready:
 			DPIS A 1 A_WeaponReady
