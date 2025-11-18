@@ -167,7 +167,7 @@ actor "Spectral B.F.G. 9000": "B.F.G. 9000"
 
     Weapon.SisterWeapon "B.F.G. 9000"
     +POWERED_UP
-    Tag "B.F.G. 9000"
+    Tag "Spectral B.F.G. 9000"
 
     States
     {

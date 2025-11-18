@@ -29,4 +29,19 @@ actor PistolStartEnabled : Boolean {}
 ACTOR MetaCheatDetector : Pistol
 {
 	Weapon.SelectionOrder 0
+	States
+	{
+		Spawn:
+			WPIS A -1
+			Stop
+		Ready:
+			DPIS A 1 A_WeaponReady
+			Loop
+		Deselect:
+			DPIS A 1 A_Lower
+			Loop
+		Select:
+			DPIS A 1 A_Raise
+			Loop
+	}
 }

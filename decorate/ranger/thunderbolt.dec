@@ -498,13 +498,12 @@ actor "Thunderbolt": InstantSwitchWeapon
 
 actor "Spectral LG": Thunderbolt
 {
-    Weapon.SisterWeapon "Thunderbolt"
-    +POWERED_UP
-
     Weapon.AmmoType ""
     Weapon.AmmoUse 0
     Weapon.AmmoGive 0
-
+    Weapon.SisterWeapon "Thunderbolt"
+    Tag "Spectral Thunderbolt"
+    +POWERED_UP
     States
     {
       Fire:

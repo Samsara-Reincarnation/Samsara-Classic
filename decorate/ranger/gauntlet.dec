@@ -81,8 +81,8 @@ actor "Gauntlet": InstantSwitchWeapon
 actor "Spectral Gauntlet": Gauntlet
 {
     Weapon.SisterWeapon "Gauntlet"
+    Tag "Spectral Gauntlet"
     +POWERED_UP
-
     States
     {
       Fire:

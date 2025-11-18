@@ -423,6 +423,11 @@ PISTOLSTART_WIT36 = "It makes Chex Quest slightly more challenging.";
 // CHANGELOG
 
 SAMSARA_CHANGELOG =
-"FROM CLASSIC 1.01 TO CLASSIC 1.02\n"
+"FROM CLASSIC 1.02 TO CLASSIC 1.03\n"
 "===============================\n"
-"- Fixed several projectiles and puffs for all of the heroes having missing dynamic lights.";
+"- Fixed Strife spectral firing being completely broken in GZDoom.\n"
+"- Fixed Corvus' Tome of Power playing a Sigil sound when expiring while the Splinter of the Sigil isn't active.\n"
+"- Fixed Ranger's axe not being affected by the Splinter of the Sigil.\n"
+"- Ranger's powerup displays have been moved up to avoid overlapping with the key display.\n"
+"- Fixed the quad damage recharge icon being overridden by the regeneration icon.\n"
+"- Fixed IDFA/IDKFA not working correctly outside of Doom and Chex Quest.";

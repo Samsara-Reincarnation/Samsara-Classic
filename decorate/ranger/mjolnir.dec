@@ -83,8 +83,8 @@ actor Mjolnir: InstantSwitchWeapon
 actor "Spectral Mjolnir": Mjolnir
 {
     Weapon.SisterWeapon "Mjolnir"
+    Tag "Spectral Mjolnir"
     +POWERED_UP
-
     States
     {
       Fire:

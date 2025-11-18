@@ -13,6 +13,7 @@ actor "Axe": InstantSwitchWeapon
 
     Inventory.Icon "TNT1A0"
     Obituary "$SAMSARA_RANGER_OB_FIST"
+    Weapon.SisterWeapon "Spectral Axe"
 	Tag "Axe"
 
     States
@@ -48,8 +49,8 @@ actor "Axe": InstantSwitchWeapon
 actor "Spectral Axe": Axe
 {
     Weapon.SisterWeapon "Axe"
+    Tag "Spectral Axe"
     +POWERED_UP
-    
     States
     {
       Fire:

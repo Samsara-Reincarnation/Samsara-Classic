@@ -73,10 +73,9 @@ actor "Spectral DSG": "Double Shotgun"
     Weapon.AmmoType ""
     Weapon.AmmoUse  0
     Weapon.AmmoGive 0
-
     Weapon.SisterWeapon "Double Shotgun"
+    Tag "Spectral Double Shotgun"
     +POWERED_UP
-    
     States
     {
       Fire:

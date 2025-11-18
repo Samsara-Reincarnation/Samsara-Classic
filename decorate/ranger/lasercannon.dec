@@ -91,10 +91,9 @@ actor "Spectral LC": "Laser Cannon"
     Weapon.AmmoType ""
     Weapon.AmmoUse  0
     Weapon.AmmoGive 0
-
     Weapon.SisterWeapon "Laser Cannon"
+    Tag "Spectral Laser Cannon"
     +POWERED_UP
-
     States
     {
       Fire:

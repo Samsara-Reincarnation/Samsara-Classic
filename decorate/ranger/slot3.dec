@@ -270,14 +270,12 @@ actor "Spectral GL": "Grenade Launcher"
     Weapon.AmmoType ""
     Weapon.AmmoUse  0
     Weapon.AmmoGive 0
-    
     Weapon.AmmoType2 ""
     Weapon.AmmoUse2  0
     Weapon.AmmoGive2 0
-    
     Weapon.SisterWeapon "Grenade Launcher"
+    Tag "Spectral Grenade Launcher"
     +POWERED_UP
-    
     States
     {
       Fire:

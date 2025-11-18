@@ -183,7 +183,7 @@ script "SamsaraQPowers" (int startTime)
         oPentTimer = pentTimer;
         pentTimer  = CheckInventory("QuakePentTimer");
 
-        offset = 0;
+        offset = 2; // set to 2 so it doesn't overlap with keys
         opowercount = powercount;
         powercount = 0;
         powercount += (quadTimer > 0);
@@ -247,7 +247,7 @@ script "SamsaraQPowers" (int startTime)
                 LocalAmbientSound("quakeweps/quadready", 96);
                 SetHudSize(240, 180, 1);
                 SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 142.0, 0.0, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58109, CR_UNTRANSLATED, 215.4, 102.0, 0.0, 1.0);
             }
 
             TakeInventory("CantQuad", 0x7FFFFFFF);

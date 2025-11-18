@@ -349,14 +349,12 @@ actor "Spectral SNG": "Super Nailgun"
     Weapon.AmmoType ""
     Weapon.AmmoUse  0
     Weapon.AmmoGive 0
-
     Weapon.AmmoType2 ""
     Weapon.AmmoUse2  0
     Weapon.AmmoGive2 0
-
     Weapon.SisterWeapon "Super Nailgun"
+    Tag "Spectral Super Nailgun"
     +POWERED_UP
-
     States
     {
       Fire:

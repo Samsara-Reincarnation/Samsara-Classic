@@ -80,8 +80,8 @@ actor "Single Shotgun": InstantSwitchWeapon
 actor "Spectral SG": "Single Shotgun"
 {
     Weapon.SisterWeapon "Single Shotgun"
+    Tag "Spectral Single Shotgun"
     +POWERED_UP
-
     States
     {
       Fire:

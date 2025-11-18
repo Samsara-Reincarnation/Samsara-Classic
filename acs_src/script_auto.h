@@ -288,12 +288,6 @@ script "SamsaraSpawn" (int respawning)
 
         SetInventory("SamsaraLevelSwitch_HadDoE", CheckInventory("UsingDoEAmmo"));
 
-        if (CheckInventory("SpectralFiring"))
-        {
-            TakeInventory("SpectralFiring", 1);
-            GiveInventory("SpectralFiring", 1);
-        }
-
         if (GetCVar("samsara_banjetpack") && CheckInventory("DukePortJetpack"))
         {
             GiveInventory("DukeBootserk", 1);

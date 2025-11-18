@@ -263,14 +263,12 @@ actor "Spectral RL": "  Rocket Launcher  "
     Weapon.AmmoType ""
     Weapon.AmmoUse  0
     Weapon.AmmoGive 0
-
     Weapon.AmmoType2 ""
     Weapon.AmmoUse2  0
     Weapon.AmmoGive2 0
-
     Weapon.SisterWeapon "  Rocket Launcher  "
+    Tag "Spectral Rocket Launcher"
     +POWERED_UP
-
     States
     {
       Fire:
