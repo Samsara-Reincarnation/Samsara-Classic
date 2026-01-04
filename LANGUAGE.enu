@@ -426,6 +426,7 @@ SAMSARA_CHANGELOG =
 "FROM CLASSIC 1.02 TO CLASSIC 1.03\n"
 "===============================\n"
 "- Fixed Strife spectral firing being completely broken in GZDoom.\n"
+"- Chex bits spawned from being gibbed now fade after one minute, though they can remain indefinitely with "Gib Persistence" enabled.\n"
 "- Fixed Corvus' Tome of Power playing a Sigil sound when expiring while the Splinter of the Sigil isn't active.\n"
 "- Fixed Ranger's axe not being affected by the Splinter of the Sigil.\n"
 "- Ranger's powerup displays have been moved up to avoid overlapping with the key display.\n"
