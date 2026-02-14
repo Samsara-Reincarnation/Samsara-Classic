@@ -431,4 +431,5 @@ SAMSARA_CHANGELOG =
 "- Fixed Ranger's axe not being affected by the Splinter of the Sigil.\n"
 "- Ranger's powerup displays have been moved up to avoid overlapping with the key display.\n"
 "- Fixed the quad damage recharge icon being overridden by the regeneration icon.\n"
-"- Fixed IDFA/IDKFA not working correctly outside of Doom and Chex Quest.";
+"- Fixed IDFA/IDKFA not working correctly outside of Doom and Chex Quest.\n"
+"- Fixed the pain elemental using the wrong sprite when hit by Duke's mighty boot and Security Officer's Tech.50 Pacifier.";
