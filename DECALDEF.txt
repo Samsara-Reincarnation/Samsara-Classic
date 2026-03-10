@@ -93,6 +93,8 @@ generator HeadFX32				CacoScorch
 generator Sorcerer2FX3			SorcererLightning
 generator HereticImpBall2		HImpScorch
 generator MummyFX2				MummyScorch
+generator KnightAxe2			AxeScorch
+generator RedAxe2				BloodSmear
 generator WizardFX2				WizardScorch
 
 generator SerpentFX2			DoomImpScorch
