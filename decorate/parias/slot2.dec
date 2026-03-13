@@ -103,6 +103,7 @@ actor FrostMissileMelee2 : FastProjectile
     DamageType "HexenIce"
     Projectile
     -BLOODSPLATTER
+    +NOTIMEFREEZE
     States
     {
       Spawn:
@@ -126,6 +127,7 @@ actor FrostMissileMelee : FastProjectile
     Projectile
     +STRIFEDAMAGE
     -BLOODSPLATTER
+    +NOTIMEFREEZE
     States
     {
       Spawn:
