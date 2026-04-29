@@ -38,10 +38,10 @@ actor LostSoul2 : LostSoul replaces LostSoul
         TNT1 A 0 A_Stop
         TNT1 A 0 A_GiveInventory("NothingSpeed")
         TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
-        SKUL E 5 A_FaceTarget
+        SKUL E 5 Bright A_FaceTarget
         TNT1 A 0 A_Gravity
-        SKUL E 30 A_Pain
-        SKUL E 70
+        SKUL E 30 Bright A_Pain
+        SKUL E 70 Bright
         Goto See
 
       Death.ZorchPistol:
@@ -130,25 +130,49 @@ actor PainElemental2 : PainElemental replaces PainElemental
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity
-        PAIN E 0 A_Stop
+        PAIN G 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        PAIN E 4 A_SpawnItem("ZorchEffectBig")
-        PAIN E 4 A_SetTranslucent(0.9,0)
-        PAIN E 0 A_Pain
+        PAIN G 4 A_SpawnItem("ZorchEffectBig")
+        PAIN G 4 A_SetTranslucent(0.9,0)
+        PAIN G 0 A_Pain
         TNT1 A 0 A_PainDie
-        PAIN E 4 A_SetTranslucent(0.8,0)
-        PAIN E 4 A_SetTranslucent(0.7,0)
-        PAIN E 4 A_SetTranslucent(0.6,0)
-        PAIN E 4 A_SetTranslucent(0.5,0)
-        PAIN E 4 A_SetTranslucent(0.4,0)
-        PAIN E 4 A_SetTranslucent(0.3,0)
-        PAIN E 4 A_SetTranslucent(0.2,0)
-        PAIN E 4 A_SetTranslucent(0.1,0)
+        PAIN G 4 A_SetTranslucent(0.8,0)
+        PAIN G 4 A_SetTranslucent(0.7,0)
+        PAIN G 4 A_SetTranslucent(0.6,0)
+        PAIN G 4 A_SetTranslucent(0.5,0)
+        PAIN G 4 A_SetTranslucent(0.4,0)
+        PAIN G 4 A_SetTranslucent(0.3,0)
+        PAIN G 4 A_SetTranslucent(0.2,0)
+        PAIN G 4 A_SetTranslucent(0.1,0)
         TNT1 A 1 A_SetTranslucent(1,0)
         TNT1 A 0 A_Gravity
         TNT1 A 1 A_NoBlocking
         stop
+
+      Raise:
+        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+        PAIN MLKJIH 8
+        goto See
+
+      ZorchRaise:
+        TNT1 A 1 A_UnsetShootable
+        TNT1 A 1 A_SpawnItem("SpawnFire2")
+        TNT1 A 0 A_PlaySound("archvile/resummon")
+        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+        TNT1 A 0 A_NoGravity
+        TNT1 A 0 A_SetTranslucent(0.1,0)
+        PAIN A 3 A_SetTranslucent(0.2,0)
+        PAIN A 3 A_SetTranslucent(0.3,0)
+        PAIN A 3 A_SetTranslucent(0.4,0)
+        PAIN A 3 A_SetTranslucent(0.5,0)
+        PAIN A 3 A_SetTranslucent(0.6,0)
+        PAIN A 3 A_SetTranslucent(0.7,0)
+        PAIN A 3 A_SetTranslucent(0.8,0)
+        PAIN A 3 A_SetTranslucent(0.9,0)
+        PAIN A 3 A_SetTranslucent(1,0)
+        PAIN A 1 A_SetShootable
+        Goto See
 
       Death.DukeIce:
         TNT1 A 0 A_PlaySound("duke/enemyfreeze")
@@ -165,11 +189,11 @@ actor PainElemental2 : PainElemental replaces PainElemental
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_PainDie
         //TNT1 A 0 A_SpawnItem("PainElementalFrozen")
-        PAIN E 0 A_GenericFreezeDeath
-        PAIN E 70 A_UnsetSolid
-        PAIN E 1 A_NoBlocking
-        PAIN E 0 A_IceGuyDie
-        PAIN E 1 A_IceGuyDie
+        PAIN G 0 A_GenericFreezeDeath
+        PAIN G 70 A_UnsetSolid
+        PAIN G 1 A_NoBlocking
+        PAIN G 0 A_IceGuyDie
+        PAIN G 1 A_IceGuyDie
         TNT1 A -1
         stop
         

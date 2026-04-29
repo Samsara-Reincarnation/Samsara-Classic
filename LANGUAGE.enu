@@ -432,6 +432,7 @@ SAMSARA_CHANGELOG =
 "- Ranger's powerup displays have been moved up to avoid overlapping with the key display.\n"
 "- Fixed the quad damage recharge icon being overridden by the regeneration icon.\n"
 "- Fixed IDFA/IDKFA not working correctly outside of Doom and Chex Quest.\n"
-"- Fixed the pain elemental using the wrong sprite when hit by Duke's mighty boot and Security Officer's Tech.50 Pacifier.\n"
+"- Fixed the lost soul not having Bright frames when hit by Security Officer's Tech.50 Pacifier.\n"
+"- Fixed the pain elemental using the wrong sprite when hit by Duke's mighty boot and Security Officer's Tech.50 Pacifier, as well as when zorched and frozen.\n"
 "- Fixed the Heretic undead warriors' projectiles not leaving decals.\n"
 "- Fixed Parias' frost shards' melee attack being affected by time freeze.";
