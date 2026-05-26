@@ -1,5 +1,7 @@
 script "SamsaraPDWTAK" death
 {
+    if (ClassifyActor(0) & ACTOR_VOODOODOLL) { terminate; } // do not activate for voodoo dolls
+
     int bombtimer, yourTID;
     int pdwtak = GetCVar("samsara_peoplediewhentheyarekilled");
     int myTID = defaultTID(-1);
