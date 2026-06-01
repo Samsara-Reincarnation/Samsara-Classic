@@ -429,6 +429,8 @@ SAMSARA_CHANGELOG =
 "- Chex bits spawned from being gibbed now fade after one minute, though they can remain indefinitely with "Gib Persistence" enabled.\n"
 "- Fixed Corvus' Tome of Power playing a Sigil sound when expiring while the Splinter of the Sigil isn't active.\n"
 "- Fixed Ranger's axe not being affected by the Splinter of the Sigil.\n"
+"- Fixed Ranger's Mjolnir spawning a bullet puff when hitting non-bleeding actors in Doom.\n"
+"- Fixed Ranger's Mjolnir lightning displaying incorrectly on its first tic.\n"
 "- Ranger's powerup displays have been moved up to avoid overlapping with the key display.\n"
 "- Fixed the quad damage recharge icon being overridden by the regeneration icon.\n"
 "- Fixed IDFA/IDKFA not working correctly outside of Doom and Chex Quest.\n"
