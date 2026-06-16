@@ -77,8 +77,8 @@ OptionValue "JumpModOptions"
     20,  "Build"
     32,  "Rocket Jumping"
     64,  "Jump Boots"
-    100, "Full Retard"
-    200, "Fuller Retard"
+    100, "Extreme Jumping"
+    200, "Full Retard"
 }
 
 OptionValue "ArmorModeOptions"

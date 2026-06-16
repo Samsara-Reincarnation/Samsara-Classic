@@ -439,4 +439,5 @@ SAMSARA_CHANGELOG =
 "- Fixed the Heretic undead warriors' projectiles not leaving decals.\n"
 "- Fixed Parias' frost shards' melee attack being affected by time freeze.\n"
 "- Player voodoo dolls now have normalized gravity and mass to ensure some map design tricks work as intended.\n"
+"- The \"Fuller Retard\" experience rate setting has been renamed to \"Full Retard\", while the \"Full Retard\" setting was renamed to \"Extreme Jumping\".\n"
 "- The \"Players Explode when Killed\" setting no longer takes effect for dead player voodoo dolls.";
