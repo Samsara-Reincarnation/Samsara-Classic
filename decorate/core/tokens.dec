@@ -186,3 +186,17 @@ actor FuckArmor: BasicArmorPickup
     Inventory.PickupMessage "Fuck armor."
     Inventory.Icon "RMR2A0"
 }
+
+ACTOR SamsaraClassicLoadedToken
+{
+	Height 2
+	Radius 1
+	+NOINTERACTION
+	+NOTELEPORT
+	States
+	{
+		Spawn:
+			TNT1 A 35
+			Stop
+	}
+}
